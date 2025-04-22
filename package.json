@@ -1,9 +1,9 @@
 {
-  "name": "design-system",
+  "name": "design-system-docusaurus",
   "version": "0.0.1",
   "private": true,
-  "license": "UNLICENSED",
-  "description": "Монорепозиторий дизайн-системы",
+  "license": "ISC",
+  "description": "design-system-docusaurus",
   "bin": {
     "pcbl-fe": "./fe-scripts/bin/pcbl-fe.js"
   },

@@ -11714,9 +11714,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"design-system@workspace:.":
+"design-system-docusaurus@workspace:.":
   version: 0.0.0-use.local
-  resolution: "design-system@workspace:."
+  resolution: "design-system-docusaurus@workspace:."
   dependencies:
     "@babel/core": 7.21.3
     "@babel/plugin-transform-runtime": 7.21.0
