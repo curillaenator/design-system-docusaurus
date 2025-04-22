@@ -1,0 +1,93 @@
+---
+sidebar_label: 'О дизайн–системе'
+title: 'О дизайн–системе'
+description: 'Компоненты, стили и утилиты с широкими настройками функциональных возможностей и гибкой темизацией их отображения'
+---
+
+import { ContextProvider, WindowSizeWatcher } from './components';
+import { ComponentsStyles, InfoSection, INFO_SHEMAS, Architecture, Team, TasksStatuses, Integration } from './sections';
+
+import documentation from './assets/infosections/documentation.jpg';
+import beginning from './assets/infosections/beginning.jpg';
+import dummy from './assets/infosections/dummy.jpg';
+
+import headerImage from './assets/aboutDS.png';
+
+<headermeta
+  title='Design–System & UI Kit'
+  description='Компоненты, стили и утилиты с широкими настройками функциональных возможностей и гибкой темизацией их отображения'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+  headerImage={headerImage}
+/>
+
+<versionselector versionPages={[]}>
+<ContextProvider>
+<crutch />
+
+# О дизайн–системе
+
+## Компоненты и стили
+
+<ComponentsStyles />
+
+<divider />
+
+## Документация
+
+<InfoSection {...INFO_SHEMAS['info-section-documentation']} />
+
+<divider />
+
+## Архитектура сервиса
+
+<Architecture />
+
+<divider />
+
+## Начало работы
+
+<InfoSection {...INFO_SHEMAS['info-section-beginning']} />
+
+<divider />
+
+## Дизайн-ресурсы
+
+<InfoSection {...INFO_SHEMAS['info-section-design-sources']} />
+
+<divider />
+
+## Ресурсы для разработки
+
+<InfoSection {...INFO_SHEMAS['info-section-development-sources']} />
+
+<divider />
+
+## Интеграция в процессы
+
+<Integration />
+
+<divider />
+
+## Статусы задач
+
+<TasksStatuses />
+
+<divider />
+
+## Команда
+
+<Team />
+
+<WindowSizeWatcher />
+</ContextProvider>
+</versionselector>

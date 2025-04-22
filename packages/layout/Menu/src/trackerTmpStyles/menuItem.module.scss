@@ -1,0 +1,30 @@
+.linkButton {
+  --btn_pm-tp_bgc-a: #6060ff;
+
+  --btn_pm-tp_cnt-gn: #ffffff;
+  --btn_pm-tp_cnt-gn-p: #8b8bde;
+  --btn_pm-tp_cnt-gn-a: #ffffff;
+  --btn_pm-tp_cnt-gn-h: #6060ff;
+
+  &_active {
+    --btn_pm-tp_cnt-gn-p: #ffffff;
+    --btn_pm-tp_cnt-gn-h: #ffffff;
+    --btn_pm-tp_ntn-ctv: #ffffff;
+
+    color: #ffffff !important;
+  }
+}
+
+.menuItem {
+  --btn_sc-tp_bgc: transparent;
+  --btn_sc-tp_bgc-h: transparent;
+  --btn_sc-tp_bgc-a: transparent;
+  --btn_sc-tp_bgc-db: transparent9;
+  --btn_sc-tp_bgc-p: transparent;
+  --btn_sc-tp_bgc-l: transparent9;
+
+  --btn_sc-tp_cnt-gn: #7a7a7a;
+  --btn_sc-tp_cnt-gn-h: #ffffff;
+  --btn_sc-tp_cnt-gn-p: #8b8bde;
+  --btn_sc-tp_cnt-gn-a: #6060ff;
+}

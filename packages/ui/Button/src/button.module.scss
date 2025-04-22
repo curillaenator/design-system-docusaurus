@@ -1,0 +1,119 @@
+$justifies: (
+  'center': 'center',
+  'start': 'start',
+  'end': 'end',
+  'between': 'space-between',
+);
+
+.button {
+  --btn-w: fit-content;
+
+  outline: none;
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--btn-gp);
+  width: var(--btn-w);
+  min-width: var(--btn-mw);
+  min-height: var(--btn-mh);
+  padding: var(--btn-pd);
+
+  font-family: var(--btn-ff);
+  color: var(--btn-cnt-gn);
+  font-size: var(--btn-fz);
+  font-weight: var(--btn-fw);
+  line-height: var(--btn-lh);
+  letter-spacing: var(--btn-lts);
+  white-space: nowrap;
+
+  border: none;
+  border-radius: var(--btn-bdrs);
+  background-color: var(--btn-bgc);
+  box-shadow: var(--btn-bd-sh, inset 0 0 0 0 transparent), var(--btn-drop-sh, 0 0 0 0 transparent);
+
+  @each $justify, $value in $justifies {
+    &_#{'' + $justify} {
+      justify-content: #{$value};
+    }
+  }
+
+  &:disabled {
+    --btn-cnt-gn: var(--btn-cnt-gn-db);
+    --btn-cnt-ad: var(--btn-cnt-ad-db);
+    --btn-bgc: var(--btn-bgc-db);
+    --btn-bdc: var(--btn-bdc-db);
+
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &::before {
+    position: absolute;
+    top: calc(-1 * var(--btn-f-outline-space));
+    left: calc(-1 * var(--btn-f-outline-space));
+    width: calc(100% + var(--btn-f-outline-space) * 2);
+    height: calc(100% + var(--btn-f-outline-space) * 2);
+    border-radius: calc(var(--btn-bdrs) + var(--btn-f-outline-space));
+    box-shadow: inset 0 0 0 var(--btn-f-outline-bdw) var(--btn-f-outline);
+  }
+
+  &:focus-visible::before {
+    content: '';
+  }
+}
+
+._interactive {
+  pointer-events: all !important;
+  cursor: pointer !important;
+
+  &:hover {
+    --btn-cnt-gn: var(--btn-cnt-gn-h);
+    --btn-cnt-ad: var(--btn-cnt-ad-h);
+    --btn-bgc: var(--btn-bgc-h);
+    --btn-bdc: var(--btn-bdc-h);
+  }
+
+  &:active {
+    --btn-drop-sh: 0 0 0 0 transparent;
+
+    --btn-cnt-gn: var(--btn-cnt-gn-p);
+    --btn-cnt-ad: var(--btn-cnt-ad-p);
+    --btn-bgc: var(--btn-bgc-p);
+    --btn-bdc: var(--btn-bdc-p);
+  }
+}
+
+._activated {
+  --btn-cnt-gn: var(--btn-cnt-gn-a) !important;
+  --btn-cnt-ad: var(--btn-cnt-ad-a) !important;
+  --btn-bgc: var(--btn-bgc-a) !important;
+  --btn-bdc: var(--btn-bdc-a) !important;
+
+  &:hover {
+    --btn-cnt-gn: var(--btn-cnt-gn-a);
+    --btn-cnt-ad: var(--btn-cnt-ad-a);
+    --btn-bgc: var(--btn-bgc-a);
+    --btn-bdc: var(--btn-bdc-a);
+  }
+
+  &:active {
+    --btn-drop-sh: 0 0 0 0 transparent;
+
+    --btn-cnt-gn: var(--btn-cnt-gn-a);
+    --btn-cnt-ad: var(--btn-cnt-ad-a);
+    --btn-bgc: var(--btn-bgc-a);
+    --btn-bdc: var(--btn-bdc-a);
+  }
+}
+
+._reversed {
+  flex-direction: row-reverse;
+}
+
+._width_full {
+  --btn-w: 100%;
+}

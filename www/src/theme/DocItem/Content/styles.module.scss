@@ -1,0 +1,16 @@
+.markdown {
+  width: 100%;
+  padding: var(--docitem-padding-y) var(--docitem-padding-x);
+
+  @each $heading in (h1, h2, h3, h4, h5, h6) {
+    & > #{'' + $heading} {
+      --ifm-#{$heading}-font-size: var(--heading-#{$heading}-fz);
+      margin-bottom: var(--ifm-heading-margin-bottom);
+      margin-top: var(--ifm-heading-margin-top);
+    }
+  }
+
+  @media (max-width: 1439px) {
+    padding: var(--docitem-mobile-padding-y) var(--docitem-mobile-padding-x);
+  }
+}

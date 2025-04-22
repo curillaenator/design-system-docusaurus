@@ -1,0 +1,220 @@
+---
+sidebar_label: 'Badge'
+title: 'Badge'
+description: 'Компонент особых отметок и для выделений важной информации'
+---
+
+import { Badge } from '@kit-xyz/badge';
+import pkg from '@kit-xyz/badge/package.json';
+
+import headerImage from './assets/badge.png';
+import wireframeImage from './assets/wireframe.png';
+
+import { COLORS, TYPES, STATES, FORMS, VARIANTS, APPEARANCES, TABLE, FIGMA_SETTINGS } from './examples/index';
+import { BadgeWrapped } from './examples/badgeWrapped';
+
+<headermeta
+  title='Badge'
+  description='Компонент особых отметок и для выделений важной информации'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/xyz/Badge'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-404'
+  headerImage={headerImage}
+/>
+
+# Badge
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Настройка конфигурации.</p>
+  </span>
+
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + 1} exampleCodeJSX={undefined}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Type
+
+<textcolumns>
+  <span>
+    <p>Badge разделяется на 3 основных типа отображения:</p>
+  </span>
+
+  <span>
+    <ul>
+      <li>Solid — залитый фон</li>
+      <li>Border — обводка</li>
+      <li>Transparent — без фона и обводки</li>
+    </ul>
+  </span>
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {TYPES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <BadgeWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## State
+
+<textcolumns>
+  <span>
+    <p>Состояния поведения</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {STATES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <BadgeWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Form
+
+<textcolumns>
+  <span>
+    <p>Базовые формы отображения</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {FORMS.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <BadgeWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Variants
+
+<textcolumns>
+  <span>
+    <p>Заложенные разновидности элемента, настраиваемые через его props</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {VARIANTS.map(({ title, code, ...rest }, i) => (
+      <example key={`${title} + ${i}`} exampleCodeJSX={code}>
+        <card title={title}>
+          <BadgeWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Appearance
+
+<textcolumns>
+  <span>
+    <p>Цветовое кодирование элемента относительно фона</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {APPEARANCES.map(({ title, code, ...rest }, i) => (
+      <example key={`${title} + ${i}`} exampleCodeJSX={code}>
+        <card title={title}>
+          <BadgeWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Wireframe
+
+<textcolumns>
+  <span>
+    <p>Таблица размеров и отступов</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <wireframe
+    src={{
+      light: wireframeImage,
+      dark: wireframeImage,
+      color: wireframeImage,
+    }}
+  />
+
+  <table data={TABLE} />
+</docviewport>
+
+<divider />
+
+## Properties
+
+<textcolumns>
+  <span>
+    <p>Информация по настройке компонентов в Figma</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <swiper slides={FIGMA_SETTINGS} />
+</docviewport>
+
+</versionselector>

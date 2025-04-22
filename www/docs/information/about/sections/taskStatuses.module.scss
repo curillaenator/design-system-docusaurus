@@ -1,0 +1,66 @@
+@import './breakpoints';
+
+.container {
+  --general-offset: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+
+  @media (min-width: $mobile) {
+    --general-offset: 24px;
+    gap: 48px;
+  }
+
+  @media (min-width: $tablet) {
+    --general-offset: 32px;
+    gap: 64px;
+  }
+}
+
+$appearances: (
+  'default': (
+    'bgc': var(--ifm-color-emphasis-200),
+    'text': var(--ifm-color-emphasis-700),
+  ),
+  'primary': (
+    'bgc': var(--color-accent-1-700),
+    'text': var(--color-neutral-100),
+  ),
+  'disabled': (
+    'bgc': var(--ifm-color-emphasis-200),
+    'text': var(--ifm-color-emphasis-400),
+  ),
+  'dummy': (
+    'bgc': transparent,
+    'text': transparent,
+  ),
+);
+
+.status {
+  width: 100%;
+
+  @each $appearance, $values in $appearances {
+    &_#{'' + $appearance} {
+      --ppr-bgc: #{map-get($values, 'bgc')};
+      color: #{map-get($values, 'text')};
+    }
+  }
+
+  & > span {
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $tablet) {
+    & > span {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+$theme-dark: (
+  color-solid: (
+    background: var(--tbs_c-s_bgc, rgba(255, 255, 255, 0.1)),
+    background-active: var(--tbs_c-s_bgc-a, rgb(64, 96, 255)),
+    toggler-active-color: var(--tbs_c-s_tgglr-ctv-clr, rgb(255, 255, 255)),
+  ),
+);

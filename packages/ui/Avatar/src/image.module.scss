@@ -1,0 +1,87 @@
+.image {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--av-bdrs);
+  width: var(--av-w);
+  height: var(--av-h);
+  background: var(--av-bg);
+  border: none;
+
+  color: var(--av-image-text);
+
+  .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--av-bdrs);
+    box-shadow: inset 0 0 0 var(--av-bdw) var(--av-bdc);
+  }
+
+  .source {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: var(--av-i-filter);
+    border-radius: var(--av-bdrs);
+  }
+
+  .text {
+    font-family: var(--av-ff);
+
+    font-size: var(--av-txt-fz);
+    line-height: var(--av-txt-lh);
+    font-weight: var(--av-fw);
+    text-transform: var(--av-ttn, none);
+  }
+
+  .notion {
+    // --av-nt-offset: -10px;
+
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: var(--av-notion, #6060c0);
+    border: solid 3px var(--av-notion-bd, white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_top-left {
+      top: var(--av-nt-offset);
+      left: var(--av-nt-offset);
+    }
+
+    &_top-right {
+      top: var(--av-nt-offset);
+      right: var(--av-nt-offset);
+    }
+
+    &_bottom-right {
+      bottom: var(--av-nt-offset);
+      right: var(--av-nt-offset);
+    }
+
+    &_bottom-left {
+      bottom: var(--av-nt-offset);
+      left: var(--av-nt-offset);
+    }
+  }
+
+  // .online {
+  //   position: absolute;
+  //   width: var(--av-nt-sz);
+  //   height: var(--av-nt-sz);
+  //   background-color: var(--av-nt-c);
+  //   border: 2px solid var(--av-bdc);
+  //   border-radius: 50%;
+  // }
+}

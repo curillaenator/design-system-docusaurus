@@ -1,0 +1,12 @@
+$palette-gradient: (
+  indigo-purple:
+    linear-gradient(90deg, rgb(64, 96, 255) 0%, rgb(128, 48, 255) 100%),
+  purple-blue:
+    linear-gradient(90deg, rgb(128, 48, 255) 0%, rgb(64, 128, 255) 100%),
+  blue-green: linear-gradient(90deg, rgb(64, 128, 255) 0%, rgb(0, 192, 96) 100%),
+  green-yellow:
+    linear-gradient(90deg, rgb(0, 192, 96) 0%, rgb(255, 192, 32) 100%),
+  yellow-red:
+    linear-gradient(90deg, rgb(255, 192, 32) 0%, rgb(255, 96, 64) 100%),
+  red-indigo: linear-gradient(90deg, rgb(255, 96, 64) 0%, rgb(64, 96, 255) 100%),
+);

@@ -1,0 +1,154 @@
+.wrapper {
+  --toggle-btn-bg: var(--ifm-color-emphasis-200);
+  --toggle-btn-toggler-bg: var(--color-accent-1-700);
+
+  flex-shrink: 0;
+}
+
+.light-on-light {
+  --toggle-btn-toggler-ic-l: var(--color-neutral-100);
+  --toggle-btn-toggler-ic-d: var(--color-neutral-700);
+  --toggle-btn-toggler-ic-c: var(--color-neutral-700);
+}
+
+.light-on-dark {
+  --toggle-btn-toggler-ic-l: var(--color-neutral-100);
+  --toggle-btn-toggler-ic-d: var(--color-neutral-100);
+  --toggle-btn-toggler-ic-c: var(--color-neutral-100);
+}
+
+.dark-on-dark {
+  --toggle-btn-toggler-ic-l: var(--color-neutral-100);
+  --toggle-btn-toggler-ic-d: var(--color-neutral-100);
+  --toggle-btn-toggler-ic-c: var(--color-neutral-100);
+}
+
+.dark-on-light {
+  --toggle-btn-toggler-ic-l: var(--color-neutral-700);
+  --toggle-btn-toggler-ic-d: var(--color-neutral-100);
+  --toggle-btn-toggler-ic-c: var(--color-neutral-700);
+}
+
+.color-on-light {
+  --toggle-btn-toggler-ic-l: var(--color-neutral-700);
+  --toggle-btn-toggler-ic-d: var(--color-neutral-700);
+  --toggle-btn-toggler-ic-c: var(--color-neutral-100);
+}
+
+.color-on-dark {
+  --toggle-btn-toggler-ic-l: var(--color-neutral-100);
+  --toggle-btn-toggler-ic-d: var(--color-neutral-100);
+  --toggle-btn-toggler-ic-c: var(--color-neutral-100);
+}
+
+@each $modesCnt in (1 2 3) {
+  .#{'togleLength-' + $modesCnt} {
+    --toggle-btn-w: calc(48px * #{$modesCnt} + var(--toggle-btn-gap) * (#{$modesCnt} - 1));
+  }
+}
+
+@each $mode in ('light', 'dark', 'color') {
+  .#{'transition-' + $mode} {
+    --transition-movement: var(--toggle-move-#{$mode});
+  }
+}
+
+.toggleButton {
+  --toggle-btn-h: 48px;
+  --toggle-btn-gap: 8px;
+  --toggle-btn-bdrs: 8px;
+  --toggle-animation: var(--ifm-transition-fast) ease;
+
+  --toggle-move-light: 0;
+  --toggle-move-dark: calc(48px + var(--toggle-btn-gap));
+  --toggle-move-color: calc(var(--toggle-btn-w) - 48px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  width: var(--toggle-btn-w);
+  height: var(--toggle-btn-h);
+
+  border: none;
+  border-radius: var(--toggle-btn-bdrs);
+  background-color: var(--toggle-btn-bg);
+  transition: var(--ifm-transition-fast) ease;
+
+  padding: 0;
+
+  .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--toggle-animation);
+    width: var(--toggle-btn-h);
+    height: var(--toggle-btn-h);
+
+    background-color: var(--toggle-btn-toggler-bg);
+    border-radius: var(--toggle-btn-bdrs);
+    transform: translateX(var(--transition-movement));
+  }
+
+  .iconWrapper {
+    cursor: pointer;
+    outline: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: var(--toggle-btn-bdrs);
+    background-color: transparent;
+
+    width: var(--toggle-btn-h);
+    height: var(--toggle-btn-h);
+
+    &_interactive {
+      &:hover {
+        .sun,
+        .star {
+          stroke: var(--color-accent-1-700);
+        }
+
+        .moon {
+          fill: var(--color-accent-1-700);
+        }
+      }
+
+      &:active {
+        .sun,
+        .star {
+          stroke: var(--color-accent-1-400);
+        }
+
+        .moon {
+          fill: var(--color-accent-1-400);
+        }
+      }
+    }
+
+    .icon {
+      position: relative;
+      transition: var(--toggle-animation);
+    }
+
+    .sun {
+      stroke: var(--toggle-btn-toggler-ic-l);
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    .moon {
+      fill: var(--toggle-btn-toggler-ic-d);
+      transform: rotate(180deg);
+    }
+
+    .star {
+      stroke: var(--toggle-btn-toggler-ic-c);
+      stroke-width: 2;
+    }
+  }
+}

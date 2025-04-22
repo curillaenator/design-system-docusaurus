@@ -1,0 +1,32 @@
+$variables: (
+  theme-light: (
+    --mdl_df_cnt-gn: rgb(10, 10, 10),
+    --mdl_df_bgc: rgb(255, 255, 255),
+    --mdl_df_overlay-bgc: rgba(255, 255, 255, 0.8),
+    --mdl_df_drp-sh: 0 0 0 0 transparent,
+    --mdl_df_bd-sh: 0 0 0 2px rgb(235, 235, 235),
+    --mdl_df_mobile-cs-btn-bgc: rgb(128, 128, 128),
+    --mdl_df_mobile-cs-btn-bgc-h: rgb(139, 139, 222),
+    --mdl_df_mobile-cs-btn-bgc-p: rgb(64, 96, 255),
+  ),
+  theme-dark: (
+    --mdl_df_cnt-gn: rgb(255, 255, 255),
+    --mdl_df_bgc: rgb(10, 10, 10),
+    --mdl_df_overlay-bgc: rgba(10, 10, 10, 0.8),
+    --mdl_df_drp-sh: 0 0 0 0 transparent,
+    --mdl_df_bd-sh: 0 0 0 2px rgb(61, 61, 61),
+    --mdl_df_mobile-cs-btn-bgc: rgb(128, 128, 128),
+    --mdl_df_mobile-cs-btn-bgc-h: rgb(139, 139, 222),
+    --mdl_df_mobile-cs-btn-bgc-p: rgb(64, 96, 255),
+  ),
+  theme-color: (
+    --mdl_df_cnt-gn: rgb(10, 10, 10),
+    --mdl_df_bgc: rgb(255, 255, 255),
+    --mdl_df_overlay-bgc: rgba(255, 255, 255, 0.8),
+    --mdl_df_drp-sh: 0 0 0 0 transparent,
+    --mdl_df_bd-sh: 0 0 0 2px rgb(235, 235, 235),
+    --mdl_df_mobile-cs-btn-bgc: rgb(128, 128, 128),
+    --mdl_df_mobile-cs-btn-bgc-h: rgb(139, 139, 222),
+    --mdl_df_mobile-cs-btn-bgc-p: rgb(64, 96, 255),
+  ),
+);

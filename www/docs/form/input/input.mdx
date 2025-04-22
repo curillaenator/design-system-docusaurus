@@ -1,0 +1,128 @@
+---
+sidebar_label: 'Input'
+title: 'Input'
+description: 'Базовый элемент формы, для взаимодействия с пользователем'
+---
+
+import pkg from '@kit-xyz/input/package.json';
+
+import { InputWrapped } from './components/InputWraped';
+import { COLORS, APPEARANCES, STATES, SHAPES } from './examples/index';
+
+<headermeta
+  title='Input'
+  description='Базовый элемент формы, для взаимодействия с пользователем. Включает в себя несколько типов нативного инпута, такие как: text, email, tel, password, url, также принимает такие же проперти, что и нативный элемент input.'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+  headerImage={undefined}
+/>
+
+# Input
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Base
+
+Input может быть как контролируемым, так и нет. В случае неконтролируемого варианта необходимо передать проп uncontrolled. Для контролируемого компонента, разработчику необходимо предоставить состояние и его обработчик для инпута через проперти <b>value</b> и <b>onChange</b>.
+
+Для контролируемого варианта c каунтером и лимитом вводимых символов пакет дополнительно экспортирует хук <i>useLimitCounter</i>, содержащий в себе необходимые пропсы.
+
+<p>
+  <i>{`const { value, onChage, onClearInput, endMetaText } = useLimitCounter(42);`}</i>
+</p>
+
+<divider />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + 1}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Appearance
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {APPEARANCES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <InputWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## State
+
+<textcolumns>
+  <span>
+    <p>Состояния поведения</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {STATES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <InputWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Form
+
+<textcolumns>
+  <span>
+    <p>Варианты форм</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {SHAPES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <InputWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+</versionselector>

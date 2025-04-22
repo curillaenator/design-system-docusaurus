@@ -1,0 +1,112 @@
+{
+  "tabs/scale": {
+    "padding": {
+      "s": {
+        "value": "0px",
+        "type": "spacing"
+      },
+      "xs": {
+        "value": "0px",
+        "type": "spacing"
+      }
+    },
+    "gap-x": {
+      "s": {
+        "value": "4px",
+        "type": "spacing"
+      },
+      "xs": {
+        "value": "4px",
+        "type": "spacing"
+      }
+    },
+    "border-radius-circular": {
+      "s": {
+        "value": "{button/scale.height.s} / 2",
+        "type": "borderRadius"
+      },
+      "xs": {
+        "value": "{button/scale.height.xs} / 2",
+        "type": "borderRadius"
+      }
+    },
+    "border-radius-rounded": {
+      "s": {
+        "value": "{border-radius.s}",
+        "type": "borderRadius"
+      },
+      "xs": {
+        "value": "{border-radius.s}",
+        "type": "borderRadius"
+      }
+    },
+    "border-radius-square": {
+      "s": {
+        "value": "{border-radius.none}",
+        "type": "borderRadius"
+      },
+      "xs": {
+        "value": "{border-radius.none}",
+        "type": "borderRadius"
+      }
+    }
+  },
+  "tabs/theme/light": {
+    "color/tracker-solid": {
+      "background": {
+        "value": "#ebeff4",
+        "type": "color"
+      },
+      "background-active": {
+        "value": "#ebeff4",
+        "type": "color"
+      },
+      "toggler-active-color": {
+        "value": "#1677ff",
+        "type": "color"
+      }
+    },
+    "color/solid": {
+      "background": {
+        "value": "{color.accent-1-100}",
+        "type": "color"
+      },
+      "background-active": {
+        "value": "{color.accent-1-700}",
+        "type": "color"
+      },
+      "toggler-active-color": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      }
+    }
+  },
+  "tabs/theme/dark": {
+    "color/solid": {
+      "scheme": {
+        "value": "tabs/theme/light.color/solid",
+        "type": "meta"
+      },
+      "background": {
+        "value": "{color-transparent.neutral-100-10%}",
+        "type": "color"
+      }
+    }
+  },
+  "tabs/theme/color": {
+    "color/solid": {
+      "scheme": {
+        "value": "tabs/theme/light.color/solid",
+        "type": "meta"
+      },
+      "background": {
+        "value": "{color-transparent.neutral-100-10%}",
+        "type": "color"
+      },
+      "background-active": {
+        "value": "{color-transparent.neutral-100-20%}",
+        "type": "color"
+      }
+    }
+  }
+}

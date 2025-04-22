@@ -1,0 +1,129 @@
+@import './breakpoints';
+@import './paddings';
+
+.section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: var(--ifm-common-bdw) solid var(--ifm-color-emphasis-200);
+
+  &_high {
+    padding: 32px 32px;
+
+    @media (width >= $mobile) {
+      padding: $sectionTabletY $sectionTabletX;
+    }
+
+    @media (width >= $tablet) {
+      padding: $sectionDesctopY $sectionDesctopX;
+    }
+  }
+
+  &_low {
+    padding: 32px 32px;
+
+    @media (width >= $tablet) {
+      padding: 64px 192px;
+    }
+
+    @media (width >= $laptop) {
+      height: calc(100vh - var(--ifm-navbar-height) - 96px); // 96px - высота меню с навигацией
+      min-height: 480px;
+    }
+
+    @media (width >= $desktop) {
+      height: calc(100vh - var(--ifm-navbar-height) - 128px); // 128px - высота меню с навигацией
+      min-height: calc(640px + 64px);
+    }
+  }
+}
+
+.cover {
+  --shp-gradient-from: var(--cover-from-color);
+  --shp-gradient-to: var(--cover-to-color);
+
+  position: relative;
+  z-index: 1; // шейп имеет Z индекс -1
+  overflow: visible; // хак safari
+  // border-radius: 24px;
+  width: 100%;
+  padding: 32px 32px;
+  // background-image: linear-gradient(74deg, var(--cover-from-color), var(--cover-to-color));
+
+  @media (width >= $laptop) {
+    padding: 48px 48px;
+    min-height: 480px;
+
+    .coverImage {
+      display: block;
+    }
+  }
+
+  @media (width >= $desktop) {
+    padding: 64px 128px;
+    min-height: 640px;
+  }
+
+  &_darkToPrimary {
+    --cover-from-color: var(--color-neutral-700);
+    --cover-to-color: var(--color-accent-1-700);
+  }
+
+  &_dark {
+    --cover-from-color: var(--color-neutral-700);
+    --cover-to-color: var(--color-neutral-700);
+  }
+
+  .coverImage {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+
+    @media (width >= $laptop) {
+      display: block;
+    }
+  }
+
+  .coverContent {
+    padding: 0 0;
+    max-width: 100%;
+
+    @media (width >= $mobile) {
+    }
+
+    @media (width >= $laptop) {
+      max-width: calc(50% - 16px);
+      // padding: 24px 0;
+    }
+
+    @media (width >= $desktop) {
+      padding: 40px 0;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 44px;
+      line-height: 48px;
+      letter-spacing: -0.04em;
+      color: var(--color-neutral-100);
+      margin-bottom: 24px;
+
+      @media (width >= $desktop) {
+        font-size: 55px;
+        line-height: 64px;
+        letter-spacing: -0.02em;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 28px;
+      color: var(--color-neutral-100);
+      margin-bottom: 48px;
+    }
+  }
+}

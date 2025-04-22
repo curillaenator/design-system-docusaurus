@@ -1,0 +1,10 @@
+{
+  "indigo": { "value": "rgb(64, 32, 224)", "type": "color" },
+  "indigo-700": { "value": "rgb(64, 32, 224)", "type": "color" },
+  "indigo-600": { "value": "rgb(79, 50, 226)", "type": "color" },
+  "indigo-500": { "value": "rgb(110, 86, 231)", "type": "color" },
+  "indigo-400": { "value": "rgb(156, 139, 239)", "type": "color" },
+  "indigo-300": { "value": "rgb(194, 184, 245)", "type": "color" },
+  "indigo-200": { "value": "rgb(224, 219, 250)", "type": "color" },
+  "indigo-100": { "value": "rgb(240, 237, 253)", "type": "color" }
+}

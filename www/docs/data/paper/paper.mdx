@@ -1,0 +1,130 @@
+---
+sidebar_label: 'Paper'
+title: 'Paper'
+description: 'Компонент для визуализации контейнера карточки'
+---
+
+import pkg from '@kit-xyz/paper/package.json';
+
+import { PaperWrapped } from './components/PaperWrapped';
+
+import { COLORS, SIZES, BORDERS } from './examples/index';
+
+<headermeta
+  title='Paper'
+  description='Компонент для визуализации контейнера карточки'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/xyz/Badge'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-404'
+/>
+
+# Paper
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + 1} exampleCodeJSX={undefined}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Basic
+
+<textcolumns>
+  <span>
+    <p>Внешний вид Paper</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={undefined}>
+      <card title='Normal'>
+        <PaperWrapped fullwidth smoothedCorners={false} withBorder borderWidth='xs'>
+          <div style={{ height: '200px' }}>Normal</div>
+        </PaperWrapped>
+      </card>
+    </example>
+    <example exampleCodeJSX={undefined}>
+      <card title='Experimental (not in prod in near future)'>
+        <PaperWrapped fullwidth smoothedCorners withBorder borderWidth='xs'>
+          <div style={{ height: '200px' }}>Smoothed corners</div>
+        </PaperWrapped>
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Sandbox
+
+<textcolumns>
+  <span>
+    <p>Песочница для визуального сравнения отличий экпериментального сглаживания углов и стандартного</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {SIZES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <PaperWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Demo
+
+<textcolumns>
+  <span>
+    <p>Варианты представления Paper в виде экcпериментального рендера сглаживания углов</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {BORDERS.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <PaperWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+</versionselector>

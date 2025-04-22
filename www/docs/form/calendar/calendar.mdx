@@ -1,0 +1,71 @@
+---
+sidebar_label: 'Calendar'
+title: 'Calendar'
+description: 'Компонент календарь'
+---
+
+import pkg from '@kit-xyz/calendar/package.json';
+
+import { CalendarWrapped } from './components/CalendarWrapped';
+import { DropableCalendarWrapped } from './components/DropableCalendarWrapped';
+
+import calendarWrappedCode from '!!raw-loader!./components/CalendarWrapped.tsx';
+import dropableCalendarWrappedCode from '!!raw-loader!./components/DropableCalendarWrapped.tsx';
+
+<headermeta
+  title='Calendar'
+  description='Компонент календарь'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/xyz/Badge'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-404'
+/>
+
+# Calendar
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Basic
+
+<textcolumns>
+  <span>
+    <p>Внешний вид Calendar</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={calendarWrappedCode}>
+      <card title='Календарь'>
+        <CalendarWrapped />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Dropable
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={dropableCalendarWrappedCode}>
+      <card title='Dropable'>
+        <DropableCalendarWrapped />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+</versionselector>

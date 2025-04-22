@@ -1,0 +1,28 @@
+.openNode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+
+  margin-bottom: 1px;
+
+  padding: 24px;
+  border-radius: 16px;
+
+  transition: border-radius var(--acdn-animation-time) var(--acdn-animation-method);
+
+  &_active {
+    border-radius: 16px 16px 0 0;
+  }
+
+  background-color: var(--acdn-ct-bgc);
+
+  .title {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: -0.88px;
+  }
+}

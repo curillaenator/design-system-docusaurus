@@ -1,0 +1,73 @@
+@use 'sass:color';
+@use '~@kit-xyz/theme/src/scss/style/color' as tokenColors;
+@use '~@kit-xyz/theme/src/scss/style/color-transparent' as tokenTransparentColors;
+
+@mixin generateColorVars($prefix: '--color') {
+  @each $color, $value in tokenColors.$color {
+    #{'' + $prefix}-#{'' + $color}: #{$value};
+  }
+}
+@mixin generateTransparentColorVars($prefix: '--color') {
+  @each $color, $value in tokenTransparentColors.$color-transparent {
+    #{'' + $prefix}-#{'' + $color}: #{$value};
+  }
+}
+
+// ifm = docusaurus ui
+
+$ifmToTokensAccos: (
+  primary: 'accent-1',
+  secondary: 'accent-2',
+  success: 'positive',
+  info: 'informative',
+  warning: 'attention',
+  danger: 'negative',
+);
+
+@mixin generateIfmColors() {
+  @each $ifmName, $tokenName in $ifmToTokensAccos {
+    --ifm-color-#{'' + $ifmName}: var(--color-#{'' + $tokenName}-700);
+    --ifm-color-#{'' + $ifmName}-dark: darken(var(--color-#{'' + $tokenName}-700), 10%);
+    --ifm-color-#{'' + $ifmName}-darker: darken(var(--color-#{'' + $tokenName}-700), 15%);
+    --ifm-color-#{'' + $ifmName}-darkest: darken(var(--color-#{'' + $tokenName}-700), 30%);
+    --ifm-color-#{'' + $ifmName}-light: var(--color-#{'' + $tokenName}-600);
+    --ifm-color-#{'' + $ifmName}-lighter: var(--color-#{'' + $tokenName}-500);
+    --ifm-color-#{'' + $ifmName}-lightest: var(--color-#{'' + $tokenName}-400);
+  }
+}
+
+$tints: (4, 8, 16, 24, 32);
+$indexes: (
+  100: 700,
+  200: 600,
+  300: 500,
+  400: 400,
+  500: 300,
+  600: 200,
+  700: 100,
+);
+
+@mixin tintedLight {
+  @each $tint in $tints {
+    @each $index, $target in $indexes {
+      --ifm-color-emphasis-tint-#{$tint}-#{$index}: var(--color-neutral-tint-#{$tint}-#{$index});
+    }
+  }
+}
+
+@mixin tintedDark {
+  @each $tint in $tints {
+    @each $index, $target in $indexes {
+      --ifm-color-emphasis-tint-#{$tint}-#{$index}: var(--color-neutral-tint-#{$tint}-#{$target});
+    }
+  }
+}
+
+@mixin colors {
+  // token colors
+  @include generateColorVars();
+  @include generateTransparentColorVars();
+
+  // ifm (docusaurus ui) colors
+  @include generateIfmColors();
+}

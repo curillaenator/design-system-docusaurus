@@ -1,0 +1,45 @@
+{
+  "name": "@pcbl-ui-v4/ds-tokens-parser",
+  "version": "0.6.7",
+  "description": "Утилиты для парсинга дизайн-токенов",
+  "license": "UNLICENSED",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "type": "git",
+    "registry": "https://gitlab.com/api/v4/projects/50873891/packages/npm/"
+  },
+  "main": "src/indexLocal.js",
+  "scripts": {
+    "build": "run -T rimraf build && yarn build:raw",
+    "build:raw": "run -T tsc -p tsconfig.build.json",
+    "build:watch": "yarn build:raw --watch",
+    "pub": "yarn build && npm publish",
+    "test": "run -T pcbl-fe  test",
+    "checkDep": "run -T pcbl-fe  checkDependencies",
+    "pack": "run -T pcbl-fe  pack",
+    "revertPack": "run -T pcbl-fe  revertPack",
+    "clean": "run -T pcbl-fe  clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit4/browse/packages/ds-tokens-parser",
+    "directory": "packages/ds-tokens-parser"
+  },
+  "dependencies": {
+    "@epegzz/sass-vars-loader": "6.1.0",
+    "lodash": "4.17.21",
+    "pino": "7.8.1",
+    "pino-pretty": "7.5.3",
+    "prettier": "2.6.0",
+    "superstruct": "0.15.4"
+  },
+  "devDependencies": {
+    "@kit-base/common-types": "0.0.2"
+  },
+  "files": [
+    "/build"
+  ]
+}

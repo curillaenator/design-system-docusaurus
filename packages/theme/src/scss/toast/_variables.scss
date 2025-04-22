@@ -1,0 +1,14 @@
+$variables: (
+  theme-light: (
+    --tst_c-s_cnt-gn: rgb(10, 10, 10),
+    --tst_c-s_bgc: rgb(235, 235, 235),
+  ),
+  theme-dark: (
+    --tst_c-s_cnt-gn: rgb(255, 255, 255),
+    --tst_c-s_bgc: rgb(20, 20, 20),
+  ),
+  theme-color: (
+    --tst_c-s_cnt-gn: rgb(255, 255, 255),
+    --tst_c-s_bgc: rgba(255, 255, 255, 0.1),
+  ),
+);

@@ -1,0 +1,9 @@
+{
+  "negative-700": { "value": "{palette.red-700}", "type": "color" },
+  "negative-600": { "value": "{palette.red-600}", "type": "color" },
+  "negative-500": { "value": "{palette.red-500}", "type": "color" },
+  "negative-400": { "value": "{palette.red-400}", "type": "color" },
+  "negative-300": { "value": "{palette.red-300}", "type": "color" },
+  "negative-200": { "value": "{palette.red-200}", "type": "color" },
+  "negative-100": { "value": "{palette.red-100}", "type": "color" }
+}

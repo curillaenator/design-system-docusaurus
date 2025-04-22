@@ -1,0 +1,50 @@
+{
+  "informative-700-informative-400-top": {
+    "value": "linear-gradient(180deg, rgb(64, 32, 224) 0%, rgb(156, 139, 239) 100%)",
+    "type": "color"
+  },
+  "informative-700-informative-400-right": {
+    "value": "linear-gradient(270deg, rgb(64, 32, 224) 0%, rgb(156, 139, 239) 100%)",
+    "type": "color"
+  },
+  "informative-700-informative-400-bottom": {
+    "value": "linear-gradient(180deg, rgb(156, 139, 239) 0%, rgb(64, 32, 224) 100%)",
+    "type": "color"
+  },
+  "informative-700-informative-400-left": {
+    "value": "linear-gradient(90deg, rgb(64, 32, 224) 0%, rgb(156, 139, 239) 100%)",
+    "type": "color"
+  },
+  "informative-700-informative-100-top": {
+    "value": "linear-gradient(180deg, rgb(64, 32, 224) 0%, rgb(240, 237, 253) 100%)",
+    "type": "color"
+  },
+  "informative-700-informative-100-right": {
+    "value": "linear-gradient(270deg, rgb(64, 32, 224) 0%, rgb(240, 237, 253) 100%)",
+    "type": "color"
+  },
+  "informative-700-informative-100-bottom": {
+    "value": "linear-gradient(180deg, rgb(240, 237, 253) 0%, rgb(64, 32, 224) 100%)",
+    "type": "color"
+  },
+  "informative-700-informative-100-left": {
+    "value": "linear-gradient(90deg, rgb(64, 32, 224) 0%, rgb(240, 237, 253) 100%)",
+    "type": "color"
+  },
+  "informative-400-informative-100-top": {
+    "value": "linear-gradient(180deg, rgb(156, 139, 239) 0%, rgb(240, 237, 253) 100%)",
+    "type": "color"
+  },
+  "informative-400-informative-100-right": {
+    "value": "linear-gradient(270deg, rgb(156, 139, 239) 0%, rgb(240, 237, 253) 100%)",
+    "type": "color"
+  },
+  "informative-400-informative-100-bottom": {
+    "value": "linear-gradient(180deg, rgb(240, 237, 253) 0%, rgb(156, 139, 239) 100%)",
+    "type": "color"
+  },
+  "informative-400-informative-100-left": {
+    "value": "linear-gradient(90deg, rgb(156, 139, 239) 0%, rgb(240, 237, 253) 100%)",
+    "type": "color"
+  }
+}

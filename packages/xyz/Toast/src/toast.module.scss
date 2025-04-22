@@ -1,0 +1,96 @@
+@use '../../../theme/src/scss/toast' as toast;
+
+$modeMaps: (
+  'light': toast.$theme-light,
+  'dark': toast.$theme-dark,
+  'color': toast.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(toast.$scale, $prop, $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(toast.$style, $group, $value);
+}
+
+@function get-modeColor($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+.toastVariables {
+  // переменые, переопределяющие стили в @kit-base/toast
+  --tst-ct-pd: 0;
+  --tst-drop-sh: 0 0 0 0 transparent;
+  --tst-maw: 320px;
+  --tst-fw: #{get-style('font-weight')};
+  --tst-offset: 40px;
+
+  // переопределение дефолтных переменных пакета toastify, не нотировать!
+  --toastify-toast-min-height: #{get-scale('min-height', 'xs')} !important;
+  --toastify-font-family: #{get-style('font-family')} !important;
+  --toastify-toast-min-height: 40px !important;
+  --toastify-toast-max-height: 320px !important;
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{'' + $schema}-#{'' + $modeMapName} {
+      --tst-bgc: #{get-modeColor('background', $modeMapName, $schema)};
+      --tst-ct-gn: #{get-modeColor('content-general', $modeMapName, $schema)};
+    }
+  }
+}
+
+@each $size in ('xs') {
+  ._size_#{'' + $size} {
+    --tst-mw: #{get-scale('min-width', $size)};
+    --tst-mh: #{get-scale('min-height', $size)};
+    --tst-bdrs: #{get-scale('border-radius', $size)};
+
+    --tst-gp-x: #{get-scale('gap-x', $size)};
+    --tst-gp-y: #{get-scale('gap-y', $size)};
+    --tst-pd-y: #{get-scale('padding-y', $size)};
+    --tst-pd-x: #{get-scale('padding-x', $size)};
+
+    --tst-fz: #{get-scale('font-size', $size)};
+    --tst-lh: #{get-scale('line-height', $size)};
+    --tst-txt-pd-y: #{get-scale('text-padding-y', $size)};
+    --tst-txt-pd-x: #{get-scale('text-padding-x', $size)};
+  }
+}
+
+// .toast {
+//   display: flex;
+//   gap: var(--tst-gp-x);
+
+//   width: 100%;
+//   min-width: var(--tst-mw);
+//   min-height: var(--tst-mh);
+
+//   padding: var(--tst-pd-y) var(--tst-pd-x);
+//   border-radius: var(--tst-bdrs);
+
+//   background-color: var(--tst-bgc);
+//   color: var(--tst-ct-gn);
+
+//   // проверить можно ли убрать
+//   .icon {
+//     flex-shrink: 0;
+//   }
+
+//   .content {
+//     display: flex;
+//     flex-direction: column;
+//     gap: var(--tst-gp-y);
+//     width: 100%;
+
+//     .text {
+//       font-size: var(--tst-fz);
+//       line-height: var(--tst-lh);
+//       padding: var(--tst-txt-pd-y) var(--tst-txt-pd-x);
+//       font-weight: var(--tst-fw);
+//       margin: 0;
+//     }
+//   }
+// }

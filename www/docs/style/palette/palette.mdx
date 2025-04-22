@@ -1,0 +1,167 @@
+---
+sidebar_label: 'Palette'
+sidebar_position: 1
+title: 'Palette'
+description: 'Раздел включает в себя набор системных компонентов, используемых для построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета'
+---
+
+import { CardColorValue } from '@site/src/components/ExamplesGrid';
+import { ColorMatrix, Opacities, Effect } from './components';
+import {
+  PALETTE,
+  COLOR_MATRIX,
+  DOT_POSITIONS_MATRIX,
+  INDIGO,
+  PURPLE,
+  BLUE,
+  GREEN,
+  YELLOW,
+  RED,
+  DOT_POSITIONS_ROW,
+} from './constants';
+
+import tokens from '!!raw-loader!./examples/tokens.txt';
+import palletteImage from './assets/palette.png';
+import PaletteSmoothed from './versions/_paletteSmoothed.mdx';
+
+<headermeta
+  title='Palette'
+  description='Раздел включает в себя набор системных компонентов, используемых для построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0', 'Smoothed']}
+  actualVersion='1.0'
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/theme/src/scss/style/_palette.scss'
+  figmaLink='https://www.figma.com/'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-364'
+  headerImage={palletteImage}
+/>
+
+# Palette
+
+<versionselector versionPages={[{ version: 'Smoothed', page: <PaletteSmoothed /> }]}>
+<crutch />
+
+## Basic color
+
+<textcolumns>
+  <span>
+    <p>Основные цвета в X.Y.Z для набора стилей, определяющих наполненность компонентов и фирменного стиля</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={tokens} language='json'>
+  <examples>
+    {PALETTE.map((card, i) => (
+      <example key={`card-${i}`} exampleCodeJSON={card.code}>
+        <card {...card}>
+          <CardColorValue color={card.valueStyle} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Effect
+
+<textcolumns>
+  <span>
+    <p>
+      Тональный переход через черный и белый слой, cтандартное значение в дизайн-системе X.Y.Z имеет шаг прозрачности в
+      4%, но может варьироваться при необходимости создания своего шага в определении тонального перехода под проект
+    </p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <examples minCardWidth={1920}>
+    <example colorMode='dark'>
+      <card title='white' colorMode='dark' subtitles={['color name: neutral-100', 'HEX: #ffffff']}>
+        <Opacities color='#ffffff' />
+      </card>
+    </example>
+    <example colorMode='dark'>
+      <card title='white overlay' colorMode='dark' subtitles={['color name: neutral-100', 'HEX: #ffffff']}>
+        <Opacities color='#ffffff' blendMode='overlay' />
+      </card>
+    </example>
+    <example colorMode='dark'>
+      <card title='black' colorMode='dark' subtitles={['color name: neutral-700', 'HEX: #0a0a0a']}>
+        <Opacities color='#0a0a0a' />
+      </card>
+    </example>
+    <example colorMode='dark'>
+      <card title='black overlay' colorMode='dark' subtitles={['color name: neutral-700', 'HEX: #0a0a0a']}>
+        <Opacities color='#0a0a0a' blendMode='overlay' />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Sample
+
+<textcolumns>
+  <span>
+    <p>
+      Компонент содержит слои, которые накладываются поверх основного цвета, и дает возможность настроить тональный
+      спектр основного цвета
+    </p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <examples minCardWidth={1920}>
+    <example>
+      <Effect />
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Sample combination
+
+<textcolumns>
+  <span>
+    <p>Совмещенная палитра базовых цветов и наложения эффектов для выбора цветовых оттенков</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <examples minCardWidth={1920}>
+    <example>
+      <ColorMatrix colorMatrix={COLOR_MATRIX} dotsPositions={DOT_POSITIONS_MATRIX} type='matrix' />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }}>
+      <ColorMatrix colorMatrix={PURPLE} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }}>
+      <ColorMatrix colorMatrix={INDIGO} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }}>
+      <ColorMatrix colorMatrix={BLUE} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }}>
+      <ColorMatrix colorMatrix={GREEN} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }}>
+      <ColorMatrix colorMatrix={YELLOW} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }}>
+      <ColorMatrix colorMatrix={RED} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+  </examples>
+</docviewport>
+
+<crutch />
+</versionselector>

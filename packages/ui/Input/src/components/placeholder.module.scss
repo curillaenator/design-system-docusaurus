@@ -1,0 +1,35 @@
+.placeholder {
+  --inp-ph-display: none;
+  --inp-ph-left: 0;
+  --inp-ph-translate-x: 0;
+
+  display: var(--inp-ph-display);
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: var(--inp-ph-left);
+  height: 100%;
+  transform: translate(var(--inp-ph-translate-x), -50%);
+  transition: var(--inp-ph-animation-time, 0.2s) var(--inp-ph-animation-method, ease-in-out);
+
+  &_active {
+    --inp-ph-left: 100%;
+    --inp-ph-translate-x: -100%;
+  }
+
+  &_visible {
+    --inp-ph-display: flex;
+  }
+
+  & > span {
+    font-family: var(--inp-ff);
+    font-size: var(--inp-fz);
+    font-weight: var(--inp-fw);
+    line-height: var(--inp-lh);
+    color: var(--inp-ct-ph);
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

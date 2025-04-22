@@ -1,0 +1,19 @@
+{
+  "extends": "../../../fe-scripts/configs/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["esnext", "dom"],
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "outDir": "build",
+    "paths": {
+      "*": ["*"]
+    },
+    "declaration": true,
+    "noEmit": false,
+    "target": "es2019",
+    "downlevelIteration": true,
+    "types": ["react"]
+  },
+  "include": ["src", "@types"],
+  "exclude": ["**/stories", "**/*.stories.*", "**/*.test.*", "*.css"]
+}

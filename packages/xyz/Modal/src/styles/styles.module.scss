@@ -1,0 +1,151 @@
+@use '../../../../theme/src/scss/modal' as modal;
+@use '../../../../theme/src/scss/mixins/scroll' as scroll;
+
+@import './fades', './close';
+
+$modeMaps: (
+  'light': modal.$theme-light,
+  'dark': modal.$theme-dark,
+  'color': modal.$theme-light,
+);
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@function get-scale($prop, $size) {
+  @return map-get(modal.$scale, $prop, $size);
+}
+
+@function get-style($prop, $style: 'animation') {
+  @return map-get(modal.$style, $style, $prop);
+}
+
+@each $size in ('s') {
+  ._size_#{$size} {
+    --mdl-inset-x: #{get-scale('inset-x', $size)};
+    --mdl-inset-y: #{get-scale('inset-y', $size)};
+    --mdl-min-width: #{get-scale('min-width', $size)};
+    --mdl-min-height: #{get-scale('min-height', $size)};
+    --mdl-bdrs: #{get-scale('border-radius', $size)};
+    --mdl-ct-pd-y: #{get-scale('content-padding-y', $size)};
+    --mdl-ct-pd-x: #{get-scale('content-padding-x', $size)};
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --mdl-ct-gn: #{get-color('content-general', $colorMode, $schema)};
+
+      --mdl-ct-bgc: #{get-color('background', $colorMode, $schema)};
+      --mdl-overlay-bgc: #{get-color('overlay-background', $colorMode, $schema)};
+      --mdl-drop-sh: #{get-color('drop-shadow', $colorMode, $schema)};
+      --mdl-bd-sh: #{get-color('border-shadow', $colorMode, $schema)};
+
+      --mdl-tablet-cs-bgc: #{get-color('mobile-close-button-background', $colorMode, $schema)};
+      --mdl-tablet-cs-bgc-h: #{get-color('mobile-close-button-background-hovered', $colorMode, $schema)};
+      --mdl-tablet-cs-bgc-a: #{get-color('mobile-close-button-background-pressed', $colorMode, $schema)};
+    }
+  }
+}
+
+.scroll {
+  &_light {
+    @include scroll.scrollbar('xs', 'onLight');
+  }
+
+  &_dark {
+    @include scroll.scrollbar('xs', 'onDark');
+  }
+}
+
+.variables {
+  --mdl-animation-time: #{get-style('time')};
+  --mdl-animation-method: #{get-style('method')};
+
+  --mdl-ct-pd: var(--mdl-ct-pd-y) var(--mdl-ct-pd-x);
+}
+
+.transparentOverlay {
+  --mdl-overlay-bgc: transparent !important;
+}
+
+.container {
+  --mdl-ctr-maw: calc(100% - var(--mdl-inset-x) * 4 - 32px); // 32px здесь подобранное значение
+  --mdl-ctr-scrollbody-mg: var(--mdl-inset-y) 0;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  min-width: var(--mdl-min-width);
+  max-width: var(--mdl-ctr-maw);
+  min-height: var(--mdl-min-height);
+  max-height: calc(100% - var(--mdl-inset-y) * 2);
+
+  &_scrollable {
+    margin: var(--mdl-ctr-scrollbody-mg);
+    height: fit-content;
+    max-height: unset;
+  }
+
+  &_withoutButton {
+    --mdl-ctr-maw: calc(100% - var(--mdl-inset-x) * 2);
+  }
+
+  @include close;
+  @include fades;
+
+  .content {
+    flex: 0 1 auto;
+    width: 100%;
+    height: 100%;
+    min-height: var(--mdl-min-height);
+    padding: var(--mdl-ct-pd);
+    background-color: var(--mdl-ct-bgc);
+    box-shadow: var(--mdl-drop-sh), var(--mdl-bd-sh);
+    border-radius: var(--mdl-bdrs);
+    color: var(--mdl-ct-gn);
+
+    &_scrollable {
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      // не удалено так как может понадобиться если будет нужен скроллбар контента сейчас он отключен
+
+      // &_light {
+      //   @include scroll.scrollbar('mini', 'onLight');
+      // }
+
+      // &_dark {
+      //   @include scroll.scrollbar('mini', 'onDark');
+      // }
+
+      // &_color {
+      //   @include scroll.scrollbar('mini', 'onLight');
+      // }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    --mdl-ctr-scrollbody-mg: 0;
+
+    min-width: 100vw;
+    min-height: 0;
+    max-height: calc(100% - var(--mdl-inset-y));
+    border-radius: var(--mdl-bdrs) var(--mdl-bdrs) 0 0;
+    align-self: flex-end;
+
+    .content {
+      border-radius: var(--mdl-bdrs) var(--mdl-bdrs) 0 0;
+      height: fit-content;
+      min-height: unset;
+    }
+  }
+}

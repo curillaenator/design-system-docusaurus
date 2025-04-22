@@ -1,0 +1,9 @@
+{
+  "extends": "@pcbl/fe-scripts/configs/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "baseUrl": "./src",
+    "module": "CommonJS"
+  },
+  "include": ["src"]
+}

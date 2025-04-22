@@ -1,0 +1,49 @@
+{
+  "name": "@kit-base/common-types",
+  "description": "Общие типы для ui компонентов",
+  "version": "0.0.2",
+  "license": "UNLICENSED",
+  "main": "src/index",
+  "types": "src/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "main": "build/index",
+    "types": "build/index.d.ts",
+    "type": "git",
+    "registry": "https://gitlab.com/api/v4/projects/50873891/packages/npm/"
+  },
+  "scripts": {
+    "build": "run -T rimraf build && cp -R src build",
+    "build:watch": "cp -R src build",
+    "test": "run -T pcbl-fe  test",
+    "checkDep": "run -T pcbl-fe  checkDependencies",
+    "pack": "run -T pcbl-fe  pack",
+    "revertPack": "run -T pcbl-fe  revertPack",
+    "clean": "run -T pcbl-fe  clean"
+  },
+  "files": [
+    "/build"
+  ],
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.1"
+  },
+  "peerDependencies": {
+    "@testing-library/dom": "*",
+    "@testing-library/jest-dom": "*",
+    "@testing-library/react": "*",
+    "@testing-library/react-hooks": "*",
+    "@testing-library/user-event": "*",
+    "dayjs": "*",
+    "jest": "*",
+    "jest-canvas-mock": "*",
+    "jest-fetch-mock": "*",
+    "jest-styled-components": "*",
+    "react": "*",
+    "react-dom": "*",
+    "styled-components": "*",
+    "ts-jest": "*"
+  },
+  "type": "git"
+}

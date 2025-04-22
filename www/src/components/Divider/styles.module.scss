@@ -1,0 +1,11 @@
+.divider {
+  width: calc(100% + var(--docitem-padding-x) * 2);
+  height: var(--ifm-common-bdw);
+  background-color: var(--ifm-color-emphasis-200);
+  margin: var(--docitem-padding-y) 0;
+  transform: translateX(calc(-1 * var(--docitem-padding-x)));
+
+  @media (max-width: 1439px) {
+    margin: var(--docitem-mobile-padding-y) 0;
+  }
+}

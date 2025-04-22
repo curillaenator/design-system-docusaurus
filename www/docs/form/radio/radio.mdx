@@ -1,0 +1,91 @@
+---
+sidebar_label: 'Radio'
+title: 'Radio'
+description: 'Компонент для создания группы радиокнопок'
+---
+
+import pkg from '@kit-xyz/radio/package.json';
+
+import { COLORS, STATES, RADIO_GROUP_CODE } from './examples/index';
+import { RadioWrapped } from './components/RadioWrapped';
+import { RadioGroup } from './components/RadioGroup';
+
+<headermeta
+  title='Radio'
+  description='Компонент для создания группы радиокнопок'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/xyz/Radio'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-151'
+/>
+
+# Radio
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + 1} exampleCodeJSX={undefined}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Base radio group
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={RADIO_GROUP_CODE}>
+      <card title='Radio group'>
+        <RadioGroup />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## State
+
+<textcolumns>
+  <span>
+    <p>Состояния поведения</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {STATES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <RadioWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+</versionselector>

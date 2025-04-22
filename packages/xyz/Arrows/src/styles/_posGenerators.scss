@@ -1,0 +1,525 @@
+// файл содержит настройки (стили) положения якорей для прямоугольного элемента (карточки).
+// по якорям соединяются схемы через react-archer
+
+// COMMON
+
+$anchorSize: 2px;
+
+$offsets: (
+  '-3': (
+    'index': 3,
+    'value': -3,
+  ),
+  '-2': (
+    'index': 2,
+    'value': -2,
+  ),
+  '-1': (
+    'index': 1,
+    'value': -1,
+  ),
+  '1': (
+    'index': 1,
+    'value': 1,
+  ),
+  '2': (
+    'index': 2,
+    'value': 2,
+  ),
+  '3': (
+    'index': 3,
+    'value': 3,
+  ),
+);
+
+@function repeatString($string, $n) {
+  $result: '';
+  @for $i from 1 through $n {
+    $result: $result + $string;
+  }
+  @return $result;
+}
+
+// TOPS_BOTTOMS
+
+@function generateTopPositions($offset) {
+  $resultedMap: ();
+
+  @each $offsetName, $values in $offsets {
+    $shift: map-get($values, 'value');
+    $index: map-get($values, 'index');
+
+    $posName: '-left';
+    @if $shift > 0 {
+      $posName: '-right';
+    }
+
+    $outerPositionName: #{'top' + repeatString($posName, $index)};
+    $edgePositionName: #{'top-edge' + repeatString($posName, $index)};
+
+    $resultedMap: map-merge(
+      $resultedMap,
+      (
+        #{$outerPositionName}:
+          (
+            'top': calc(0px - $offset),
+            'left': calc(50% + ($offset * $shift)),
+            'transform': translate(-50%, -50%),
+          ),
+        #{$edgePositionName}:
+          (
+            'top': 0px,
+            'left': calc(50% + ($offset * $shift)),
+            'transform': translate(-50%, 0%),
+          )
+      )
+    );
+  }
+
+  $resultedMap: map-merge(
+    $resultedMap,
+    (
+      'top': (
+        'top': calc(0px - $offset),
+        'left': 50%,
+        'transform': translate(-50%, -50%),
+      ),
+      'top-edge': (
+        'top': 0px,
+        'left': calc(50%),
+        'transform': translate(-50%, 0%),
+      ),
+    )
+  );
+
+  @return $resultedMap;
+}
+
+@function generateBottomPositions($offset) {
+  $resultedMap: ();
+
+  @each $offsetName, $values in $offsets {
+    $shift: map-get($values, 'value');
+    $index: map-get($values, 'index');
+
+    $posName: '-left';
+    @if $shift > 0 {
+      $posName: '-right';
+    }
+
+    $outerPositionName: #{'bottom' + repeatString($posName, $index)};
+    $edgePositionName: #{'bottom-edge' + repeatString($posName, $index)};
+
+    $resultedMap: map-merge(
+      $resultedMap,
+      (
+        #{$outerPositionName}:
+          (
+            'top': calc(100% + $offset),
+            'left': calc(50% + ($offset * $shift)),
+            'transform': translate(-50%, -50%),
+          ),
+        #{$edgePositionName}:
+          (
+            'top': 100%,
+            'left': calc(50% + ($offset * $shift)),
+            'transform': translate(-50%, -100%),
+          )
+      )
+    );
+  }
+
+  $resultedMap: map-merge(
+    $resultedMap,
+    (
+      'bottom': (
+        'top': calc(100% + $offset),
+        'left': 50%,
+        'transform': translate(-50%, -50%),
+      ),
+      'bottom-edge': (
+        'top': 100%,
+        'left': 50%,
+        'transform': translate(-50%, -100%),
+      ),
+    )
+  );
+
+  @return $resultedMap;
+}
+
+@function generateTopsBottoms($offset) {
+  @return map-merge(generateTopPositions($offset), generateBottomPositions($offset));
+}
+
+// TOPS_BOTTOMS END
+
+// CORNERS
+
+@function generateCornersTL($offset) {
+  $result: ();
+
+  @each $ofsetValue in (0, 1, 2) {
+    $schemaNameX: #{'tl-x-' + #{$ofsetValue}};
+    $schemaNameY: #{'tl-y-' + #{$ofsetValue}};
+    $schemaEdgeNameX: #{'tl-edge-x-' + #{$ofsetValue}};
+    $schemaEdgeNameY: #{'tl-edge-y-' + #{$ofsetValue}};
+
+    $schema: (
+      #{$schemaNameX}:
+        (
+          'top': calc(0px - $offset),
+          'left': calc(0px + ($offset * $ofsetValue)),
+          'transform': translate(0, -50%),
+        ),
+      #{$schemaEdgeNameX}:
+        (
+          'top': 0,
+          'left': calc(0px + ($offset * $ofsetValue)),
+          'transform': none,
+        ),
+      #{$schemaNameY}:
+        (
+          'top': calc(0px + ($offset * $ofsetValue)),
+          'left': calc(0px - $offset),
+          'transform': translate(-50%, 0),
+        ),
+      #{$schemaEdgeNameY}:
+        (
+          'top': calc(0px + ($offset * $ofsetValue)),
+          'left': 0,
+          'transform': none,
+        )
+    );
+
+    $result: map-merge($result, $schema);
+  }
+
+  $result: map-merge(
+    $result,
+    (
+      'tl': (
+        'top': calc(0px - $offset),
+        'left': calc(0px - $offset),
+        'transform': translate(-50%, -50%),
+      ),
+      'tl-edge': (
+        'top': 0,
+        'left': 0,
+        'transform': translate(0, 0),
+      ),
+    )
+  );
+
+  @return $result;
+}
+
+@function generateCornersBL($offset) {
+  $result: ();
+
+  @each $ofsetValue in (0, 1, 2) {
+    $schemaNameX: #{'bl-x-' + #{$ofsetValue}};
+    $schemaNameY: #{'bl-y-' + #{$ofsetValue}};
+    $schemaEdgeNameX: #{'bl-edge-x-' + #{$ofsetValue}};
+    $schemaEdgeNameY: #{'bl-edge-y-' + #{$ofsetValue}};
+
+    $schema: (
+      #{$schemaNameX}:
+        (
+          'top': calc(100% + $offset),
+          'left': calc(0px + ($offset * $ofsetValue)),
+          'transform': translate(0, -50%),
+        ),
+      #{$schemaEdgeNameX}:
+        (
+          'top': 100%,
+          'left': calc(0px + ($offset * $ofsetValue)),
+          'transform': translate(0, -100%),
+        ),
+      #{$schemaNameY}:
+        (
+          'top': calc(100% - ($offset * $ofsetValue)),
+          'left': calc(0px - $offset),
+          'transform': translate(-50%, -100%),
+        ),
+      #{$schemaEdgeNameY}:
+        (
+          'top': calc(100% - ($offset * $ofsetValue)),
+          'left': 0,
+          'transform': translate(0, -100%),
+        )
+    );
+
+    $result: map-merge($result, $schema);
+  }
+
+  $result: map-merge(
+    $result,
+    (
+      'bl': (
+        'top': calc(100% + $offset),
+        'left': calc(0px - $offset),
+        'transform': translate(-50%, -50%),
+      ),
+      'bl-edge': (
+        'top': 100%,
+        'left': 0,
+        'transform': translate(0, -100%),
+      ),
+    )
+  );
+
+  @return $result;
+}
+
+@function generateCornersTR($offset) {
+  $result: ();
+
+  @each $ofsetValue in (0, 1, 2) {
+    $schemaNameX: #{'tr-x-' + #{$ofsetValue}};
+    $schemaNameY: #{'tr-y-' + #{$ofsetValue}};
+    $schemaEdgeNameX: #{'tr-edge-x-' + #{$ofsetValue}};
+    $schemaEdgeNameY: #{'tr-edge-y-' + #{$ofsetValue}};
+
+    $schema: (
+      #{$schemaNameX}:
+        (
+          'top': calc(0px - $offset),
+          'left': calc(100% - ($offset * $ofsetValue)),
+          'transform': translate(-100%, -50%),
+        ),
+      #{$schemaEdgeNameX}:
+        (
+          'top': 0,
+          'left': calc(100% - ($offset * $ofsetValue)),
+          'transform': translate(-100%, 0),
+        ),
+      #{$schemaNameY}:
+        (
+          'top': calc(0px + ($offset * $ofsetValue)),
+          'left': calc(100% + $offset),
+          'transform': translate(-50%, 0),
+        ),
+      #{$schemaEdgeNameY}:
+        (
+          'top': calc(0px + ($offset * $ofsetValue)),
+          'left': 100%,
+          'transform': translate(-100%, 0),
+        )
+    );
+
+    $result: map-merge($result, $schema);
+  }
+
+  $result: map-merge(
+    $result,
+    (
+      'tr': (
+        'top': calc(0px - $offset),
+        'left': calc(100% + $offset),
+        'transform': translate(-50%, -50%),
+      ),
+      'tr-edge': (
+        'top': 0,
+        'left': 100%,
+        'transform': translate(-100%, 0),
+      ),
+    )
+  );
+
+  @return $result;
+}
+
+@function generateCornersBR($offset) {
+  $result: ();
+
+  @each $ofsetValue in (0, 1, 2) {
+    $schemaNameX: #{'br-x-' + #{$ofsetValue}};
+    $schemaNameY: #{'br-y-' + #{$ofsetValue}};
+    $schemaEdgeNameX: #{'br-edge-x-' + #{$ofsetValue}};
+    $schemaEdgeNameY: #{'br-edge-y-' + #{$ofsetValue}};
+
+    $schema: (
+      #{$schemaNameX}:
+        (
+          'top': calc(100% + $offset),
+          'left': calc(100% - ($offset * $ofsetValue)),
+          'transform': translate(-100%, -50%),
+        ),
+      #{$schemaEdgeNameX}:
+        (
+          'top': 100%,
+          'left': calc(100% - ($offset * $ofsetValue)),
+          'transform': translate(-100%, -100%),
+        ),
+      #{$schemaNameY}:
+        (
+          'top': calc(100% - ($offset * $ofsetValue)),
+          'left': calc(100% + $offset),
+          'transform': translate(-50%, -100%),
+        ),
+      #{$schemaEdgeNameY}:
+        (
+          'top': calc(100% - ($offset * $ofsetValue)),
+          'left': 100%,
+          'transform': translate(-100%, -100%),
+        )
+    );
+
+    $result: map-merge($result, $schema);
+  }
+
+  $result: map-merge(
+    $result,
+    (
+      'br': (
+        'top': calc(100% + $offset),
+        'left': calc(100% + $offset),
+        'transform': translate(-50%, -50%),
+      ),
+      'br-edge': (
+        'top': 100%,
+        'left': 100%,
+        'transform': translate(-100%, -100%),
+      ),
+    )
+  );
+
+  @return $result;
+}
+
+@function generateCorners($offset) {
+  $cornersTop: map-merge(generateCornersTL($offset), generateCornersTR($offset));
+  $cornersBottom: map-merge(generateCornersBL($offset), generateCornersBR($offset));
+
+  @return map-merge($cornersTop, $cornersBottom);
+}
+
+// CORNERS END
+
+// MIDDLES
+
+@function generateMiddles($offset) {
+  $resultedMap: ();
+
+  @each $offsetName, $values in $offsets {
+    $shift: map-get($values, 'value');
+    $index: map-get($values, 'index');
+
+    $posName: '-left';
+    @if $shift > 0 {
+      $posName: '-right';
+    }
+
+    // on vertical axis
+    $topPositionName: #{'middle-top' + repeatString($posName, $index)};
+    $middlePositionName: #{'middle' + repeatString($posName, $index)};
+    $bottomPositionName: #{'middle-bottom' + repeatString($posName, $index)};
+
+    $resultedMap: map-merge(
+      $resultedMap,
+      (
+        #{$topPositionName}:
+          (
+            'top': calc(50% - $offset),
+            'left': calc(50% + ($offset * $shift)),
+            'transform': translate(-50%, -50%),
+          ),
+        #{$middlePositionName}:
+          (
+            'top': 50%,
+            'left': calc(50% + ($offset * $shift)),
+            'transform': translate(-50%, -50%),
+          ),
+        #{$bottomPositionName}:
+          (
+            'top': calc(50% + $offset),
+            'left': calc(50% + ($offset * $shift)),
+            'transform': translate(-50%, -50%),
+          )
+      )
+    );
+  }
+
+  $resultedMap: map-merge(
+    $resultedMap,
+    (
+      'middle-top': (
+        'top': calc(50% - $offset),
+        'left': 50%,
+        'transform': translate(-50%, -50%),
+      ),
+      'middle': (
+        'top': 50%,
+        'left': 50%,
+        'transform': translate(-50%, -50%),
+      ),
+      'middle-bottom': (
+        'top': calc(50% + $offset),
+        'left': 50%,
+        'transform': translate(-50%, -50%),
+      ),
+    )
+  );
+
+  @return $resultedMap;
+}
+
+// MIDDLES END
+
+// REST POSITIONS
+
+@function getPositions($offset) {
+  @return (
+    'right': (
+      'top': 50%,
+      'left': calc(100% + $offset),
+      'transform': translate(-50%, -50%),
+    ),
+    'right-edge': (
+      'top': 50%,
+      'left': 100%,
+      'transform': translate(-100%, -50%),
+    ),
+    'right-top': (
+      'top': calc(50% - $offset),
+      'left': calc(100% + $offset),
+      'transform': translate(-50%, -50%),
+    ),
+    'right-bottom': (
+      'top': calc(50% + $offset),
+      'left': calc(100% + $offset),
+      'transform': translate(-50%, -50%),
+    ),
+    'left': (
+      'top': 50%,
+      'left': calc(0px - $offset),
+      'transform': translate(-50%, -50%),
+    ),
+    'left-edge': (
+      'top': 50%,
+      'left': 0px,
+      'transform': translateY(-50%),
+    ),
+    'left-top': (
+      'top': calc(50% - $offset),
+      'left': calc(0px - $offset),
+      'transform': translate(-50%, -50%),
+    ),
+    'left-bottom': (
+      'top': calc(50% + $offset),
+      'left': calc(0px - $offset),
+      'transform': translate(-50%, -50%),
+    )
+  );
+}
+
+// REST POSITIONS END
+
+@function getAnchorsPositions($offset) {
+  $cornersTopsBottoms: map-merge(generateTopsBottoms($offset), generateCorners($offset));
+  $cornersTopsBottomsMiddles: map-merge($cornersTopsBottoms, generateMiddles($offset));
+  $generatedPositions: map-merge(getPositions($offset), $cornersTopsBottomsMiddles);
+
+  @return $generatedPositions;
+}

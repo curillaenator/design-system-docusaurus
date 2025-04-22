@@ -1,0 +1,49 @@
+.iconSets {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 24px);
+  gap: 48px;
+  // grid-row-gap: 64px;
+  // grid-column-gap: 22px;
+  width: 100%;
+}
+
+.light {
+  --card-display-bgc: var(--color-neutral-100);
+}
+
+.dark {
+  --card-display-bgc: var(--color-neutral-700);
+}
+
+.color {
+  --card-display-bgc: var(--color-accent-1-700);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 16px;
+  background-color: var(--card-display-bgc);
+  width: 100%;
+  height: 100px;
+}
+
+.border {
+  border-radius: 4px;
+  padding: 1px;
+  width: fit-content;
+}
+
+.border_light {
+  border: 1px dashed #0060ff;
+}
+
+.border_dark {
+  border: 1px dashed #ffffff;
+}
+
+.border_color {
+  border: 1px dashed #ffffff;
+}

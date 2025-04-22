@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'SB Sans Interface';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local('SBSansUI-Thin'), local('SB Sans Interface Thin'), local('SBSansInterface-Thin'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-Light.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Interface';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local('SBSansUI-Light'), local('SB Sans Interface Light'), local('SBSansInterface-Light'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-Light.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Interface';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('SBSansUI-Regular'), local('SB Sans Interface Regular'), local('SBSansInterface-Regular'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-Regular.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Interface';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('SBSansUI-Medium'), local('SB Sans Interface Medium'), local('SBSansInterface-Medium'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-SemiBold.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Interface';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('SBSansUI-Bold'), local('SB Sans Interface Bold'), local('SBSansInterface-Bold'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-Bold.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Interface';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('SBSansUI-Heavy'), local('SB Sans Interface Heavy'), local('SBSansInterface-Heavy'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-Bold.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSansUI-Bold.woff') format('woff');
+}

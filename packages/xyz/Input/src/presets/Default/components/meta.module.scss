@@ -1,0 +1,43 @@
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+
+  &_disabled {
+    --inp-label-c: var(--inp-label-c-db);
+    --inp-start-meta-c: var(--inp-start-meta-c-db);
+    --inp-end-meta-c: var(--inp-end-meta-c-db);
+  }
+
+  &_success {
+    --inp-start-meta-c: var(--inp-start-meta-c-sc);
+    --inp-end-meta-c: var(--inp-end-meta-c-sc);
+  }
+
+  &_error {
+    --inp-start-meta-c: var(--inp-start-meta-c-er);
+    --inp-end-meta-c: var(--inp-end-meta-c-er);
+  }
+
+  .text {
+    font-size: var(--inp-meta-fz);
+    font-weight: var(--inp-meta-fw);
+    line-height: var(--inp-meta-lh);
+    text-align: left;
+
+    &_label {
+      color: var(--inp-label-c);
+    }
+
+    &_left {
+      color: var(--inp-start-meta-c);
+    }
+
+    &_right {
+      color: var(--inp-end-meta-c);
+      text-align: right;
+    }
+  }
+}

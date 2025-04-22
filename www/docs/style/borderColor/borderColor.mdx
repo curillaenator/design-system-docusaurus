@@ -1,0 +1,127 @@
+---
+sidebar_label: 'Border color'
+sidebar_position: 8
+title: 'Border color'
+description: 'Цветовая схема для обводки в компонентах, карточках'
+---
+
+import headerImage from './assets/borderColor.png';
+import { COLORS, CODEBLOCKS } from './index';
+
+<headermeta
+  title='Border color'
+  description='Цветовая схема для обводки в компонентах, карточках'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/theme/src/scss/style/_color.scss'
+  figmaLink='https://www.figma.com/'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-110'
+  headerImage={headerImage}
+/>
+
+# Border Color
+
+## Neutral
+
+<docviewport codeBlock={CODEBLOCKS.neutral} language='json'>
+  <examples>
+    {COLORS.neutral.map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Accent-1
+
+<docviewport codeBlock={CODEBLOCKS['accent-1']} language='json'>
+  <examples>
+    {COLORS['accent-1'].map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Accent-2
+
+<docviewport codeBlock={CODEBLOCKS['accent-2']} language='json'>
+  <examples>
+    {COLORS['accent-2'].map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Informative
+
+<docviewport codeBlock={CODEBLOCKS.informative} language='json'>
+  <examples>
+    {COLORS['informative'].map((card) => (
+      <example key={card.id} >
+       <card {...card} />
+      </example>
+    ))}
+  </examples>
+
+</docviewport>
+
+<divider />
+
+## Positive
+
+<docviewport codeBlock={CODEBLOCKS.positive} language='json'>
+  <examples>
+    {COLORS['positive'].map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Attention
+
+<docviewport codeBlock={CODEBLOCKS.attention} language='json'>
+  <examples>
+    {COLORS['attention'].map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Negative
+
+<docviewport codeBlock={CODEBLOCKS.negative} language='json'>
+  <examples>
+    {COLORS['negative'].map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>

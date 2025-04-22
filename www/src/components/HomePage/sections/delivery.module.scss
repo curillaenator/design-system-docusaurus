@@ -1,0 +1,138 @@
+@import './breakpoints';
+@import './paddings';
+
+.section {
+  user-select: none;
+  // padding: 128px 192px;
+  border-bottom: var(--ifm-common-bdw) solid var(--ifm-color-emphasis-200);
+  padding: $sectionMobileY $sectionMobileX;
+
+  @media (min-width: $mobile) {
+    padding: $sectionTabletY $sectionTabletX;
+  }
+
+  @media (min-width: $tablet) {
+    padding: $sectionLaptopY $sectionLaptopX;
+  }
+
+  @media (min-width: $desktop) {
+    padding: $sectionDesctopY $sectionDesctopX;
+  }
+
+  h2 {
+    margin-bottom: 64px;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+    color: var(--ifm-color-emphasis-700);
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 32px;
+
+  @media (min-width: $mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $laptop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  --ppr-bdc: transparent;
+
+  // padding: 32px;
+  // background-color: var(--ifm-color-emphasis-200);
+  // border-radius: 24px;
+  // box-shadow: inset 0 0 0 4px var(--delivery-card-bdc);
+
+  &_interactive {
+    &:hover {
+      --ppr-bdc: var(--color-accent-1-700);
+
+      h3 {
+        --delivery-card-title-c: var(--color-accent-1-700);
+      }
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+
+    .imageWrapper {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+
+      & > img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transform: scale(1.28);
+      }
+    }
+
+    .titles {
+      margin-bottom: 48px;
+
+      h3 {
+        color: var(--delivery-card-title-c, var(--ifm-color-emphasis-700));
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+      }
+
+      p {
+        color: var(--ifm-color-emphasis-700);
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ul {
+    margin-bottom: 48px;
+
+    li {
+      position: relative;
+      padding: 4px 8px;
+      margin-left: 32px;
+      margin-bottom: 8px;
+
+      span {
+        display: block;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--ifm-color-emphasis-700);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 8px;
+        height: 8px;
+        top: 16px;
+        left: -20px;
+        transform: translateY(-50%);
+        background-color: var(--ifm-color-emphasis-300);
+        border-radius: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+import * as React from 'react';
+import { Ref, forwardRef } from 'react';
+
+import { getAttributesByProps } from '../../utils/getAttributesByProps';
+import { IconProps } from '../../interfaces';
+
+const {componentName} = (props: IconProps, ref: Ref<SVGSVGElement>) => {
+  return ({svg})
+}
+
+const ForwardRef = forwardRef({componentName});
+export default ForwardRef;

@@ -1,0 +1,35 @@
+$variables: (
+  theme-light: (
+    --dwr_trckr-dflt_cnt-gn: rgba(0, 0, 0, 0.88),
+    --dwr_trckr-dflt_bgc: rgb(255, 255, 255),
+    --dwr_trckr-dflt_overlay-bgc: rgba(255, 255, 255, 0.6),
+    --dwr_trckr-dflt_bdc: rgba(0, 0, 0, 0),
+    --dwr_trckr-dflt_sh: 0px 0px 16px rgb(22, 119, 255, 0.4),
+    --dwr_df_cnt-gn: rgb(10, 10, 10),
+    --dwr_df_bgc: rgb(255, 255, 255),
+    --dwr_df_overlay-bgc: rgba(255, 255, 255, 0.6),
+    --dwr_df_bdc: rgba(0, 0, 0, 0),
+    --dwr_df_sh: 0px 0px 16px rgba(64, 96, 255, 0.6),
+  ),
+  theme-dark: (
+    --dwr_df_cnt-gn: rgb(255, 255, 255),
+    --dwr_df_bgc: rgb(10, 10, 10),
+    --dwr_df_overlay-bgc: rgba(10, 10, 10, 0.8),
+    --dwr_df_bdc: rgba(0, 0, 0, 0),
+    --dwr_df_sh: 0px 0px 16px rgba(64, 96, 255, 0.6),
+  ),
+  theme-color: (
+    --dwr_df_cnt-gn: rgb(255, 255, 255),
+    --dwr_df_bgc:
+      linear-gradient(
+        to bottom,
+        rgb(64, 96, 255) 0%,
+        rgb(64, 96, 255) 50%,
+        rgb(128, 48, 255)
+      )
+      100%,
+    --dwr_df_overlay-bgc: rgba(255, 255, 255, 0.6),
+    --dwr_df_bdc: rgba(0, 0, 0, 0),
+    --dwr_df_sh: 0px 0px 16px rgba(64, 96, 255, 0.6),
+  ),
+);

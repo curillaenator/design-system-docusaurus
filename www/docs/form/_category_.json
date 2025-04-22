@@ -1,0 +1,9 @@
+{
+  "position": 7,
+  "label": "Form",
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Компоненты создания форм"
+  }
+}

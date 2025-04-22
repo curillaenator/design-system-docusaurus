@@ -1,0 +1,79 @@
+@use '../../../theme/src/scss/button/' as button;
+
+@function get-color($prop, $mapName, $schema) {
+  @return #{map-get(map-get($modeMaps, $mapName), $schema, $prop)};
+}
+
+@function get-scale($prop, $size) {
+  @return map-get(button.$scale, $prop, $size);
+}
+
+$modeMaps: (
+  'light': button.$theme-light,
+  'dark': button.$theme-dark,
+  'color': button.$theme-color,
+);
+
+.buttonGroup {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  border-radius: var(--group-btn-bdrs);
+
+  & > button,
+  & > div {
+    flex-shrink: 0;
+
+    &:first-child {
+      border-radius: var(--group-btn-bdrs) 0 0 var(--group-btn-bdrs);
+
+      & > button {
+        --btn-bdrs: var(--group-btn-bdrs) 0 0 var(--group-btn-bdrs);
+      }
+    }
+
+    &:last-child {
+      border-radius: 0 var(--group-btn-bdrs) var(--group-btn-bdrs) 0;
+
+      & > button {
+        --btn-bdrs: 0 var(--group-btn-bdrs) var(--group-btn-bdrs) 0;
+      }
+    }
+  }
+}
+
+._withBorder {
+  box-shadow: 0 0 0 var(--group-btn-bdw, 1px) var(--group-btn-bdc, #ffffff);
+
+  & > button,
+  & > div {
+    border-left: var(--group-btn-bdw, 1px) solid var(--group-btn-bdc, #ffffff);
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+}
+
+@each $shape, $shapeNotation in ('square': 'sq', 'rounded': 'ro', 'circular': 'cc') {
+  ._shape_#{'' + $shape} {
+    --group-btn-bdrs: var(--group-btn-bdrs-#{$shapeNotation});
+  }
+}
+
+@each $size in ('s', 'xs') {
+  ._size_#{'' + $size} {
+    --group-btn-bdw: #{get-scale('border-width', $size)};
+    --group-btn-bdrs-sq: #{get-scale('border-radius-square', $size)};
+    --group-btn-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --group-btn-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+  }
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{$schema}_#{$modeMapName} {
+      --group-btn-bdc: #{get-color('border', $modeMapName, $schema)};
+    }
+  }
+}

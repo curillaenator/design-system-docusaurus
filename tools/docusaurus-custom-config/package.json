@@ -1,0 +1,11 @@
+{
+  "name": "docusaurus-custom-config",
+  "version": "0.0.1",
+  "description": "Custom config for docusaurus",
+  "main": "docusaurus-custom-config.js",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "file-loader": "6.2.0",
+    "url-loader": "4.1.1"
+  }
+}

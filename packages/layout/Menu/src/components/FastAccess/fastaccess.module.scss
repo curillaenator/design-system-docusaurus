@@ -1,0 +1,17 @@
+.fastAccess {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: var(--menu-section-padding-y) var(--menu-section-padding-x);
+  flex-grow: 0;
+  height: fit-content;
+  border-bottom: var(--menu-bdw) solid var(--menu-bdc);
+  flex-shrink: 0;
+}
+
+.input_minified {
+  & > div,
+  & > button {
+    display: none !important;
+  }
+}

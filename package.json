@@ -1,0 +1,166 @@
+{
+  "name": "design-system",
+  "version": "0.0.1",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Монорепозиторий дизайн-системы",
+  "bin": {
+    "pcbl-fe": "./fe-scripts/bin/pcbl-fe.js"
+  },
+  "scripts": {
+    "start": "cd www/ && npx yarn start --port 6006",
+    "build": "cd www/ && npx yarn build",
+    "serve": "cd www/ && npx yarn build && npx yarn serve --port 6006",
+    "test": "npx jest",
+    "cm": "npx lint-staged && npx git-cz",
+    "setVersion": "pcbl-fe setVersion",
+    "typecheck": "npx tsc",
+    "prepare": "husky install",
+    "pub": "yarn workspaces foreach -p run build",
+    "lint": "npx eslint ./ --fix --quiet",
+    "parse": "node packages/theme/src/scripts/parse.js",
+    "generate:types": "pcbl-fe generate:types -m",
+    "icons:update": "pcbl-fe icons:update"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.21.3",
+    "@babel/plugin-transform-runtime": "7.21.0",
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-conventional": "15.0.0",
+    "@mdx-js/react": "1.6.22",
+    "@rollup/plugin-image": "3.0.1",
+    "@rollup/plugin-typescript": "9.0.2",
+    "@testing-library/dom": "8.9.0",
+    "@testing-library/jest-dom": "5.16.1",
+    "@testing-library/react": "12.1.2",
+    "@testing-library/react-hooks": "7.0.1",
+    "@testing-library/user-event": "13.3.0",
+    "@types/jest": "26.0.23",
+    "@types/lodash": "4.14.191",
+    "@types/react": "17.0.69",
+    "@types/react-dom": "17.0.9",
+    "@types/rimraf": "3.0.2",
+    "@types/testing-library__jest-dom": "5.14.2",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
+    "babel-jest": "27.5.1",
+    "babel-loader": "8.3.0",
+    "babel-plugin-dynamic-import-webpack": "1.1.0",
+    "babel-plugin-import-remove-resource-query": "1.0.0",
+    "babel-plugin-lodash": "3.3.4",
+    "babel-plugin-styled-components": "2.0.7",
+    "babel-plugin-ts-optchain": "1.1.5",
+    "babel-preset-proposal-typescript": "3.0.0",
+    "commitizen": "4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "8.9.0",
+    "eslint-config-google": "0.14.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-testing-library": "5.0.1",
+    "husky": "8.0.3",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "27.5.1",
+    "jest-canvas-mock": "2.1.0",
+    "jest-environment-jsdom": "27.3.1",
+    "jest-environment-node": "27.4.2",
+    "jest-fetch-mock": "3.0.3",
+    "jest-junit": "13.0.0",
+    "jest-raw-loader": "1.0.1",
+    "lint-staged": "11.2.6",
+    "prettier": "2.6.2",
+    "react-hot-loader": "4.13.1",
+    "rimraf": "3.0.2",
+    "rollup": "3.2.5",
+    "rollup-plugin-styles": "4.0.0",
+    "sass": "1.53.0",
+    "sass-loader": "13.0.2",
+    "style-loader": "3.3.2",
+    "ts-jest": "27.1.3",
+    "typescript": "4.9.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "maxHeaderWidth": 172,
+      "disableScopeLowerCase": true,
+      "types": {
+        "feat": {
+          "description": "A new feature",
+          "value": "feat"
+        },
+        "fix": {
+          "description": "A bug fix",
+          "value": "fix"
+        },
+        "ci": {
+          "description": "CI related changes",
+          "value": "ci"
+        },
+        "chore": {
+          "value": "chore",
+          "description": "Build process or auxiliary tool changes"
+        },
+        "docs": {
+          "value": "docs",
+          "description": "Documentation only changes"
+        },
+        "style": {
+          "value": "style",
+          "description": "Markup, white-space, formatting, missing semi-colons..."
+        },
+        "refactor": {
+          "description": "A code change that neither fixes a bug or adds a feature",
+          "value": "refactor"
+        },
+        "perf": {
+          "description": "A code change that improves performance",
+          "value": "perf"
+        },
+        "test": {
+          "value": "test",
+          "description": "Adding missing tests"
+        }
+      },
+      "commitUrlFormat": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit/commits/{{hash}}",
+      "compareUrlFormat": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit/commits/{{hash}}"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=16.14"
+  },
+  "workspaces": {
+    "packages": [
+      "tools/*",
+      "www",
+      "packages/common-types",
+      "packages/ds-tokens-parser",
+      "packages/theme",
+      "packages/ui/*",
+      "packages/xyz/*",
+      "packages/layout/*",
+      "packages/uikit-utils"
+    ]
+  },
+  "packageManager": "yarn@3.2.0"
+}

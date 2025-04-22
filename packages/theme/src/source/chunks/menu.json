@@ -1,0 +1,102 @@
+{
+  "menu/scale": {
+    "padding-y": {
+      "xs": {
+        "value": "0px",
+        "type": "spacing"
+      }
+    },
+    "padding-x": {
+      "xs": {
+        "value": "0px",
+        "type": "spacing"
+      }
+    },
+    "section-padding-y": {
+      "xs": {
+        "value": "24px",
+        "type": "spacing"
+      }
+    },
+    "section-padding-x": {
+      "xs": {
+        "value": "24px",
+        "type": "spacing"
+      }
+    },
+    "border-width": {
+      "xs": {
+        "value": "{border-width.xs}",
+        "type": "borderWidth"
+      }
+    }
+  },
+  "menu/style": {
+    "content": {
+      "mobile-min-width": {
+        "value": "375px",
+        "type": "sizing"
+      },
+      "header-min-height": {
+        "value": "96px",
+        "type": "sizing"
+      }
+    }
+  },
+  "menu/theme/light": {
+    "color/solid": {
+      "content-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color-transparent.accent-1-700-20%}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      }
+    }
+  },
+  "menu/theme/dark": {
+    "color/solid": {
+      "scheme": {
+        "value": "menu/theme/light.color/solid",
+        "type": "meta"
+      },
+      "content-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color-transparent.accent-1-700-20%}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      }
+    }
+  },
+  "menu/theme/color": {
+    "color/solid": {
+      "scheme": {
+        "value": "menu/theme/light.color/solid",
+        "type": "meta"
+      },
+      "content-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color-transparent.accent-1-700-20%}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      }
+    }
+  }
+}

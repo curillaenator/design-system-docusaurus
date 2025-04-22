@@ -1,0 +1,14 @@
+$glyph-theme-dark: (
+  color-transparent: var(--mda_clr-trnsprnt, rgba(0, 0, 0, 0)),
+  color-neutral: var(--mda_clr-ntrl, rgb(49, 49, 49)),
+  color-light: var(--mda_clr-lght, rgb(255, 255, 255)),
+  color-primary: var(--mda_clr-prmr, undefined),
+  color-secondary: var(--mda_clr-scndr, undefined),
+  color-informative: var(--mda_clr-nfrmtv, rgb(110, 86, 231)),
+  color-positive: var(--mda_clr-pstv, rgb(61, 207, 134)),
+  color-attention: var(--mda_clr-ttntn, rgb(255, 183, 86)),
+  color-negative: var(--mda_clr-ngtv, rgb(255, 134, 110)),
+  color-disabled: var(--mda_clr-dsbld, undefined),
+  color-skeleton: var(--mda_clr-skltn, undefined),
+  state-skeleton-background: var(--mda_stt-skltn-bckgrnd, undefined),
+);

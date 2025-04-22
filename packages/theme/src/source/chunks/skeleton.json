@@ -1,0 +1,58 @@
+{
+  "skeleton/scale": {
+    "slider-min-width": {
+      "medium": {
+        "value": "400px",
+        "type": "sizing"
+      }
+    }
+  },
+  "skeleton/style": {
+    "common": {
+      "speed": {
+        "value": "1.6s",
+        "type": "sizing"
+      },
+      "delay": {
+        "value": "0.8s",
+        "type": "sizing"
+      }
+    }
+  },
+  "skeleton/theme/light": {
+    "color/default": {
+      "background": {
+        "value": "{color.accent-1-300}",
+        "type": "color"
+      },
+      "slider": {
+        "value": "{color.accent-1-100}",
+        "type": "color"
+      }
+    }
+  },
+  "skeleton/theme/dark": {
+    "color/default": {
+      "background": {
+        "value": "{color.neutral-600}",
+        "type": "color"
+      },
+      "slider": {
+        "value": "{color.neutral-500}",
+        "type": "color"
+      }
+    }
+  },
+  "skeleton/theme/color": {
+    "color/default": {
+      "background": {
+        "value": "{color-transparent.neutral-100-20%}",
+        "type": "color"
+      },
+      "slider": {
+        "value": "{color.accent-1-100}",
+        "type": "color"
+      }
+    }
+  }
+}

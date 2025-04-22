@@ -1,0 +1,47 @@
+---
+sidebar_label: 'Opacity'
+sidebar_position: 10
+title: 'Opacity'
+description: 'Применение для любого слоя прозрачности. Раздел показывает значения и правила шага свойства прозрачности'
+---
+
+import { OPACITIES } from './index';
+
+import headerImage from './assets/opacity.png';
+
+<headermeta
+  title='Opacity'
+  description='Применение для любого слоя прозрачности. Раздел показывает значения и правила шага свойства прозрачности'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/theme/src/scss/style/_opacity.scss'
+  figmaLink='https://www.figma.com/'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-115'
+  headerImage={headerImage}
+/>
+
+# Opacity
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Base
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {OPACITIES.map((opacity) => (
+      <example key={opacity.id} exampleCodeJSON={opacity.code} language='json'>
+        <card {...opacity} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+</versionselector>

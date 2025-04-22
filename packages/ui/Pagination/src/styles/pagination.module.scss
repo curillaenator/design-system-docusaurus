@@ -1,0 +1,18 @@
+.pagination {
+  --pagination-gap: 8px;
+
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  li:first-child + li,
+  li + li:last-child {
+    margin-left: var(--pagination-gap);
+  }
+
+  li:first-child,
+  li:last-child {
+    display: flex;
+  }
+}

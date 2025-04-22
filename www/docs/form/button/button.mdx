@@ -1,0 +1,261 @@
+---
+sidebar_label: 'Button'
+title: 'Button'
+description: 'Компонент взаимодействия интерфейса с пользователем'
+---
+
+import { Button } from '@kit-xyz/button';
+import pkg from '@kit-xyz/button/package.json';
+
+import headerImage from './assets/button.png';
+import wireframeImage from './assets/wireframe.png';
+
+import { COLORS, TYPES, SHAPES, VARIANTS, STATES, APPEARANCES, SIZES, LINKS, TABLE, FIGMA_SETTINGS } from './examples';
+import { ButtonWrapped } from './examples/ButtonWrapped';
+
+<headermeta
+  title='Button'
+  description='Компонент взаимодействия интерфейса с пользователем.'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/xyz/Button'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-418'
+  headerImage={headerImage}
+/>
+
+# Button
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Разрабатывая элементы дизайн системы, для настроек конфигурации цветовой схемы.</p>
+  </span>
+
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элементдизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + 1} exampleCodeJSX={undefined}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Type
+
+<textcolumns>
+  <span>
+    <p>Button разделяется на 4 основных типа отображения:</p>
+  </span>
+
+  <span>
+    <ul>
+      <li>Shadow — элемент с тенью</li>
+      <li>Solid — залитый фон</li>
+      <li>Border — обводка</li>
+      <li>Transparent — без фона и обводки</li>
+    </ul>
+  </span>
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {TYPES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <ButtonWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## State
+
+<textcolumns>
+  <span>
+    <p>Состояния поведения Button</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {STATES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <ButtonWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Form
+
+<textcolumns>
+  <span>
+    <p>Базовые формы отображения</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {SHAPES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <ButtonWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Variants
+
+<textcolumns>
+  <span>
+    <p>Заложенные разновидности кнопки настраиваемые через properties</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {VARIANTS.map(({ title, code, ...rest }, i) => (
+      <example key={title + i} exampleCodeJSX={code}>
+        <card title={title}>
+          <ButtonWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Appearance
+
+<textcolumns>
+  <span>
+    <p>Цветовое кодирование элемента относительно фона</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {APPEARANCES.map(({ title, code, ...rest }, i) => (
+      <example key={title + i} exampleCodeJSX={code}>
+        <card title={title}>
+          <ButtonWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Size
+
+<textcolumns>
+  <span>
+    <p>Варианты размеров</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {SIZES.map(({ title, code, ...rest }, i) => (
+      <example key={title + i} exampleCodeJSX={code}>
+        <card title={title}>
+          <ButtonWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## LinkButton
+
+<textcolumns>
+  <span>
+    <p>Определение кнопки в качестве ссылки</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {LINKS.map(({ title, code, ...rest }, i) => (
+      <example key={title + i} exampleCodeJSX={code}>
+        <card title={title}>
+          <ButtonWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Wireframe
+
+<textcolumns>
+  <span>
+    <p>Таблица размеров и отступов</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <wireframe
+    src={{
+      light: wireframeImage,
+      dark: wireframeImage,
+      color: wireframeImage,
+    }}
+  />
+
+  <table data={TABLE} />
+</docviewport>
+
+<divider />
+
+## Properties
+
+<textcolumns>
+  <span>
+    <p>Информация по настройке компонентов в Figma</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <swiper slides={FIGMA_SETTINGS} />
+</docviewport>
+
+</versionselector>

@@ -1,0 +1,34 @@
+$emoji-scale: (
+  width: (
+    2xl: 64px,
+    xl: 56px,
+    l: 48px,
+    m: 40px,
+    s: 32px,
+    xs: 24px,
+  ),
+  height: (
+    2xl: 64px,
+    xl: 56px,
+    l: 48px,
+    m: 40px,
+    s: 32px,
+    xs: 24px,
+  ),
+  border-radius-circular: (
+    2xl: undefined,
+    xl: undefined,
+    l: undefined,
+    m: undefined,
+    s: undefined,
+    xs: undefined,
+  ),
+  border-radius-rounded: (
+    2xl: undefined,
+    xl: undefined,
+    l: undefined,
+    m: 32px,
+    s: 16px,
+    xs: 12px,
+  ),
+);

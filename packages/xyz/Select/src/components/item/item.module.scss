@@ -1,0 +1,51 @@
+.badgeItem {
+  --btn-mh: 32px;
+  --btn-pd: 0 8px;
+}
+
+.avatarItem {
+  --btn-mh: 40px;
+  --btn-pd: 4px 8px;
+}
+
+.menuItem {
+  --btn-mh: 32px;
+  --btn-pd: 0 8px;
+}
+
+.selectItem {
+  & > span > span {
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.selectItem:hover {
+  background-color: var(--select-menu-item-hv);
+}
+
+.noShrink {
+  flex-shrink: 0;
+}
+
+.captionBadge {
+  gap: 0px !important;
+  padding-left: 0 !important;
+
+  & > svg + span {
+    padding-left: 0 !important;
+  }
+}
+
+.rightElement {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  padding-right: 8px;
+  color: var(--select-menu-item-fn, #858585);
+}

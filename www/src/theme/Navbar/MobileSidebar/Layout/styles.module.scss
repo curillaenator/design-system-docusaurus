@@ -1,0 +1,18 @@
+@use '~@kit-xyz/theme/src/scss/mixins/scroll' as scroll;
+
+.mobileSidebar {
+  --ifm-navbar-sidebar-width: 100vw;
+  --ifm-navbar-background-color: var(--ifm-color-emphasis-100);
+
+  .items {
+    padding: 24px;
+  }
+
+  .scrollbar-light {
+    @include scroll.scrollbar('mini', 'onLight');
+  }
+
+  .scrollbar-dark {
+    @include scroll.scrollbar('mini', 'onDark');
+  }
+}

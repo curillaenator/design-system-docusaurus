@@ -1,0 +1,13 @@
+@use '~@kit-xyz/theme/src/scss/style/shadow' as shadows;
+
+@mixin shadows($prefix: '--shadow') {
+  @each $shadowName, $value in shadows.$shadow {
+    #{'' + $prefix}-#{'' + $shadowName}: #{$value};
+  }
+}
+
+@mixin shadowsReassigned {
+  --ifm-global-shadow-lw: var(--shadow-neutral-medium-s);
+  --ifm-global-shadow-md: var(--shadow-neutral-medium-m);
+  --ifm-global-shadow-tl: var(--shadow-neutral-medium-l);
+}

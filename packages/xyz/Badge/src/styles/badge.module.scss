@@ -1,0 +1,113 @@
+@use '../../../../theme/src/scss/badge/' as badge;
+
+@function get-scale($prop, $size) {
+  @return map-get(badge.$scale, $prop, $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(badge.$style, $group, $value);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+$modeMaps: (
+  'light': badge.$theme-light,
+  'dark': badge.$theme-dark,
+  'color': badge.$theme-color,
+);
+
+$states: (
+  'default': 'df',
+  'disabled': 'db',
+);
+
+$shapes: (
+  'square': 'sq',
+  'rounded': 'ro',
+  'circular': 'cc',
+);
+
+.badgeXYZ {
+  --bdg-ff: #{get-style('font-family')};
+  --bdg-fw: #{get-style('font-weight')};
+
+  --bdg-sh: 0 0 0 0 rgba(0, 0, 0, 0);
+
+  .labels {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: var(--bdg-labels-pd-y) var(--bdg-labels-pd-x);
+
+    &_reversed {
+      flex-direction: row-reverse;
+    }
+
+    span[data-label='additional'] {
+      color: var(--bdg-ct-ad);
+    }
+  }
+}
+
+._withShadow {
+  --bdg-bd-sh: var(--bdg-drop-sh);
+}
+
+._withBorder {
+  --bdg-bd-sh: inset 0px 0px 0px var(--bdg-bdw) var(--bdg-bdc);
+}
+
+@each $shape, $shapeNotation in $shapes {
+  ._shape_#{'' + $shape} {
+    --bdg-bdrs: var(--bdg-bdrs-#{$shapeNotation});
+  }
+}
+
+@each $state, $stateNotation in $states {
+  ._state_#{'' + $state} {
+    --bdg-bgc: var(--bdg-bgc-#{$stateNotation});
+    --bdg-bdc: var(--bdg-bdc-#{$stateNotation});
+    --bdg-ct-gn: var(--bdg-ct-gn-#{$stateNotation});
+    --bdg-ct-ad: var(--bdg-ct-ad-#{$stateNotation});
+  }
+}
+
+@each $size in (s, xs) {
+  ._size_#{'' + $size} {
+    --bdg-gp: #{get-scale('gap-x', $size)};
+    --bdg-h: #{get-scale('height', $size)};
+    --bdg-pd-y: #{get-scale('padding-y', $size)};
+    --bdg-pd-x: #{get-scale('padding-x', $size)};
+    --bdg-bdw: #{get-scale('border-width', $size)};
+    --bdg-bdrs-sq: #{get-scale('border-radius-square', $size)};
+    --bdg-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --bdg-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+    --bdg-fz: #{get-scale('font-size', $size)};
+    --bdg-lh: #{get-scale('line-height', $size)};
+    --bdg-lts: #{get-scale('letter-spacing', $size)};
+    --bdg-labels-pd-y: #{get-scale('text-padding-y', $size)};
+    --bdg-labels-pd-x: #{get-scale('text-padding-x', $size)};
+  }
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{$schema}_#{$modeMapName} {
+      --bdg-bgc-df: #{get-color('background', $modeMapName, $schema)};
+      --bdg-bgc-db: #{get-color('background-disabled', $modeMapName, $schema)};
+
+      --bdg-bdc-df: #{get-color('border', $modeMapName, $schema)};
+      --bdg-bdc-db: #{get-color('border-disabled', $modeMapName, $schema)};
+
+      --bdg-ct-gn-df: #{get-color('content-general', $modeMapName, $schema)};
+      --bdg-ct-gn-db: #{get-color('content-general-disabled', $modeMapName, $schema)};
+
+      --bdg-ct-ad-df: #{get-color('content-additional', $modeMapName, $schema)};
+      --bdg-ct-ad-db: #{get-color('content-additional-disabled', $modeMapName, $schema)};
+
+      --bdg-drop-sh: #{get-color('shadow', $modeMapName, $schema)};
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "positive-700": { "value": "{palette.green-700}", "type": "color" },
+  "positive-600": { "value": "{palette.green-600}", "type": "color" },
+  "positive-500": { "value": "{palette.green-500}", "type": "color" },
+  "positive-400": { "value": "{palette.green-400}", "type": "color" },
+  "positive-300": { "value": "{palette.green-300}", "type": "color" },
+  "positive-200": { "value": "{palette.green-200}", "type": "color" },
+  "positive-100": { "value": "{palette.green-100}", "type": "color" },
+}

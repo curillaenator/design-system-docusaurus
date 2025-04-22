@@ -1,0 +1,50 @@
+{
+  "accent-2-700-accent-2-400-top": {
+    "value": "linear-gradient(180deg, rgb(96, 32, 224) 0%, rgb(172, 139, 239) 100%)",
+    "type": "color"
+  },
+  "accent-2-700-accent-2-400-right": {
+    "value": "linear-gradient(270deg, rgb(96, 32, 224) 0%, rgb(172, 139, 239) 100%)",
+    "type": "color"
+  },
+  "accent-2-700-accent-2-400-bottom": {
+    "value": "linear-gradient(180deg, rgb(172, 139, 239) 0%, rgb(96, 32, 224) 100%)",
+    "type": "color"
+  },
+  "accent-2-700-accent-2-400-left": {
+    "value": "linear-gradient(90deg, rgb(96, 32, 224) 0%, rgb(172, 139, 239) 100%)",
+    "type": "color"
+  },
+  "accent-2-700-accent-2-100-top": {
+    "value": "linear-gradient(180deg, rgb(96, 32, 224) 0%, rgb(242, 237, 253) 100%)",
+    "type": "color"
+  },
+  "accent-2-700-accent-2-100-right": {
+    "value": "linear-gradient(270deg, rgb(96, 32, 224) 0%, rgb(242, 237, 253) 100%)",
+    "type": "color"
+  },
+  "accent-2-700-accent-2-100-bottom": {
+    "value": "linear-gradient(180deg, rgb(242, 237, 253) 0%, rgb(96, 32, 224) 100%)",
+    "type": "color"
+  },
+  "accent-2-700-accent-2-100-left": {
+    "value": "linear-gradient(90deg, rgb(96, 32, 224) 0%, rgb(242, 237, 253) 100%)",
+    "type": "color"
+  },
+  "accent-2-400-accent-2-100-top": {
+    "value": "linear-gradient(180deg, rgb(172, 139, 239) 0%, rgb(242, 237, 253) 100%)",
+    "type": "color"
+  },
+  "accent-2-400-accent-2-100-right": {
+    "value": "linear-gradient(270deg, rgb(172, 139, 239) 0%, rgb(242, 237, 253) 100%)",
+    "type": "color"
+  },
+  "accent-2-400-accent-2-100-bottom": {
+    "value": "linear-gradient(180deg, rgb(242, 237, 253) 0%, rgb(172, 139, 239) 100%)",
+    "type": "color"
+  },
+  "accent-2-400-accent-2-100-left": {
+    "value": "linear-gradient(90deg, rgb(172, 139, 239) 0%, rgb(242, 237, 253) 100%)",
+    "type": "color"
+  }
+}

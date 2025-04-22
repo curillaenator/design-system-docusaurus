@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  .navButtons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.title {
+  display: flex;
+  gap: 8px;
+  cursor: default;
+
+  font-weight: var(--clnd-fw-semibold);
+  font-size: var(--clnd-navigation-fz);
+  line-height: var(--clnd-navigation-lh);
+  color: var(--clnd-txt-navigation);
+  text-transform: capitalize;
+
+  .textButton {
+    text-transform: capitalize;
+
+    span {
+      padding: 0 !important;
+    }
+  }
+
+  &_nonclickable {
+    padding: var(--clnd-navigation-txt-pd-y) 0;
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "select/scale": {
+    "padding-y": {
+      "s": {
+        "value": "8px",
+        "type": "spacing"
+      }
+    },
+    "padding-x": {
+      "s": {
+        "value": "8px",
+        "type": "spacing"
+      }
+    },
+    "scroll-padding-right": {
+      "s": {
+        "value": "8px",
+        "type": "spacing"
+      }
+    },
+    "border-radius": {
+      "s": {
+        "value": "{border-radius.s}",
+        "type": "borderRadius"
+      }
+    },
+    "border-width": {
+      "s": {
+        "value": "{border-width.xs}",
+        "type": "borderWidths"
+      }
+    }
+  },
+  "select/theme/light": {
+    "color/default": {
+      "background": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "item-background-hover": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color.transparent}",
+        "type": "color"
+      },
+      "divider": {
+        "value": "{color-transparent.accent-1-700-20%}",
+        "type": "color"
+      },
+      "shadow": {
+        "value": "0px 4px 8px {color-transparent.accent-1-700-20%}",
+        "type": "color"
+      }
+    }
+  },
+  "select/theme/dark": {
+    "color/default": {
+      "scheme": {
+        "value": "select/theme/light.color/default",
+        "type": "meta"
+      },
+      "item-background-hover": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color-transparent.accent-1-700-20%}",
+        "type": "color"
+      },
+      "divider": {
+        "value": "{color-transparent.accent-1-700-20%}",
+        "type": "color"
+      },
+      "shadow": {
+        "value": "0 0 0 0 {color.transparent}",
+        "type": "color"
+      }
+    }
+  },
+  "select/theme/color": {
+    "color/default": {
+      "scheme": {
+        "value": "select/theme/light.color/default",
+        "type": "meta"
+      },
+      "item-background-hover": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "divider": {
+        "value": "{color-transparent.neutral-100-20%}",
+        "type": "color"
+      },
+      "shadow": {
+        "value": "0 0 0 0 {color.transparent}",
+        "type": "color"
+      }
+    }
+  }
+}

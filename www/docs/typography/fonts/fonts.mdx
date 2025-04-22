@@ -1,0 +1,62 @@
+---
+sidebar_label: 'Fonts'
+title: 'Fonts'
+description: 'Наборы шрифтов дизайн-системы'
+---
+
+import headerImage from './assets/headerImage.png';
+import { FONTS } from './assets/tokens';
+
+import { Fontview } from './examples';
+
+<headermeta
+  title='Fonts'
+  description='Наборы шрифтов дизайн-системы'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+  headerImage={headerImage}
+/>
+
+# Fonts
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Sans
+
+<docviewport codeBlock={undefined} modes={[]}>
+  <examples>
+    <Fontview fontFamily={FONTS.sans} />
+  </examples>
+</docviewport>
+
+<divider />
+
+## Mono
+
+<docviewport codeBlock={undefined} modes={[]}>
+  <examples>
+    <Fontview fontFamily={FONTS.mono} />
+  </examples>
+</docviewport>
+
+<divider />
+
+## Serif
+
+<docviewport codeBlock={undefined} modes={[]}>
+  <examples>
+    <Fontview fontFamily={FONTS.serif} />
+  </examples>
+</docviewport>
+
+</versionselector>

@@ -1,0 +1,206 @@
+{
+  "dateinput/style": {
+    "font-family": {
+      "value": "{font-family.sans}",
+      "type": "fontFamilies"
+    }
+  },
+  "dateinput/scale": {
+    "height": {
+      "s": {
+        "value": "32px",
+        "type": "sizing"
+      },
+      "xs": {
+        "value": "40px",
+        "type": "sizing"
+      }
+    },
+    "width": {
+      "s": {
+        "value": "151px",
+        "type": "sizing"
+      },
+      "xs": {
+        "value": "151px",
+        "type": "sizing"
+      }
+    },
+    "divider-padding-right": {
+      "s": {
+        "value": "36px",
+        "type": "spacing"
+      },
+      "xs": {
+        "value": "48px",
+        "type": "spacing"
+      }
+    },
+    "divider-padding-top": {
+      "s": {
+        "value": "10px",
+        "type": "spacing"
+      },
+      "xs": {
+        "value": "14px",
+        "type": "spacing"
+      }
+    },
+    "divider-height": {
+      "s": {
+        "value": "20px",
+        "type": "spacing"
+      },
+      "xs": {
+        "value": "20px",
+        "type": "spacing"
+      }
+    },
+    "focus-outline-width": {
+      "s": {
+        "value": "1px",
+        "type": "spacing"
+      },
+      "xs": {
+        "value": "1px",
+        "type": "spacing"
+      }
+    },
+    "focus-outline-radius-rectangular": {
+      "s": {
+        "value": "10px",
+        "type": "spacing"
+      },
+      "xs": {
+        "value": "10px",
+        "type": "spacing"
+      }
+    },
+    "focus-outline-gap": {
+      "s": {
+        "value": "4px",
+        "type": "spacing"
+      },
+      "xs": {
+        "value": "4px",
+        "type": "spacing"
+      }
+    },
+    "border-width": {
+      "s": {
+        "value": "0px",
+        "type": "borderWidth"
+      },
+      "xs": {
+        "value": "0px",
+        "type": "borderWidth"
+      }
+    },
+    "line-height": {
+      "s": {
+        "value": "16px",
+        "type": "lineHeights"
+      },
+      "xs": {
+        "value": "20px",
+        "type": "lineHeights"
+      }
+    }
+  },
+  "dateinput/theme/light": {
+    "color/light": {
+      "content-general": {
+        "value": "{color.transparent}",
+        "type": "color"
+      },
+      "border-color": {
+        "value": "{color.transparent}",
+        "type": "color"
+      },
+      "border-hovered": {
+        "value": "{color.accent-1-400}",
+        "type": "color"
+      },
+      "divider-color": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "placeholder-color": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      },
+      "placeholder-hovered": {
+        "value": "{color.neutral-500}",
+        "type": "color"
+      }
+    },
+    "state/disabled": {
+      "scheme": {
+        "value": "dateinput/theme/light.color/light",
+        "type": "meta"
+      },
+      "border-color": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      },
+      "glyph-color": {
+        "value": "{color-transparent.neutral-700-20%}",
+        "type": "color"
+      }
+    },
+    "state/error": {
+      "scheme": {
+        "value": "dateinput/theme/light.color/light",
+        "type": "meta"
+      },
+      "border-color": {
+        "value": "{color.negative-400}",
+        "type": "color"
+      },
+      "placeholder-color": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      }
+    }
+  },
+  "dateinput/theme/dark": {
+    "color/light": {
+      "scheme": {
+        "value": "dateinput/theme/light.color/light",
+        "type": "meta"
+      }
+    },
+    "state/disabled": {
+      "scheme": {
+        "value": "dateinput/theme/light.state/disabled",
+        "type": "meta"
+      }
+    },
+    "state/error": {
+      "scheme": {
+        "value": "dateinput/theme/light.state/error",
+        "type": "meta"
+      }
+    }
+  },
+  "dateinput/theme/color": {
+    "color/light": {
+      "scheme": {
+        "value": "dateinput/theme/light.color/light",
+        "type": "meta"
+      }
+    },
+    "state/disabled": {
+      "scheme": {
+        "value": "dateinput/theme/light.state/disabled",
+        "type": "meta"
+      }
+    },
+    "state/error": {
+      "scheme": {
+        "value": "dateinput/theme/light.state/error",
+        "type": "meta"
+      }
+    }
+  }
+}

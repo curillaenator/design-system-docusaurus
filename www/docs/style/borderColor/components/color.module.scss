@@ -1,0 +1,36 @@
+.light {
+  --color-display-bdc-100: var(--color-neutral-300);
+  --color-display-bdc-200: var(--color-neutral-300);
+  --color-display-bdc-600: transparent;
+}
+
+.dark {
+  --color-display-bdc-100: transparent;
+  --color-display-bdc-200: transparent;
+  --color-display-bdc-600: var(--color-neutral-500);
+}
+
+.color {
+  --color-display-bdc-100: transparent;
+  --color-display-bdc-200: transparent;
+  --color-display-bdc-600: transparent;
+}
+
+.colorValue {
+  width: 100%;
+  height: 128px;
+  border-radius: 16px;
+  margin-bottom: 48px;
+}
+
+._bordered-100 {
+  box-shadow: inset 0 0 0 2px var(--color-display-bdc-100);
+}
+
+._bordered-200 {
+  box-shadow: inset 0 0 0 2px var(--color-display-bdc-200);
+}
+
+._bordered-600 {
+  box-shadow: inset 0 0 0 2px var(--color-display-bdc-600);
+}

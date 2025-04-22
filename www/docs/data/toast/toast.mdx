@@ -1,0 +1,80 @@
+---
+sidebar_label: 'Toast'
+title: 'Toast'
+description: 'Всплывающий Toast'
+---
+
+import { ToastContainer } from '@kit-xyz/toast';
+import pkg from '@kit-xyz/toast/package.json';
+
+import { ToastRunner } from './components/ToastRunner';
+
+import { COLORS, TOASTS } from './examples/index';
+
+<headermeta
+  title='Toast'
+  description='Всплывающий Toast'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.com'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.com'
+/>
+
+# Toast
+
+<ToastContainer />
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + 1} exampleCodeJSX={undefined}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Basic toasts
+
+<textcolumns>
+  <span>
+    <p>Basic toasts</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {TOASTS.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={code}>
+        <card title={title}>
+          <ToastRunner {...rest} title={title} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+</versionselector>

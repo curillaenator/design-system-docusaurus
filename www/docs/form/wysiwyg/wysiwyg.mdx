@@ -1,0 +1,54 @@
+---
+sidebar_label: 'Wysiwyg'
+title: 'Wysiwyg'
+description: 'Wysiwyg'
+---
+
+import { WysiwygWrapper } from './Wysiwyg';
+import pkg from '@kit-xyz/wysiwyg/package.json';
+
+<headermeta
+  title='Wysiwyg'
+  description='Wysiwyg'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/xyz/Button'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-418'
+/>
+
+# Wysiwyg
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Basic
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples minCardWidth={1280}>
+    <example exampleCodeJSX={undefined}>
+      <card title='Toolbar top'>
+        <WysiwygWrapper />
+      </card>
+    </example>
+    <example exampleCodeJSX={undefined}>
+      <card title='Toolbar bottom'>
+        <WysiwygWrapper toolbarPlacement='bottom' maxHeight={400} />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## State
+
+</versionselector>

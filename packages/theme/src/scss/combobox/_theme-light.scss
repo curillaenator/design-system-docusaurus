@@ -1,0 +1,37 @@
+$theme-light: (
+  color-solid: (
+    content-general: var(--cmbx_c-s_cnt-gn, rgb(10, 10, 10)),
+    background: var(--cmbx_c-s_bgc, rgb(235, 235, 235)),
+    border: var(--cmbx_c-s_bdc, rgb(194, 194, 194)),
+    border-hovered: var(--cmbx_c-s_bdc-h, rgb(139, 139, 222)),
+    border-pressed: var(--cmbx_c-s_bdc-p, rgb(64, 96, 255)),
+    border-disabled: var(--cmbx_c-s_bdc-db, rgb(64, 96, 255)),
+    control-content-general: var(--cmbx_c-s_control-cnt-gn, rgb(10, 10, 10)),
+    control-placeholder: var(--cmbx_c-s_control-ph, rgb(128, 128, 128)),
+    control-chip-background:
+      var(--cmbx_c-s_control-chip-bgc, rgb(255, 255, 255)),
+    control-chip-border: var(--cmbx_c-s_control-chip-bdc, rgb(194, 194, 194)),
+    control-chip-icon-hovered:
+      var(--cmbx_c-s_control-chip-ic-h, rgb(255, 96, 64)),
+    control-indicator: var(--cmbx_c-s_control-indicator, rgb(128, 128, 128)),
+    control-indicator-hovered:
+      var(--cmbx_c-s_control-indicator-h, rgb(139, 139, 222)),
+    control-indicator-pressed:
+      var(--cmbx_c-s_control-indicator-p, rgb(64, 96, 255)),
+    menu-background: var(--cmbx_c-s_menu-bgc, rgb(255, 255, 255)),
+    menu-border: var(--cmbx_c-s_menu-bdc, rgb(194, 194, 194)),
+    menu-shadow: var(--cmbx_c-s_menu-sh, 0 0 0 0 transparent),
+    option-content-general: var(--cmbx_c-s_option-cnt-gn, rgb(10, 10, 10)),
+    option-content-additional: var(--cmbx_c-s_option-cnt-ad, rgb(128, 128, 128)),
+    option-content-general-hovered:
+      var(--cmbx_c-s_option-cnt-gn-h, rgb(139, 139, 222)),
+    option-content-general-pressed:
+      var(--cmbx_c-s_option-cnt-gn-p, rgb(64, 96, 255)),
+    option-content-general-disabled:
+      var(--cmbx_c-s_option-cnt-gn-db, rgb(128, 128, 128)),
+    option-background: var(--cmbx_c-s_option-bgc, rgba(0, 0, 0, 0)),
+    option-background-hovered: var(--cmbx_c-s_option-bgc-h, rgba(0, 0, 0, 0)),
+    option-background-pressed: var(--cmbx_c-s_option-bgc-p, rgba(0, 0, 0, 0)),
+    option-icon: var(--cmbx_c-s_option-ic-c, rgb(64, 96, 255)),
+  ),
+);

@@ -1,0 +1,45 @@
+.valuecontainer {
+  border: none;
+  outline: none;
+  gap: var(--cmbx-control-value-gp-x);
+  padding: 0 !important;
+  min-height: var(--cmbx-control-value-h);
+
+  &_noIcon {
+    padding-left: var(--cmbx-control-pd-x) !important;
+  }
+
+  :global {
+    .combobox__multi-value {
+      gap: var(--cmbx-control-chip-gp);
+      height: var(--cmbx-control-lh);
+      border-radius: var(--cmbx-control-chip-bdrs);
+      background: var(--cmbx-control-chip-bgc);
+      margin: 0;
+      padding: var(--cmbx-control-chip-pd-y) var(--cmbx-control-chip-pd-x);
+      max-width: var(--cmbx-control-chip-maw);
+      border: none;
+      outline: none;
+      box-shadow: inset 0 0 0 var(--cmbx-control-chip-bdw) var(--cmbx-control-chip-bdc);
+
+      &__label {
+        font-size: var(--cmbx-control-fz);
+        font-weight: var(--cmbx-control-fw);
+        line-height: var(--cmbx-control-lh);
+        padding: 0;
+        padding-left: 4px;
+        color: var(--cmbx-control-ct-gn);
+      }
+
+      &__remove {
+        cursor: pointer;
+        padding: 0;
+        background: transparent;
+
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+  }
+}

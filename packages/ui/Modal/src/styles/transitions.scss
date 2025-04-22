@@ -1,0 +1,53 @@
+@mixin overlayTransitions {
+  .overlay_enter {
+    transition: opacity var(--mdl-animation-time) var(--mdl-animation-method);
+
+    &_from {
+      opacity: 0;
+    }
+
+    &_to {
+      opacity: 1;
+    }
+  }
+
+  .overlay_leave {
+    transition: opacity var(--mdl-animation-time) var(--mdl-animation-method);
+
+    &_from {
+      opacity: 1;
+    }
+
+    &_to {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin contentTransitions {
+  .content_enter {
+    transition: opacity var(--mdl-animation-time) var(--mdl-animation-method),
+      transform var(--mdl-animation-time) var(--mdl-animation-method);
+
+    &_from {
+      opacity: 0;
+    }
+
+    &_to {
+      opacity: 1;
+    }
+  }
+
+  .content_leave {
+    transition: opacity var(--mdl-animation-time) var(--mdl-animation-method),
+      transform var(--mdl-animation-time) var(--mdl-animation-method);
+
+    &_from {
+      opacity: 1;
+    }
+
+    &_to {
+      opacity: 0;
+    }
+  }
+}

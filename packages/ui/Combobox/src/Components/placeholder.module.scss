@@ -1,0 +1,13 @@
+.placeholder {
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+  font-size: var(--cmbx-control-fz);
+  line-height: var(--cmbx-control-lh);
+  font-weight: var(--cmbx-control-fw);
+  color: var(--cmbx-control-ph-c);
+
+  &_shifted {
+    padding-left: var(--cmbx-control-pd-x);
+  }
+}

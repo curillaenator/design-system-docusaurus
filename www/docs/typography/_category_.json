@@ -1,0 +1,9 @@
+{
+  "position": 5,
+  "label": "Typography",
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Типографика дизайн-системы"
+  }
+}

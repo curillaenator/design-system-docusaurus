@@ -1,0 +1,42 @@
+$theme-dark: (
+  color-primary: (
+    content-general: var(--ntfc_pm_cnt-gn, rgb(255, 255, 255)),
+    content-additional: var(--ntfc_pm_cnt-ad, rgb(194, 194, 194)),
+    background: var(--ntfc_pm_bgc, rgb(20, 20, 20)),
+  ),
+  color-secondary: (
+    content-general: var(--ntfc_sc_cnt-gn, rgb(255, 255, 255)),
+    content-additional: var(--ntfc_sc_cnt-ad, rgb(194, 194, 194)),
+    background: var(--ntfc_sc_bgc, rgb(10, 10, 10)),
+  ),
+  color-tertiary: (
+    content-general: var(--ntfc_tt_cnt-gn, rgb(255, 255, 255)),
+    content-additional: var(--ntfc_tt_cnt-ad, rgba(255, 255, 255, 0.4)),
+    background: var(--ntfc_tt_bgc, rgb(64, 96, 255)),
+  ),
+  color-quaternary: (
+    content-general: var(--ntfc_qt_cnt-gn, rgb(255, 255, 255)),
+    content-additional: var(--ntfc_qt_cnt-ad, rgba(255, 255, 255, 0.4)),
+    background: var(--ntfc_qt_bgc, rgb(128, 48, 255)),
+  ),
+  color-informative: (
+    content-general: var(--ntfc_inf_cnt-gn, rgb(255, 255, 255)),
+    content-additional: var(--ntfc_inf_cnt-ad, rgba(255, 255, 255, 0.4)),
+    background: var(--ntfc_inf_bgc, rgb(64, 128, 255)),
+  ),
+  color-positive: (
+    content-general: var(--ntfc_ps_cnt-gn, rgb(255, 255, 255)),
+    content-additional: var(--ntfc_ps_cnt-ad, rgba(255, 255, 255, 0.4)),
+    background: var(--ntfc_ps_bgc, rgb(0, 192, 96)),
+  ),
+  color-attention: (
+    content-general: var(--ntfc_at_cnt-gn, rgb(255, 255, 255)),
+    content-additional: var(--ntfc_at_cnt-ad, rgba(255, 255, 255, 0.4)),
+    background: var(--ntfc_at_bgc, rgb(255, 192, 32)),
+  ),
+  color-negative: (
+    content-general: var(--ntfc_ng_cnt-gn, rgb(255, 255, 255)),
+    content-additional: var(--ntfc_ng_cnt-ad, rgba(255, 255, 255, 0.4)),
+    background: var(--ntfc_ng_bgc, rgb(255, 96, 64)),
+  ),
+);

@@ -1,0 +1,14 @@
+.accordionContentCn {
+  padding: 16px 44px;
+}
+
+.noCarret {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.accordionItem {
+  min-height: unset !important;
+  padding: 0 !important;
+}

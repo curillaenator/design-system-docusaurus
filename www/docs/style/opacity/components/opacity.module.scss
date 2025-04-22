@@ -1,0 +1,29 @@
+.light {
+  --opacity-bdc: var(--color-neutral-300);
+}
+
+.dark {
+  --opacity-bdc: var(--color-neutral-500);
+}
+
+.color {
+  --opacity-bdc: var(--color-accent-1-500);
+}
+
+.opacity {
+  width: 100%;
+  height: 128px;
+  border-radius: 16px;
+  margin-bottom: 48px;
+
+  & > img {
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+._bordered {
+  box-shadow: inset 0 0 0 2px var(--opacity-bdc);
+}

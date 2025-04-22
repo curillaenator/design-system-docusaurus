@@ -1,0 +1,62 @@
+@use '../../../../../theme/src/scss/select' as select;
+@use '../../../../../theme/src/scss/mixins/scroll' as scroll;
+
+$modeMaps: (
+  'light': select.$theme-light,
+  'dark': select.$theme-dark,
+  'color': select.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(select.$scale, $prop, $size);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@function get-style($prop) {
+  @return map-get(select.$style, 'content', $prop);
+}
+
+@each $size in (s) {
+  ._size_#{'' + $size} {
+    --dd-pd: #{get-scale('padding-y', $size)} #{get-scale('padding-x', $size)};
+    --dd-bdw: #{get-scale('border-width', $size)};
+    --dd-scrl-pd: 0 #{get-scale('scroll-padding-right', $size)} 0 0;
+    --dd-bdrs: #{get-scale('border-radius', $size)};
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --dd-bgc: #{get-color('background', $colorMode, $schema)};
+      --dd-bdc: #{get-color('border', $colorMode, $schema)};
+      --dd-drop-sh: #{get-color('shadow', $colorMode, $schema)};
+    }
+  }
+}
+
+$scrollbars: (
+  'light': 'onLight',
+  'dark': 'onDark',
+  'color': 'onColor',
+);
+
+.scroll {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @each $modeName, $scrollMode in $scrollbars {
+    &_#{'' + $modeName} {
+      @include scroll.scrollbar('mini', #{$scrollMode});
+    }
+  }
+}
+
+.openNodeFullwidth {
+  width: 100% !important;
+}

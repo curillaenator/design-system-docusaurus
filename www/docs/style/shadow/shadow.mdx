@@ -1,0 +1,155 @@
+---
+sidebar_label: 'Shadow'
+sidebar_position: 11
+title: 'Shadow'
+description: 'Содержит базовый ряд правил по рассеиванию тени, её размеры, цветовые значения в дизайн-системе'
+---
+
+import headerImage from './assets/shadow.png';
+
+import { SIZES, SHADOWS } from './index';
+
+<headermeta
+  title='Shadow'
+  description='Содержит базовый ряд правил по рассеиванию тени, её размеры, цветовые значения в дизайн-системе'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/theme/src/scss/style/_shadow.scss'
+  figmaLink='https://www.figma.com/'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-114'
+  headerImage={headerImage}
+/>
+
+# Shadow
+
+<versionselector versionPages={[]}>
+  <crutch />
+
+## Size
+
+<textcolumns>
+  <span>
+    <p>
+      Варианты рассеивания тени, заложенные в дизайн-системе. Изменение происходит относительно значения blur radius с
+      уменьшением шага в 2 раза
+    </p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} language='json' modes={['light', 'dark', 'color']}>
+  <examples>
+    {SIZES.map((card) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Neutral
+
+<docviewport codeBlock={undefined} language='json' modes={[]}>
+  <examples>
+    {SHADOWS['neutral'].map((card) => (
+      <example key={card.id} exampleCodeJSON={card.code} colorMode={card.colorMode}>
+        <card {...card} colorMode={card.colorMode} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Accent-1
+
+<docviewport codeBlock={undefined} language='json' modes={[]}>
+  <examples>
+    {SHADOWS['accent-1'].map((card) => (
+      <example key={card.id} exampleCodeJSON={card.code} colorMode={card.colorMode}>
+        <card {...card} colorMode={card.colorMode} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Accent-2
+
+<docviewport codeBlock={undefined} language='json' modes={[]}>
+  <examples>
+    {SHADOWS['accent-2'].map((card) => (
+      <example key={card.id} exampleCodeJSON={card.code} colorMode={card.colorMode}>
+        <card {...card} colorMode={card.colorMode} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Informative
+
+<docviewport codeBlock={undefined} language='json' modes={[]}>
+  <examples>
+    {SHADOWS['informative'].map((card) => (
+      <example key={card.id} exampleCodeJSON={card.code} colorMode={card.colorMode}>
+        <card {...card} colorMode={card.colorMode} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Positive
+
+<docviewport codeBlock={undefined} language='json' modes={[]}>
+  <examples>
+    {SHADOWS['positive'].map((card) => (
+      <example key={card.id} exampleCodeJSON={card.code} colorMode={card.colorMode}>
+        <card {...card} colorMode={card.colorMode} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Attention
+
+<docviewport codeBlock={undefined} language='json' modes={[]}>
+  <examples>
+    {SHADOWS['attention'].map((card) => (
+      <example key={card.id} exampleCodeJSON={card.code} colorMode={card.colorMode}>
+        <card {...card} colorMode={card.colorMode} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Negative
+
+<docviewport codeBlock={undefined} language='json' modes={[]}>
+  <examples>
+    {SHADOWS['negative'].map((card) => (
+      <example key={card.id} exampleCodeJSON={card.code} colorMode={card.colorMode}>
+        <card {...card} colorMode={card.colorMode} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+</versionselector>

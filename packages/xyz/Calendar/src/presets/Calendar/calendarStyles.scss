@@ -1,0 +1,20 @@
+.DayPicker-Month {
+  display: grid;
+  gap: 8px 0;
+
+  -webkit-user-select: none;
+
+  -moz-user-select: none;
+
+  -ms-user-select: none;
+
+  user-select: none;
+}
+
+.DayPicker-Body {
+  gap: var(--clnd-day-gp-y) 0;
+}
+
+.DayPicker .DayPicker-Weekday {
+  line-height: var(--clnd-week-row-h);
+}

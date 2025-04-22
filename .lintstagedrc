@@ -1,0 +1,4 @@
+{
+  "*.(ts|tsx)": ["npx prettier --write", "npx eslint --ignore-path .eslintignore --fix --quiet", "git add"],
+  "*.json": ["npx prettier --write", "git add"]
+}

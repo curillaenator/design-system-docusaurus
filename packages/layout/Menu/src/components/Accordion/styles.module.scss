@@ -1,0 +1,32 @@
+.openNode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .icon {
+    flex-shrink: 0;
+  }
+}
+
+.accordionButton {
+  --btn_pm-tp_bgc: transparent;
+  --btn_pm-tp_bgc-a: transparent;
+
+  --btn-cnt-gn: #ffffff;
+  --btn-cnt-gn-p: #8b8bde;
+  --btn-cnt-gn-a: #6060ff;
+  --btn-cnt-gn-h: #6060ff !important;
+
+  transition: transform 200ms ease;
+
+  &_active {
+    --btn-cnt-gn-a: #ffffff;
+
+    &:hover {
+      --btn-cnt-gn-a: #6060ff;
+    }
+
+    transform: rotate(-90deg);
+  }
+}

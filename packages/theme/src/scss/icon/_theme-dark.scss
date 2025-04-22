@@ -1,0 +1,10 @@
+$theme-dark: (
+  color-primary: var(--ic_clr-prmr, rgb(255, 255, 255)),
+  color-secondary: var(--ic_clr-scndr, rgb(128, 128, 128)),
+  color-tertiary: var(--ic_clr-trtr, rgb(64, 96, 255)),
+  color-quaternary: var(--ic_clr-qtrnr, rgb(128, 48, 255)),
+  color-informative: var(--ic_clr-nfrmtv, rgb(64, 128, 255)),
+  color-positive: var(--ic_clr-pstv, rgb(0, 192, 96)),
+  color-attention: var(--ic_clr-ttntn, rgb(255, 192, 32)),
+  color-negative: var(--ic_clr-ngtv, rgb(255, 96, 64)),
+);

@@ -1,0 +1,26 @@
+.container {
+  max-height: 48px;
+  padding: 8px;
+
+  .badge {
+    min-width: 160px;
+  }
+
+  :global {
+    .react-flow__handle {
+      min-width: 1px;
+      min-height: 1px;
+      background-color: transparent;
+    }
+  }
+
+  &_selected {
+    :global {
+      .react-flow__handle {
+        min-width: 3px;
+        min-height: 3px;
+        background-color: #000;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@kit-xyz/fonts",
+  "version": "0.0.1",
+  "description": "Пакет поставки шрифтов",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "npx sass --no-source-map ./src/fonts.scss:./fonts.css",
+    "checkDep": "run -T pcbl-fe  checkDependencies",
+    "pack": "run -T pcbl-fe  pack",
+    "revertPack": "run -T pcbl-fe  revertPack",
+    "setVersion": "run -T pcbl-fe  setVersion",
+    "clean": "run -T pcbl-fe  clean"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "packages/xyz"
+  }
+}

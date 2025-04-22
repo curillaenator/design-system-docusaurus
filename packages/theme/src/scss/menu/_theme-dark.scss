@@ -1,0 +1,7 @@
+$theme-dark: (
+  color-solid: (
+    content-general: var(--menu_c-s_cnt-gn, rgb(255, 255, 255)),
+    border: var(--menu_c-s_bdc, rgba(64, 96, 255, 0.2)),
+    background: var(--menu_c-s_bgc, rgb(10, 10, 10)),
+  ),
+);

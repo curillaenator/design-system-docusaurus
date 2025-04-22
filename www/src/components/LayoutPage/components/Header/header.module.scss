@@ -1,0 +1,19 @@
+.header {
+  min-height: var(--base-layout-header-mh);
+  padding: var(--base-layout-header-p-y) var(--base-layout-header-p-x);
+  background-color: var(--base-layout-header-p-bgc);
+
+  border-bottom: var(--base-layout-header-p-bdw) solid var(--base-layout-header-p-bdc);
+
+  // temp styles, to delete
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}

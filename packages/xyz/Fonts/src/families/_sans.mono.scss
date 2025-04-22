@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'SB Sans Text Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('SBSansTextMono-Regular'), local('SB Sans TextMono Regular'),
+    url('~@kit-xyz/fonts/src/assets/SBSansTextMono-Regular.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSansTextMono-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Text Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('SBSansTextMono-Bold'), local('SB Sans TextMono Bold'),
+    url('~@kit-xyz/fonts/src/assets/SBSansTextMono-Bold.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSansTextMono-Bold.woff') format('woff');
+}

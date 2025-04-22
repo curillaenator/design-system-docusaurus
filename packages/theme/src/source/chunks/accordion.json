@@ -1,0 +1,78 @@
+{
+  "accordion/scale": {
+    "padding-y": {
+      "s": {
+        "value": "16px",
+        "type": "spacings"
+      },
+      "xs": {
+        "value": "8px",
+        "type": "spacings"
+      }
+    },
+    "padding-x": {
+      "s": {
+        "value": "16px",
+        "type": "spacings"
+      },
+      "xs": {
+        "value": "8px",
+        "type": "spacings"
+      }
+    }
+  },
+  "accordion/style": {
+    "content": {
+      "font-family": {
+        "value": "{font-family.sans}",
+        "type": "fontFamilies"
+      }
+    },
+    "animation": {
+      "time": {
+        "value": "200ms",
+        "type": "other"
+      },
+      "method": {
+        "value": "ease",
+        "type": "other"
+      }
+    }
+  },
+  "accordion/theme/light": {
+    "color/default": {
+      "content-general": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.transparent}",
+        "type": "color"
+      }
+    }
+  },
+  "accordion/theme/dark": {
+    "color/default": {
+      "content-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.transparent}",
+        "type": "color"
+      }
+    }
+  },
+  "accordion/theme/color": {
+    "color/default": {
+      "content-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.transparent}",
+        "type": "color"
+      }
+    }
+  }
+}

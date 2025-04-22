@@ -1,0 +1,52 @@
+.examples {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 32px;
+
+  &_variant {
+    &_4inRow {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &_2inRow {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &_3inRow {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &_6inRow {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+}
+
+.mb32 {
+  margin-bottom: 32px;
+}
+
+.block {
+  width: 100%;
+  height: calc(240px - 64px);
+  display: flex;
+  flex-direction: column;
+
+  &_row {
+    flex-direction: row;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  min-height: 240px;
+}

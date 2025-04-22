@@ -1,0 +1,88 @@
+---
+sidebar_label: 'Combobox'
+title: 'Combobox'
+description: 'Combobox'
+---
+
+import { ComboBox } from '@kit-xyz/combobox';
+import pkg from '@kit-xyz/combobox/package.json';
+import { ComboBoxWrapped } from './components/ComboBoxWrapped';
+import { ComboBoxInPortal } from './components/ComboBoxInPortal';
+import { COLORS, FORMS } from './index';
+
+import comboboxWrappedCode from '!!raw-loader!./components/ComboBoxWrapped.tsx';
+
+<headermeta
+  title='Combobox'
+  description='Combobox'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+/>
+
+# Combobox
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Настройка конфигурации.</p>
+  </span>
+
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + 1} exampleCodeJSX={undefined}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Form
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {FORMS.map(({ code, title, ...comboboxProps }) => (
+      <example key={title} exampleCodeJSX={comboboxWrappedCode}>
+        <card title={title}>
+          <ComboBoxWrapped {...comboboxProps} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Portals
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={undefined}>
+      <card title='Combobox in Modal'>
+        <ComboBoxInPortal />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+</versionselector>

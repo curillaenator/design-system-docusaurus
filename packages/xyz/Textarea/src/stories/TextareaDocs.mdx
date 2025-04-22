@@ -1,0 +1,21 @@
+import { Layout, Header, DocsGenerator } from '@pcbl-ui-v4/storybook-components';
+
+import { docs } from './TextareaStory.docs';
+import packageInfo from '../../package.json';
+
+<Layout withoutPadding>
+<Header
+  title="Textarea"
+  authorName="Дмитрий Сухов"
+  designerName="Олег Астахов"
+  status="production"
+  design="https://www.figma.com/file/BUAr7rDW0wH3SjaHbFV64K/⚡%EF%B8%8F-Textarea?node-id=154%3A127421"
+  description="Стилизованный компонент для ввода пользователем текстового контента."
+  origin={`${packageInfo.repository.url}?at=refs%2Fheads%2Fmaster`}
+  packageName={packageInfo.name}
+  packageVersion={packageInfo.version}
+/>
+
+<DocsGenerator docs={docs} />
+
+</Layout>

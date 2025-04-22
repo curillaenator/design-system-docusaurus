@@ -1,0 +1,7 @@
+.searchBox {
+  :global {
+    .algolia-autocomplete {
+      display: block !important;
+    }
+  }
+}

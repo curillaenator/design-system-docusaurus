@@ -1,0 +1,20 @@
+$variables: (
+  theme-light: (
+    --tbs_trckr-sld_bgc: #ebeff4,
+    --tbs_trckr-sld_bgc-a: #ebeff4,
+    --tbs_trckr-sld_tgglr-ctv-clr: #1677ff,
+    --tbs_c-s_bgc: rgb(237, 237, 250),
+    --tbs_c-s_bgc-a: rgb(64, 96, 255),
+    --tbs_c-s_tgglr-ctv-clr: rgb(255, 255, 255),
+  ),
+  theme-dark: (
+    --tbs_c-s_bgc: rgba(255, 255, 255, 0.1),
+    --tbs_c-s_bgc-a: rgb(64, 96, 255),
+    --tbs_c-s_tgglr-ctv-clr: rgb(255, 255, 255),
+  ),
+  theme-color: (
+    --tbs_c-s_bgc: rgba(255, 255, 255, 0.1),
+    --tbs_c-s_bgc-a: rgba(255, 255, 255, 0.2),
+    --tbs_c-s_tgglr-ctv-clr: rgb(255, 255, 255),
+  ),
+);

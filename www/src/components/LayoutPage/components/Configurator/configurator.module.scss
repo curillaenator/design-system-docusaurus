@@ -1,0 +1,16 @@
+$paddings: (
+  'large': 64px,
+  'medium': 32px,
+  'small': 16px,
+);
+
+.configurator {
+  width: 100%;
+  padding: 24px;
+
+  // @each $paddingsSize, $paddings in $paddings {
+  //   &_#{'' + $paddingsSize} {
+  //     padding: #{$paddings};
+  //   }
+  // }
+}

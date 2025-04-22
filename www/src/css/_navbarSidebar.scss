@@ -1,0 +1,20 @@
+@mixin navbar {
+  --ifm-navbar-height: calc(96px + var(--ifm-common-bdw));
+  --ifm-navbar-padding-horizontal: 0;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-shadow: none;
+
+  --ifm-navbar-background-color: transparent;
+
+  // @media (min-width: 1440px) {
+  //   --ifm-navbar-height: 128px;
+  // }
+}
+
+@mixin sidebar {
+  --doc-sidebar-width: 384px !important;
+  --doc-sidebar-hidden-width: 0px;
+
+  --left-sidebar-w: var(--doc-sidebar-width);
+  --right-sidebar-w: 0px; // 384px
+}

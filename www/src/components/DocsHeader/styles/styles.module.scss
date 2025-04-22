@@ -1,0 +1,112 @@
+.light {
+  --header-bgc: transparent;
+  --header-title-c: var(--color-neutral-700);
+  --header-description-c: var(--color-neutral-700);
+}
+
+.dark {
+  --header-bgc: transparent;
+  --header-title-c: var(--color-neutral-100);
+  --header-description-c: var(--color-neutral-100);
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  // max-width: calc(100vw - var(--left-sidebar-w));
+
+  &_withPadding {
+    --header-p-x: 64px;
+  }
+
+  .content {
+    padding: 64px var(--header-p-x);
+    z-index: 10;
+
+    .title {
+      color: var(--header-title-c);
+      font-weight: 600;
+      font-size: 55px;
+      line-height: 56px;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+      max-width: 50%;
+    }
+
+    .description {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 28px;
+      color: var(--header-description-c);
+      margin-bottom: 48px;
+      max-width: 50%;
+      // min-height: 120px;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: flex-start;
+      gap: 24px;
+      z-index: 10;
+
+      &_mb {
+        margin-bottom: 48px;
+      }
+
+      &badge {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      &text {
+        display: block;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &link {
+        color: var(--ifm-color-primary);
+        text-decoration: none;
+      }
+    }
+
+    .badges {
+      display: flex;
+      justify-content: flex-start;
+      gap: 16px;
+      // padding: 32px;
+      z-index: 10;
+    }
+
+    @media (max-width: 1279px) {
+      .title,
+      .description {
+        max-width: 100%;
+        margin-bottom: 24px;
+      }
+
+      .meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  }
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-58%);
+  width: 56%;
+  max-width: 768px;
+  min-width: 512px;
+  aspect-ratio: 1 / 1;
+  z-index: -1;
+
+  @media (max-width: 1279px) {
+    display: none;
+  }
+}

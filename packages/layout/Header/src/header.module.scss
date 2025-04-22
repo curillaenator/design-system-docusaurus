@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 97px;
+  padding: 24px;
+
+  border-bottom: 1px solid var(--color-neutral-themed-200);
+
+  overflow-x: auto;
+}
+
+.elements {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.left,
+.right {
+  width: fit-content;
+  flex-shrink: 0;
+}
+
+.middle {
+  width: 100%;
+  flex-shrink: 1;
+}

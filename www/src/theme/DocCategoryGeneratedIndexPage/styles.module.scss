@@ -1,0 +1,28 @@
+// @media (min-width: 1440px) {
+.generatedIndexPage {
+  max-width: 100% !important;
+}
+
+.list article:nth-last-child(-n + 2) {
+  margin-bottom: 0 !important;
+}
+// }
+
+.article {
+  padding: var(--docitem-padding-y) var(--docitem-padding-x);
+  border-top: var(--ifm-common-bdw) solid var(--ifm-color-emphasis-200);
+
+  @media (max-width: 1439px) {
+    padding: var(--docitem-mobile-padding-y) var(--docitem-mobile-padding-x);
+  }
+}
+
+/* Duplicated from .markdown h1 */
+.title {
+  // --ifm-h1-font-size: 3rem;
+  // margin-bottom: calc(1.25 * var(--ifm-leading));
+}
+
+.list article:last-child {
+  margin-bottom: 0 !important;
+}

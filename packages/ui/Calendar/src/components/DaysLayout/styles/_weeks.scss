@@ -1,0 +1,43 @@
+@mixin weeks {
+  .DayPicker-Day--weekHover:not(.DayPicker-Day--weekSelected) {
+    background-color: var(--clnd-date-bg-h);
+
+    &:first-child {
+      border-radius: var(--clnd-date-bdrs) 0 0 var(--clnd-date-bdrs);
+    }
+
+    &:last-child {
+      border-radius: 0 var(--clnd-date-bdrs) var(--clnd-date-bdrs) 0;
+    }
+  }
+
+  .DayPicker-Day--weekSelected {
+    background-color: var(--clnd-date-bg-in-range);
+    color: var(--clnd-txt-in-range);
+
+    &:first-child {
+      border-radius: var(--clnd-date-bdrs) 0 0 var(--clnd-date-bdrs);
+    }
+
+    &:last-child {
+      border-radius: 0 var(--clnd-date-bdrs) var(--clnd-date-bdrs) 0;
+    }
+
+    &:first-child,
+    &:last-child {
+      position: relative;
+      z-index: 1;
+      color: var(--clnd-txt-a);
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        border-radius: var(--clnd-date-bdrs);
+        height: 100%;
+        width: 100%;
+        background-color: var(--clnd-date-bg-a);
+      }
+    }
+  }
+}

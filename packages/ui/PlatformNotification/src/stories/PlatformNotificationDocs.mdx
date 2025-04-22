@@ -1,0 +1,20 @@
+import { Header, Layout, DocsGenerator } from '@pcbl-ui-v4/storybook-components';
+
+import packageInfo from '../../package.json';
+import { docs } from './PlatformNotification.docs';
+
+<Layout withoutPadding>
+  <Header
+    title="PlatformNotification"
+    authorName="Зубков Валерий"
+    designerName="Олег Астахов"
+    status="production"
+    design="https://www.figma.com/file/by9RScdBk63xOQevKazheX/xyz-%F0%9F%93%84-presentation?node-id=530%3A30095&t=oLZo3oJfaUirBLga-0"
+    description="Компонент для показа уведомлений пользователю и возможностью пользователю выбирать действия."
+    origin={`${packageInfo.repository.url}?at=refs%2Fheads%2Fmaster`}
+    packageName={packageInfo.name}
+    packageVersion={packageInfo.version}
+  />
+
+  <DocsGenerator docs={docs} />
+</Layout>

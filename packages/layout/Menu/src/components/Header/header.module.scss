@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--menu-section-padding-y) var(--menu-section-padding-x);
+  flex-grow: 0;
+  width: 100%;
+  height: fit-content;
+  min-height: var(--menu-header-mh);
+  border-bottom: var(--menu-bdw) solid var(--menu-bdc);
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.minified {
+  position: relative;
+  height: 48px;
+
+  .minButton {
+    --menu-collapse-btn-opacity: 0;
+
+    opacity: var(--menu-collapse-btn-opacity);
+
+    &_visible {
+      --menu-collapse-btn-opacity: 1;
+    }
+  }
+
+  .minLogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+
+    &_visible {
+      opacity: 1;
+      z-index: 0;
+    }
+  }
+}

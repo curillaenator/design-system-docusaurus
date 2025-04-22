@@ -1,0 +1,78 @@
+// к сожалению без импортантов с react-toastify при нашем подходе с cssv токенами не обойтись.
+// нужно вот так грубо переопределить родные стили бибилотеки, чтобы ни при каких обстоятельствах
+// не возникло конфликтов с внутренними стилями react-toastify
+
+:root {
+  --toastify-color-light: transparent !important;
+  --toastify-color-dark: transparent !important;
+  --toastify-color-info: transparent !important;
+  --toastify-color-success: transparent !important;
+  --toastify-color-warning: transparent !important;
+  --toastify-color-error: transparent !important;
+  --toastify-color-transparent: transparent !important;
+  --toastify-icon-color-info: transparent !important;
+  --toastify-icon-color-success: transparent !important;
+  --toastify-icon-color-warning: transparent !important;
+  --toastify-icon-color-error: transparent !important;
+  --toastify-toast-width: fit-content !important;
+  --toastify-toast-background: transparent !important;
+}
+
+:global {
+  .Toastify__toast-container--top-left {
+    top: var(--tst-offset, 64px) !important;
+    left: var(--tst-offset, 64px) !important;
+  }
+
+  .Toastify__toast-container--top-center {
+    top: var(--tst-offset, 64px) !important;
+  }
+
+  .Toastify__toast-container--top-right {
+    top: var(--tst-offset, 64px) !important;
+    right: var(--tst-offset, 64px) !important;
+  }
+
+  .Toastify__toast-container--bottom-left {
+    bottom: var(--tst-offset, 64px) !important;
+    left: var(--tst-offset, 64px) !important;
+  }
+
+  .Toastify__toast-container--bottom-center {
+    bottom: var(--tst-offset, 64px) !important;
+  }
+
+  .Toastify__toast-container--bottom-right {
+    bottom: var(--tst-offset, 64px) !important;
+    right: var(--tst-offset, 64px) !important;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: var(--tst-ct-pd, 0) !important;
+  max-width: var(--tst-maw);
+
+  :global {
+    .Toastify__toast {
+      position: relative !important;
+      padding: 0 !important;
+      border-radius: 0px !important;
+      // background-color: transparent !important;
+      box-shadow: var(--tst-drop-sh, 0 0 0 0 transparent) !important;
+      overflow: var(--tst-overflow, visible) !important;
+      margin: 0 !important;
+
+      .Toastify__toast-body {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .Toastify__close-button {
+        display: none !important;
+      }
+    }
+  }
+}

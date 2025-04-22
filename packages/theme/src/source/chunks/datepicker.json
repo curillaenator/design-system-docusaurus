@@ -1,0 +1,478 @@
+{
+  "datepicker/style": {
+    "font-family": {
+      "value": "{font-family.sans}",
+      "type": "fontFamilies"
+    }
+  },
+  "datepicker/scale": {
+    "font-weight": {
+      "small": {
+        "value": "{font-weight.400}",
+        "type": "fontWeights"
+      },
+      "medium": {
+        "value": "{font-weight.400}",
+        "type": "fontWeights"
+      },
+      "large": {
+        "value": "{font-weight.400}",
+        "type": "fontWeights"
+      }
+    },
+    "height": {
+      "small": {
+        "value": "32px",
+        "type": "sizing"
+      },
+      "medium": {
+        "value": "40px",
+        "type": "sizing"
+      },
+      "large": {
+        "value": "48px",
+        "type": "sizing"
+      }
+    },
+    "width": {
+      "small": {
+        "value": "32px",
+        "type": "sizing"
+      },
+      "medium": {
+        "value": "40px",
+        "type": "sizing"
+      },
+      "large": {
+        "value": "48px",
+        "type": "sizing"
+      }
+    },
+    "padding-x": {
+      "small": {
+        "value": "9px",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "10px",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "14px",
+        "type": "spacing"
+      }
+    },
+    "padding-y": {
+      "small": {
+        "value": "8px",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "10px",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "14px",
+        "type": "spacing"
+      }
+    },
+    "gap-x": {
+      "small": {
+        "value": "8px",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "10px",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "14px",
+        "type": "spacing"
+      }
+    },
+    "focus-outline-gap": {
+      "small": {
+        "value": "3px",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "3px",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "3px",
+        "type": "spacing"
+      }
+    },
+    "border-width": {
+      "small": {
+        "value": "1px",
+        "type": "borderWidth"
+      },
+      "medium": {
+        "value": "1px",
+        "type": "borderWidth"
+      },
+      "large": {
+        "value": "1px",
+        "type": "borderWidth"
+      }
+    },
+    "focus-outline-width": {
+      "small": {
+        "value": "1px",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "1px",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "1px",
+        "type": "spacing"
+      }
+    },
+    "border-radius-rectangular": {
+      "small": {
+        "value": "6px",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "6px",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "6px",
+        "type": "spacing"
+      }
+    },
+    "glyph-height": {
+      "small": {
+        "value": "14px",
+        "type": "sizing"
+      },
+      "medium": {
+        "value": "16px",
+        "type": "sizing"
+      },
+      "large": {
+        "value": "20px",
+        "type": "sizing"
+      }
+    },
+    "glyph-padding-x": {
+      "small": {
+        "value": "0px",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "0px",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "0px",
+        "type": "spacing"
+      }
+    },
+    "glyph-padding-y": {
+      "small": {
+        "value": "0px",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "0px",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "0px",
+        "type": "spacing"
+      }
+    },
+    "text-font-size": {
+      "small": {
+        "value": "{font-size.s}",
+        "type": "fontSizes"
+      },
+      "medium": {
+        "value": "{font-size.s}",
+        "type": "fontSizes"
+      },
+      "large": {
+        "value": "{font-size.s}",
+        "type": "fontSizes"
+      }
+    },
+    "text-letter-spacing": {
+      "small": {
+        "value": "0px",
+        "type": "letterSpacing"
+      },
+      "medium": {
+        "value": "0px",
+        "type": "letterSpacing"
+      },
+      "large": {
+        "value": "0px",
+        "type": "letterSpacing"
+      }
+    },
+    "text-line-height": {
+      "small": {
+        "value": "16px",
+        "type": "lineHeights"
+      },
+      "medium": {
+        "value": "20px",
+        "type": "lineHeights"
+      },
+      "large": {
+        "value": "20px",
+        "type": "lineHeights"
+      }
+    },
+    "text-padding-x": {
+      "small": {
+        "value": "2px",
+        "type": "sizing"
+      },
+      "medium": {
+        "value": "2px",
+        "type": "sizing"
+      },
+      "large": {
+        "value": "2px",
+        "type": "sizing"
+      }
+    },
+    "padding-right": {
+      "small": {
+        "value": "8",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "10",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "14",
+        "type": "spacing"
+      }
+    },
+    "padding-left": {
+      "small": {
+        "value": "10",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "12",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "16",
+        "type": "spacing"
+      }
+    },
+    "focus-outline-radius-rectangular": {
+      "small": {
+        "value": "10px",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "10px",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "10px",
+        "type": "spacing"
+      }
+    },
+    "font-size": {
+      "small": {
+        "value": "{font-size.s}",
+        "type": "fontSizes"
+      },
+      "medium": {
+        "value": "{font-size.s}",
+        "type": "fontSizes"
+      },
+      "large": {
+        "value": "{font-size.s}",
+        "type": "fontSizes"
+      }
+    },
+    "line-height": {
+      "small": {
+        "value": "16px",
+        "type": "lineHeights"
+      },
+      "medium": {
+        "value": "20px",
+        "type": "lineHeights"
+      },
+      "large": {
+        "value": "20px",
+        "type": "lineHeights"
+      }
+    }
+  },
+  "datepicker/theme/light": {
+    "color/light": {
+      "content-general": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "content-general-hovered": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "content-general-disabled": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      },
+      "content-general-pressed": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "background-focused": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "background-disabled": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "background-hovered": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "background-pressed": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "border-disabled": {
+        "value": "{color.transparent}",
+        "type": "color"
+      },
+      "border-disabled-placeholder": {
+        "value": "{color.transparent}",
+        "type": "color"
+      },
+      "border-hovered": {
+        "value": "{color.accent-1-400}",
+        "type": "color"
+      },
+      "focus-outline": {
+        "value": "{color.accent-1-700}",
+        "type": "color"
+      },
+      "border-color": {
+        "value": "{color.transparent}",
+        "type": "color"
+      },
+      "divider-color": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      },
+      "divider-active": {
+        "value": "{color.neutral-500}",
+        "type": "color"
+      },
+      "content-additional": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      },
+      "glyph-color": {
+        "value": "{color-transparent.neutral-700-40%}",
+        "type": "color"
+      },
+      "placeholder-color": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      },
+      "placeholder-hover": {
+        "value": "{color.neutral-500}",
+        "type": "color"
+      }
+    },
+    "state/disabled": {
+      "scheme": {
+        "value": "datepicker/theme/light.color/light",
+        "type": "meta"
+      },
+      "border-color": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "content-general": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      },
+      "border-disabled": {
+        "value": "{color.transparent}",
+        "type": "color"
+      },
+      "border-disabled-placeholder": {
+        "value": "{color.neutral-300}",
+        "type": "color"
+      }
+    },
+    "state/error": {
+      "scheme": {
+        "value": "datepicker/theme/light.color/light",
+        "type": "meta"
+      },
+      "border-color": {
+        "value": "{color.negative-700}",
+        "type": "color"
+      }
+    }
+  },
+  "datepicker/theme/dark": {
+    "color/light": {
+      "scheme": {
+        "value": "datepicker/theme/light.color/light",
+        "type": "meta"
+      }
+    },
+    "state/disabled": {
+      "scheme": {
+        "value": "datepicker/theme/dark.color/light",
+        "type": "meta"
+      }
+    },
+    "state/error": {
+      "scheme": {
+        "value": "datepicker/theme/dark.color/light",
+        "type": "meta"
+      }
+    }
+  },
+  "datepicker/theme/color": {
+    "color/light": {
+      "scheme": {
+        "value": "datepicker/theme/light.color/light",
+        "type": "meta"
+      }
+    },
+    "state/disabled": {
+      "scheme": {
+        "value": "datepicker/theme/dark.color/light",
+        "type": "meta"
+      }
+    },
+    "state/error": {
+      "scheme": {
+        "value": "datepicker/theme/dark.color/light",
+        "type": "meta"
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@use '../../../../../theme/src/scss/pagination' as pagination;
+
+$modeMaps: (
+  'light': pagination.$theme-light,
+  'dark': pagination.$theme-dark,
+  'color': pagination.$theme-color,
+);
+
+$sizes: (s, xs);
+
+@function get-scale($prop, $size) {
+  @return map-get(pagination.$scale, $prop, $size);
+}
+
+// @function get-style($value, $group: 'content') {
+//   @return map-get(pagination.$style, $group, $value);
+// }
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: var(--pgtn-gp-x);
+  background-color: var(--pgtn-bgc);
+  border-radius: var(--pgtn-bdrs);
+}
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --pgtn-gp-x: #{get-scale('gap-x', $size)};
+
+    --pgtn-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+    --pgtn-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --pgtn-bdrs-sq: #{get-scale('border-radius-square', $size)};
+  }
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{$schema}_#{$modeMapName} {
+      --pgtn-bgc: #{get-color('background', $modeMapName, $schema)};
+    }
+  }
+}
+
+@each $shape, $shapeNotation in ('square': 'sq', 'rounded': 'ro', 'circular': 'cc') {
+  ._shape_#{$shape} {
+    --pgtn-bdrs: var(--pgtn-bdrs-#{$shapeNotation});
+  }
+}
+
+.pagesSelector {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

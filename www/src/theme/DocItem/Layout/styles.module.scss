@@ -1,0 +1,15 @@
+.docItemContainer header + *,
+.docItemContainer article > *:first-child {
+  margin-top: 0;
+}
+
+.docItemRow {
+  position: relative;
+  margin: 0 !important;
+  border-top: var(--ifm-common-bdw) solid var(--ifm-color-emphasis-200);
+  flex-wrap: nowrap !important;
+
+  .docItemCol {
+    padding: 0 !important;
+  }
+}

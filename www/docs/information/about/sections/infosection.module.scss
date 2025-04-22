@@ -1,0 +1,100 @@
+$appearances: (
+  'neutral-300-200': (
+    'angle': '80deg',
+    'from': var(--ifm-color-emphasis-300),
+    'to': var(--ifm-color-emphasis-200),
+  ),
+  'neutral-700-accent-1-700': (
+    'angle': '80deg',
+    'from': var(--ifm-color-emphasis-700),
+    'to': var(--color-accent-1-700),
+  ),
+  'neutral-700-600': (
+    'angle': '80deg',
+    'from': var(--ifm-color-emphasis-700),
+    'to': var(--ifm-color-emphasis-600),
+  ),
+);
+
+$layouts: (
+  '2cols': (
+    'direction': row,
+    'block-width': 50%,
+    'content-p': 118px 128px 118px 0,
+    'gap': 0px,
+  ),
+  '1col': (
+    'direction': column,
+    'block-width': 100%,
+    'content-p': 0,
+    'gap': 64px,
+  ),
+);
+
+.container {
+  display: flex;
+  gap: var(--infosection-flex-gap);
+  width: 100%;
+  margin-top: 64px;
+  flex-direction: var(--infosection-flex-direction);
+
+  &_fliped {
+    --infosection-content-p: 118px 0px 118px 128px !important;
+    --infosection-flex-direction: row-reverse !important;
+  }
+
+  @each $layout, $valuesMap in $layouts {
+    &_#{'' + $layout} {
+      --infosection-flex-direction: #{map-get($valuesMap, 'direction')};
+      --infosection-flex-gap: #{map-get($valuesMap, 'gap')};
+      --infosection-block-w: #{map-get($valuesMap, 'block-width')};
+      --infosection-content-p: #{map-get($valuesMap, 'content-p')};
+    }
+  }
+
+  @each $appearance, $values in $appearances {
+    &_#{'' + $appearance} {
+      --image-gradient-angle: #{map-get($values, 'angle')};
+      --image-gradient-from: #{map-get($values, 'from')};
+      --image-gradient-to: #{map-get($values, 'to')};
+    }
+  }
+
+  .block {
+    width: var(--infosection-block-w);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px;
+    padding: var(--infosection-content-p);
+
+    .description {
+      display: block;
+
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 28px;
+      color: var(--ifm-color-emphasis-400);
+    }
+  }
+
+  .image {
+    padding: 32px;
+    border-radius: 16px;
+    background-image: linear-gradient(
+      var(--image-gradient-angle),
+      var(--image-gradient-from) 0%,
+      var(--image-gradient-to) 100%
+    );
+
+    & > img {
+      border-radius: 12px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

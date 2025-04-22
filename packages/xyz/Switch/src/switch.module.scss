@@ -1,0 +1,92 @@
+@use '../../../theme/src/scss/switch/' as switch;
+
+$sizes: (xs);
+
+$modeMaps: (
+  'light': switch.$theme-light,
+  'dark': switch.$theme-dark,
+  'color': switch.$theme-color,
+);
+
+$color-schemas: map-keys(switch.$theme-light);
+
+@function get-scale($prop, $size) {
+  @return map-get(switch.$scale, $prop, $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(switch.$style, $group, $value);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+.switchVariables {
+  --sch-ff: #{get-style('font-family')};
+  --sch-fw: #{get-style('font-weight')};
+
+  --sch-glph-inner-animation-time: #{get-style('time', 'animation')};
+  --sch-glph-inner-animation-method: #{get-style('method', 'animation')};
+
+  --sch-glph-pd-y: 0;
+  --sch-glph-pd-x: 0;
+
+  --sch-glph-fzn-w: calc(var(--sch-glph-w) + 8px);
+  --sch-glph-fzn-h: calc(var(--sch-glph-h) + 8px);
+  --sch-glph-fzn-bdrs: calc(var(--sch-glph-bdrs) + 8px);
+}
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --sch-gp-x: #{get-scale('gap-x', $size)};
+    --sch-w: #{get-scale('width', $size)};
+    --sch-pd: #{get-scale('padding-y', $size)} #{get-scale('padding-x', $size)};
+
+    --sch-glph-w: #{get-scale('glyph-width', $size)};
+    --sch-glph-h: #{get-scale('glyph-height', $size)};
+    --sch-glph-bdw: #{get-scale('glyph-border-width', $size)};
+    --sch-glph-bdrs: #{get-scale('glyph-border-radius', $size)};
+    --sch-glph-toggler-sz: #{get-scale('glyph-toggler-size', $size)};
+
+    --sch-lh: #{get-scale('text-line-height', $size)};
+    --sch-fz: #{get-scale('text-font-size', $size)};
+    --sch-txt-pd: #{get-scale('text-padding-y', $size)} #{get-scale('text-padding-x', $size)};
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --rdo-txt-gn: #{get-color('text-general', $colorMode, $schema)};
+
+      --sch-txt-gn: #{get-color('text-general', $colorMode, $schema)};
+      --sch-txt-gn-h: #{get-color('text-general-hovered', $colorMode, $schema)};
+      --sch-txt-gn-p: #{get-color('text-general-pressed', $colorMode, $schema)};
+      --sch-txt-gn-db: #{get-color('text-general-disabled', $colorMode, $schema)};
+
+      --sch-txt-ad: #{get-color('text-additional', $colorMode, $schema)};
+      --sch-txt-ad-h: #{get-color('text-additional-hovered', $colorMode, $schema)};
+      --sch-txt-ad-p: #{get-color('text-additional-pressed', $colorMode, $schema)};
+      --sch-txt-ad-db: #{get-color('text-additional-disabled', $colorMode, $schema)};
+
+      --sch-glph-gn: #{get-color('glyph-general', $colorMode, $schema)};
+      --sch-glph-gn-f: #{get-color('glyph-general-focused', $colorMode, $schema)};
+      --sch-glph-gn-h: #{get-color('glyph-general-hovered', $colorMode, $schema)};
+      --sch-glph-gn-p: #{get-color('glyph-general-pressed', $colorMode, $schema)};
+      --sch-glph-gn-db: #{get-color('glyph-general-disabled', $colorMode, $schema)};
+
+      --sch-glph-ad: #{get-color('glyph-additional', $colorMode, $schema)};
+      --sch-glph-ad-f: #{get-color('glyph-additional-focused', $colorMode, $schema)};
+      --sch-glph-ad-h: #{get-color('glyph-additional-hovered', $colorMode, $schema)};
+      --sch-glph-ad-p: #{get-color('glyph-additional-pressed', $colorMode, $schema)};
+      --sch-glph-ad-db: #{get-color('glyph-additional-disabled', $colorMode, $schema)};
+
+      --sch-glph-bg: #{get-color('glyph-background', $colorMode, $schema)};
+      --sch-glph-bg-f: #{get-color('glyph-background-focused', $colorMode, $schema)};
+      --sch-glph-bg-h: #{get-color('glyph-background-hovered', $colorMode, $schema)};
+      --sch-glph-bg-p: #{get-color('glyph-background-pressed', $colorMode, $schema)};
+      --sch-glph-bg-db: #{get-color('glyph-background-disabled', $colorMode, $schema)};
+    }
+  }
+}

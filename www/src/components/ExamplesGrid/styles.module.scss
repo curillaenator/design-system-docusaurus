@@ -1,0 +1,21 @@
+.examples {
+  --grid-example-opacity: 0;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  flex-wrap: wrap;
+  gap: 32px;
+  opacity: var(--grid-example-opacity);
+  transition: opacity 0.1s ease;
+
+  &_visible {
+    --grid-example-opacity: 1;
+  }
+
+  @for $col from 1 through 20 {
+    &_#{'' + $col} {
+      grid-template-columns: repeat($col, 1fr);
+    }
+  }
+}

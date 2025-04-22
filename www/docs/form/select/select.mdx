@@ -1,0 +1,71 @@
+---
+sidebar_label: 'Select'
+title: 'Select'
+description: 'Select'
+---
+
+import pkg from '@kit-xyz/select/package.json';
+import { SelectWrapped } from './components/SelectWrapped';
+import { SelectExtendedWrapped } from './components/SelectExtendedWrapped';
+
+import selectWrappedCode from '!!raw-loader!./components/SelectWrapped.tsx';
+import selectExtendedWrappedCode from '!!raw-loader!./components/SelectExtendedWrapped.tsx';
+
+<headermeta
+  title='Select'
+  description='Select'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+/>
+
+# Select
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Base
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={selectWrappedCode}>
+      <card title='Right'>
+        <SelectWrapped placement='bottom-start' />
+      </card>
+    </example>
+    <example exampleCodeJSX={selectWrappedCode}>
+      <card title='Left'>
+        <SelectWrapped placement='bottom-end' />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Extended
+
+<docviewport modes={['light', 'dark']}>
+  <examples>
+    <example exampleCodeJSX={selectExtendedWrappedCode}>
+      <card title='Avatars'>
+        <SelectExtendedWrapped selectType='avatars' />
+      </card>
+    </example>
+    <example exampleCodeJSX={selectExtendedWrappedCode}>
+      <card title='Badges'>
+        <SelectExtendedWrapped selectType='badges' />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+</versionselector>

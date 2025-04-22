@@ -1,0 +1,12 @@
+.hoverableLogo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.hidableButton {
+  @media (width < 1440px) {
+    display: none;
+  }
+}

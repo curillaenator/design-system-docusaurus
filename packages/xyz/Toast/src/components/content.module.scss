@@ -1,0 +1,29 @@
+.toast {
+  display: flex;
+  gap: var(--tst-gp-x);
+
+  width: 100%;
+  min-width: var(--tst-mw);
+  min-height: var(--tst-mh);
+
+  padding: var(--tst-pd-y) var(--tst-pd-x);
+  border-radius: var(--tst-bdrs);
+
+  background-color: var(--tst-bgc);
+  color: var(--tst-ct-gn);
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tst-gp-y);
+    width: 100%;
+
+    .text {
+      font-size: var(--tst-fz);
+      line-height: var(--tst-lh);
+      padding: var(--tst-txt-pd-y) var(--tst-txt-pd-x);
+      font-weight: var(--tst-fw);
+      margin: 0;
+    }
+  }
+}

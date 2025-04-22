@@ -1,0 +1,147 @@
+---
+sidebar_label: 'Checkbox'
+title: 'Checkbox'
+description: 'Checkbox'
+---
+
+import pkg from '@kit-xyz/checkbox/package.json';
+import { Indeterminate } from './components/Indeterminate';
+import { Collapsible } from './components/Collapsible';
+import { StatedCheckbox } from './components/Stated';
+import { TodoList } from './components/TodoList';
+import {
+  COLORS,
+  STATES,
+  CODE_INDETERMINATE,
+  CODE_COLLAPSIBLE,
+  CODE_STATED,
+  CODE_TODOLIST,
+  CODE_TODOLIST_STYLES,
+} from './examples';
+
+<headermeta
+  title='Checkbox'
+  description='Checkbox'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+/>
+
+# Checkbox
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + 1} exampleCodeJSX={undefined}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## State
+
+<textcolumns>
+  <span>
+    <p>Возможные состояния чекбоксов </p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples id='checkboxes-stated-check-id'>
+    {STATES.map(({ title, code, ...rest }) => (
+      <example key={title} exampleCodeJSX={CODE_STATED}>
+        <card title={title}>
+          <StatedCheckbox {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## DOD Block
+
+<textcolumns>
+  <span>
+    <p>Редактируемый список чекбоксов </p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={[]}>
+  <examples>
+    <example exampleCodeJSX={CODE_TODOLIST} exampleCodeJSON={CODE_TODOLIST_STYLES}>
+      <card title='Dod'>
+        <TodoList />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Indeterminate checkbox
+
+<textcolumns>
+  <span>
+    <p>Группировавние чекбоксов в подгруппы</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={CODE_INDETERMINATE}>
+      <card title='Indeterminate'>
+        <Indeterminate />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Indeterminate collapsible
+
+<textcolumns>
+  <span>
+    <p>Группировавние чекбоксов в раскрывающиеся подгруппы</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={CODE_COLLAPSIBLE}>
+      <card title='Collapsible'>
+        <Collapsible />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+</versionselector>

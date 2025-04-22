@@ -1,0 +1,128 @@
+import { Layout, Header } from '@pcbl-ui-v4/storybook-components';
+import packageInfo from '../../package.json';
+
+<Layout withoutPadding>
+<Header
+  title="UikitUtils"
+  authorName="команда UIKit"
+  designerName="отсутствует"
+  status="production"
+  design=""
+  description="Утилиты для проекта и компонентов."
+  origin="https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit4/browse/packages/uikit-utils?at=refs%2Fheads%2Fmaster"
+  packageName={packageInfo.name}
+  packageVersion={packageInfo.version}
+/>
+
+<div className="content">
+
+- [useClickAway](#useClickAway)
+- [useDisabledScroll](#useDisabledScroll)
+- [usePortal](#usePortal)
+- [isTablet](#isTablet)
+- [isMobile](#isMobile)
+- [isSafari](#isSafari)
+- [Константы](#constants)
+- [useImageUrlGenerator](#useImageUrlGenerator)
+- [useImageLoader](#useImageLoader)
+- [useImageLoaderFetch](#useImageLoaderFetch)
+- [useObserverImageLoader](#useObserverImageLoader)
+- [useBreakpoint](#useBreakpoint)
+- [useScale](#useScale)
+- [useWindowSize](#useWindowSize)
+
+## useClickAway <a id="useClickAway" />
+
+#### Входящий интерфейс:
+
+<ul>
+  <li>
+    <b>{`containerRef: MutableRefObject<HTMLDivElement | null>`}</b> (required)
+  </li>
+  <li>
+    <b>{`onOutside: () => void`}</b> (required)
+  </li>
+</ul>
+
+Данный хук вызывает колбэк`onOutside` при клике мышкой вне `containerRef`. Добавляет слушатель событий в `document` при анмаунте компонента, который использует хук, удаляет слушатель событий.
+
+## useDisabledScroll <a id="useDisabledScroll" />
+
+#### Входящий интерфейс:
+
+<ul>
+  <li>
+    <b>{`parentId?: string`}</b> (optional)
+  </li>
+  <li>
+    <b>{`overlayRef?: RefObject<HTMLDivElement | null>`}</b> (optional)
+  </li>
+</ul>
+
+Данный хук блокирует скролл у `parentId`. Если `parentId` не определен, то берется `document.body`. `overlayRef` - блокирует всплытие событий при тач событиях на overlay, чтобы не давать пользователю взаимодействовать с подложкой под overlay.
+
+## usePortal <a id="usePortal" />
+
+#### Входящий интерфейс:
+
+<ul>
+  <li>
+    <b>{`id: string`}</b> (required)
+  </li>
+</ul>
+
+Хук для создания портала .Создает контейнер при отрисовке компонента и вставляет его последним в body. Лениво инициализирует контейнер для присоединения переданного элемента и переиспользует его без перерисовок . Также следит за тем, чтобы использовалась только одна DOM-нода, к которой будет присоединен контент. Автоматически удаляет ее, когда компонент с хуком анмаунтится.
+
+## isTablet <a id="isTablet" />
+
+Функция для соответствия устройства пользователя на планшет. Парсит `userAgent` на соответствие типа платформы - `tablet`, также парсит `navigator.platform` на соответствие `MacIntel` и количества тач точек больше одной из `navigator.maxTouchPoints`. Возвращает `boolean`.
+
+## isMobile <a id="isMobile" />
+
+Функция для соответствия устройства пользователя на мобильное. Парсит `userAgent` на соответствие типа платформы - `mobile`. Возвращает `boolean`.
+
+## isSafari <a id="isSafari" />
+
+Функция для проверки равенства текущего браузера и Safari. Возвращает `boolean`.
+
+## Константы <a id="constants" />
+
+Из данного пакета можно импортировать следующие константы:
+
+<ul>
+  <li>
+    <b>LOCALES</b> - локали для приложения. Всего существует две локали: `ru` и `en`.
+  </li>
+</ul>
+
+## useImageUrlGenerator <a id="useImageUrlGenerator" />
+
+`useImageUrlGenerator` - возвращает функцию `getUrlToResizedImg`, которая принимает адрес изображения и желаемые параметры ресайза, и возвращает ссылку к нужному варианту изображения. `getUrlToResizedImg` - позволяет уже получить ссылку до изображения нужных размеров.
+
+## useImageLoader <a id="useImageLoader" />
+
+`useImageLoader` - хук обеспечивающий загрузку изображения, через `new Image()`, в качестве аргумента принимает `src` (путь до изображения), возвращает два значения `dataImg` (ссылка на картинку) и `error` - если картинку не удалось загрузить.
+
+## useImageLoaderFetch <a id="useImageLoaderFetch" />
+
+`useImageLoaderFetch` - хук обеспечивающий загрузку изображения, через `fetch()`, в качестве аргумента принимает `src` (путь до изображения) и `init` (заголовки для объекта, необязательный аргумент), возвращает два значения `dataImg` (ссылка на картинку) и `error` - если картинку не удалось загрузить. <strong>ВНИМАНИЕ!</strong> могут быть проблемы с CORS!
+
+## useObserverImageLoader <a id="useObserverImageLoader" />
+
+`useObserverImageLoader` - хук позволяющий отслеживать появление картинки в поле зрения пользователя и начать ее загружать. Работает через IntersectionObserver
+
+## useBreakpoint <a id="useBreakpoint" />
+
+`useBreakpoint` - возвращает текущий размер экрана: '3xl' | '2xl' | 'xl' | 'l' | 'm' | 's' | 'xs'.
+
+## useScale <a id="useBreakpoint" />
+
+`useScale` - возвращает текущий размер экрана по установленной пользователем ассоциации: `{ xs: 's', md: 'xl' }`.
+
+## useWindowSize <a id="useWindowSize" />
+
+`useWindowSize` - возвращает текущую ширину и высоту экрана.
+
+</div>
+
+</Layout>

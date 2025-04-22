@@ -1,0 +1,55 @@
+$headings: (
+  'h1': (
+    fz: 55px,
+    lh: 64px,
+    lts: -0.04rem,
+    mb: 32px,
+  ),
+  'h2': (
+    fz: 44px,
+    lh: 56px,
+    lts: -0.04rem,
+    mb: 32px,
+  ),
+  'h3': (
+    fz: 33px,
+    lh: 40px,
+    lts: -0.02rem,
+    mb: 32px,
+  ),
+  'h4': (
+    fz: 22px,
+    lh: 32px,
+    lts: -0.02rem,
+    mb: 32px,
+  ),
+  'h5': (
+    fz: 11px,
+    lh: 20px,
+    lts: 0,
+    mb: 32px,
+  ),
+  'h6': (
+    fz: 7px,
+    lh: 12px,
+    lts: 0,
+    mb: 32px,
+  ),
+);
+
+@mixin headings {
+  @each $heading, $valueSet in $headings {
+    @each $prop, $value in $valueSet {
+      --heading-#{$heading}-#{$prop}: #{$value};
+    }
+  }
+
+  --ifm-h1-font-size: var(--heading-h1-fz) !important;
+  --ifm-h2-font-size: var(--heading-h2-fz) !important;
+  --ifm-h3-font-size: var(--heading-h3-fz) !important;
+  --ifm-h4-font-size: var(--heading-h4-fz) !important;
+  --ifm-h5-font-size: var(--heading-h5-fz) !important;
+  --ifm-h6-font-size: var(--heading-h6-fz) !important;
+
+  --ifm-heading-font-weight: 600 !important;
+}

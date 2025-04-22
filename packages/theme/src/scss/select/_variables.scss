@@ -1,0 +1,23 @@
+$variables: (
+  theme-light: (
+    --slct_df_bgc: rgb(255, 255, 255),
+    --slct_df_tm-bckgrnd-hvr: rgb(235, 235, 235),
+    --slct_df_bdc: rgba(0, 0, 0, 0),
+    --slct_df_dvdr: rgba(64, 96, 255, 0.2),
+    --slct_df_sh: 0px 4px 8px rgba(64, 96, 255, 0.2),
+  ),
+  theme-dark: (
+    --slct_df_bgc: rgb(10, 10, 10),
+    --slct_df_tm-bckgrnd-hvr: rgb(235, 235, 235),
+    --slct_df_bdc: rgba(64, 96, 255, 0.2),
+    --slct_df_dvdr: rgba(64, 96, 255, 0.2),
+    --slct_df_sh: 0 0 0 0 rgba(0, 0, 0, 0),
+  ),
+  theme-color: (
+    --slct_df_bgc: rgb(255, 255, 255),
+    --slct_df_tm-bckgrnd-hvr: rgb(235, 235, 235),
+    --slct_df_bdc: rgb(255, 255, 255),
+    --slct_df_dvdr: rgba(255, 255, 255, 0.2),
+    --slct_df_sh: 0 0 0 0 rgba(0, 0, 0, 0),
+  ),
+);

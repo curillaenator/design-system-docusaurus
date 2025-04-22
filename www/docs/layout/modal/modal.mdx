@@ -1,0 +1,39 @@
+---
+sidebar_label: 'Modal'
+title: 'Modal'
+description: 'Modal'
+---
+
+import { StatedModal } from './components/StatedModal.tsx';
+import pkg from '@kit-xyz/modal/package.json';
+
+import { base } from './examples';
+
+<headermeta
+  title='Modal'
+  description='Modal'
+  designer='Олег Астахов'
+  developer='Кирилл Артуров'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  json='JSON'
+  sass='SASS'
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+/>
+
+# Modal
+
+## Base
+
+Базовое использование
+
+<docviewport codeBlock={base}>
+  <examples>
+    <example exampleCodeJSX={undefined}>
+      <StatedModal>Content</StatedModal>
+    </example>
+  </examples>
+</docviewport>

@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding: 24px;
+  flex-shrink: 0;
+
+  path[data-pathtype='wording'] {
+    fill: var(--color-neutral-100);
+  }
+}

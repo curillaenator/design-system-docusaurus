@@ -1,0 +1,16 @@
+{
+  "extends": "./configs/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["esnext", "dom", "ES5"],
+    "rootDir": ".",
+    "baseUrl": ".",
+    "outDir": "build",
+    "declaration": true,
+    "noEmit": false,
+    "target": "ES6",
+    "module": "CommonJS",
+    "downlevelIteration": true
+  },
+  "include": ["src", "bin", "configs", "mdx-demo-loader", "configs/**/*.json"],
+  "exclude": ["**/stories", "**/*.stories.*", "**/*.test.*"]
+}

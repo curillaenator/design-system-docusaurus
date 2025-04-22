@@ -1,0 +1,10 @@
+{
+  "green": { "value": "rgb(0, 192, 96)", "type": "color" },
+  "green-700": { "value": "rgb(0, 192, 96)", "type": "color" },
+  "green-600": { "value": "rgb(20, 197, 109)", "type": "color" },
+  "green-500": { "value": "rgb(61, 207, 134)", "type": "color" },
+  "green-400": { "value": "rgb(122, 222, 172)", "type": "color" },
+  "green-300": { "value": "rgb(173, 235, 204)", "type": "color" },
+  "green-200": { "value": "rgb(214, 245, 230)", "type": "color" },
+  "green-100": { "value": "rgb(235, 250, 242)", "type": "color" }
+}

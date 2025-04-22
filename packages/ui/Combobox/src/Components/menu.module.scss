@@ -1,0 +1,44 @@
+// !important - :( , иначе не перебить дефолтные стили
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.menu {
+  --cmbx-menu-scroll-padding-right: 0;
+
+  margin-top: var(--cmbx-menu-y-offset) !important;
+  margin-bottom: 0 !important;
+  border-radius: var(--cmbx-menu-bdrs) !important;
+  box-shadow: var(--cmbx-menu-sh) !important;
+  border: var(--cmbx-menu-bdw) solid var(--cmbx-menu-bdc);
+  border-top: none;
+  z-index: 1400 !important;
+  padding: var(--cmbx-menu-pd-y) var(--cmbx-menu-pd-x) !important;
+  background-color: var(--cmbx-menu-bgc) !important;
+  animation: fadeIn var(--cmbx-animation-time) var(--cmbx-animation-method);
+
+  &_scrollable {
+    --cmbx-menu-scroll-padding-right: 8px;
+  }
+
+  :global {
+    .combobox__group {
+      padding: 0;
+    }
+  }
+}
+
+.noOptionsMessage {
+  color: var(--cmbx-option-ct-ad) !important;
+  font-size: var(--cmbx-menu-fz) !important;
+  line-height: var(--cmbx-menu-lh) !important;
+  font-weight: var(--cmbx-menu-fw) !important;
+}

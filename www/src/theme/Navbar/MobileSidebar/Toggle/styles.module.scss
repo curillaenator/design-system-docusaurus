@@ -1,0 +1,9 @@
+.mobileSidebarToggle {
+  flex-shrink: 0;
+}
+
+@media (min-width: 1440px) {
+  .mobileSidebarToggle {
+    display: none !important;
+  }
+}

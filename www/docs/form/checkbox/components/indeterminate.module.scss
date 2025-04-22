@@ -1,0 +1,35 @@
+.light {
+  --card-display-bgc: var(--color-neutral-100);
+}
+
+.dark {
+  --card-display-bgc: var(--color-neutral-700);
+}
+
+.color {
+  --card-display-bgc: var(--color-accent-1-700);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  border-radius: 16px;
+  background-color: var(--card-display-bgc);
+  width: 100%;
+
+  .indeterminated {
+    width: fit-content;
+
+    .group {
+      margin-top: 16px;
+      padding-left: 16px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}

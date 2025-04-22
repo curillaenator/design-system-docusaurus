@@ -1,0 +1,10 @@
+{
+  "yellow": { "value": "rgb(255, 160, 32)", "type": "color" },
+  "yellow-700": { "value": "rgb(255, 160, 32)", "type": "color" },
+  "yellow-600": { "value": "rgb(255, 168, 50)", "type": "color" },
+  "yellow-500": { "value": "rgb(255, 183, 86)", "type": "color" },
+  "yellow-400": { "value": "rgb(255, 206, 139)", "type": "color" },
+  "yellow-300": { "value": "rgb(255, 225, 184)", "type": "color" },
+  "yellow-200": { "value": "rgb(255, 240, 219)", "type": "color" },
+  "yellow-100": { "value": "rgb(255, 247, 237)", "type": "color" }
+}

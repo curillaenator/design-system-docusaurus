@@ -1,0 +1,9 @@
+{
+  "accent-2-700": { "value": "{palette.purple-700}", "type": "color" },
+  "accent-2-600": { "value": "{palette.purple-600}", "type": "color" },
+  "accent-2-500": { "value": "{palette.purple-500}", "type": "color" },
+  "accent-2-400": { "value": "{palette.purple-400}", "type": "color" },
+  "accent-2-300": { "value": "{palette.purple-300}", "type": "color" },
+  "accent-2-200": { "value": "{palette.purple-200}", "type": "color" },
+  "accent-2-100": { "value": "{palette.purple-100}", "type": "color" },
+}

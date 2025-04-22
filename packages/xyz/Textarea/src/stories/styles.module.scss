@@ -1,0 +1,12 @@
+.wrapper {
+  width: 512px;
+  height: 160px;
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+    height: 200px;
+  }
+}

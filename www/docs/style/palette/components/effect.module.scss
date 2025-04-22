@@ -1,0 +1,109 @@
+@use 'sass:math';
+
+$breakpoint: 997px;
+
+.light {
+  --effect-bgc: var(--color-neutral-200);
+  --effect-title-c: var(--color-neutral-700);
+}
+
+.dark {
+  --effect-bgc: var(--color-neutral-600);
+  --effect-title-c: var(--color-neutral-100);
+}
+
+.color {
+  --effect-bgc: var(--ifm-color-primary);
+  --effect-title-c: var(--color-neutral-100);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  width: 100%;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    padding: 64px 0;
+  }
+
+  & > img {
+    display: none;
+    flex-shrink: 0;
+    height: 496px;
+    object-fit: contain;
+  }
+
+  @media (min-width: $breakpoint) {
+    flex-direction: row;
+    gap: 0;
+
+    .content {
+      padding: 0 32px 0 0;
+      gap: 42px;
+    }
+
+    & > img {
+      display: block;
+    }
+  }
+}
+
+$tiles: (
+  white-60: var(--color-neutral-100-60\%),
+  white-80: var(--color-neutral-100-80\%),
+  black-20: var(--color-neutral-700-20\%),
+  black-40: var(--color-neutral-700-40\%),
+  accent: var(--color-accent-1-700),
+);
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  height: 24px;
+  width: 100%;
+
+  .tileWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    max-width: 338px;
+    width: 100%;
+
+    .tile {
+      width: calc(100% * math.sin(45deg)); // / 1.23
+      aspect-ratio: 1 / 1;
+      background-color: var(--tile-bgc);
+      border-radius: 16px;
+      border: 1px solid var(--color-neutral-400-40\%);
+      transform: rotateX(57deg) rotateZ(43deg);
+      // transform: matrix(0.87, -0.5, 0.87, 0.5,  0, 0);
+
+      @each $color, $value in $tiles {
+        &_#{'' + $color} {
+          --tile-bgc: #{$value};
+        }
+      }
+    }
+  }
+
+  .title {
+    display: block;
+    flex-shrink: 0;
+    min-width: 108px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--effect-title-c);
+  }
+}

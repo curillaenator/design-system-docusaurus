@@ -1,0 +1,128 @@
+import type { HTMLAttributes } from 'react';
+import type { RelationType } from 'react-archer/lib/types';
+import type { ArcherContainerProps } from 'react-archer/lib/ArcherContainer/ArcherContainer.types';
+
+export type AnchorPositions =
+  | 'tl'
+  | 'tl-x-0'
+  | 'tl-x-1'
+  | 'tl-x-2'
+  | 'tl-y-0'
+  | 'tl-y-1'
+  | 'tl-y-2'
+  | 'tl-edge'
+  | 'tl-edge-x-1'
+  | 'tl-edge-x-2'
+  | 'tl-edge-y-1'
+  | 'tl-edge-y-2'
+  | 'tr'
+  | 'tr-x-0'
+  | 'tr-x-1'
+  | 'tr-x-2'
+  | 'tr-y-0'
+  | 'tr-y-1'
+  | 'tr-y-2'
+  | 'tr-edge'
+  | 'tr-edge-x-1'
+  | 'tr-edge-x-2'
+  | 'tr-edge-y-1'
+  | 'tr-edge-y-2'
+  | 'br'
+  | 'br-x-0'
+  | 'br-x-1'
+  | 'br-x-2'
+  | 'br-y-0'
+  | 'br-y-1'
+  | 'br-y-2'
+  | 'br-edge'
+  | 'br-edge-x-1'
+  | 'br-edge-x-2'
+  | 'br-edge-y-1'
+  | 'br-edge-y-2'
+  | 'bl'
+  | 'bl-x-0'
+  | 'bl-x-1'
+  | 'bl-x-2'
+  | 'bl-y-0'
+  | 'bl-y-1'
+  | 'bl-y-2'
+  | 'bl-edge'
+  | 'bl-edge-x-1'
+  | 'bl-edge-x-2'
+  | 'bl-edge-y-1'
+  | 'bl-edge-y-2'
+  | 'middle'
+  | 'middle-left'
+  | 'middle-left-left'
+  | 'middle-left-left-left'
+  | 'middle-right'
+  | 'middle-right-right'
+  | 'middle-right-right-right'
+  | 'middle-top'
+  | 'middle-top-left'
+  | 'middle-top-left-left'
+  | 'middle-top-left-left-left'
+  | 'middle-top-right'
+  | 'middle-top-right-right'
+  | 'middle-top-right-right-right'
+  | 'middle-bottom'
+  | 'middle-bottom-left'
+  | 'middle-bottom-left-left'
+  | 'middle-bottom-left-left-left'
+  | 'middle-bottom-right'
+  | 'middle-bottom-right-right'
+  | 'middle-bottom-right-right-right'
+  | 'top'
+  | 'top-edge'
+  | 'top-left'
+  | 'top-left-left'
+  | 'top-left-left-left'
+  | 'top-edge-left'
+  | 'top-edge-left-left'
+  | 'top-edge-left-left-left'
+  | 'top-right'
+  | 'top-right-right'
+  | 'top-right-right-right'
+  | 'top-edge-right'
+  | 'top-edge-right-right'
+  | 'top-edge-right-right-right'
+  | 'bottom'
+  | 'bottom-edge'
+  | 'bottom-left'
+  | 'bottom-left-left'
+  | 'bottom-left-left-left'
+  | 'bottom-edge-left'
+  | 'bottom-edge-left-left'
+  | 'bottom-edge-left-left-left'
+  | 'bottom-right'
+  | 'bottom-right-right'
+  | 'bottom-right-right-right'
+  | 'bottom-edge-right'
+  | 'bottom-edge-right-right'
+  | 'bottom-edge-right-right-right'
+  | 'right'
+  | 'right-edge'
+  | 'right-top'
+  | 'right-bottom'
+  | 'left'
+  | 'left-edge'
+  | 'left-top'
+  | 'left-bottom';
+
+export type Anchors = {
+  position: AnchorPositions;
+  relations?: RelationType[];
+};
+
+export interface ArrowsContainerProps extends ArcherContainerProps {
+  strokeColor?: 'neutral' | 'accent-1' | 'accent-2' | 'positive' | 'attention' | 'negative';
+  strokeShade?: '700' | '600' | '500' | '400' | '300' | '200' | '100';
+  colorMode?: 'light' | 'dark';
+}
+
+export interface ArrowsCardProps extends HTMLAttributes<HTMLDivElement> {
+  id: string;
+  anchors?: Anchors[];
+  fullWidth?: boolean;
+  devMode?: boolean;
+}

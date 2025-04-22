@@ -1,0 +1,66 @@
+---
+sidebar_label: 'Spinner'
+title: 'Spinner'
+description: 'Индикатор загрузки'
+---
+
+import pkg from '@kit-xyz/spinner/package.json';
+
+import { SpinnerWrapped } from './components/SpinnerWrapped';
+import { SIZES } from './examples';
+
+<headermeta
+  title='Spinner'
+  description='Индикатор загрузки'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/xyz/Badge'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-404'
+/>
+
+# Spinner
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Basic
+
+<textcolumns>
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<divider />
+
+## Size
+
+<textcolumns>
+  <span>
+    <p>Размеры Spinner</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {SIZES.map((spinner) => (
+      <example key={spinner.id} exampleCodeJSX={undefined}>
+        <card title={spinner.title}>
+          <SpinnerWrapped {...spinner} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+</versionselector>

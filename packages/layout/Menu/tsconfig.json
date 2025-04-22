@@ -1,0 +1,9 @@
+{
+  "extends": "@pcbl/fe-scripts/configs/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "esModuleInterop": true,
+    "baseUrl": "./src"
+  },
+  "include": ["src", "@types"]
+}

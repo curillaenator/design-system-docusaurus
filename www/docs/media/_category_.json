@@ -1,0 +1,9 @@
+{
+  "position": 9,
+  "label": "Media",
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Media"
+  }
+}

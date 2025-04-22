@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'SB Sans Text Serif';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local('SBTextSerif-Thin'), local('SB Sans Text Serif Thin'), local('SBSansTextSerif-Thin'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-Light.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Text Serif';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local('SBTextSerif-Light'), local('SB Sans Text Serif Light'), local('SBSansTextSerif-Light'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-Light.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Text Serif';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('SBTextSerif-Regular'), local('SB Sans Text Serif Regular'), local('SBSansTextSerif-Regular'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-Regular.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Text Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('SBTextSerif-Medium'), local('SB Sans Text Serif Medium'), local('SBSansTextSerif-Medium'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-SemiBold.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Text Serif';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('SBTextSerif-Bold'), local('SB Sans Text Serif Bold'), local('SBSansTextSerif-Bold'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-Bold.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SB Sans Text Serif';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('SBTextSerif-Heavy'), local('SB Sans Text Serif Heavy'), local('SBSansTextSerif-Heavy'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-Bold.woff2') format('woff2'),
+    url('~@kit-xyz/fonts/src/assets/SBSerifDisplay-Bold.woff') format('woff');
+}

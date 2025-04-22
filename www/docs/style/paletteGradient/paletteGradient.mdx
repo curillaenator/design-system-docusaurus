@@ -1,0 +1,49 @@
+---
+sidebar_label: 'Palette gradient'
+sidebar_position: 2
+title: 'Palette'
+description: 'Совмещение базовых цветов в стандартный набор градиентных переходов'
+---
+
+import headerImage from './assets/paletteGradient.png';
+import tokens from 'raw-loader!./examples/basic.txt';
+
+import { GRADIENTS } from './constants.tsx';
+
+<headermeta
+  title='Palette-gradient'
+  description='Совмещение базовых цветов в стандартный набор градиентных переходов'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/theme/src/scss/style/_palette-gradient.scss'
+  figmaLink='https://www.figma.com/'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-197'
+  headerImage={headerImage}
+/>
+
+# Palette-gradient
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Basic gradients
+
+<docviewport codeBlock={tokens} language='json'>
+  <examples>
+    {GRADIENTS.map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+</versionselector>

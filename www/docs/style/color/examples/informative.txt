@@ -1,0 +1,9 @@
+{
+  "informative-700": { "value": "{palette.indigo-700}", "type": "color" },
+  "informative-600": { "value": "{palette.indigo-600}", "type": "color" },
+  "informative-500": { "value": "{palette.indigo-500}", "type": "color" },
+  "informative-400": { "value": "{palette.indigo-400}", "type": "color" },
+  "informative-300": { "value": "{palette.indigo-300}", "type": "color" },
+  "informative-200": { "value": "{palette.indigo-200}", "type": "color" },
+  "informative-100": { "value": "{palette.indigo-100}", "type": "color" },
+}

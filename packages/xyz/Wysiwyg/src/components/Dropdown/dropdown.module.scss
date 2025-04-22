@@ -1,0 +1,49 @@
+@use '../../../../../theme/src/scss/select' as select;
+@use '../../../../../theme/src/scss/mixins/scroll' as scroll;
+
+$modeMaps: (
+  'light': select.$theme-light,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(select.$scale, $prop, $size);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+._size_s {
+  --dd-pd: #{get-scale('padding-y', 's')} #{get-scale('padding-x', 's')};
+  --dd-bdw: #{get-scale('border-width', 's')};
+  --dd-scrl-pd: 0 #{get-scale('scroll-padding-right', 's')} 0 0;
+  --dd-bdrs: #{get-scale('border-radius', 's')};
+}
+
+._color-default_light {
+  --dd-bgc: #{get-color('background', 'light', 'color-default')};
+  --dd-bdc: #{get-color('border', 'light', 'color-default')};
+  --dd-drop-sh: #{get-color('shadow', 'light', 'color-default')};
+}
+
+.triggerCaption {
+  padding-right: 8px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: 8px 0;
+  flex-shrink: 0;
+
+  background-color: var(--editor-bdc, red);
+}
+
+.scroll {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  @include scroll.scrollbar('mini', 'onLight');
+}

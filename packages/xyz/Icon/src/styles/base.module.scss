@@ -1,0 +1,9 @@
+.icon {
+  display: block;
+  flex-shrink: 0;
+  width: var(--ic-w);
+  height: var(--ic-h);
+  stroke-width: var(--ic-stroke-w);
+  color: var(--ic-c, currentColor);
+  fill: var(--ic-c, currentColor);
+}

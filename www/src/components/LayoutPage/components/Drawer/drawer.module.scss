@@ -1,0 +1,20 @@
+$dummyWidths: (128, 96, 80, 64, 48, 32, 0);
+
+.drawerDummy {
+  height: 100vh;
+  flex-shrink: 0;
+
+  @each $width in $dummyWidths {
+    &_#{'' + $width} {
+      width: #{$width + 'px'};
+    }
+  }
+}
+
+._maxed_lsb-closed {
+  --dwr-opened-w: calc(100vw - 96px) !important;
+}
+
+._maxed_lsb-opened {
+  --dwr-opened-w: calc(100vw - 384px) !important;
+}

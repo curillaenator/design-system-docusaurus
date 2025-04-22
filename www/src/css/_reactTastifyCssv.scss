@@ -1,0 +1,21 @@
+@mixin reactTastifyCssv {
+  --toastify-font-family: var(--ifm-font-family-base) !important;
+  --toastify-text-color-light: var(--color-neutral-700) !important;
+  --toastify-text-color-dark: var(--color-neutral-100) !important;
+  --toastify-text-color-info: var(--color-neutral-100) !important;
+  --toastify-text-color-success: var(--color-neutral-100) !important;
+  --toastify-text-color-warning: var(--color-neutral-100) !important;
+  --toastify-text-color-error: var(--color-neutral-100) !important;
+  --toastify-spinner-color: var(--color-accent-1-700) !important;
+  --toastify-spinner-color-empty-area: var(--color-accent-1-400) !important;
+  --toastify-color-progress-light: linear-gradient(
+    90deg,
+    var(--color-accent-1-700),
+    var(--color-neutral-400)
+  ) !important;
+  --toastify-color-progress-dark: linear-gradient(
+    90deg,
+    var(--color-accent-1-700),
+    var(--color-neutral-400)
+  ) !important;
+}

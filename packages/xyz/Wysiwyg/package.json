@@ -1,0 +1,57 @@
+{
+  "name": "@kit-xyz/wysiwyg",
+  "version": "0.0.1",
+  "description": "Редактор Wysiwyg",
+  "license": "UNLICENSED",
+  "sideEffects": [
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "type": "git",
+    "registry": "https://gitlab.com/api/v4/projects/50873891/packages/npm/"
+  },
+  "main": "src/index",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "run -T rimraf build && yarn run -T rollup -c --bundleConfigAsCjs",
+    "build:raw": "run -T tsc -p tsconfig.build.json",
+    "build:watch": "yarn build:raw --watch",
+    "pub": "yarn build && yarn setPath && npm publish && yarn revertPath",
+    "checkDep": "run -T pcbl-fe  checkDependencies",
+    "setPath": "node ../../../fe-scripts/bin/set-paths.js",
+    "revertPath": "node ../../../fe-scripts/bin/revert-paths.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit4/browse/packages/ui/Modal",
+    "directory": "packages/ui"
+  },
+  "dependencies": {
+    "@kit-base/dropable": "0.2.7",
+    "@tiptap/core": "2.2.1",
+    "@tiptap/extension-code-block": "2.2.1",
+    "@tiptap/extension-code-block-lowlight": "2.2.1",
+    "@tiptap/extension-link": "2.2.1",
+    "@tiptap/extension-placeholder": "2.2.1",
+    "@tiptap/extension-text-align": "2.2.1",
+    "@tiptap/extension-underline": "2.2.1",
+    "@tiptap/pm": "2.2.1",
+    "@tiptap/react": "2.2.1",
+    "@tiptap/starter-kit": "2.2.1",
+    "classnames": "2.3.1",
+    "highlight.js": "~11.7.0",
+    "lowlight": "2.8.1"
+  },
+  "devDependencies": {
+    "@kit-base/common-types": "0.0.2"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "files": [
+    "/build"
+  ]
+}

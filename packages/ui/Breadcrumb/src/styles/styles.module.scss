@@ -1,0 +1,50 @@
+.nav {
+  --crumb-color: var(--color-neutral-700);
+  --crumb-color-hover: var(--color-primary-500);
+  --crumb-select: auto;
+  --crumb-cursor: pointer;
+
+  width: fit-content;
+
+  .list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--color-neutral-300);
+
+      &:last-child {
+        --crumb-color: var(--color-neutral-300);
+        --crumb-color-hover: var(--color-neutral-300);
+        --crumb-select: none;
+        --crumb-cursor: default;
+      }
+
+      .navlink {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        font-family: var(--font-family-sans);
+        font-size: 14px;
+        font-weight: var(--font-weight-semibold, 600);
+        color: var(--crumb-color);
+        user-select: var(--crumb-select);
+        cursor: var(--crumb-cursor);
+
+        & > span {
+          white-space: nowrap;
+        }
+
+        &:hover {
+          color: var(--crumb-color-hover);
+        }
+      }
+    }
+  }
+}

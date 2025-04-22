@@ -1,0 +1,43 @@
+---
+sidebar_label: 'Blur'
+sidebar_position: 12
+title: 'Blur'
+description: 'Стиль служит для размытия фоновой части, включая изображения, текст и другую графическую информацию'
+---
+
+import { BLURS, CODEBLOCK } from './index';
+
+import headerImage from './assets/blur.png';
+
+<headermeta
+  title='Blur'
+  description='Стиль служит для размытия фоновой части, включая изображения, текст и другую графическую информацию'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/theme/src/scss/style/_blur.scss'
+  figmaLink='https://www.figma.com/'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-113'
+  headerImage={headerImage}
+/>
+
+# Blur
+
+## Base
+
+<docviewport codeBlock={CODEBLOCK} language='json'>
+  <examples>
+    {BLURS.map((opacity) => (
+      <example key={opacity.id} exampleCodeJSON={opacity.exampleCode}>
+        <card {...opacity} />
+      </example>
+    ))}
+  </examples>
+</docviewport>

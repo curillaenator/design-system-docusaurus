@@ -1,0 +1,32 @@
+$variables: (
+  theme-dark: (
+    --ic_clr-prmr: rgb(255, 255, 255),
+    --ic_clr-scndr: rgb(128, 128, 128),
+    --ic_clr-trtr: rgb(64, 96, 255),
+    --ic_clr-qtrnr: rgb(128, 48, 255),
+    --ic_clr-nfrmtv: rgb(64, 128, 255),
+    --ic_clr-pstv: rgb(0, 192, 96),
+    --ic_clr-ttntn: rgb(255, 192, 32),
+    --ic_clr-ngtv: rgb(255, 96, 64),
+  ),
+  theme-light: (
+    --ic_clr-prmr: rgb(10, 10, 10),
+    --ic_clr-scndr: rgb(128, 128, 128),
+    --ic_clr-trtr: rgb(64, 96, 255),
+    --ic_clr-qtrnr: rgb(128, 48, 255),
+    --ic_clr-nfrmtv: rgb(64, 128, 255),
+    --ic_clr-pstv: rgb(0, 192, 96),
+    --ic_clr-ttntn: rgb(255, 192, 32),
+    --ic_clr-ngtv: rgb(255, 96, 64),
+  ),
+  theme-color: (
+    --ic_clr-prmr: rgb(255, 255, 255),
+    --ic_clr-scndr: rgb(139, 139, 222),
+    --ic_clr-trtr: rgb(139, 139, 222),
+    --ic_clr-qtrnr: rgb(189, 147, 255),
+    --ic_clr-nfrmtv: rgb(156, 189, 255),
+    --ic_clr-pstv: rgb(122, 222, 172),
+    --ic_clr-ttntn: rgb(255, 222, 139),
+    --ic_clr-ngtv: rgb(255, 172, 156),
+  ),
+);

@@ -1,0 +1,52 @@
+:root {
+  --docusaurus-collapse-button-bg: transparent;
+  // --docusaurus-collapse-button-bg-hover: rgb(0 0 0 / 10%);
+}
+
+// [data-theme='dark']:root {
+//   --docusaurus-collapse-button-bg: rgb(255 255 255 / 5%);
+//   --docusaurus-collapse-button-bg-hover: rgb(255 255 255 / 10%);
+// }
+
+@media (min-width: 1440px) {
+  .collapseSidebarButton {
+    position: sticky;
+    display: block !important;
+    height: 0px;
+    padding: 0;
+    bottom: 0;
+    border-radius: 0;
+    background-color: var(--docusaurus-collapse-button-bg);
+    border: none;
+
+    .collapseSidebarButtonIcon {
+      transform: rotate(180deg);
+      margin-top: 4px;
+
+      & > g {
+        fill: var(--ifm-color-emphasis-400);
+        transition: var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+      }
+    }
+  }
+
+  [dir='rtl'] .collapseSidebarButtonIcon {
+    transform: rotate(0);
+  }
+
+  .collapseSidebarButton:hover,
+  .collapseSidebarButton:focus {
+    // background-color: var(--docusaurus-collapse-button-bg-hover);
+
+    .collapseSidebarButtonIcon {
+      & > g {
+        fill: var(--ifm-color-primary);
+      }
+    }
+  }
+}
+
+.collapseSidebarButton {
+  display: none;
+  margin: 0;
+}

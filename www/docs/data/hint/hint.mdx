@@ -1,0 +1,76 @@
+---
+sidebar_label: 'Hint'
+title: 'Hint'
+description: 'Всплывающая подсказка с кастомным наполнением'
+---
+
+import pkg from '@kit-xyz/hint/package.json';
+
+import { HintWrapped } from './components/HintWrapped';
+
+import { COLORS, SIZES, PLACEMENTS } from './examples/index';
+
+<headermeta
+  title='Hint'
+  description='Всплывающая подсказка с кастомным наполнением'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/xyz/Badge'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-404'
+/>
+
+# Tooltip
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + 1} exampleCodeJSX={undefined}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Placement
+
+<textcolumns>
+  <span>
+    <p>Позиционирование тултипа</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {PLACEMENTS.map(({ title, code, ...rest }, i) => (
+      <example key={`${title} + ${i}`} exampleCodeJSX={code}>
+        <card>
+          <HintWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+</versionselector>

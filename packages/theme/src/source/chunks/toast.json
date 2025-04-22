@@ -1,0 +1,126 @@
+{
+  "toast/scale": {
+    "min-width": {
+      "xs": {
+        "value": "200px",
+        "type": "sizing"
+      }
+    },
+    "min-height": {
+      "xs": {
+        "value": "48px",
+        "type": "sizing"
+      }
+    },
+    "border-radius": {
+      "xs": {
+        "value": "12px",
+        "type": "borderRadius"
+      }
+    },
+    "padding-y": {
+      "xs": {
+        "value": "16px",
+        "type": "spacing"
+      }
+    },
+    "padding-x": {
+      "xs": {
+        "value": "16px",
+        "type": "spacing"
+      }
+    },
+    "gap-x": {
+      "xs": {
+        "value": "8px",
+        "type": "spacing"
+      }
+    },
+    "gap-y": {
+      "xs": {
+        "value": "16px",
+        "type": "spacing"
+      }
+    },
+    "font-size": {
+      "xs": {
+        "value": "{font-size.m}",
+        "type": "fontSizes"
+      }
+    },
+    "line-height": {
+      "xs": {
+        "value": "{line-height.l}",
+        "type": "lineHeights"
+      }
+    },
+    "text-padding-x": {
+      "xs": {
+        "value": "8px",
+        "type": "spacing"
+      }
+    },
+    "text-padding-y": {
+      "xs": {
+        "value": "0px",
+        "type": "spacing"
+      }
+    }
+  },
+  "toast/style": {
+    "content": {
+      "font-family": {
+        "value": "{font-family.sans}",
+        "type": "fontFamilies"
+      },
+      "font-weight": {
+        "value": "{font-weight.400}",
+        "type": "fontWeights"
+      }
+    }
+  },
+  "toast/theme/light": {
+    "color/solid": {
+      "content-general": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      }
+    }
+  },
+  "toast/theme/dark": {
+    "color/solid": {
+      "scheme": {
+        "value": "toast/theme/light.color/solid",
+        "type": "meta"
+      },
+      "content-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-600}",
+        "type": "color"
+      }
+    }
+  },
+  "toast/theme/color": {
+    "color/solid": {
+      "scheme": {
+        "value": "toast/theme/light.color/solid",
+        "type": "meta"
+      },
+      "content-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color-transparent.neutral-100-10%}",
+        "type": "color"
+      }
+    }
+  }
+}

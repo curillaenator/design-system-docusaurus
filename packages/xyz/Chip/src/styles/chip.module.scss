@@ -1,0 +1,46 @@
+@use '../../../../theme/src/scss/chip' as chip;
+
+@function get-color($value, $schema: 'color-dark-solid', $theme: chip.$theme-light) {
+  @return map-get(map-get($theme, $schema), $value);
+}
+
+@function get-scale($prop, $size: '2xl') {
+  @return map-get(chip.$scale, $prop, $size);
+}
+
+$sizes: (2xl, xl, l, m, s, xs);
+
+.chipVariables {
+  --chp-bdrs: var(--chp-bdrs-ro, 16px);
+
+  --chp-fw: #{map-get(chip.$style, content, 'font-weight')};
+  --chp-ff: #{map-get(chip.$style, content, 'font-family')};
+  --chp-td: #{map-get(chip.$style, content, 'text-decoration')};
+}
+
+._circular {
+  --chp-bdrs: var(--chp-bdrs-cc);
+}
+
+
+@each $schema in map-keys(chip.$theme-light) {
+  ._#{'' + $schema} {
+    --chp-bgc: #{get-color('background', $schema)};
+    --chp-ct-gn: #{get-color('content-general', $schema)};
+    --chp-ct-ad: #{get-color('content-additional', $schema)};
+    --chp-bd-sh-c: #{get-color('border', $schema)};
+    --chp-sh: #{get-color('shadow', $schema)};
+  }
+}
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --chp-pd: #{get-scale('padding-y', $size)} #{get-scale('padding-x', $size)};
+    --chp-fz: #{get-scale('text-font-size', $size)};
+    --chp-lh: #{get-scale('text-line-height', $size)};
+    --chp-gp: #{get-scale('gap-x', $size)};
+    --chp-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --chp-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+    --chp-bdw: #{get-scale('border-width', $size)};
+  }
+}

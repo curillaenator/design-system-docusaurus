@@ -1,0 +1,26 @@
+$theme-light: (
+  color-default: (
+    thumb: var(--scrl_df_thmb, rgb(194, 194, 194)),
+    thumb-hovered: var(--scrl_df_thmb-h, rgb(64, 96, 255)),
+    track: var(--scrl_df_trck, rgb(235, 235, 235)),
+    track-hovered: var(--scrl_df_trck-h, rgb(235, 235, 235)),
+  ),
+  color-doc: (
+    thumb: var(--scrl_dc_thmb, rgba(255, 255, 255, 0.2)),
+    thumb-hovered: var(--scrl_dc_thmb-h, rgba(255, 255, 255, 0.4)),
+    track: var(--scrl_dc_trck, rgb(64, 96, 255)),
+    track-hovered: var(--scrl_dc_trck-h, rgb(64, 96, 255)),
+  ),
+  color-ui: (
+    thumb: var(--scrl_ui_thmb, rgb(128, 128, 128)),
+    thumb-hovered: var(--scrl_ui_thmb-h, rgb(64, 96, 255)),
+    track: var(--scrl_ui_trck, rgb(194, 194, 194)),
+    track-hovered: var(--scrl_ui_trck-h, rgb(194, 194, 194)),
+  ),
+  state-disabled: (
+    thumb: var(--scrl_s-db_thmb, rgba(128, 128, 128, 0.4)),
+    thumb-hovered: var(--scrl_s-db_thmb-h, rgba(128, 128, 128, 0.4)),
+    track: var(--scrl_s-db_trck, rgb(235, 235, 235)),
+    track-hovered: var(--scrl_s-db_trck-h, rgb(235, 235, 235)),
+  ),
+);

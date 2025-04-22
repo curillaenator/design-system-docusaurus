@@ -1,0 +1,25 @@
+.wrapper {
+  padding: 40px var(--docitem-padding-x);
+  border-bottom: var(--ifm-common-bdw) solid var(--ifm-color-emphasis-200);
+
+  & > div {
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  /* Prevent hydration FOUC, as the mobile TOC needs to be server-rendered */
+  .wrapper {
+    display: none;
+  }
+
+  .tocMobile {
+    display: none;
+  }
+}
+
+@media print {
+  .tocMobile {
+    display: none;
+  }
+}

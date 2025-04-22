@@ -1,0 +1,34 @@
+@import './transitions';
+
+.accordion {
+  position: relative;
+
+  width: var(--acdn-w, 100%);
+  min-width: var(--acdn-w, 100%);
+
+  @include accordionTransitions;
+}
+
+.transition {
+  overflow: hidden;
+}
+
+.content {
+  width: var(--acdn-ct-w, 100%);
+  font-family: var(--acdn-ff);
+  color: var(--acdn-ct-gn);
+  background-color: var(--acdn-ct-bgc, transparent);
+
+  &_withPaddings {
+    padding: var(--acdn-ct-pd-y, 0px) var(--acdn-ct-pd-x, 0px);
+  }
+}
+
+.prerenderedContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  opacity: 0;
+  z-index: -1000;
+}

@@ -1,0 +1,10 @@
+{
+  "blue": { "value": "rgb(0, 96, 255)", "type": "color" },
+  "blue-700": { "value": "rgb(0, 96, 255)", "type": "color" },
+  "blue-600": { "value": "rgb(20, 109, 255)", "type": "color" },
+  "blue-500": { "value": "rgb(61, 134, 255)", "type": "color" },
+  "blue-400": { "value": "rgb(122, 172, 255)", "type": "color" },
+  "blue-300": { "value": "rgb(173, 204, 255)", "type": "color" },
+  "blue-200": { "value": "rgb(214, 230, 255)", "type": "color" },
+  "blue-100": { "value": "rgb(235, 242, 255)", "type": "color" }
+}

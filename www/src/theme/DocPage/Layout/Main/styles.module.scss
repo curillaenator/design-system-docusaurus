@@ -1,0 +1,26 @@
+.docMainContainer {
+  // --main-container-mw: calc(100% - var(--doc-sidebar-width));
+
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.docWrapper {
+  width: 100%;
+}
+
+@media (min-width: 1440px) {
+  .docMainContainer {
+    flex-grow: 1;
+    // max-width: var(--main-container-mw);
+  }
+
+  .docMainContainerEnhanced {
+    // --main-container-mw: calc(100% - var(--doc-sidebar-hidden-width));
+  }
+
+  // .docItemWrapperEnhanced {
+  //   max-width: calc(var(--ifm-container-width) + var(--doc-sidebar-width)) !important;
+  // }
+}

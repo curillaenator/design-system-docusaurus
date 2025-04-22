@@ -1,0 +1,33 @@
+@use '../../../../theme/src/scss/icon' as icon;
+
+$modeMaps: (
+  'light': icon.$theme-light,
+  'dark': icon.$theme-dark,
+  'color': icon.$theme-color,
+);
+
+@function get-color($mapName, $schema) {
+  @return map-get($modeMaps, $mapName, $schema);
+}
+
+@function get-shape-value($schema-name, $size) {
+  @return map-get(icon.$scale, $schema-name, $size);
+}
+
+$sizes: (xl, l, m, s, xs);
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --ic-stroke-w: #{get-shape-value(border-width, $size)};
+    --ic-w: #{get-shape-value(width, $size)};
+    --ic-h: #{get-shape-value(height, $size)};
+  }
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{$schema}_#{$modeMapName} {
+      --ic-c: #{get-color($modeMapName, $schema)};
+    }
+  }
+}

@@ -1,0 +1,89 @@
+$columns: (
+  '4cols': (
+    'cols': 4,
+    'mt': 64px,
+    'p': 0,
+  ),
+  '2cols': (
+    'cols': 2,
+    'mt': 64px,
+    'p': 0,
+  ),
+  '1col': (
+    'cols': 1,
+    'mt': 0px,
+    'p': 34px,
+  ),
+);
+
+.container {
+  display: grid;
+  gap: 64px;
+
+  @each $name, $settings in $columns {
+    &_#{'' + $name} {
+      grid-template-columns: repeat(map-get($settings, 'cols'), 1fr);
+      margin-top: #{map-get($settings, 'mt')};
+      padding: #{map-get($settings, 'p')};
+    }
+  }
+}
+
+$types: (
+  'normal': (
+    'title-c': var(--ifm-color-emphasis-700),
+    'bgc': var(--ifm-color-emphasis-200),
+  ),
+  'dimmed': (
+    'title-c': var(--ifm-color-emphasis-400),
+    'bgc': var(--ifm-color-emphasis-200),
+  ),
+  'dummy': (
+    'title-c': transparent,
+    'bgc': transparent,
+  ),
+);
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  // border-radius: 16px;
+  // padding: 32px;
+  // background-color: var(--architecture-card-bgc);
+
+  @each $type, $values in $types {
+    &_#{'' + $type} {
+      --ppr-bgc: #{map-get($values, 'bgc')};
+
+      --architecture-card-title-c: #{map-get($values, 'title-c')};
+    }
+  }
+
+  .content {
+    & > h3 {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 28px;
+      margin-bottom: 0;
+      color: var(--architecture-card-title-c);
+    }
+
+    & > span {
+      display: block;
+      margin-top: 16px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 0;
+      color: var(--ifm-color-emphasis-400);
+    }
+  }
+
+  .badges {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+  }
+}

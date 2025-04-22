@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "SB Sans Interface";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local("SBSansUI-Thin"), local("SB Sans Interface Thin"), local("SBSansInterface-Thin"), url("~@kit-xyz/fonts/src/assets/SBSansUI-Light.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansUI-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Interface";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local("SBSansUI-Light"), local("SB Sans Interface Light"), local("SBSansInterface-Light"), url("~@kit-xyz/fonts/src/assets/SBSansUI-Light.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansUI-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Interface";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("SBSansUI-Regular"), local("SB Sans Interface Regular"), local("SBSansInterface-Regular"), url("~@kit-xyz/fonts/src/assets/SBSansUI-Regular.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansUI-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Interface";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("SBSansUI-Medium"), local("SB Sans Interface Medium"), local("SBSansInterface-Medium"), url("~@kit-xyz/fonts/src/assets/SBSansUI-SemiBold.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansUI-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Interface";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("SBSansUI-Bold"), local("SB Sans Interface Bold"), local("SBSansInterface-Bold"), url("~@kit-xyz/fonts/src/assets/SBSansUI-Bold.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansUI-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Interface";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("SBSansUI-Heavy"), local("SB Sans Interface Heavy"), local("SBSansInterface-Heavy"), url("~@kit-xyz/fonts/src/assets/SBSansUI-Bold.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansUI-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local("SBSansText-Thin"), local("SB Sans Text Thin"), url("~@kit-xyz/fonts/src/assets/SBSansText-Thin.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansText-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local("SBSansText-Light"), local("SB Sans Text Light"), url("~@kit-xyz/fonts/src/assets/SBSansText-Light.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansText-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("SBSansText-Regular"), local("SB Sans Text Regular"), url("~@kit-xyz/fonts/src/assets/SBSansText-Regular.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansText-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("SBSansText-Medium"), local("SB Sans Text Medium"), url("~@kit-xyz/fonts/src/assets/SBSansText-Medium.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansText-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("SBSansText-SemiBold"), local("SB Sans Text SemiBold"), url("~@kit-xyz/fonts/src/assets/SBSansText-SemiBold.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansText-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("SBSansText-Bold"), local("SB Sans Text Bold"), url("~@kit-xyz/fonts/src/assets/SBSansText-Bold.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansText-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("SBSansText-Heavy"), local("SB Sans Text Heavy"), url("~@kit-xyz/fonts/src/assets/SBSansText-Heavy.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansText-Heavy.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text Mono";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("SBSansTextMono-Regular"), local("SB Sans TextMono Regular"), url("~@kit-xyz/fonts/src/assets/SBSansTextMono-Regular.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansTextMono-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("SBSansTextMono-Bold"), local("SB Sans TextMono Bold"), url("~@kit-xyz/fonts/src/assets/SBSansTextMono-Bold.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSansTextMono-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text Serif";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local("SBTextSerif-Thin"), local("SB Sans Text Serif Thin"), local("SBSansTextSerif-Thin"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-Light.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text Serif";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local("SBTextSerif-Light"), local("SB Sans Text Serif Light"), local("SBSansTextSerif-Light"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-Light.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text Serif";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("SBTextSerif-Regular"), local("SB Sans Text Serif Regular"), local("SBSansTextSerif-Regular"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-Regular.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("SBTextSerif-Medium"), local("SB Sans Text Serif Medium"), local("SBSansTextSerif-Medium"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-SemiBold.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text Serif";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("SBTextSerif-Bold"), local("SB Sans Text Serif Bold"), local("SBSansTextSerif-Bold"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-Bold.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "SB Sans Text Serif";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("SBTextSerif-Heavy"), local("SB Sans Text Serif Heavy"), local("SBSansTextSerif-Heavy"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-Bold.woff2") format("woff2"), url("~@kit-xyz/fonts/src/assets/SBSerifDisplay-Bold.woff") format("woff");
+}

@@ -1,0 +1,76 @@
+@use '../../../theme/src/scss/spinner' as spinner;
+
+$sizes: (xs, s, m, l, xl, 2xl);
+
+$modeMaps: (
+  'light': spinner.$theme-light,
+  'dark': spinner.$theme-dark,
+  'color': spinner.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(spinner.$scale, $prop, $size);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 0, 50;
+    stroke-dashoffset: 0px;
+  }
+  50% {
+    stroke-dasharray: 50, 50;
+    stroke-dashoffset: 0px;
+  }
+  100% {
+    stroke-dasharray: 50, 50;
+    stroke-dashoffset: -50px;
+  }
+}
+
+.spinnerVariables {
+  color: var(--spn-c);
+  height: var(--spn-h);
+  width: var(--spn-w);
+  transform-origin: center center;
+
+  &_line {
+    stroke-width: var(--spn-stroke-w);
+  }
+}
+
+.animateSpinnerRotate {
+  stroke: var(--spn-c);
+  stroke-width: var(--spn-stroke-w);
+  transform-origin: center;
+  stroke-linecap: round;
+  animation: dash 1.6s linear infinite, rotate 2s linear infinite;
+}
+
+@each $size in $sizes {
+  ._size_#{$size} {
+    --spn-h: #{get-scale('height', $size)};
+    --spn-w: #{get-scale('width', $size)};
+    --spn-stroke-w: #{get-scale('stroke-width', $size)};
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --spn-c: #{get-color('content-general', $colorMode, $schema)};
+    }
+  }
+}

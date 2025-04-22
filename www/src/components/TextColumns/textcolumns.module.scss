@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+
+  & p {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 1279px) {
+  @each $cols in (1 2 3 4 5 6) {
+    ._cols-#{'' + $cols} {
+      gap: 0;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  @each $cols in (1 2 3 4 5 6) {
+    ._cols-#{'' + $cols} {
+      gap: calc(128px / $cols);
+      grid-template-columns: repeat($cols, 1fr);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "neutral-700": { "value": "rgb(20, 20, 20)", "type": "color" },
+  "neutral-600": { "value": "rgb(30, 30, 30)", "type": "color" },
+  "neutral-500": { "value": "rgb(49, 49, 49)", "type": "color" },
+  "neutral-400": { "value": "rgb(137, 137, 137)", "type": "color" },
+  "neutral-300": { "value": "rgb(226, 226, 226)", "type": "color" },
+  "neutral-200": { "value": "rgb(245, 245, 245)", "type": "color" },
+  "neutral-100": { "value": "rgb(255, 255, 255)", "type": "color" }
+}

@@ -1,0 +1,9 @@
+{
+  "attention-700": { "value": "{palette.yellow-700}", "type": "color" },
+  "attention-600": { "value": "{palette.yellow-600}", "type": "color" },
+  "attention-500": { "value": "{palette.yellow-500}", "type": "color" },
+  "attention-400": { "value": "{palette.yellow-400}", "type": "color" },
+  "attention-300": { "value": "{palette.yellow-300}", "type": "color" },
+  "attention-200": { "value": "{palette.yellow-200}", "type": "color" },
+  "attention-100": { "value": "{palette.yellow-100}", "type": "color" },
+}

@@ -1,0 +1,49 @@
+@use 'sass:string';
+@use '../../../../theme/src/scss/style/color' as color;
+
+@function get-neutral-color($shade) {
+  @return map-get(color.$color, #{'neutral-' + $shade});
+}
+
+$shades: (
+  'light': (
+    '100': '100',
+    '200': '200',
+    '300': '300',
+    '400': '400',
+    '500': '500',
+    '600': '600',
+    '700': '700',
+  ),
+  'dark': (
+    '100': '700',
+    '200': '600',
+    '300': '500',
+    '400': '400',
+    '500': '300',
+    '600': '200',
+    '700': '100',
+  ),
+);
+
+@each $colorName, $colorValue in color.$color {
+  $neutralIndex: string.index(#{$colorName}, 'neutral');
+
+  @if $neutralIndex == null {
+    ._#{'' + $colorName}_light {
+      --arrows-stroke-color: #{$colorValue};
+    }
+
+    ._#{'' + $colorName}_dark {
+      --arrows-stroke-color: #{$colorValue};
+    }
+  }
+}
+
+@each $colorMode, $shadesMap in $shades {
+  @each $shadeName, $shadeValue in $shadesMap {
+    ._neutral-#{'' + $shadeName}_#{'' + $colorMode} {
+      --arrows-stroke-color: #{get-neutral-color($shadeValue)};
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@use '../../../../theme/src/scss/textarea' as textarea;
+@use '../../../../theme/src/scss/mixins/scroll' as scroll;
+
+@use 'sass:map';
+
+$sizes: (2xl, xl, l, m, s, xs);
+$color-schemas: map-keys(textarea.$theme-light);
+
+@function get-scale($prop, $size: xl) {
+  @return map.get(textarea.$scale, $prop, $size);
+}
+
+@function get-color($prop, $schema) {
+  $value: map.get(textarea.$theme-light, $schema, $prop);
+
+  @if $value == null {
+    @if ($prop == 'border-focused') {
+      @return map.get(textarea.$theme-light, $schema, 'border');
+    }
+
+    @if ($prop == 'border-hovered') {
+      @return map.get(textarea.$theme-light, $schema, 'border');
+    }
+
+    @if ($prop == 'cursor') {
+      @return auto;
+    }
+  }
+
+  @return $value;
+}
+
+.textareaVariables {
+  --trea-ff: #{map.get(textarea.$style, 'content', 'font-family')};
+  --trea-tcase: #{map.get(textarea.$style, 'content', 'text-case')};
+  --trea-td: #{map.get(textarea.$style, 'content', 'text-decoration')};
+  --trea-fw: #{map.get(textarea.$style, 'content', 'font-weight')};
+
+  --trea-meta-gp: #{map.get(textarea.$style, 'meta', 'gap')};
+  --trea-meta-fz: #{map.get(textarea.$style, 'meta', 'font-size')};
+  --trea-meta-lh: #{map.get(textarea.$style, 'meta', 'line-height')};
+  --trea-meta-lts: #{map.get(textarea.$style, 'meta', 'letter-spacing')};
+}
+
+.scrollbar {
+  @include scroll.scrollbar;
+
+  &:disabled {
+    @include scroll.scrollbar-disabled;
+  }
+}
+
+@each $size in $sizes {
+  ._size_#{$size} {
+    --trea-mw: #{get-scale('width', $size)};
+    --trea-mh: #{get-scale('height', $size)};
+    --trea-ct-pd-x: #{get-scale('padding-x', $size)};
+    --trea-ct-pd-y: #{get-scale('padding-y', $size)};
+    --trea-gp-x: #{get-scale('gap-x', $size)};
+    --trea-gp-y: #{get-scale('gap-y', $size)};
+    --trea-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --trea-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+    --trea-fz: #{get-scale('text-font-size', $size)};
+    --trea-lh: #{get-scale('text-line-height', $size)};
+    --trea-lts: #{get-scale('text-letter-spacing', $size)};
+    --trea-txt-pd-y: #{get-scale('text-padding-y', $size)};
+    --trea-bdw: #{get-scale('border-width', $size)};
+    --trea-glph-w: #{get-scale('glyph-width', $size)};
+  }
+}
+
+._rounded {
+  --trea-bdrs: var(--trea-bdrs-ro);
+}
+
+._circular {
+  --trea-bdrs: var(--trea-bdrs-cc);
+}
+
+@each $scheme in $color-schemas {
+  ._#{$scheme} {
+    --trea-ct-gn: #{get-color('content-general', $scheme)};
+    --trea-ct-ad: #{map.get(textarea.$theme-light, $scheme, 'content-additional')};
+    --trea-ph-c: var(--trea-ct-ad);
+    --trea-sts: #{map.get(textarea.$theme-light, $scheme, 'status')};
+    --trea-bgc: #{map.get(textarea.$theme-light, $scheme, 'background')};
+    --trea-bdc: #{map.get(textarea.$theme-light, $scheme, 'border')};
+    --trea-bdc-f: #{get-color('border-focused', $scheme)};
+    --trea-bdc-h: #{get-color('border-hovered', $scheme)};
+    --trea-sh: #{map.get(textarea.$theme-light, $scheme, 'shadow')};
+    --trea-cu: #{get-color('cursor', $scheme)};
+  }
+}

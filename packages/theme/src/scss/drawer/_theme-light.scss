@@ -1,0 +1,17 @@
+$theme-light: (
+  color-tracker-default: (
+    content-general: var(--dwr_trckr-dflt_cnt-gn, rgba(0, 0, 0, 0.88)),
+    background: var(--dwr_trckr-dflt_bgc, rgb(255, 255, 255)),
+    overlay-background:
+      var(--dwr_trckr-dflt_overlay-bgc, rgba(255, 255, 255, 0.6)),
+    border: var(--dwr_trckr-dflt_bdc, rgba(0, 0, 0, 0)),
+    shadow: var(--dwr_trckr-dflt_sh, 0px 0px 16px rgb(22, 119, 255, 0.4)),
+  ),
+  color-default: (
+    content-general: var(--dwr_df_cnt-gn, rgb(10, 10, 10)),
+    background: var(--dwr_df_bgc, rgb(255, 255, 255)),
+    overlay-background: var(--dwr_df_overlay-bgc, rgba(255, 255, 255, 0.6)),
+    border: var(--dwr_df_bdc, rgba(0, 0, 0, 0)),
+    shadow: var(--dwr_df_sh, 0px 0px 16px rgba(64, 96, 255, 0.6)),
+  ),
+);

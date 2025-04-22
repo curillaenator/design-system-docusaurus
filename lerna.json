@@ -1,0 +1,40 @@
+{
+  "version": "independent",
+  "cacheDir": ".tmp/lerna",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": ["packages/*"],
+  "rejectCycles": true,
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "**/__tests__/**",
+        "**/*.md",
+        "**/__mocks__/**",
+        "**/*.stories.{ts,tsx,js}",
+        "**/stories/**",
+        "**/.storybook/**",
+        "./tools/**"
+      ],
+      "conventionalCommits": true,
+      "yes": true,
+      "exact": true
+    },
+    "version": {
+      "ignoreChanges": [
+        "**/__tests__/**",
+        "**/*.md",
+        "**/__mocks__/**",
+        "**/*.stories.{ts,tsx,js}",
+        "**/stories/**",
+        "**/.storybook/**",
+        "./tools/**"
+      ],
+      "conventionalCommits": true,
+      "yes": true,
+      "exact": true
+    }
+  },
+  "registry": "https://gitlab.com/api/v4/projects/50873891/packages/npm/",
+  "lerna": "4.0.0"
+}

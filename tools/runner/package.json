@@ -1,0 +1,16 @@
+{
+  "name": "@pcbl-ui-v4/storybook-runner",
+  "version": "0.2.1",
+  "description": "",
+  "license": "UNLICENSED",
+  "main": "bin/index.js",
+  "keywords": [],
+  "author": "Ivan Baranov",
+  "bin": {
+    "story": "./bin/index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "inquirer": "^7.3.3"
+  }
+}

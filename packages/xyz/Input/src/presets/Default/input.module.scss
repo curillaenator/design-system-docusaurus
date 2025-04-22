@@ -1,0 +1,141 @@
+@use '../../../../../theme/src/scss/input/' as input;
+
+$modeMaps: (
+  'light': input.$theme-light,
+  'dark': input.$theme-dark,
+  'color': input.$theme-color,
+);
+
+$sizes: (s);
+
+@function get-scale($prop, $size) {
+  @return map-get(input.$scale, $prop, $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(input.$style, $group, $value);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+.inputThemed {
+  --inp-ff: #{get-style('font-family')};
+  --inp-fw: #{get-style('font-weight')};
+  --inp-meta-fw: #{get-style('font-weight', 'meta')};
+
+  --inp-ph-animation-time: 0.2s;
+  --inp-ph-animation-method: ease-in-out;
+
+  // попробовал избавиться от лишних колор схем в токенах (типа стейтов саксесс, еррор, дисаблед), оставив только колор схемы
+  // из дизайна, а все необходимые токены для стейтов содержаться в них. Переопределение состояний происходит
+  // не через смену колор схемы, а через классы темизированного компонента, переопределяющие каждую базовую cssv (которая без постфикса -хх)
+  // для целевых свойств, но в таком случае нужен !important
+
+  &_disabled {
+    --inp-ct-gn: var(--inp-ct-gn-db) !important;
+    --inp-ct-ph: var(--inp-ct-ph-db) !important;
+    --inp-bdc: var(--inp-bdc-db) !important;
+    --inp-bgc: var(--inp-bgc-db) !important;
+  }
+
+  &_success {
+    --inp-bdc: var(--inp-bdc-sc) !important;
+  }
+
+  &_error {
+    --inp-bdc: var(--inp-bdc-er) !important;
+  }
+
+  &_active {
+    --inp-bgc: var(--inp-bgc-a) !important;
+    --inp-bdc: var(--inp-bdc-a) !important;
+    --inp-ct-ph: var(--inp-ct-ph-a) !important;
+  }
+}
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --inp-h: #{get-scale('height', $size)};
+
+    --inp-gp-x: #{get-scale('gap-x', $size)};
+    --inp-gp-y: #{get-scale('gap-y', $size)};
+
+    --inp-bdw: #{get-scale('border-width', $size)};
+    --inp-bdrs-sq: #{get-scale('border-radius-square', $size)};
+    --inp-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --inp-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+
+    --inp-pd-x: #{get-scale('padding-x', $size)};
+    --inp-pd-y: #{get-scale('padding-y', $size)};
+
+    --inp-fz: #{get-scale('font-size', $size)};
+    --inp-lh: #{get-scale('line-height', $size)};
+
+    --inp-meta-fz: #{get-scale('meta-font-size', $size)};
+    --inp-meta-lh: #{get-scale('meta-line-height', $size)};
+  }
+}
+
+@each $shape, $shapeNotation in ('square': 'sq', 'rounded': 'ro', 'circular': 'cc') {
+  ._shape_#{$shape} {
+    --inp-bdrs: var(--inp-bdrs-#{$shapeNotation});
+  }
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{$schema}_#{$modeMapName} {
+      --inp-focus-outline: #{get-color('focus-outline', $modeMapName, $schema)};
+
+      --inp-ic-c: #{get-color('icon', $modeMapName, $schema)};
+      --inp-ic-c-h: #{get-color('icon-hovered', $modeMapName, $schema)};
+
+      --inp-ct-gn: #{get-color('content-general', $modeMapName, $schema)};
+      --inp-ct-gn-db: #{get-color('content-general-disabled', $modeMapName, $schema)};
+
+      --inp-ct-ph: #{get-color('placeholder', $modeMapName, $schema)};
+      --inp-ct-ph-h: #{get-color('placeholder-hovered', $modeMapName, $schema)};
+      --inp-ct-ph-a: #{get-color('placeholder-active', $modeMapName, $schema)};
+      --inp-ct-ph-db: #{get-color('placeholder-disabled', $modeMapName, $schema)};
+
+      --inp-bgc: #{get-color('background', $modeMapName, $schema)};
+      --inp-bgc-h: #{get-color('background-hovered', $modeMapName, $schema)};
+      --inp-bgc-a: #{get-color('background-active', $modeMapName, $schema)};
+      --inp-bgc-db: #{get-color('background-disabled', $modeMapName, $schema)};
+
+      --inp-bdc: #{get-color('border', $modeMapName, $schema)};
+      --inp-bdc-h: #{get-color('border-hovered', $modeMapName, $schema)};
+      --inp-bdc-a: #{get-color('border-active', $modeMapName, $schema)};
+      --inp-bdc-db: #{get-color('border-disabled', $modeMapName, $schema)};
+      --inp-bdc-sc: #{get-color('border-success', $modeMapName, $schema)};
+      --inp-bdc-er: #{get-color('border-error', $modeMapName, $schema)};
+
+      --inp-label-c: #{get-color('label-text', $modeMapName, $schema)};
+      --inp-label-c-db: #{get-color('label-text-disabled', $modeMapName, $schema)};
+
+      --inp-start-meta-c: #{get-color('start-meta-text', $modeMapName, $schema)};
+      --inp-start-meta-c-db: #{get-color('start-meta-text-disabled', $modeMapName, $schema)};
+      --inp-start-meta-c-sc: #{get-color('start-meta-text-success', $modeMapName, $schema)};
+      --inp-start-meta-c-er: #{get-color('start-meta-text-error', $modeMapName, $schema)};
+
+      --inp-end-meta-c: #{get-color('end-meta-text', $modeMapName, $schema)};
+      --inp-end-meta-c-db: #{get-color('end-meta-text-disabled', $modeMapName, $schema)};
+      --inp-end-meta-c-sc: #{get-color('end-meta-text-success', $modeMapName, $schema)};
+      --inp-end-meta-c-er: #{get-color('end-meta-text-error', $modeMapName, $schema)};
+    }
+  }
+}
+
+.noShrink {
+  flex-shrink: 0;
+}
+
+.icon {
+  color: var(--inp-ic-c);
+
+  // &:hover {
+  //   color: var(--inp-ic-c-h);
+  // }
+}

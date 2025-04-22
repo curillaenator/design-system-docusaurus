@@ -1,0 +1,35 @@
+.chip {
+  text-decoration: var(--chp-td, none);
+  font-family: var(--chp-ff, 'SB Sans Interface, Arial, Helvetica, sans-serif');
+  padding: var(--chp-pd, 8px 8px);
+  font-size: var(--chp-fz, 16px);
+  font-weight: var(--chp-fw, 600);
+  line-height: var(--chp-lh, 20px);
+  display: inline-flex;
+  white-space: nowrap;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--chp-gp, 16px);
+  border-radius: var(--chp-bdrs);
+  background-color: var(--chp-bgc, rgb(99, 102, 241));
+  color: var(--chp-ct-gn, rgb(245, 245, 245));
+  box-shadow: var(--chp-sh, 0px 0px 0px 0px rgba(0, 0, 0, 0)), inset 0px 0px 0px var(--chp-bdw, 2px) var(--chp-bd-sh-c, rgba(0, 0, 0, 0));
+}
+
+._disabled {
+  pointer-events: none;
+}
+
+.textSecondary {
+  color: var(--chp-ct-ad, rgba(245, 245, 245, 0.6));
+}
+
+.buttonClose {
+  color: var(--chp-ct-ad, rgba(245, 245, 245, 0.6));
+
+  &:hover {
+    cursor: pointer;
+    color: var(--chp-ct-gn, rgb(245, 245, 245));
+  }
+}

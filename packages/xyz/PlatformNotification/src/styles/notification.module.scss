@@ -1,0 +1,50 @@
+.notificationVariables {
+  --n-pd: 32px;
+  --n-bdrs: 16px;
+
+  --n-icon-pd: 20px;
+  --n-section-gap: 20px;
+  --n-text-gap: 8px;
+  --n-actions-gap: 16px;
+  --n-title-fz: 22px;
+  --n-title-lh: 28px;
+  --n-subTitle-fz: 16px;
+  --n-subTitle-lh: 24px;
+
+  --n-description-fz: 16px;
+  --n-description-lh: 24px;
+
+  --n-divider-width: 2px;
+
+  --n-close-button-margin: 20px;
+}
+
+.primary {
+  --shadow-color: rgba(0, 96, 255, 0.16);
+  --n-bg: #0060FF;
+  --n-text-color: #FFFFFF;
+  --n-divider-color: rgba(255, 255, 255, 0.12);
+}
+
+.light {
+  --shadow-color: rgba(0, 96, 255, 0.16);
+  --n-bg: #FFFFFF;
+  --n-text-color: #0A0A0A;
+  --n-divider-color: rgba(10, 10, 10, 0.12);
+}
+
+.dark {
+  --shadow-color: rgba(0, 96, 255, 0.16);
+  --n-bg: #0A0A0A;
+  --n-text-color: #FFFFFF;
+  --n-divider-color: rgba(255, 255, 255, 0.12);
+}
+
+.default {
+  --n-main-direction: row;
+}
+
+.compact {
+  --n-main-direction: column;
+  --n-max-width: 600px
+}

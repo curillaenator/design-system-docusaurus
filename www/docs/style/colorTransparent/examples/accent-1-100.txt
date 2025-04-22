@@ -1,0 +1,22 @@
+{
+  "accent-1-100-80%": {
+    "value": "rgba(235, 242, 255, 0.8)",
+    "type": "color"
+  },
+  "accent-1-100-60%": {
+    "value": "rgba(235, 242, 255, 0.6)",
+    "type": "color"
+  },
+  "accent-1-100-40%": {
+    "value": "rgba(235, 242, 255, 0.4)",
+    "type": "color"
+  },
+  "accent-1-100-20%": {
+    "value": "rgba(235, 242, 255, 0.2)",
+    "type": "color"
+  },
+  "accent-1-100-0%": {
+    "value": "rgba(235, 242, 255, 0)",
+    "type": "color"
+  }
+}

@@ -1,0 +1,23 @@
+// @use '~@kit-xyz/theme/src/scss/mixins/scroll' as scroll;
+
+.transition {
+  --mdl-animation-time: var(--ifm-transition-fast);
+  --mdl-animation-method: ease;
+}
+
+.overlay {
+  --mdl-overlay-bgc: var(--ifm-color-emphasis-100);
+}
+
+.content {
+  position: relative;
+
+  max-width: calc(100vw - 128px);
+  max-height: calc(100vh - 128px);
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: -64px;
+  }
+}

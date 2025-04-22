@@ -1,0 +1,42 @@
+---
+sidebar_label: 'Overlay'
+sidebar_position: 13
+title: 'Overlay'
+description: 'Отображает варианты корректного сокрытия контента внутри скроллируемых блоков'
+---
+
+import { OVERLAYS } from './index';
+import headerImage from './assets/overlay.png';
+
+<headermeta
+  title='Overlay'
+  description='Отображает варианты корректного сокрытия контента внутри скроллируемых блоков'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/theme/src/scss/style/'
+  figmaLink='https://www.figma.com/'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-112'
+  headerImage={headerImage}
+/>
+
+# Overlay
+
+## Base
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {OVERLAYS.map((overlay) => (
+      <example key={overlay.id} exampleCode={overlay.exampleCode}>
+        <card {...overlay} />
+      </example>
+    ))}
+  </examples>
+</docviewport>

@@ -1,0 +1,30 @@
+.content {
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--av-gp-y);
+  width: var(--av-captions-w);
+  font-family: var(--av-ff);
+  padding: var(--av-captions-pd-y, 0) var(--av-captions-pd-x, 0);
+
+  .username {
+    white-space: nowrap;
+    font-size: var(--av-txt-fz);
+    line-height: var(--av-txt-lh);
+    font-weight: var(--av-fw);
+    color: var(--av-ct-gn);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .subline {
+    white-space: nowrap;
+    font-size: var(--av-subline-fz);
+    line-height: var(--av-subline-lh);
+    font-weight: var(--av-subline-fw);
+    color: var(--av-ct-ad);
+  }
+}

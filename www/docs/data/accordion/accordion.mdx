@@ -1,0 +1,87 @@
+---
+sidebar_label: 'Accordion'
+title: 'Accordion'
+description: 'Представляет собой элемент, который схлопнут до одного кликабелного пункта'
+---
+
+import pkg from '@kit-xyz/accordion/package.json';
+import { AccordionWrapped } from './components/AccordionWrapped';
+import { AccordionSection } from './components/AccordionSection';
+
+import { COLORS } from './examples';
+
+import accordionWrappedCode from '!!raw-loader!./components/AccordionWrapped.tsx';
+
+<headermeta
+  title='Accordion'
+  description='Представляет собой элемент, который схлопнут/скрыт до одного кликабелного пункта. Элемент может быть раскрыт, чтобы показать содержание.'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+/>
+
+# Accordion
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + i}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Size
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={accordionWrappedCode}>
+      <card title='S'>
+        <AccordionWrapped title='Basic accordion S' />
+      </card>
+    </example>
+    <example exampleCodeJSX={accordionWrappedCode}>
+      <card title='XS'>
+        <AccordionWrapped title='Basic accordion XS' size='xs' />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## AccordionSection
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={accordionWrappedCode}>
+      <card title='AccordionSection'>
+        <AccordionSection title='Заголовок' />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+</versionselector>

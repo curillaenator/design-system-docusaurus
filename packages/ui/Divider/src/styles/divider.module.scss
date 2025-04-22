@@ -1,0 +1,98 @@
+$shapes: (
+  'rounded': (
+    border-radius: 2px,
+  ),
+  'cornered': (
+    border-radius: 0px,
+  ),
+);
+
+$orientations: (
+  horizontal: (
+    width: 100%,
+    height: fit-content,
+    direction: row,
+    line-width: 100%,
+    line-height: var(--dv-bdw),
+    content-height: auto,
+  ),
+  vertical: (
+    width: fit-content,
+    height: 100%,
+    direction: column,
+    line-width: var(--dv-bdw),
+    line-height: 100%,
+    content-height: var(--dv-ct-vertical-h),
+  ),
+);
+
+.divider {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: var(--dv-direction);
+  align-items: center;
+  width: var(--dv-w);
+  height: var(--dv-h);
+  min-width: 16px;
+  min-height: 16px;
+
+  .line {
+    width: var(--dv-line-w);
+    height: var(--dv-line-h);
+    border-radius: var(--dv-line-bdrs);
+    background-color: var(--dv-line-bgc);
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--dv-ct-gn);
+    gap: var(--dv-ct-gp);
+    padding: var(--dv-ct-pd);
+    height: var(--dv-ct-h);
+
+    .text,
+    .secondaryText {
+      flex-shrink: 0;
+      white-space: nowrap;
+      padding: var(--dv-txt-pd);
+      font-size: var(--dv-fz);
+      line-height: var(--dv-lh);
+      text-decoration: var(--dv-td);
+      text-transform: var(--dv-txt-case);
+      font-family: var(--dv-ff);
+      font-weight: var(--dv-fw);
+    }
+
+    .secondaryText {
+      color: var(--dv-ct-ad);
+    }
+
+    .icon {
+      flex-shrink: 0;
+      min-width: var(--dv-glph-w);
+      min-height: var(--dv-glph-h);
+      max-width: var(--dv-glph-w);
+      max-height: var(--dv-glph-h);
+      padding: var(--dv-glph-pd);
+    }
+  }
+}
+
+@each $shape in map-keys($shapes) {
+  ._#{$shape} {
+    -dv-line-bdrs: #{map-get($shapes, $shape, 'border-radius')};
+  }
+}
+
+@each $orientation in map-keys($orientations) {
+  ._#{$orientation} {
+    --dv-direction: #{map-get($orientations, $orientation, 'direction')};
+    --dv-w: #{map-get($orientations, $orientation, 'width')};
+    --dv-h: #{map-get($orientations, $orientation, 'height')};
+    --dv-line-w: #{map-get($orientations, $orientation, 'line-width')};
+    --dv-line-h: #{map-get($orientations, $orientation, 'line-height')};
+    --dv-ct-h: #{map-get($orientations, $orientation, 'content-height')};
+  }
+}

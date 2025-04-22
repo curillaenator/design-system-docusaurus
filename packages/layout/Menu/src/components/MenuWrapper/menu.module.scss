@@ -1,0 +1,89 @@
+@use '../../../../../theme/src/scss/menu' as menu;
+
+$modeMaps: (
+  'light': menu.$theme-light,
+  'dark': menu.$theme-dark,
+  'color': menu.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(menu.$scale, $prop, $size);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@function get-style($prop, $group: 'content') {
+  @return map-get(menu.$style, $group, $prop);
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --menu-ct-gn: #{get-color('content-general', $colorMode, $schema)};
+      --menu-bdc: #{get-color('border', $colorMode, $schema)};
+      --menu-bgc: #{get-color('background', $colorMode, $schema)};
+    }
+  }
+}
+
+@each $size in (xs) {
+  ._size_#{'' + $size} {
+    --menu-bdw: #{get-scale('border-width', $size)};
+
+    --menu-padding-y: #{get-scale('padding-y', $size)};
+    --menu-padding-x: #{get-scale('padding-x', $size)};
+
+    --menu-section-padding-y: #{get-scale('section-padding-y', $size)};
+    --menu-section-padding-x: #{get-scale('section-padding-x', $size)};
+  }
+}
+
+.menuVariables {
+  --menu-opened-maw: 384px;
+  --menu-closed-maw: 96px;
+  --menu-submenu-w: calc(var(--menu-opened-maw) - var(--menu-closed-maw));
+
+  --menu-mobile-mw: #{get-style('mobile-min-width')};
+  --menu-header-mh: #{get-style('header-min-height')};
+}
+
+.menu {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  min-height: 100vh;
+  padding: var(--menu-padding-y) var(--menu-padding-x);
+
+  background-color: var(--menu-bgc);
+
+  &_mobile {
+    min-width: var(--menu-mobile-mw) !important;
+  }
+
+  // START подложка для submenu
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: -1;
+
+    width: 0px;
+    height: 100%;
+
+    background-color: var(--menu-bgc);
+
+    transition: width 0.2s ease;
+  }
+
+  &_submenuShown {
+    &::after {
+      width: var(--menu-submenu-w);
+    }
+  }
+  // END подложка для submenu
+}

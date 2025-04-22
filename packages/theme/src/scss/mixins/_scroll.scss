@@ -1,0 +1,68 @@
+@use '../scroll/' as scroll;
+
+$modeMaps: (
+  'onLight': scroll.$theme-light,
+  'onDark': scroll.$theme-dark,
+  'onColor': scroll.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(scroll.$scale, $prop, $size);
+}
+
+@function get-modeColor($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@mixin scrollbar($size: 'xs', $modeMapName: 'onLight', $schema: 'color-default') {
+  &::-webkit-scrollbar {
+    width: #{get-scale('track-width', $size)};
+
+    &:horizontal {
+      height: #{get-scale('thumb-width', $size)};
+    }
+
+    &-thumb {
+      background-color: get-modeColor('thumb', $modeMapName, $schema);
+      width: #{get-scale('thumb-width', $size)};
+      border-radius: get-scale('thumb-border-radius', $size);
+
+      &:horizontal {
+        height: #{get-scale('thumb-width', $size)};
+      }
+
+      &:hover {
+        background-color: get-modeColor('thumb-hovered', $modeMapName, $schema);
+      }
+    }
+
+    &-track {
+      background-color: get-modeColor('track', $modeMapName, $schema);
+      border-radius: get-scale('track-border-radius', $size);
+
+      &:hover {
+        background-color: get-modeColor('track-hovered', $modeMapName, $schema);
+      }
+    }
+  }
+}
+
+@mixin scrollbar-disabled {
+  &::-webkit-scrollbar {
+    &-thumb {
+      background-color: map-get(scroll.$theme-light, 'state-disabled', 'thumb');
+
+      &:hover {
+        background-color: map-get(scroll.$theme-light, 'state-disabled', 'thumb');
+      }
+    }
+
+    &-track {
+      background-color: map-get(scroll.$theme-light, 'state-disabled', 'track');
+
+      &:hover {
+        background-color: map-get(scroll.$theme-light, 'state-disabled', 'track');
+      }
+    }
+  }
+}

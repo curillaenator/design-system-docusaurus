@@ -1,0 +1,9 @@
+{
+  "position": 1,
+  "label": "Information",
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Набор продуктов для быстрого создания и легкого масштабирования промышленных приложений любой сложности"
+  }
+}

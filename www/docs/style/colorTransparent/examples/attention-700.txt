@@ -1,0 +1,22 @@
+{
+  "attention-700-80%": {
+    "value": "rgba(255, 160, 32, 0.8)",
+    "type": "color"
+  },
+  "attention-700-60%": {
+    "value": "rgba(255, 160, 32, 0.6)",
+    "type": "color"
+  },
+  "attention-700-40%": {
+    "value": "rgba(255, 160, 32, 0.4)",
+    "type": "color"
+  },
+  "attention-700-20%": {
+    "value": "rgba(255, 160, 32, 0.2)",
+    "type": "color"
+  },
+  "attention-700-0%": {
+    "value": "rgba(255, 160, 32, 0)",
+    "type": "color"
+  }
+}

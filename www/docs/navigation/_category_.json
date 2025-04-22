@@ -1,0 +1,9 @@
+{
+  "position": 11,
+  "label": "Navigation",
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Navigation"
+  }
+}

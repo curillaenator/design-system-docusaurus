@@ -1,0 +1,21 @@
+@mixin fades {
+  .fade {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--mdl-ct-pd-y);
+    z-index: 10;
+
+    &_top {
+      top: 0;
+      border-radius: var(--mdl-bdrs) var(--mdl-bdrs) 0 0;
+      background-image: linear-gradient(to bottom, var(--mdl-ct-bgc) 0%, transparent 100%);
+    }
+
+    &_bottom {
+      bottom: 0;
+      border-radius: 0 0 var(--mdl-bdrs) var(--mdl-bdrs);
+      background-image: linear-gradient(to top, var(--mdl-ct-bgc) 0%, transparent 100%);
+    }
+  }
+}

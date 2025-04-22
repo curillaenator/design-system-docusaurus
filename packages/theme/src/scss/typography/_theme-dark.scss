@@ -1,0 +1,14 @@
+$theme-dark: (
+  color-transparent: var(--tphy_tp, rgba(#000000, 0)),
+  color-neutral: var(--tphy_nc, #292929),
+  color-light: var(--tphy_lt, #ffffff),
+  color-dark: var(--tphy_dk, rgb(23, 23, 23)),
+  color-primary: var(--tphy_pm, #6e56e7),
+  color-secondary: var(--tphy_sc, #3d86ff),
+  color-informative: var(--tphy_inf, #6e56e7),
+  color-positive: var(--tphy_ps, #3dcf86),
+  color-attention: var(--tphy_at, #ffb756),
+  color-negative: var(--tphy_ng, #ff866e),
+  state-disabled: var(--tphy_s-db, #292929),
+  state-skeleton: var(--tphy_s-sk, rgba(#000000, 0)),
+);

@@ -1,0 +1,105 @@
+.notification {
+  --n-pd: 32px;
+  --n-bdrs: 16px;
+  --n-max-width: 100%;
+  --n-icon-pd: 20px;
+  --n-section-gap: 20px;
+  --n-text-gap: 8px;
+  --n-actions-gap: 16px;
+  --n-title-fz: 22px;
+  --n-title-lh: 28px;
+  --n-subTitle-fz: 16px;
+  --n-subTitle-lh: 24px;
+
+  --n-description-fz: 16px;
+  --n-description-lh: 24px;
+
+  --n-divider-width: 2px;
+  --n-close-button-margin: 20px;
+  --shadow-color: rgba(0, 96, 255, 0.16);
+  --n-bg: #0060FF;
+  --n-text-color: #FFFFFF;
+  --n-divider-color: rgba(255, 255, 255, 0.12);
+  --n-main-direction: row;
+
+
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: var(--n-max-width);
+  justify-content: space-between;
+
+  padding: var(--n-pd);
+  border-radius: var(--n-bdrs);
+
+  background-color: var(--n-bg);
+  color: var(--n-text-color);
+  box-shadow: 0px 4px 16px var(--shadow-color)
+}
+
+.icon {
+  margin-right: var(--n-icon-pd);
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+}
+
+.mainSectionCentered {
+  align-items: center;
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--n-text-gap);
+}
+
+.infoSection {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: var(--n-main-direction);
+  justify-content: space-between;
+  gap: var(--n-section-gap);
+}
+
+.actionsSection {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  gap: var(--n-actions-gap);
+}
+
+.title {
+  font-weight: 600;
+  font-size: var(--n-title-fz);
+  line-height: var(--n-title-lh);
+}
+
+.subTitle {
+  font-weight: 600;
+  font-size: var(--n-subTitle-fz);
+  line-height: var(--n-subTitle-lh);
+}
+
+.description {
+  font-weight: 500;
+  font-size: var(--n-description-fz);
+  line-height: var(--n-description-lh);
+}
+
+.closeButtonSection {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  margin-left: var(--n-close-button-margin);
+}
+
+.closeButtonSectionWithDivider {
+  border-left: var(--n-divider-width) solid var(--n-divider-color);
+  padding-left: var(--n-close-button-margin);
+}
+
+

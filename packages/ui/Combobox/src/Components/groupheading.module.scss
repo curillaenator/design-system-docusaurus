@@ -1,0 +1,12 @@
+.heading {
+  display: flex !important;
+  align-items: center;
+  padding: var(--cmbx-option-pd-y) calc(var(--cmbx-option-pd-x) * 2) !important;
+  margin-bottom: var(--cmbx-menu-gp-y) !important;
+  border-bottom: var(--cmbx-menu-bdw) solid var(--color-neutral-400);
+  font-size: var(--cmbx-menu-fz) !important;
+  line-height: var(--cmbx-menu-lh) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  color: var(--color-neutral-400) !important;
+}

@@ -1,0 +1,27 @@
+.button {
+  --search-btn-ic-c: var(--inp-ic-c);
+
+  outline: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: fit-content;
+  height: fit-content;
+
+  &:disabled {
+    --search-btn-ic-c: var(--ifm-color-emphasis-200);
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:not(:disabled):hover {
+    --search-btn-ic-c: var(--ifm-color-primary);
+  }
+
+  path,
+  circle {
+    stroke: var(--search-btn-ic-c);
+  }
+}

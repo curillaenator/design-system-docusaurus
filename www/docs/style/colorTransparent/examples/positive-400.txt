@@ -1,0 +1,22 @@
+{
+  "positive-400-80%": {
+    "value": "rgba(122, 222, 172, 0.8)",
+    "type": "color"
+  },
+  "positive-400-60%": {
+    "value": "rgba(122, 222, 172, 0.6)",
+    "type": "color"
+  },
+  "positive-400-40%": {
+    "value": "rgba(122, 222, 172, 0.4)",
+    "type": "color"
+  },
+  "positive-400-20%": {
+    "value": "rgba(122, 222, 172, 0.2)",
+    "type": "color"
+  },
+  "positive-400-0%": {
+    "value": "rgba(122, 222, 172, 0)",
+    "type": "color"
+  }
+}

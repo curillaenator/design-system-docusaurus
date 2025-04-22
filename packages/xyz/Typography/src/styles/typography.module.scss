@@ -1,0 +1,55 @@
+@use '../../../../theme/src/scss/utils/' as utils;
+@use '../../../../theme/src/scss/typography' as typography;
+
+@function get-scale($value-name, $size: '2xl') {
+  @return map-get(mtypography.$scale, $size);
+}
+
+@function get-font-size($value-name, $size: '2xl') {
+  @return map-get(typography.$font-size, $size);
+}
+
+@function get-line-height-low($value-name, $size: '2xl') {
+  @return map-get(typography.$line-height-low, $size);
+}
+
+@function get-line-height-high($value-name, $size: '2xl') {
+  @return map-get(typography.$line-height-high, $size);
+}
+
+@function get-letter-spacing($value-name, $size: '2xl') {
+  @return map-get(typography.$letter-spacing, $size);
+}
+
+@each $color, $value in typography.$theme-light {
+  ._#{utils.kebab-to-camel-case($color)} {
+    --tphy-c: #{$value};
+  }
+}
+
+@each $size in (2xl xl l m s xs) {
+  ._size_#{$size} {
+    --tphy-low-lh: #{get-line-height-low(line-height-low, $size)};
+    --tphy-high-lh: #{get-line-height-high(line-height-high, $size)};
+    --tphy-fz: #{get-font-size(font-size, $size)};
+    --tphy-lts: #{get-letter-spacing(letter-spacing, $size)};
+  }
+}
+
+@each $fontWeight, $value in typography.$font-weight {
+  ._fontWeight-#{$fontWeight} {
+    --tphy-fw: #{$value};
+  }
+}
+
+@each $fontFamily, $value in typography.$font-family {
+  ._fontFamily-#{$fontFamily} {
+    --tphy-ff: #{$value};
+  }
+}
+
+@each $lineHeight in (low high) {
+  ._lineHeight-#{$lineHeight} {
+    --tphy-lh: var(--tphy-#{$lineHeight}-lh);
+  }
+}

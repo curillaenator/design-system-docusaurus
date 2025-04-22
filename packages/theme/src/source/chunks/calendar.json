@@ -1,0 +1,286 @@
+{
+  "calendar/scale": {
+    "calendar-min-width": {
+      "default": {
+        "value": "264px",
+        "type": "sizing"
+      }
+    },
+    "calendar-height": {
+      "default": {
+        "value": "232px",
+        "type": "sizing"
+      }
+    },
+    "calendar-gap-y": {
+      "default": {
+        "value": "16px",
+        "type": "spacing"
+      }
+    },
+    "calendar-padding-y": {
+      "default": {
+        "value": "20px",
+        "type": "spacing"
+      }
+    },
+    "calendar-padding-x": {
+      "default": {
+        "value": "20px",
+        "type": "spacing"
+      }
+    },
+    "calendar-border-radius": {
+      "default": {
+        "value": "16px",
+        "type": "borderRadius"
+      }
+    },
+    "navigation-text-padding-y": {
+      "default": {
+        "value": "2px",
+        "type": "spacing"
+      }
+    },
+    "navigation-line-height": {
+      "default": {
+        "value": "{font-size.m}",
+        "type": "lineHeights"
+      }
+    },
+    "navigation-font-size": {
+      "default": {
+        "value": "{font-size.s}",
+        "type": "fontSizes"
+      }
+    },
+    "weekday-height": {
+      "default": {
+        "value": "32px",
+        "type": "sizing"
+      }
+    },
+    "day-height": {
+      "default": {
+        "value": "32px",
+        "type": "sizing"
+      }
+    },
+    "day-width": {
+      "default": {
+        "value": "40px",
+        "type": "sizing"
+      }
+    },
+    "day-gap-y": {
+      "default": {
+        "value": "8px",
+        "type": "spacing"
+      }
+    },
+    "weekday-font-size": {
+      "default": {
+        "value": "{font-size.m}",
+        "type": "fontSizes"
+      }
+    },
+    "date-font-size": {
+      "default": {
+        "value": "{font-size.s}",
+        "type": "fontSizes"
+      }
+    },
+    "date-border-radius": {
+      "default": {
+        "value": "8px",
+        "type": "borderRadius"
+      }
+    },
+    "month-height": {
+      "default": {
+        "value": "32px",
+        "type": "sizing"
+      }
+    },
+    "month-width": {
+      "default": {
+        "value": "70px",
+        "type": "sizing"
+      }
+    },
+    "month-gap-y": {
+      "default": {
+        "value": "12px",
+        "type": "spacing"
+      }
+    }
+  },
+  "calendar/style": {
+    "content": {
+      "font-family": {
+        "value": "{font-family.sans}",
+        "type": "fontFamilies"
+      },
+      "font-weight-semibold": {
+        "value": "{font-weight.500}",
+        "type": "fontWeights"
+      },
+      "font-weight-regular": {
+        "value": "{font-weight.400}",
+        "type": "fontWeights"
+      }
+    }
+  },
+  "calendar/theme/light": {
+    "color/primary": {
+      "background": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color.neutral-200}",
+        "type": "color"
+      },
+      "text-general": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "text-navigation": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "text-additional": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      },
+      "text-active": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "text-in-range": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "date-bg-hover": {
+        "value": "{color.accent-1-400}",
+        "type": "color"
+      },
+      "date-bg-in-range": {
+        "value": "{color.accent-1-400}",
+        "type": "color"
+      },
+      "date-bg-active": {
+        "value": "{color.accent-1-700}",
+        "type": "color"
+      },
+      "drop-shadow": {
+        "value": "{shadow.transparent}",
+        "type": "dropShadow"
+      }
+    }
+  },
+  "calendar/theme/dark": {
+    "color/primary": {
+      "scheme": {
+        "value": "calendar/theme/light.color/primary",
+        "type": "meta"
+      },
+      "background": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color.neutral-600}",
+        "type": "color"
+      },
+      "text-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "text-navigation": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "text-additional": {
+        "value": "{color.neutral-400}",
+        "type": "color"
+      },
+      "text-active": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "text-in-range": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "date-bg-hover": {
+        "value": "{color-transparent.neutral-100-10%}",
+        "type": "color"
+      },
+      "date-bg-in-range": {
+        "value": "{color-transparent.neutral-100-10%}",
+        "type": "color"
+      },
+      "date-bg-active": {
+        "value": "{color.accent-1-700}",
+        "type": "color"
+      },
+      "drop-shadow": {
+        "value": "{shadow.transparent}",
+        "type": "dropShadow"
+      }
+    }
+  },
+  "calendar/theme/color": {
+    "color/primary": {
+      "scheme": {
+        "value": "calendar/theme/light.color/primary",
+        "type": "meta"
+      },
+      "background": {
+        "value": "{color-transparent.neutral-100-10%}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color-transparent.neutral-100-20%}",
+        "type": "color"
+      },
+      "text-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "text-navigation": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "text-additional": {
+        "value": "{color.accent-1-400}",
+        "type": "color"
+      },
+      "text-active": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "text-in-range": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "date-bg-hover": {
+        "value": "{color-transparent.neutral-100-20%}",
+        "type": "color"
+      },
+      "date-bg-in-range": {
+        "value": "{color-transparent.neutral-100-20%}",
+        "type": "color"
+      },
+      "date-bg-active": {
+        "value": "{color-transparent.neutral-100-40%}",
+        "type": "color"
+      },
+      "drop-shadow": {
+        "value": "{shadow.transparent}",
+        "type": "dropShadow"
+      }
+    }
+  }
+}

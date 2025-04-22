@@ -1,0 +1,21 @@
+import { Layout, Header, DocsGenerator } from '@pcbl-ui-v4/storybook-components';
+
+import { docs } from './COMPONENT_NAMEStory.docs';
+import packageInfo from '../../package.json';
+
+<Layout withoutPadding>
+<Header
+  title="COMPONENT_NAME"
+  authorName=""
+  designerName=""
+  status="{status}"
+  design=""
+  description="Описание компонента пока отстутствует"
+  origin="https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit4/browse/packages/"
+  packageName={packageInfo.name}
+  packageVersion={packageInfo.version}
+/>
+
+<DocsGenerator docs={docs} />
+
+</Layout>

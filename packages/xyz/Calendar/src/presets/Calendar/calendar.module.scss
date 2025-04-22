@@ -1,0 +1,99 @@
+@use '../../../../../theme/src/scss/calendar' as calendar;
+
+$modeMaps: (
+  'light': calendar.$theme-light,
+  'dark': calendar.$theme-dark,
+  'color': calendar.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(calendar.$scale, $prop, $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(calendar.$style, $group, $value);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return #{map-get(map-get($modeMaps, $mapName), $schema, $prop)};
+}
+
+.calendarVariables {
+  --clnd-fw-semibold: #{get-style('font-weight-semibold')};
+  --clnd-fw-regular: #{get-style('font-weight-regular')};
+
+  --clnd-week-day-w: var(--clnd-day-w);
+
+  --clnd-today-highlight-c: transparent;
+  --clnd-today-highlight-bg: transparent;
+  --clnd-today-highlight-bd: 1px;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--clnd-gp-y);
+  width: fit-content;
+  min-width: var(--clnd-mw);
+  padding: var(--clnd-pd-y) var(--clnd-pd-x);
+
+  box-shadow: inset 0 0 0 1px var(--clnd-bdc), var(--clnd-sh);
+  background-color: var(--clnd-bgc);
+  border-radius: var(--clnd-bdrs);
+
+  line-height: 0;
+
+  &_today {
+    --clnd-today-highlight-c: var(--clnd-date-bg-a);
+  }
+}
+
+@each $size in ('default') {
+  ._size_#{$size} {
+    --clnd-mw: #{get-scale('calendar-min-width', $size)};
+    --clnd-gp-y: #{get-scale('calendar-gap-y', $size)};
+    --clnd-pd-y: #{get-scale('calendar-padding-y', $size)};
+    --clnd-pd-x: #{get-scale('calendar-padding-x', $size)};
+    --clnd-bdrs: #{get-scale('calendar-border-radius', $size)};
+
+    --clnd-navigation-txt-pd-y: #{get-scale('navigation-text-padding-y', $size)};
+    --clnd-navigation-lh: #{get-scale('navigation-line-height', $size)};
+    --clnd-navigation-fz: #{get-scale('navigation-font-size', $size)};
+
+    --clnd-weekday-fz: #{get-scale('weekday-font-size', $size)};
+    --clnd-week-row-h: #{get-scale('weekday-height', $size)};
+
+    --clnd-date-fz: #{get-scale('date-font-size', $size)};
+    --clnd-date-bdrs: #{get-scale('date-border-radius', $size)};
+
+    --clnd-full-h: #{get-scale('calendar-height', $size)};
+
+    --clnd-day-h: #{get-scale('day-height', $size)};
+    --clnd-day-w: #{get-scale('day-width', $size)};
+    --clnd-day-gp-y: #{get-scale('day-gap-y', $size)};
+
+    --clnd-month-h: #{get-scale('month-height', $size)};
+    --clnd-month-gp-y: #{get-scale('month-gap-y', $size)};
+    --clnd-month-w: #{get-scale('month-width', $size)};
+  }
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{$schema}_#{$modeMapName} {
+      --clnd-bgc: #{get-color('background', $modeMapName, $schema)};
+      --clnd-bdc: #{get-color('border', $modeMapName, $schema)};
+      --clnd-sh: #{get-color('drop-shadow', $modeMapName, $schema)};
+
+      --clnd-txt-gn: #{get-color('text-general', $modeMapName, $schema)};
+      --clnd-txt-navigation: #{get-color('text-navigation', $modeMapName, $schema)};
+      --clnd-txt-ad: #{get-color('text-additional', $modeMapName, $schema)};
+      --clnd-txt-a: #{get-color('text-active', $modeMapName, $schema)};
+      --clnd-txt-in-range: #{get-color('text-in-range', $modeMapName, $schema)};
+
+      --clnd-date-bg-h: #{get-color('date-bg-hover', $modeMapName, $schema)};
+      --clnd-date-bg-in-range: #{get-color('date-bg-in-range', $modeMapName, $schema)};
+      --clnd-date-bg-a: #{get-color('date-bg-active', $modeMapName, $schema)};
+
+      --clnd-today-highlight-c: #{get-color('date-bg-hover', $modeMapName, $schema)};
+    }
+  }
+}

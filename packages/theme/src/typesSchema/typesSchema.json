@@ -1,0 +1,183 @@
+{
+  "style": {
+    "title": "GeneratedStyleProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "select": {
+    "title": "GeneratedSelectProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "scroll": {
+    "title": "GeneratedScrollProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "avatar": {
+    "title": "GeneratedAvatarProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "shape": { "enum": ["circular", "rounded", "square"], "type": "string" }
+    }
+  },
+  "accordion": {
+    "title": "GeneratedAccordionProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "input": {
+    "title": "GeneratedInputProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "shape": { "enum": ["square", "rounded", "circular"], "type": "string" }
+    }
+  },
+  "icon": {
+    "title": "GeneratedIconProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "badge": {
+    "title": "GeneratedBadgeProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "shape": { "enum": ["square", "rounded", "circular"], "type": "string" }
+    }
+  },
+  "skeleton": {
+    "title": "GeneratedSkeletonProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "button": {
+    "title": "GeneratedButtonProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "shape": { "enum": ["circular", "rounded", "square"], "type": "string" }
+    }
+  },
+  "modal": {
+    "title": "GeneratedModalProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "drawer": {
+    "title": "GeneratedDrawerProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "radio": {
+    "title": "GeneratedRadioProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "switch": {
+    "title": "GeneratedSwitchProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "checkbox": {
+    "title": "GeneratedCheckboxProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "shape": {
+        "enum": ["glyph-square", "glyph-circular", "glyph-rounded"],
+        "type": "string"
+      }
+    }
+  },
+  "paper": {
+    "title": "GeneratedPaperProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "shape": { "enum": ["square", "rounded"], "type": "string" }
+    }
+  },
+  "toast": {
+    "title": "GeneratedToastProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "tabs": {
+    "title": "GeneratedTabsProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "shape": { "enum": ["circular", "rounded", "square"], "type": "string" }
+    }
+  },
+  "pagination": {
+    "title": "GeneratedPaginationProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "shape": { "enum": ["circular", "rounded", "square"], "type": "string" }
+    }
+  },
+  "notification": {
+    "title": "GeneratedNotificationProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "spinner": {
+    "title": "GeneratedSpinnerProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "calendar": {
+    "title": "GeneratedCalendarProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "combobox": {
+    "title": "GeneratedComboboxProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "shape": {
+        "enum": [
+          "control-rounded",
+          "control-circular",
+          "control-square",
+          "control-chip-rounded",
+          "control-chip-circular",
+          "control-chip-square",
+          "menu-rounded",
+          "menu-circular",
+          "menu-square",
+          "option-rounded",
+          "option-circular",
+          "option-square"
+        ],
+        "type": "string"
+      }
+    }
+  },
+  "menu": {
+    "title": "GeneratedMenuProps",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

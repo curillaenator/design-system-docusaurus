@@ -1,0 +1,92 @@
+@use '../../../theme/src/scss/notification' as notification;
+
+$modeMaps: (
+  'light': notification.$theme-light,
+  'dark': notification.$theme-dark,
+  'color': notification.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(notification.$scale, $prop, $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(notification.$style, $group, $value);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+.notification {
+  --ntfc-ff: #{get-style('font-family')};
+  --ntfc-lh: #{get-style('line-height')};
+  --ntfc-fz: #{get-style('font-size')};
+  --ntfc-fw: #{get-style('font-weight')};
+
+  display: flex;
+  align-items: flex-start;
+  color: var(--ntfc-cnt-gn);
+
+  .close {
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  & > svg {
+    flex-shrink: 0;
+  }
+}
+
+.content {
+  width: 100%;
+
+  .titles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ntfc-ctn-gp-y);
+    padding: var(--ntfc-ctn-pd-y) var(--ntfc-ctn-pd-x);
+
+    .text {
+      font-family: var(--ntfc-ff);
+      font-size: var(--ntfc-fz);
+      font-style: normal;
+      font-weight: var(--ntfc-fw);
+      line-height: var(--ntfc-lh);
+    }
+
+    .title {
+      color: var(--ntfc-cnt-gn);
+    }
+
+    .message {
+      color: var(--ntfc-cnt-ad);
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{$schema}_#{$modeMapName} {
+      --ppr-bgc: #{get-color('background', $modeMapName, $schema)};
+
+      --ntfc-cnt-gn: #{get-color('content-general', $modeMapName, $schema)};
+      --ntfc-cnt-ad: #{get-color('content-additional', $modeMapName, $schema)};
+    }
+  }
+}
+
+@each $size in (s) {
+  ._size_#{'' + $size} {
+    --ntfc-ctn-gp-y: #{get-scale('content-gap-y', $size)};
+    --ntfc-ctn-pd-x: #{get-scale('content-padding-x', $size)};
+    --ntfc-ctn-pd-y: #{get-scale('content-padding-y', $size)};
+  }
+}

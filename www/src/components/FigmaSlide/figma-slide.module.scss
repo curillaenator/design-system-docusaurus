@@ -1,0 +1,19 @@
+.slide {
+  cursor: grab;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 32px;
+    background-color: var(--ifm-color-emphasis-200);
+    border-radius: 24px;
+
+    & > img {
+      max-height: 548px;
+      min-height: 548px;
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.navbar {
+  border-bottom: var(--ifm-common-bdw) solid transparent;
+}
+
+.navbarHideable {
+  transition: transform var(--ifm-transition-fast) ease;
+}
+
+.navbarHidden {
+  transform: translate3d(0, calc(-100% - var(--ifm-common-bdw)), 0);
+}
+
+.overlay {
+  background-color: var(--ifm-color-emphasis-100);
+  border-bottom: var(--ifm-common-bdw) solid var(--ifm-color-emphasis-200);
+}
+
+.navbarDocsPage {
+  transition: background-color var(--ifm-transition-fast) ease;
+  // position: relative;
+}
+
+.navbarRootPage {
+  position: relative;
+}
+
+.backdrop-light {
+  background-color: var(--color-neutral-100-80\%);
+}
+
+.backdrop-dark {
+  background-color: var(--color-neutral-700-80\%);
+}

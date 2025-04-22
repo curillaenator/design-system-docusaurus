@@ -1,0 +1,46 @@
+{
+  "name": "@kit-xyz/radio",
+  "version": "0.2.6",
+  "description": "Компонент для создания группы радиокнопок",
+  "license": "UNLICENSED",
+  "sideEffects": [
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "type": "git",
+    "registry": "https://gitlab.com/api/v4/projects/50873891/packages/npm/"
+  },
+  "main": "src/index",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "run -T rimraf build && yarn run -T rollup -c --bundleConfigAsCjs",
+    "build:raw": "run -T tsc -p tsconfig.build.json",
+    "build:watch": "yarn build:raw --watch",
+    "pub": "yarn build && yarn setPath && npm publish && yarn revertPath",
+    "checkDep": "run -T pcbl-fe  checkDependencies",
+    "setPath": "node ../../../fe-scripts/bin/set-paths.js",
+    "revertPath": "node ../../../fe-scripts/bin/revert-paths.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit4/browse/packages/xyz/Radio",
+    "directory": "packages/xyz"
+  },
+  "dependencies": {
+    "@kit-base/radio": "0.2.5",
+    "classnames": "2.3.1"
+  },
+  "devDependencies": {
+    "@kit-base/common-types": "0.0.2"
+  },
+  "peerDependencies": {
+    "@kit-xyz/skeleton": "*",
+    "react": "*"
+  },
+  "files": [
+    "/build"
+  ]
+}

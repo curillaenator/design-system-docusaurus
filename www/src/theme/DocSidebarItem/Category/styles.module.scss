@@ -1,0 +1,73 @@
+.menu_collapsable {
+  --ifm-menu-color: var(--ifm-color-white);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  padding: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    --ifm-menu-color: var(--ifm-color-primary);
+
+    text-decoration: none;
+  }
+
+  &_active {
+    // background-color: var(--ifm-color-primary);
+    --ifm-menu-color: var(--ifm-color-primary);
+
+    &:hover {
+      // background-color: var(--ifm-color-primary);
+      --ifm-menu-color: var(--ifm-color-white);
+    }
+
+    .active_link {
+      color: var(--ifm-color-primary);
+    }
+  }
+
+  .button {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+
+    // .collapseIcon {
+    //   stroke: var(--ifm-color-emphasis-700);
+
+    //   &_active {
+    //     stroke: var(--color-neutral-100);
+    //   }
+
+    //   &_open {
+    //     transform: rotate3d(1, 0, 0, 180deg);
+    //   }
+    // }
+  }
+
+  .link {
+    padding: 4px 8px;
+  }
+}
+
+.menu_sublist {
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+
+.menu_listItem:not(:first-child) {
+  margin-top: 16px;
+}
+
+.fontControl {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}

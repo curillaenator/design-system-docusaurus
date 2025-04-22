@@ -1,0 +1,62 @@
+---
+sidebar_label: 'Flow'
+title: 'Flow'
+description: 'Компонент интерактивных блок-схем'
+---
+
+import pkg from '@kit-xyz/flow/package.json';
+
+import { FlowRunner } from './FlowRunner';
+
+import flowChartCode from '!!raw-loader!./FlowRunner.tsx';
+
+<headermeta
+  title='Flow'
+  description='Компонент интерактивных блок-схем'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/xyz/Badge'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-404'
+/>
+
+# Flow
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Base
+
+<docviewport codeBlock={flowChartCode} modes={['light', 'dark']}>
+  <examples>
+    <example exampleCodeJSX={undefined}>
+      <card>
+        <FlowRunner />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Editable
+
+<docviewport codeBlock={flowChartCode} modes={['light', 'dark']}>
+  <examples>
+    <example exampleCodeJSX={undefined}>
+      <card>
+        <FlowRunner isEditable />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+</versionselector>

@@ -1,0 +1,142 @@
+---
+sidebar_label: 'Icon'
+title: 'Icon'
+description: 'Набор иконок в дизайн-системе'
+---
+
+import pkg from '@kit-xyz/icon/package.json';
+import { SolidIcons } from './examples/sets/SolidIcons.tsx';
+import { DuotoneIcons } from './examples/sets/DuotoneIcons.tsx';
+import { BaseCover } from './examples/BaseCover.tsx';
+import { IconSetsText } from './examples/sets/IconSetsText';
+import { ICON_SIZES } from './examples/size';
+import { ICON_COLORS } from './examples/theme';
+import { FIGMA_SETTINGS } from './examples/properties';
+import { IconWrapped } from './examples/IconWrapped';
+import headerImage from './assets/icon.png';
+
+<headermeta
+  title='Icon'
+  description='Набор иконок в дизайн-системе'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@valeriizubkov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@valeriizubkov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  json='JSON'
+  sass='SASS'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/xyz/Icon'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-384'
+  headerImage={headerImage}
+/>
+
+# Icon
+
+## Collection
+
+<textcolumns>
+  <span>
+    <p>
+      Коллекции иконок двух цветов, где используется 2 тона в построении иконки или иконка полностью заливается одним
+      цветом
+    </p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={IconSetsText} modes={['light', 'dark', 'color']}>
+  <subtitle>solid</subtitle>
+  <examples  mb={32}>
+    <example exampleCodeJSX={undefined}>
+      <card>
+        <SolidIcons />
+      </card>
+    </example>
+  </examples>
+
+  <subtitle>duotone</subtitle>
+  <examples  mb={32}>
+    <example exampleCodeJSX={undefined}>
+      <DuotoneIcons />
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Base
+
+<textcolumns>
+  <span>
+    <p>Цветовое ограничение в иконках и построение компонента</p>
+  </span>
+</textcolumns>
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples mb={32}>
+    <example exampleCodeJSX={undefined}>
+      <BaseCover />
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Size
+
+<textcolumns>
+  <span>
+    <p>Каждая иконка представлена в 5 возможных вариантах - xs, s, m, l, xl</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {ICON_SIZES.map(({ title, code, subtitle, exampleCodeJSON, ...rest }) => (
+      <example key={title} exampleCodeJSX={code} exampleCodeJSON={exampleCodeJSON}>
+        <card title={title.toUpperCase()} subtitles={[subtitle]}>
+          <IconWrapped {...rest} border={true} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Иконки могут принимать значение цвета родителя или их цвет может быть задан через props color</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    {ICON_COLORS.map(({ title, code, subtitleGenerator, JSONGenerator, ...rest }) => (
+      <example key={title} exampleCodeJSX={code} exampleCodeJSON={JSONGenerator}>
+        <card title={title} subtitleGenerator={subtitleGenerator}>
+          <IconWrapped {...rest} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+<divider />
+
+## Properties
+
+<textcolumns>
+  <span>
+    <p>Информация по настройке компонентов в Figma</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <swiper slides={FIGMA_SETTINGS} />
+</docviewport>

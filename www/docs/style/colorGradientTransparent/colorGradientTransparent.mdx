@@ -1,0 +1,244 @@
+---
+sidebar_label: 'Color gradient transparent'
+sidebar_position: 6
+title: 'Color gradient transparent'
+description: 'Одноцветный градиент от непрозрачного к прозрачному'
+---
+
+import headerImage from './assets/colorGradientTransparent.png';
+
+import { GRADIENTS, CODEBLOCKS } from './index';
+
+<headermeta
+  title='Color gradient transparent'
+  description='Одноцветный градиент от непрозрачного к прозрачному'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/theme/src/scss/style/_color-gradient-transparent.scss'
+  figmaLink='https://www.figma.com/'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-108'
+  headerImage={headerImage}
+/>
+
+# Color gradient transparent
+
+<versionselector versionPages={[]}>
+  <crutch />
+
+## Neutral
+
+<docviewport codeBlock={CODEBLOCKS.neutral} language='json'>
+  <examples>
+    {GRADIENTS['neutral-700'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['neutral-400'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['neutral-100'].map((card, i) => (
+      <example key={card.id} colorMode='dark' exampleCodeJSON={card.code}>
+        <card {...card} colorMode='dark' />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Accent-1
+
+<docviewport codeBlock={CODEBLOCKS['accent-1']} language='json'>
+  <examples>
+    {GRADIENTS['accent-1-700'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['accent-1-400'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['accent-1-100'].map((card, i) => (
+      <example key={card.id} colorMode='dark' exampleCodeJSON={card.code}>
+        <card {...card} colorMode='dark' />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Accent-2
+
+<docviewport codeBlock={CODEBLOCKS['accent-2']} language='json'>
+  <examples>
+    {GRADIENTS['accent-2-700'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['accent-2-400'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['accent-2-100'].map((card, i) => (
+      <example key={card.id} colorMode='dark' exampleCodeJSON={card.code}>
+        <card {...card} colorMode='dark' />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Informative
+
+<docviewport codeBlock={CODEBLOCKS.informative} language='json'>
+  <examples>
+    {GRADIENTS['informative-700'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['informative-400'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['informative-100'].map((card, i) => (
+      <example key={card.id} colorMode='dark' exampleCodeJSON={card.code}>
+        <card {...card} colorMode='dark' />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Positive
+
+<docviewport codeBlock={CODEBLOCKS.positive} language='json'>
+  <examples>
+    {GRADIENTS['positive-700'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['positive-400'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['positive-100'].map((card, i) => (
+      <example key={card.id} colorMode='dark' exampleCodeJSON={card.code}>
+        <card {...card} colorMode='dark' />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Attention
+
+<docviewport codeBlock={CODEBLOCKS.attention} language='json'>
+  <examples>
+    {GRADIENTS['attention-700'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['attention-400'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['attention-100'].map((card, i) => (
+      <example key={card.id} colorMode='dark' exampleCodeJSON={card.code}>
+        <card {...card} colorMode='dark' />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Negative
+
+<docviewport codeBlock={CODEBLOCKS.negative} language='json'>
+  <examples>
+    {GRADIENTS['negative-700'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['negative-400'].map((card, i) => (
+      <example key={card.id} exampleCodeJSON={card.code}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+  <div style={{ height: 96 }} />
+  <examples>
+    {GRADIENTS['negative-100'].map((card, i) => (
+      <example key={card.id} colorMode='dark' exampleCodeJSON={card.code}>
+        <card {...card} colorMode='dark' />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+</versionselector>

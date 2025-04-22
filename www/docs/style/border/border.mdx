@@ -1,0 +1,83 @@
+---
+sidebar_label: 'Border'
+sidebar_position: 7
+title: 'Border'
+description: 'Включает в себя значения по толщине обводки, варианты скруглений и стили оформления'
+---
+
+import headerImage from './assets/border.png';
+import {
+  BORDER_WIDTHS,
+  BORDER_RADIUSES,
+  BORDER_STYLES,
+  WIDTHS_CODEBLOCK,
+  RADIUSES_CODEBLOCK,
+  STYLES_CODEBLOCK,
+} from './index';
+
+<headermeta
+  title='Border'
+  description='Включает в себя значения по толщине обводки, варианты скруглений и стили оформления'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/theme/src/scss/style/'
+  figmaLink='https://www.figma.com/'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-109'
+  headerImage={headerImage}
+/>
+
+# Border
+
+## Width
+
+Толщина обводки
+
+<docviewport codeBlock={WIDTHS_CODEBLOCK} language='json'>
+  <examples>
+    {BORDER_WIDTHS.map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Radius
+
+Скругление обводки
+
+<docviewport codeBlock={RADIUSES_CODEBLOCK} language='json'>
+  <examples>
+    {BORDER_RADIUSES.map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Style
+
+Стиль обводки
+
+<docviewport codeBlock={STYLES_CODEBLOCK} language='json'>
+  <examples>
+    {BORDER_STYLES.map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>

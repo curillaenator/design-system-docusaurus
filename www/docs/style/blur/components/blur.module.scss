@@ -1,0 +1,27 @@
+$bdrs: 16px;
+
+.opacity {
+  position: relative;
+  width: 100%;
+  height: 128px;
+  border-radius: $bdrs;
+  margin-bottom: 48px;
+
+  .media {
+    border-radius: $bdrs;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .filter {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: $bdrs;
+    background-color: var(--color-neutral-700-40\%);
+  }
+}

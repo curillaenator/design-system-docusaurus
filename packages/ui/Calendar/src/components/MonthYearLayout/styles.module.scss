@@ -1,0 +1,47 @@
+.months {
+  $rowHeight: calc(var(--clnd-full-h, 224px) / 3);
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax($rowHeight, 1fr));
+}
+
+.monthButton {
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto 0;
+  min-height: var(--clnd-month-h);
+  width: var(--clnd-month-w);
+  border-radius: var(--clnd-date-bdrs);
+  border: none;
+  background-color: transparent;
+
+  color: var(--clnd-txt-gn);
+  text-transform: capitalize;
+  font-size: var(--clnd-date-fz);
+
+  cursor: pointer;
+
+  &:disabled {
+    color: var(--clnd-txt-ad);
+    pointer-events: none;
+  }
+
+  &_withHover {
+    &:hover {
+      background-color: var(--clnd-date-bg-h);
+    }
+  }
+
+  &_active {
+    background-color: var(--clnd-date-bg-a);
+    color: var(--clnd-txt-a);
+  }
+
+  &_current {
+    box-shadow: inset 0 0 0 1px var(--clnd-today-highlight-c);
+  }
+}

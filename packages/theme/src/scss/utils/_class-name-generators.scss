@@ -1,0 +1,11 @@
+@mixin generate-variables($assoc: (), $prefix) {
+  @each $assoc-value, $properties in $assoc {
+    @if (type-of($properties) == map) {
+      @each $property-name, $property-value in $properties {
+        #{$prefix}-#{"" + $assoc-value}-#{'' + $property-name}: #{$property-value};
+      }
+    } @else {
+      #{$prefix}-#{'' + $assoc-value}: #{$properties};
+    }
+  }
+}

@@ -1,0 +1,153 @@
+@use '../../../theme/src/scss/paper' as paper;
+@use '../../../theme/src/scss/style/color' as colors;
+
+$sizes: (2xl, 'xl', 'l', 'm', 's', 'xs', 'none');
+
+$shapes: (
+  'rounded': 'ro',
+  'square': 'sq',
+);
+
+$modeMaps: (
+  'light': paper.$theme-light,
+  'dark': paper.$theme-dark,
+  'color': paper.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(paper.$scale, $prop, $size);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@function get-style($prop) {
+  @return map-get(paper.$style, 'content', $prop);
+}
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --ppr-pd-y: #{get-scale('padding-y', $size)};
+    --ppr-pd-x: #{get-scale('padding-x', $size)};
+  }
+}
+
+@each $bdrs in $sizes {
+  ._bdrs_#{ '' + $bdrs} {
+    --ppr-bdrs-sq: #{get-scale('border-radius-square', $bdrs)};
+    --ppr-bdrs-ro: #{get-scale('border-radius-rounded', $bdrs)};
+  }
+}
+
+@each $bdw in $sizes {
+  ._bdw_#{'' + $bdw} {
+    --ppr-bdw: #{get-scale('border-width', $bdw)};
+  }
+}
+
+@each $shape, $shapeNotation in $shapes {
+  ._shape_#{'' + $shape} {
+    --ppr-bdrs: var(--ppr-bdrs-#{'' + $shapeNotation});
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --ppr-ct-gn: #{get-color('content-general', $colorMode, $schema)};
+
+      --ppr-bgc: #{get-color('background', $colorMode, $schema)};
+
+      --ppr-bdc: #{get-color('border', $colorMode, $schema)};
+      --ppr-bdc-h: #{get-color('border-hovered', $colorMode, $schema)};
+
+      --ppr-sh: #{get-color('shadow', $colorMode, $schema)};
+      --ppr-sh-smoothed: #{get-color('shadow-smoothed', $colorMode, $schema)};
+    }
+  }
+}
+
+@each $colorName, $colorValue in colors.$color {
+  ._bgc_#{'' + $colorName} {
+    --ppr-bgc: #{$colorValue};
+    --shp-bgc: #{$colorValue};
+  }
+}
+
+.paper {
+  --ppr-w: fit-content;
+  --ppr-ff: #{get-style('font-family')};
+
+  --ppr-gradient-bgc: linear-gradient(to right, tomato, lime);
+
+  --ppr-box-border-and-drop-sh: inset 0 0 0 var(--ppr-bdw) var(--ppr-bdc), var(--ppr-sh, 0 0 0 0 transparent);
+  --ppr-box-border-sh: inset 0 0 0 var(--ppr-bdw) var(--ppr-bdc);
+  --ppr-box-drop-sh: var(--ppr-sh, 0 0 0 0 transparent);
+
+  width: var(--ppr-w);
+  padding: var(--ppr-pd-y) var(--ppr-pd-x);
+  border-radius: var(--ppr-bdrs); // должен быть в любом случае
+
+  font-family: var(--ppr-ff);
+  color: var(--ppr-ct-gn);
+  box-shadow: var(--ppr-shadow);
+  background: var(--ppr-bgc);
+
+  &_fullwidth {
+    --ppr-w: 100%;
+  }
+
+  &_interactive {
+    cursor: pointer;
+
+    &:hover {
+      --ppr-bdc: var(--ppr-bdc-h);
+    }
+  }
+
+  &_smoothedCorners {
+    position: relative;
+  }
+
+  &_smoothedCornersShadow {
+    filter: drop-shadow(var(--ppr-sh-smoothed, 0px 0px 0px transparent));
+  }
+
+  &_smoothedCornersBorder {
+    box-shadow: var(--ppr-box-border-sh);
+  }
+
+  &_withBorder {
+    --shp-bdc: var(--ppr-bdc);
+  }
+
+  &_defaultCornersShadow {
+    --ppr-shadow: var(--ppr-box-drop-sh);
+  }
+
+  &_defaultCornersBorder {
+    --ppr-shadow: var(--ppr-box-border-sh);
+  }
+
+  &_defaultCornersShadowAndBorder {
+    --ppr-shadow: var(--ppr-box-border-and-drop-sh);
+  }
+
+  &_solid {
+    background-color: var(--ppr-bgc);
+  }
+
+  &_gradient {
+    background: var(--ppr-gradient-bgc);
+  }
+}
+
+.noEvents {
+  pointer-events: none;
+}
+
+.shape {
+  --shp-bgc: var(--ppr-bgc);
+  // --shp-bdw: var(--ppr-bdw);
+}

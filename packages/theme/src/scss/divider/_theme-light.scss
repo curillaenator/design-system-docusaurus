@@ -1,0 +1,52 @@
+$theme-light: (
+  color-dark: (
+    content-general: var(--dv_dk_cnt-gn, rgb(23, 23, 23)),
+    content-additional: var(--dv_dk_cnt-ad, rgba(23, 23, 23, 0.6)),
+    border: var(--dv_dk_br, rgb(23, 23, 23)),
+  ),
+  color-neutral: (
+    content-general: var(--dv_nc_cnt-gn, #292929),
+    content-additional: var(--dv_nc_cnt-ad, rgba(#292929, 0.6)),
+    border: var(--dv_nc_br, #292929),
+  ),
+  color-primary: (
+    content-general: var(--dv_pm_cnt-gn, #6e56e7),
+    content-additional: var(--dv_pm_cnt-ad, rgba(#6e56e7, 0.6)),
+    border: var(--dv_pm_br, #6e56e7),
+  ),
+  color-secondary: (
+    content-general: var(--dv_sc_cnt-gn, #3d86ff),
+    content-additional: var(--dv_sc_cnt-ad, rgba(#3d86ff, 0.6)),
+    border: var(--dv_sc_br, #3d86ff),
+  ),
+  color-informative: (
+    content-general: var(--dv_inf_cnt-gn, #6e56e7),
+    content-additional: var(--dv_inf_cnt-ad, rgba(#6e56e7, 0.6)),
+    border: var(--dv_inf_br, #6e56e7),
+  ),
+  color-positive: (
+    content-general: var(--dv_ps_cnt-gn, #3dcf86),
+    content-additional: var(--dv_ps_cnt-ad, rgba(#3dcf86, 0.6)),
+    border: var(--dv_ps_br, #3dcf86),
+  ),
+  color-attention: (
+    content-general: var(--dv_at_cnt-gn, #ffb756),
+    content-additional: var(--dv_at_cnt-ad, rgba(#ffb756, 0.6)),
+    border: var(--dv_at_br, #ffb756),
+  ),
+  color-negative: (
+    content-general: var(--dv_ng_cnt-gn, #ff866e),
+    content-additional: var(--dv_ng_cnt-ad, rgba(#ff866e, 0.6)),
+    border: var(--dv_ng_br, #ff866e),
+  ),
+  state-disabled: (
+    content-general: var(--dv_s-db_cnt-gn, #292929),
+    content-additional: var(--dv_s-db_cnt-ad, #292929),
+    border: var(--dv_s-db_br, #292929),
+  ),
+  state-skeleton: (
+    content-general: var(--dv_s-sk_cnt-gn, rgba(0, 0, 0, 0)),
+    content-additional: var(--dv_s-sk_cnt-ad, rgba(0, 0, 0, 0)),
+    border: var(--dv_s-sk_br, #292929),
+  ),
+);

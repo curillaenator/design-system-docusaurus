@@ -1,0 +1,93 @@
+@import './breakpoints';
+
+.container {
+  width: 100%;
+
+  @media (width < $desktopL) {
+    .legend {
+      margin-top: 64px;
+      margin-bottom: 32px;
+    }
+  }
+
+  @media (width >= $desktopL) {
+    position: relative;
+    margin-top: 64px;
+
+    .legend {
+      position: absolute;
+      top: calc(0px - 64px);
+      right: 0;
+      transform: translateY(-100%);
+    }
+  }
+}
+
+.flexwrap {
+  --general-offset: 8px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+
+  &_column {
+    flex-direction: column;
+  }
+
+  @media (width >= $mobile) {
+    --general-offset: 16px;
+    gap: 32px;
+  }
+
+  @media (width >= $tablet) {
+    --general-offset: 32px;
+    gap: 64px;
+  }
+}
+
+$appearances: (
+  'default': (
+    'bgc': var(--ifm-color-emphasis-200),
+    'text': var(--ifm-color-emphasis-700),
+  ),
+  'primary': (
+    'bgc': var(--color-accent-1-700),
+    'text': var(--color-neutral-100),
+  ),
+  'disabled': (
+    'bgc': var(--ifm-color-emphasis-200),
+    'text': var(--ifm-color-emphasis-400),
+  ),
+  'dummy': (
+    'bgc': transparent,
+    'text': transparent,
+  ),
+);
+
+.step {
+  @each $appearance, $values in $appearances {
+    &_#{'' + $appearance} {
+      --ppr-bgc: #{map-get($values, 'bgc')};
+      color: #{map-get($values, 'text')};
+    }
+  }
+
+  & > span {
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (width >= $tablet) {
+    & > span {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+}

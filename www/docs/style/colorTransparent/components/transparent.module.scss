@@ -1,0 +1,22 @@
+.dark {
+  --color-trasparent-value-bdc: var(--color-neutral-500);
+}
+
+.light {
+  --color-trasparent-value-bdc: var(--color-neutral-300);
+}
+
+.color {
+  --color-trasparent-value-bdc: var(--color-accent-1-400);
+}
+
+.colorValue {
+  width: 100%;
+  height: 128px;
+  border-radius: 16px;
+  margin-bottom: 48px;
+}
+
+._bordered {
+  box-shadow: inset 0 0 0 2px var(--color-trasparent-value-bdc);
+}

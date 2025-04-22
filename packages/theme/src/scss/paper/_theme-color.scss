@@ -1,0 +1,20 @@
+$theme-color: (
+  color-solid: (
+    content-general: var(--ppr_c-s_cnt-gn, rgb(255, 255, 255)),
+    border: var(--ppr_c-s_bdc, rgb(86, 86, 207)),
+    border-hovered: var(--ppr_c-s_bdc-h, rgb(255, 255, 255)),
+    background: var(--ppr_c-s_bgc, rgb(50, 50, 197)),
+    shadow: var(--ppr_c-s_sh, 0 0 16px rgba(255, 255, 255, 0.4)),
+    shadow-smoothed:
+      var(--ppr_c-s_sh-smoothed, 0 0 8px rgba(255, 255, 255, 0.4)),
+  ),
+  color-solid-alt: (
+    content-general: var(--ppr_c-s-alt_cnt-gn, rgb(10, 10, 10)),
+    border: var(--ppr_c-s-alt_bdc, rgb(194, 194, 194)),
+    border-hovered: var(--ppr_c-s-alt_bdc-h, rgb(64, 96, 255)),
+    background: var(--ppr_c-s-alt_bgc, rgb(64, 96, 255)),
+    shadow: var(--ppr_c-s-alt_sh, 0 0 16px rgba(10, 10, 10, 0.8)),
+    shadow-smoothed:
+      var(--ppr_c-s-alt_sh-smoothed, 0 0 8px rgba(10, 10, 10, 0.8)),
+  ),
+);

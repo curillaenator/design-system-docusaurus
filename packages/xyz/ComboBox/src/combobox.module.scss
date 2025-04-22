@@ -1,0 +1,160 @@
+@use '../../../theme/src/scss/combobox' as combobox;
+@use '../../../theme/src/scss/mixins/scroll' as scroll;
+
+@each $mode, $scrollMode in ('light': 'onLight', 'dark': 'onDark', 'color': 'onColor') {
+  .menuListScroll_#{$mode} {
+    @include scroll.scrollbar('mini', #{$scrollMode});
+  }
+}
+
+$modeMaps: (
+  'light': combobox.$theme-light,
+  'dark': combobox.$theme-dark,
+  'color': combobox.$theme-color,
+);
+
+$shapes: (
+  'square': 'sq',
+  'rounded': 'ro',
+  'circular': 'cc',
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(combobox.$scale, $prop, $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(combobox.$style, $group, $value);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+.variables {
+  --cmbx-ff: #{get-style('font-family')};
+
+  --cmbx-animation-time: #{get-style('time', 'animation')};
+  --cmbx-animation-method: #{get-style('method', 'animation')};
+
+  --cmbx-control-fw: #{get-style('font-weight', 'control')};
+  --cmbx-control-chip-maw: #{get-style('control-chip-maw', 'control')};
+
+  --cmbx-menu-fw: #{get-style('font-weight', 'menu')};
+  --cmbx-menu-sh: var(
+    --cmbx-menu-drop-sh,
+    0 0 0 0 transparent
+  ); //, inset 0 0 0 var(--cmbx-menu-bdw) var(--cmbx-menu-bdc);
+}
+
+@each $shape, $shapeNotation in $shapes {
+  ._shape_#{'' + $shape} {
+    --cmbx-control-bdrs: var(--cmbx-control-bdrs-#{$shapeNotation});
+    --cmbx-control-chip-bdrs: var(--cmbx-control-chip-bdrs-#{$shapeNotation});
+    --cmbx-menu-bdrs: var(--cmbx-menu-bdrs-#{$shapeNotation});
+    --cmbx-option-bdrs: var(--cmbx-option-bdrs-#{$shapeNotation});
+  }
+}
+
+@each $size in (s) {
+  ._size_#{'' + $size} {
+    --cmbx-control-h: #{get-scale('control-height', $size)};
+    --cmbx-control-value-h: #{get-scale('control-value-height', $size)};
+    --cmbx-control-gp-x: #{get-scale('control-gap-x', $size)};
+    --cmbx-control-bdw: #{get-scale('control-border-width', $size)};
+
+    --cmbx-control-value-gp-x: #{get-scale('control-value-gap-x', $size)};
+    --cmbx-control-pd-y: #{get-scale('control-padding-y', $size)};
+    --cmbx-control-pd-x: #{get-scale('control-padding-x', $size)};
+
+    --cmbx-control-bdrs-ro: #{get-scale('control-border-radius-rounded', $size)};
+    --cmbx-control-bdrs-cc: #{get-scale('control-border-radius-circular', $size)};
+    --cmbx-control-bdrs-sq: #{get-scale('control-border-radius-square', $size)};
+
+    --cmbx-control-fz: #{get-scale('control-font-size', $size)};
+    --cmbx-control-lh: #{get-scale('control-line-height', $size)};
+
+    --cmbx-control-chip-bdw: #{get-scale('control-chip-border-width', $size)};
+    --cmbx-control-chip-gp: #{get-scale('control-chip-gap-x', $size)};
+    --cmbx-control-chip-pd-y: #{get-scale('control-chip-padding-y', $size)};
+    --cmbx-control-chip-pd-x: #{get-scale('control-chip-padding-x', $size)};
+    --cmbx-control-chip-bdrs-ro: #{get-scale('control-chip-border-radius-rounded', $size)};
+    --cmbx-control-chip-bdrs-cc: #{get-scale('control-chip-border-radius-circular', $size)};
+    --cmbx-control-chip-bdrs-sq: #{get-scale('control-chip-border-radius-square', $size)};
+
+    --cmbx-menu-bdw: #{get-scale('menu-border-width', $size)};
+    --cmbx-menu-y-offset: #{get-scale('menu-offset-y', $size)};
+
+    --cmbx-menu-gp-y: #{get-scale('menu-gap-y', $size)};
+    --cmbx-menu-pd-y: #{get-scale('menu-padding-y', $size)};
+    --cmbx-menu-pd-x: #{get-scale('menu-padding-x', $size)};
+    --cmbx-menu-list-pd-y: #{get-scale('menu-list-padding-y', $size)};
+    --cmbx-menu-list-pd-x: #{get-scale('menu-list-padding-x', $size)};
+
+    --cmbx-menu-fz: #{get-scale('menu-font-size', $size)};
+    --cmbx-menu-lh: #{get-scale('menu-line-height', $size)};
+
+    --cmbx-menu-bdrs-ro: #{get-scale('menu-border-radius-rounded', $size)};
+    --cmbx-menu-bdrs-cc: #{get-scale('menu-border-radius-circular', $size)};
+    --cmbx-menu-bdrs-sq: #{get-scale('menu-border-radius-square', $size)};
+
+    --cmbx-option-h: #{get-scale('option-height', $size)};
+    --cmbx-option-gp-x: #{get-scale('option-gap-x', $size)};
+    --cmbx-option-pd-y: #{get-scale('option-padding-y', $size)};
+    --cmbx-option-pd-x: #{get-scale('option-padding-x', $size)};
+
+    --cmbx-option-bdrs-ro: #{get-scale('option-border-radius-rounded', $size)};
+    --cmbx-option-bdrs-cc: #{get-scale('option-border-radius-circular', $size)};
+    --cmbx-option-bdrs-sq: #{get-scale('option-border-radius-square', $size)};
+
+    --cmbx-option-ic-sz: #{get-scale('option-icon-size', $size)};
+  }
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{$schema}_#{$modeMapName} {
+      --cmbx-ct-gn: #{get-color('content-general', $modeMapName, $schema)};
+
+      --cmbx-control-bgc: #{get-color('background', $modeMapName, $schema)};
+
+      --cmbx-control-bdc: #{get-color('border', $modeMapName, $schema)};
+      --cmbx-control-bdc-h: #{get-color('border-hovered', $modeMapName, $schema)};
+      --cmbx-control-bdc-p: #{get-color('border-pressed', $modeMapName, $schema)};
+      --cmbx-control-bdc-db: #{get-color('border-disabled', $modeMapName, $schema)};
+
+      --cmbx-control-cnt-gn: #{get-color('control-content-general', $modeMapName, $schema)};
+      --cmbx-control-ph-c: #{get-color('control-placeholder', $modeMapName, $schema)};
+
+      --cmbx-control-chip-bgc: #{get-color('control-chip-background', $modeMapName, $schema)};
+      --cmbx-control-chip-bdc: #{get-color('control-chip-border', $modeMapName, $schema)};
+
+      --cmbx-control-indicator-c: #{get-color('control-indicator', $modeMapName, $schema)};
+      --cmbx-control-indicator-c-h: #{get-color('control-indicator-hovered', $modeMapName, $schema)};
+      --cmbx-control-indicator-c-p: #{get-color('control-indicator-pressed', $modeMapName, $schema)};
+
+      --cmbx-control-chip-ic-c-h: #{get-color('control-chip-icon-hovered', $modeMapName, $schema)};
+
+      --cmbx-menu-bgc: #{get-color('menu-background', $modeMapName, $schema)};
+      --cmbx-menu-bdc: #{get-color('menu-border', $modeMapName, $schema)};
+      --cmbx-menu-drop-sh: #{get-color('menu-shadow', $modeMapName, $schema)};
+
+      --cmbx-option-ct-gn: #{get-color('option-content-general', $modeMapName, $schema)};
+      --cmbx-option-ct-gn-h: #{get-color('option-content-general-hovered', $modeMapName, $schema)};
+      --cmbx-option-ct-gn-p: #{get-color('option-content-general-pressed', $modeMapName, $schema)};
+      --cmbx-option-ct-gn-db: #{get-color('option-content-general-disabled', $modeMapName, $schema)};
+
+      --cmbx-option-ct-ad: #{get-color('option-content-additional', $modeMapName, $schema)};
+
+      --cmbx-option-bgc: #{get-color('option-background', $modeMapName, $schema)};
+      --cmbx-option-bgc-h: #{get-color('option-background-hovered', $modeMapName, $schema)};
+      --cmbx-option-bgc-p: #{get-color('option-background-pressed', $modeMapName, $schema)};
+
+      --cmbx-option-icon-c: v #{get-color('option-icon', $modeMapName, $schema)};
+    }
+  }
+}
+
+.iconChecked {
+  flex-shrink: 0;
+}

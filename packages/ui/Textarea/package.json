@@ -1,0 +1,49 @@
+{
+  "name": "@kit-base/textarea",
+  "version": "0.6.11",
+  "description": "Описание компонента",
+  "license": "UNLICENSED",
+  "sideEffects": [
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "type": "git",
+    "registry": "https://gitlab.com/api/v4/projects/50873891/packages/npm/"
+  },
+  "main": "src/index",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "run -T rimraf build && yarn run -T rollup -c --bundleConfigAsCjs && cp -R src/stories build && yarn setVersion && yarn run -T pcbl-fe replaceSrcToBuild ./build/stories/examples",
+    "build:raw": "run -T tsc -p tsconfig.build.json",
+    "build:watch": "yarn build:raw --watch",
+    "pub": "yarn build && npm publish",
+    "test": "run -T pcbl-fe  test",
+    "checkDep": "run -T pcbl-fe  checkDependencies",
+    "pack": "run -T pcbl-fe  pack",
+    "revertPack": "run -T pcbl-fe  revertPack",
+    "setVersion": "run -T pcbl-fe  setVersion",
+    "clean": "run -T pcbl-fe  clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit4/browse/packages/ui/Textarea",
+    "directory": "packages/ui"
+  },
+  "dependencies": {
+    "@kit-base/uikit-utils": "0.3.2",
+    "classnames": "2.3.1",
+    "react-textarea-autosize": "8.5.3"
+  },
+  "devDependencies": {
+    "@kit-base/common-types": "0.0.2"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "files": [
+    "/build"
+  ]
+}

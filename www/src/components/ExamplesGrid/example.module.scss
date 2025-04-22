@@ -1,0 +1,30 @@
+.example {
+  --shp-bdc: transparent;
+  --shp-bdw: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+
+  &_smoothedCorners {
+    position: relative;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: var(--example-ct-mh, calc(200px - 64px));
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    margin-top: 48px;
+  }
+}

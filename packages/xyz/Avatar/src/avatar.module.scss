@@ -1,0 +1,114 @@
+@use '../../../theme/src/scss/avatar/' as avatar;
+
+$modeMaps: (
+  'light': avatar.$theme-light,
+  'dark': avatar.$theme-dark,
+  'color': avatar.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(avatar.$scale, $prop, $size);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@function get-style($prop) {
+  @return map-get(avatar.$style, 'content', $prop);
+}
+
+.avatarVariables {
+  --av-ff: #{get-style('font-family')};
+  --av-fw: #{get-style('font-weight')};
+  --av-subline-fw: #{get-style('font-subline-weight')};
+  --av-nt-c: #{get-style('notion-color')};
+  --av-ttn: #{get-style('text-case')};
+
+  --av-bg: var(--av-bgc);
+}
+
+$shapes: (
+  'rounded': (
+    'suffix': 'ro',
+    'image-bdrs': calc(var(--av-bdrs-ro) - var(--av-bdw)),
+  ),
+  'circular': (
+    'suffix': 'cc',
+    'image-bdrs': 50%,
+  ),
+  'square': (
+    'suffix': 'sq',
+    'image-bdrs': 0,
+  ),
+);
+
+@each $shape, $valuesMap in $shapes {
+  ._shape_#{'' + $shape} {
+    $suffix: #{map-get($valuesMap, 'suffix')};
+
+    --av-bdrs: var(--av-bdrs-#{$suffix});
+    --av-nt-offset: var(--av-nt-offset-#{$suffix});
+    // --av-i-bdrs: #{map-get($valuesMap, 'image-bdrs')};
+  }
+}
+
+$sizes: (xl, l, m, s, xs);
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --av-gp-x: #{get-scale('gap-x', $size)};
+    --av-gp-y: #{get-scale('gap-y', $size)};
+    --av-w: #{get-scale('width', $size)};
+    --av-h: #{get-scale('height', $size)};
+    --av-bdw: #{get-scale('border-width', $size)};
+
+    --av-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+    --av-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --av-bdrs-sq: #{get-scale('border-radius-square', $size)};
+
+    --av-captions-pd-x: #{get-scale('text-padding-x', $size)};
+    --av-captions-pd-y: #{get-scale('text-padding-y', $size)};
+
+    --av-txt-fz: #{get-scale('text-font-size', $size)};
+    --av-txt-lh: #{get-scale('text-line-height', $size)};
+
+    --av-subline-fz: #{get-scale('text-subline-font-size', $size)};
+    --av-subline-lh: #{get-scale('text-subline-line-height', $size)};
+
+    --av-nt-offset-ro: #{get-scale('notion-offset-rounded', $size)};
+    --av-nt-offset-cc: #{get-scale('notion-offset-circular', $size)};
+    --av-nt-offset-sq: #{get-scale('notion-offset-squared', $size)};
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --av-ct-gn: #{get-color('content-general', $colorMode, $schema)};
+      --av-ct-gn-h: #{get-color('content-general-hovered', $colorMode, $schema)};
+      --av-ct-gn-p: #{get-color('content-general-pressed', $colorMode, $schema)};
+      --av-ct-gn-db: #{get-color('content-general-disabled', $colorMode, $schema)};
+
+      --av-ct-ad: #{get-color('content-additional', $colorMode, $schema)};
+      --av-ct-ad-h: #{get-color('content-additional-hovered', $colorMode, $schema)};
+      --av-ct-ad-p: #{get-color('content-additional-pressed', $colorMode, $schema)};
+      --av-ct-ad-db: #{get-color('content-additional-disabled', $colorMode, $schema)};
+
+      --av-image-text: #{get-color('image-text', $colorMode, $schema)};
+      --av-image-text-db: #{get-color('image-text-disabled', $colorMode, $schema)};
+
+      --av-bgc: #{get-color('background', $colorMode, $schema)};
+      --av-bg-grad: #{get-color('background-gradient', $colorMode, $schema)};
+
+      --av-bdc: #{get-color('border', $colorMode, $schema)};
+      --av-bdc-h: #{get-color('border-hovered', $colorMode, $schema)};
+      --av-bdc-p: #{get-color('border-pressed', $colorMode, $schema)};
+
+      --av-i-filter: #{get-color('filter', $colorMode, $schema)};
+
+      --av-notion: #{get-color('notion', $colorMode, $schema)};
+      --av-notion-bd: #{get-color('notion-border', $colorMode, $schema)};
+    }
+  }
+}

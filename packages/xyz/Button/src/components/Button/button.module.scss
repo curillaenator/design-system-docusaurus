@@ -1,0 +1,188 @@
+@use '../../../../../theme/src/scss/button/' as button;
+
+@function get-color($prop, $mapName, $schema) {
+  @return #{map-get(map-get($modeMaps, $mapName), $schema, $prop)};
+}
+
+@function get-scale($prop, $size) {
+  @return map-get(button.$scale, $prop, $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(button.$style, $group, $value);
+}
+
+$modeMaps: (
+  'light': button.$theme-light,
+  'dark': button.$theme-dark,
+  'color': button.$theme-color,
+);
+
+$justifies: (
+  'center': 'center',
+  'start': 'start',
+  'end': 'end',
+  'between': 'space-between',
+);
+
+$stateVarsAssoc: (
+  'hovered': 'h',
+  'active': 'a',
+  'pressed': 'p',
+  'success': 'sc',
+  'error': 'er',
+  'loading': 'l',
+  'disabled': 'db',
+);
+
+$states: (
+  'default': 'df',
+  'success': 'sc',
+  'error': 'er',
+  'loading': 'l',
+);
+
+@keyframes button-icon-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.buttonThemed {
+  --btn-ff: #{get-style('font-family')};
+  --btn-fw: #{get-style('font-weight')};
+
+  &:hover {
+    --ic-c: var(--btn-ic-c-h, currentColor);
+  }
+
+  &:active {
+    --ic-c: var(--btn-ic-c-p, currentColor);
+  }
+
+  .iconLoading {
+    animation: button-icon-spin 1s linear infinite;
+  }
+
+  .labels {
+    display: flex;
+    align-items: center;
+    gap: var(--btn-labels-gp);
+    padding: var(--btn-labels-pd);
+    white-space: nowrap;
+    user-select: none;
+
+    span[data-label='secondary'] {
+      color: var(--btn-cnt-ad);
+      text-decoration: none !important;
+    }
+
+    span[data-label='label'] {
+      text-decoration: none !important;
+    }
+
+    &_reversed {
+      flex-direction: row-reverse;
+    }
+
+    &_fullWidth {
+      width: 100%;
+    }
+
+    @each $justify, $value in $justifies {
+      &_#{'' + $justify} {
+        justify-content: #{$value};
+      }
+    }
+  }
+}
+
+._withBorder {
+  --btn-bd-sh: inset 0px 0px 0px var(--btn-bdw) var(--btn-bdc);
+}
+
+._withShadow {
+  --btn-drop-sh: var(--btn-drop-sh-df);
+}
+
+@each $shape, $shapeNotation in ('square': 'sq', 'rounded': 'ro', 'circular': 'cc') {
+  ._shape_#{'' + $shape} {
+    --btn-bdrs: var(--btn-bdrs-#{$shapeNotation});
+  }
+}
+
+@each $size in ('s', 'xs') {
+  ._size_#{'' + $size} {
+    --btn-mh: #{get-scale('height', $size)};
+    --btn-mw: #{get-scale('width', $size)};
+    --btn-pd: #{get-scale('padding-y', $size) get-scale('padding-x', $size)};
+    --btn-gp: #{get-scale('gap-x', $size)};
+
+    --btn-bdw: #{get-scale('border-width', $size)};
+    --btn-bdrs-sq: #{get-scale('border-radius-square', $size)};
+    --btn-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --btn-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+
+    --btn-fz: #{get-scale('font-size', $size)};
+    --btn-lts: #{get-scale('letter-spacing', $size)};
+    --btn-lh: #{get-scale('line-height', $size)};
+
+    --btn-labels-gp: #{get-scale('labels-gap', $size)};
+    --btn-labels-pd: #{get-scale('labels-padding-y', $size)} #{get-scale('labels-padding-x', $size)};
+
+    --btn-f-outline-bdw: #{get-scale('focus-outline-width', $size)};
+    --btn-f-outline-space: #{get-scale('focus-outline-space', $size)};
+
+    --btn-notion-sz: #{get-scale('notion-size', $size)};
+    --btn-notion-offset: #{get-scale('notion-offset', $size)};
+  }
+}
+
+@each $state, $stateNotation in $states {
+  ._state_#{$state} {
+    --btn-cnt-gn: var(--btn-cnt-gn-#{$stateNotation});
+    --btn-cnt-ad: var(--btn-cnt-ad-#{$stateNotation});
+    --btn-bgc: var(--btn-bgc-#{$stateNotation});
+    --btn-bdc: var(--btn-bdc-#{$stateNotation});
+  }
+}
+
+@mixin addStateVars($varName, $tokenName, $modeMapName, $schema) {
+  #{$varName}-df: #{get-color($tokenName, $modeMapName, $schema)};
+
+  @each $stateName, $stateNotation in $stateVarsAssoc {
+    $stateTokenName: #{$tokenName}-#{$stateName};
+    #{$varName}-#{$stateNotation}: #{get-color($stateTokenName, $modeMapName, $schema)};
+  }
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{$schema}_#{$modeMapName} {
+      @include addStateVars('--btn-cnt-gn', 'content-general', $modeMapName, $schema);
+      @include addStateVars('--btn-cnt-ad', 'content-additional', $modeMapName, $schema);
+      @include addStateVars('--btn-bgc', 'background', $modeMapName, $schema);
+      @include addStateVars('--btn-bdc', 'border', $modeMapName, $schema);
+
+      --btn-ic-c-h: #{get-color('icon-hovered', $modeMapName, $schema)};
+
+      --btn-notion: #{get-color('notion', $modeMapName, $schema)};
+      --btn-notion-a: #{get-color('notion-active', $modeMapName, $schema)};
+      --btn-notion-db: #{get-color('notion-disabled', $modeMapName, $schema)};
+
+      --btn-loading: #{get-color('loading', $modeMapName, $schema)};
+      --btn-f-outline: #{get-color('focus-outline', $modeMapName, $schema)};
+      --btn-drop-sh-df: #{get-color('shadow', $modeMapName, $schema)};
+    }
+  }
+}
+
+._loading {
+  .iconLoading {
+    position: absolute;
+    left: calc(50% - 10px);
+  }
+  .labels {
+    visibility: hidden;
+  }
+}

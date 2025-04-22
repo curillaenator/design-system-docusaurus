@@ -1,0 +1,69 @@
+$cornerPlacement: (
+  top-left: border-top-left-radius,
+  top-right: border-top-right-radius,
+  bottom-left: border-bottom-left-radius,
+  bottom-right: border-bottom-right-radius,
+);
+
+.bubble {
+  display: inline-flex;
+  align-items: center;
+  min-width: var(--bbl-w, 112px);
+  gap: 0 var(--bbl-gp-x, 12px);
+  box-shadow: var(--bbl-sh, 0px 0px 0px 0px rgba(0, 0, 0, 0));
+  color: var(--bbl-ct-gn, rgb(245, 245, 245));
+  background-color: var(--bbl-bg, rgb(23, 23, 23));
+  padding: var(--bbl-pd-y, 14px) var(--bbl-pd-x, 14px);
+}
+
+.icon {
+  flex-shrink: 0;
+  padding: var(--bbl-ic-pd-y, 0px) var(--bbl-ic-pd-x, 0px);
+}
+
+.textSecondary {
+  color: var(--bbl-ct-ad, rgba(245, 245, 245, 0.6));
+}
+
+.content {
+  font-family: var(--bbl-ff);
+  font-weight: var(--bbl-fw, 400);
+  display: inline-flex;
+  gap: var(--bbl-gp-x, 12px);
+  font-size: var(--bbl-fz, 14px);
+  line-height: var(--bbl-lh, 18px);
+  padding: var(--bbl-txt-pd-y, 0px) var(--bbl-txt-pd-x, 0px);
+
+  ._reversed & {
+    flex-direction: row-reverse;
+  }
+}
+
+._interactive {
+  &:hover {
+    cursor: pointer;
+    background-color: var(--bbl-bg-h, rgb(38, 38, 38));
+  }
+
+  &:focus {
+    background-color: var(--bbl-bg-f, rgb(38, 38, 38));
+  }
+
+  &:active {
+    background-color: var(--bbl-bg-p, rgb(64, 64, 64));
+  }
+}
+
+._rounded {
+  border-radius: var(--bbl-bd-ro, 10px);
+}
+
+._circular {
+  border-radius: var(--bbl-bd-cc, 24px);
+}
+
+@each $key, $value in $cornerPlacement {
+  .corner_#{$key} {
+    #{$value}: var(--bbl-bdrs-corner, 0px);
+  }
+} 

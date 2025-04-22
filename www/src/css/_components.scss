@@ -1,0 +1,18 @@
+@use '~@kit-xyz/theme/src/scss/theme/themes' as componentsTokenColors;
+
+$modeMaps: (
+  'light': map-get(componentsTokenColors.$themes, theme-light),
+  'dark': map-get(componentsTokenColors.$themes, theme-dark),
+);
+
+@mixin generateLightTheme() {
+  @each $componentVar, $colorValue in map-get($modeMaps, 'light') {
+    #{ $componentVar}: #{$colorValue};
+  }
+}
+
+@mixin generateDarkTheme() {
+  @each $componentVar, $colorValue in map-get($modeMaps, 'dark') {
+    #{ $componentVar}: #{$colorValue};
+  }
+}

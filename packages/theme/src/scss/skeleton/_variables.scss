@@ -1,0 +1,14 @@
+$variables: (
+  theme-light: (
+    --stn_df_bgc: rgb(184, 184, 235),
+    --stn_df_sldr: rgb(237, 237, 250),
+  ),
+  theme-dark: (
+    --stn_df_bgc: rgb(20, 20, 20),
+    --stn_df_sldr: rgb(61, 61, 61),
+  ),
+  theme-color: (
+    --stn_df_bgc: rgba(255, 255, 255, 0.2),
+    --stn_df_sldr: rgb(237, 237, 250),
+  ),
+);

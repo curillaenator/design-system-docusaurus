@@ -1,0 +1,43 @@
+{
+  "module": {
+    "2xl": { "value": "64px", "type": "sizing" },
+    "xl": { "value": "32px", "type": "sizing" },
+    "l": { "value": "16px", "type": "sizing" },
+    "m": { "value": "8px", "type": "sizing" },
+    "s": { "value": "4px", "type": "sizing" },
+    "xs": { "value": "2px", "type": "sizing" }
+  },
+  "column": {
+    "10xl": { "value": "48", "type": "other" },
+    "9xl": { "value": "32", "type": "other" },
+    "8xl": { "value": "24", "type": "other" },
+    "7xl": { "value": "12", "type": "other" },
+    "6xl": { "value": "10", "type": "other" },
+    "5xl": { "value": "9", "type": "other" },
+    "4xl": { "value": "8", "type": "other" },
+    "3xl": { "value": "7", "type": "other" },
+    "2xl": { "value": "6", "type": "other" },
+    "xl": { "value": "5", "type": "other" },
+    "l": { "value": "4", "type": "other" },
+    "m": { "value": "3", "type": "other" },
+    "s": { "value": "2", "type": "other" },
+    "xs": { "value": "1", "type": "other" }
+  },
+  "row": {
+    "10xl": { "value": "48", "type": "other" },
+    "9xl": { "value": "32", "type": "other" },
+    "8xl": { "value": "24", "type": "other" },
+    "7xl": { "value": "12", "type": "other" },
+    "6xl": { "value": "10", "type": "other" },
+    "5xl": { "value": "9", "type": "other" },
+    "4xl": { "value": "8", "type": "other" },
+    "3xl": { "value": "7", "type": "other" },
+    "2xl": { "value": "6", "type": "other" },
+    "xl": { "value": "5", "type": "other" },
+    "l": { "value": "4", "type": "other" },
+    "m": { "value": "3", "type": "other" },
+    "s": { "value": "2", "type": "other" },
+    "xs": { "value": "1", "type": "other" }
+  },
+  "cursor": { "value": "{color.neutral-900}", "type": "color" }
+}

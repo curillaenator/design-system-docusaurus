@@ -1,0 +1,26 @@
+{
+  "indigo-purple": {
+    "value": "linear-gradient(90deg, {palette.indigo-700} 0%, {palette.purple-700} 100%)",
+    "type": "color"
+  },
+  "purple-blue": {
+    "value": "linear-gradient(90deg, {palette.purple-700} 0%, {palette.blue-700} 100%)",
+    "type": "color"
+  },
+  "blue-green": {
+    "value": "linear-gradient(90deg, {palette.blue-700} 0%, {palette.green-700} 100%)",
+    "type": "color"
+  },
+  "green-yellow": {
+    "value": "linear-gradient(90deg, {palette.green-700} 0%, {palette.yellow-700} 100%)",
+    "type": "color"
+  },
+  "yellow-red": {
+    "value": "linear-gradient(90deg, {color.yellow-700} 0%, {color.red-700} 100%)",
+    "type": "color"
+  },
+  "red-indigo": {
+    "value": "linear-gradient(90deg, {color.red-700} 0%, {color.indigo-700} 100%)",
+    "type": "color"
+  }
+}

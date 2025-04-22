@@ -1,0 +1,30 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.container {
+  &_chin {
+    z-index: 1;
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: calc(100% - 2 * var(--cmbx-menu-bdw));
+      height: calc(var(--cmbx-control-h) / 2 + var(--cmbx-menu-bdw));
+      background-color: var(--cmbx-menu-bgc);
+      border-left: var(--cmbx-menu-bdw) solid var(--cmbx-menu-bdc);
+      border-right: var(--cmbx-menu-bdw) solid var(--cmbx-menu-bdc);
+      animation: fadeIn var(--cmbx-animation-time) var(--cmbx-animation-method);
+      z-index: -1;
+    }
+  }
+}

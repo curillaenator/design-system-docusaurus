@@ -1,0 +1,38 @@
+.componentWrapper {
+  height: 160px;
+  display: flex;
+}
+
+.exampleContent {
+  padding: 76px 32px 108px;
+}
+
+.examplesContainer {
+
+  &_3col {
+    display: grid;
+    grid-gap: 32px;
+
+    @media (max-width: 1440px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &_2col {
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.wireframe {
+  background-color: #F5F5F5;
+
+  & > img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

@@ -1,0 +1,27 @@
+@function append-suffix-to-map-value($map: (), $suffix: '') {
+  $renamed: ();
+
+  @each $name, $value in $map {
+    $renamed: map-merge($renamed, ('' + $suffix + $name: $value));
+  }
+
+  @return $renamed;
+}
+
+@function get-all-map-names($map) {
+  $resolveMap: ();
+
+  @each $name, $value in $map {
+    @if (type-of($value) == map) {
+      $children: get-all-map-names($value);
+
+      $children: append-suffix-to-map-value($children, '#{$name}-');
+
+      $resolveMap: map-merge($resolveMap, $children);
+    } @else {
+      $resolveMap: map-merge($resolveMap, (#{$name}: $value));
+    }
+  }
+
+  @return $resolveMap;
+} ;

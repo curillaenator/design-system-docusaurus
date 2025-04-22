@@ -1,0 +1,15 @@
+$theme-light: (
+  color-primary: (
+    background: var(--clnd_pm_bgc, rgb(255, 255, 255)),
+    border: var(--clnd_pm_bdc, rgb(235, 235, 235)),
+    text-general: var(--clnd_pm_txt-gn, rgb(10, 10, 10)),
+    text-navigation: var(--clnd_pm_txt-nvgtn, rgb(10, 10, 10)),
+    text-additional: var(--clnd_pm_txt-ad, rgb(128, 128, 128)),
+    text-active: var(--clnd_pm_txt-a, rgb(255, 255, 255)),
+    text-in-range: var(--clnd_pm_txt-n-rng, rgb(10, 10, 10)),
+    date-bg-hover: var(--clnd_pm_dt-bg-hvr, rgb(139, 139, 222)),
+    date-bg-in-range: var(--clnd_pm_dt-bg-n-rng, rgb(139, 139, 222)),
+    date-bg-active: var(--clnd_pm_dt-bg-ctv, rgb(64, 96, 255)),
+    drop-shadow: var(--clnd_pm_drp-sh, 0px 0px 0px 0px rgba(0, 0, 0, 0)),
+  ),
+);

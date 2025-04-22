@@ -1,0 +1,192 @@
+{
+  "drawer/scale": {
+    "opened": {
+      "none": {
+        "value": "24px",
+        "type": "sizing"
+      },
+      "xs": {
+        "value": "384px",
+        "type": "sizing"
+      },
+      "s": {
+        "value": "480px",
+        "type": "sizing"
+      },
+      "m": {
+        "value": "512px",
+        "type": "sizing"
+      },
+      "l": {
+        "value": "640px",
+        "type": "sizing"
+      },
+      "xl": {
+        "value": "768px",
+        "type": "sizing"
+      },
+      "2xl": {
+        "value": "996px",
+        "type": "sizing"
+      }
+    },
+    "closed": {
+      "none": {
+        "value": "0px",
+        "type": "sizing"
+      },
+      "xs": {
+        "value": "0px",
+        "type": "sizing"
+      },
+      "s": {
+        "value": "0px",
+        "type": "sizing"
+      },
+      "m": {
+        "value": "0px",
+        "type": "sizing"
+      },
+      "l": {
+        "value": "0px",
+        "type": "sizing"
+      },
+      "xl": {
+        "value": "0px",
+        "type": "sizing"
+      },
+      "2xl": {
+        "value": "0px",
+        "type": "sizing"
+      }
+    },
+    "border-width": {
+      "none": {
+        "value": "2px",
+        "type": "borderWidth"
+      },
+      "xs": {
+        "value": "2px",
+        "type": "borderWidth"
+      },
+      "s": {
+        "value": "2px",
+        "type": "borderWidth"
+      },
+      "m": {
+        "value": "2px",
+        "type": "borderWidth"
+      },
+      "l": {
+        "value": "2px",
+        "type": "borderWidth"
+      },
+      "xl": {
+        "value": "2px",
+        "type": "borderWidth"
+      },
+      "2xl": {
+        "value": "2px",
+        "type": "borderWidth"
+      }
+    }
+  },
+  "drawer/style": {
+    "animation": {
+      "time": {
+        "value": "0.2s",
+        "type": "other"
+      },
+      "method": {
+        "value": "ease-in-out",
+        "type": "other"
+      }
+    }
+  },
+  "drawer/theme/light": {
+    "color/tracker-default": {
+      "content-general": {
+        "value": "rgba(0, 0, 0, 0.88)",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "overlay-background": {
+        "value": "rgba(255, 255, 255, 0.60)",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color.transparent}",
+        "type": "color"
+      },
+      "shadow": {
+        "value": "0px 0px 16px rgb(22, 119, 255, 0.40)",
+        "type": "color"
+      }
+    },
+    "color/default": {
+      "content-general": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "overlay-background": {
+        "value": "{color-transparent.neutral-100-60%}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color.transparent}",
+        "type": "color"
+      },
+      "shadow": {
+        "value": "0px 0px 16px {color-transparent.accent-1-700-60%}",
+        "type": "color"
+      }
+    }
+  },
+  "drawer/theme/dark": {
+    "color/default": {
+      "scheme": {
+        "value": "drawer/theme/light.color/default",
+        "type": "meta"
+      },
+      "content-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{color.neutral-700}",
+        "type": "color"
+      },
+      "overlay-background": {
+        "value": "{color-transparent.neutral-700-80%}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{color.transparent}",
+        "type": "color"
+      }
+    }
+  },
+  "drawer/theme/color": {
+    "color/default": {
+      "scheme": {
+        "value": "drawer/theme/light.color/default",
+        "type": "meta"
+      },
+      "content-general": {
+        "value": "{color.neutral-100}",
+        "type": "color"
+      },
+      "background": {
+        "value": "linear-gradient(to bottom, {color.accent-1-700} 0%, {color.accent-1-700} 50%, {color.accent-2-700}) 100%",
+        "type": "color"
+      }
+    }
+  }
+}

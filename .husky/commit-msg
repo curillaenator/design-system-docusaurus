@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo ""
+echo "Проверка корректности оформления коммита..."
+echo ""
+
+echo "PreCommit Hook Started"
+npx commitlint --edit $1

@@ -1,0 +1,35 @@
+.input {
+  --inp_tt-tp_cnt-gn: #ffffff;
+  --inp_tt-tp_cnt-gn-db: #ffffff;
+
+  --inp_tt-tp_ph: #ffffff;
+  --inp_tt-tp_ph-h: #6060ff;
+  --inp_tt-tp_ph-a: #ffffff;
+  --inp_tt-tp_ph-db: #ffffff;
+
+  --inp_tt-tp_ic: #ffffff;
+  // --inp_tt-tp_ic-h: #6060ff;
+
+  --inp_tt-tp_bdc: #1f1f52;
+  --inp_tt-tp_bdc-h: #1f1f52;
+  --inp_tt-tp_bdc-a: #6060ff;
+  --inp_tt-tp_bdc-db: #1f1f52;
+
+  &:not([data-focused='true']):hover {
+    --inp_tt-tp_ic: #6060ff;
+  }
+}
+
+.selectOpenNodeButton {
+  --btn_tt-s_bgc: #0f0f29;
+  --btn_tt-s_bgc-h: #0f0f29;
+  --btn_tt-s_bgc-a: #6060ff;
+  --btn_tt-s_bgc-db: #0f0f29;
+  --btn_tt-s_bgc-p: #0f0f29;
+  --btn_tt-s_bgc-l: #0f0f29;
+
+  --btn_tt-s_cnt-gn: #ffffff;
+  --btn_tt-s_cnt-gn-h: #6060ff;
+
+  --btn-bd-sh: inset 0 0 0 1px #1f1f52;
+}

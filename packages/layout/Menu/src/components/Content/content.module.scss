@@ -1,0 +1,40 @@
+@use '~@kit-xyz/theme/src/scss/mixins/scroll' as scroll;
+
+.container {
+  height: 100vh;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: var(--menu-section-padding-y) var(--menu-section-padding-x);
+
+  &_opened {
+    max-width: var(--menu-opened-maw);
+  }
+
+  @include scroll.scrollbar('mini', 'onDark');
+}
+
+.content {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 100%;
+  height: fit-content;
+  gap: 16px;
+
+  &_opened {
+    min-width: calc(var(--menu-opened-maw) - 2 * var(--menu-section-padding-x));
+  }
+
+  .elements,
+  .slotedFormHeaderLeft,
+  .slotedFormHeaderRight,
+  .linkedApps {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // gap: 16px;
+  }
+}

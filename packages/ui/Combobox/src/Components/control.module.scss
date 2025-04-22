@@ -1,0 +1,75 @@
+.control {
+  --cmbx-control-cursor: pointer;
+
+  cursor: var(--cmbx-control-cursor) !important;
+  align-items: flex-start !important;
+  gap: var(--cmbx-control-gp-x);
+  padding: var(--cmbx-control-pd-y) var(--cmbx-control-pd-x) !important;
+  border: none !important;
+  box-shadow: var(--cmbx-bd-sh, 0 0 0 0 transparent), var(--cmbx-drop-sh, 0 0 0 0 transparent) !important;
+  border-radius: var(--cmbx-control-bdrs) !important;
+  background-color: var(--cmbx-control-bgc) !important;
+  min-height: var(--cmbx-control-h) !important;
+
+  &_interactive {
+    &:hover {
+      --cmbx-control-bdc: var(--cmbx-control-bdc-h);
+    }
+  }
+
+  &_focused {
+    --cmbx-control-bdc: var(--cmbx-control-bdc-p);
+  }
+
+  &_bordered {
+    --cmbx-bd-sh: inset 0px 0px 0px var(--cmbx-control-bdw) var(--cmbx-control-bdc);
+  }
+
+  &_disabled {
+    --cmbx-control-cursor: default;
+    --cmbx-control-bdc: var(--cmbx-control-bdc-db);
+    --cmbx-control-ct-gn: var(--cmbx-control-ct-gn-db);
+    --cmbx-control-indicator-c: var(--cmbx-control-indicator-c-db);
+    --cmbx-control-indicator-c-h: var(--cmbx-control-indicator-c-db);
+    --cmbx-control-ph-c: var(--cmbx-control-ph-c-db);
+  }
+
+  .search {
+    color: var(--cmbx-control-indicator-c);
+
+    &_active {
+      color: var(--cmbx-control-cnt-gn);
+    }
+
+    &:hover {
+      color: var(--cmbx-control-indicator-c-p);
+    }
+  }
+
+  .removeMultiValue {
+    color: var(--cmbx-control-indicator-c);
+
+    &:hover {
+      color: var(--cmbx-control-chip-ic-c-h);
+    }
+  }
+
+  :global {
+    .combobox__indicators {
+      align-self: flex-start;
+    }
+
+    .combobox__indicator-separator {
+      display: none;
+    }
+
+    .combobox__input-container {
+      margin: 0;
+      padding: 0;
+      font-size: var(--cmbx-control-fz);
+      line-height: var(--cmbx-control-lh);
+      font-weight: var(--cmbx-control-fw);
+      color: var(--cmbx-control-ct-gn);
+    }
+  }
+}

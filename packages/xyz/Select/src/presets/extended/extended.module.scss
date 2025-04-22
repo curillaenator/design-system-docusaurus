@@ -1,0 +1,128 @@
+@use '../../../../../theme/src/scss/select' as select;
+@use '../../../../../theme/src/scss/mixins/scroll' as scroll;
+
+$modeMaps: (
+  'light': select.$theme-light,
+  'dark': select.$theme-dark,
+  'color': select.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(select.$scale, $prop, $size);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@function get-style($prop) {
+  @return map-get(select.$style, 'content', $prop);
+}
+
+@each $size in (s) {
+  ._size_#{'' + $size} {
+    --dd-pd: 0 0 #{get-scale('padding-y', $size)};
+    --dd-bdw: #{get-scale('border-width', $size)};
+    --dd-scrl-pd: 0 #{get-scale('scroll-padding-right', $size)} 0 0;
+    // --dd-bdrs: 0 0 #{get-scale('border-radius', $size)} #{get-scale('border-radius', $size)};
+
+    --select-menu-bdrs: #{get-scale('border-radius', $size)};
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --dd-bgc: #{get-color('background', $colorMode, $schema)};
+      --dd-bdc: #{get-color('border', $colorMode, $schema)};
+      --dd-drop-sh: #{get-color('shadow', $colorMode, $schema)};
+
+      --select-menu-dvdr: #{get-color('divider', $colorMode, $schema)};
+      --select-menu-item-hv: #{get-color('item-background-hover', $colorMode, $schema)};
+    }
+  }
+}
+
+$scrollbars: (
+  'light': 'onLight',
+  'dark': 'onDark',
+  'color': 'onColor',
+);
+
+.scroll {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+
+  padding-top: 8px !important;
+
+  @each $modeName, $scrollMode in $scrollbars {
+    &_#{'' + $modeName} {
+      @include scroll.scrollbar('mini', #{$scrollMode});
+    }
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.98);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.openNodeClassname {
+  width: 100% !important;
+
+  .captionBadge {
+    gap: 0px !important;
+    padding-left: 0 !important;
+
+    & > svg + span {
+      padding-left: 0 !important;
+    }
+  }
+
+  &_open_minified {
+    .captionBadge {
+      --bdg-bgc: var(--dd-bgc);
+    }
+
+    & > button {
+      --btn-bd-sh: inset 0 0 0 1px var(--dd-bgc);
+    }
+  }
+
+  &_open {
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 60%;
+      bottom: -8px;
+      left: 0;
+      background-color: var(--dd-bgc);
+      z-index: -1;
+
+      animation: scaleUp 200ms ease;
+    }
+  }
+}
+
+.contentNodeClassname {
+  --dd-bdrs: var(--select-menu-bdrs);
+
+  position: relative;
+}
+
+.noShrink {
+  flex-shrink: 0;
+}

@@ -1,0 +1,115 @@
+@use '../../../theme/src/scss/checkbox/' as checkbox;
+
+$sizes: (xs);
+
+$shapes: (
+  'square': (
+    'notation': 'sq',
+    'inner-bdrs': 'none',
+  ),
+  'rounded': (
+    'notation': 'ro',
+    'inner-bdrs': calc(var(--cbx-glph-bdrs) / 2),
+  ),
+  'circular': (
+    'notation': 'cc',
+    'inner-bdrs': 50%,
+  ),
+);
+
+$modeMaps: (
+  'light': checkbox.$theme-light,
+  'dark': checkbox.$theme-dark,
+  'color': checkbox.$theme-color,
+);
+
+$color-schemas: map-keys(checkbox.$theme-light);
+
+@function get-scale($prop, $size) {
+  @return map-get(checkbox.$scale, $prop, $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(checkbox.$style, $group, $value);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+.checkboxVariables {
+  --cbx-ff: #{get-style('font-family')};
+  --cbx-fw: #{get-style('font-weight')};
+
+  --cbx-fzn-w: calc(var(--cbx-glph-w) + 8px);
+  --cbx-fzn-h: calc(var(--cbx-glph-h) + 8px);
+  --cbx-fzn-bdrs: calc(var(--cbx-glph-bdrs) + 4px);
+}
+
+@each $shapeName, $shapeValues in $shapes {
+  ._shape_#{$shapeName} {
+    --cbx-glph-bdrs: var(--cbx-glph-bdrs-#{map-get($shapeValues, 'notation')});
+    --cbx-glph-inner-bdrs: #{map-get($shapeValues, 'inner-bdrs')};
+  }
+}
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --cbx-gp: #{get-scale('gap-x', $size)};
+    --cbx-w: #{get-scale('width', $size)};
+    --cbx-pd: #{get-scale('padding-y', $size)} #{get-scale('padding-x', $size)};
+
+    --cbx-glph-w: #{get-scale('glyph-width', $size)};
+    --cbx-glph-h: #{get-scale('glyph-height', $size)};
+    --cbx-glph-bdw: #{get-scale('glyph-border-width', $size)};
+    --cbx-glph-inner-w: #{get-scale('glyph-inner-width', $size)};
+    --cbx-glph-inner-h: #{get-scale('glyph-inner-height', $size)};
+    --cbx-glph-pd-y: #{get-scale('glyph-padding-y', $size)};
+    --cbx-glph-pd-x: #{get-scale('glyph-padding-x', $size)};
+
+    --cbx-glph-bdrs-sq: #{get-scale('glyph-border-radius-square', $size)};
+    --cbx-glph-bdrs-cc: #{get-scale('glyph-border-radius-circular', $size)};
+    --cbx-glph-bdrs-ro: #{get-scale('glyph-border-radius-rounded', $size)};
+
+    --cbx-lh: #{get-scale('text-line-height', $size)};
+    --cbx-fz: #{get-scale('text-font-size', $size)};
+    --cbx-txt-pd-y: #{get-scale('text-padding-y', $size)};
+    --cbx-txt-pd-x: #{get-scale('text-padding-x', $size)};
+    --cbx-txt-gp-x: #{get-scale('text-gap-x', $size)};
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --cbx-txt-gn: #{get-color('text-general', $colorMode, $schema)};
+      --cbx-txt-gn-db: #{get-color('text-general-disabled', $colorMode, $schema)};
+
+      --cbx-txt-ad: #{get-color('text-additional', $colorMode, $schema)};
+      --cbx-txt-ad-db: #{get-color('text-additional-disabled', $colorMode, $schema)};
+
+      --cbx-glph-gn: #{get-color('glyph-general', $colorMode, $schema)};
+      --cbx-glph-gn-f: #{get-color('glyph-general-focused', $colorMode, $schema)};
+      --cbx-glph-gn-h: #{get-color('glyph-general-hovered', $colorMode, $schema)};
+      --cbx-glph-gn-p: #{get-color('glyph-general-pressed', $colorMode, $schema)};
+      --cbx-glph-gn-a: #{get-color('glyph-general-active', $colorMode, $schema)};
+      --cbx-glph-gn-a-db: #{get-color('glyph-general-active-disabled', $colorMode, $schema)};
+      --cbx-glph-gn-db: #{get-color('glyph-general-disabled', $colorMode, $schema)};
+
+      --cbx-glph-ad: #{get-color('glyph-additional', $colorMode, $schema)};
+      --cbx-glph-ad-f: #{get-color('glyph-additional-focused', $colorMode, $schema)};
+      --cbx-glph-ad-h: #{get-color('glyph-additional-hovered', $colorMode, $schema)};
+      --cbx-glph-ad-p: #{get-color('glyph-additional-pressed', $colorMode, $schema)};
+      --cbx-glph-ad-a: #{get-color('glyph-additional-active', $colorMode, $schema)};
+      --cbx-glph-ad-a-db: #{get-color('glyph-additional-active-disabled', $colorMode, $schema)};
+      --cbx-glph-ad-db: #{get-color('glyph-additional-disabled', $colorMode, $schema)};
+
+      --cbx-glph-bg: #{get-color('glyph-background', $colorMode, $schema)};
+      --cbx-glph-bg-f: #{get-color('glyph-background-focused', $colorMode, $schema)};
+      --cbx-glph-bg-h: #{get-color('glyph-background-hovered', $colorMode, $schema)};
+      --cbx-glph-bg-p: #{get-color('glyph-background-pressed', $colorMode, $schema)};
+      --cbx-glph-bg-a: #{get-color('glyph-background-active', $colorMode, $schema)};
+      --cbx-glph-bg-db: #{get-color('glyph-background-disabled', $colorMode, $schema)};
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "purple": { "value": "rgb(96, 32, 224)", "type": "color" },
+  "purple-700": { "value": "rgb(96, 32, 224)", "type": "color" },
+  "purple-600": { "value": "rgb(109, 50, 226)", "type": "color" },
+  "purple-500": { "value": "rgb(134, 86, 231)", "type": "color" },
+  "purple-400": { "value": "rgb(172, 139, 239)", "type": "color" },
+  "purple-300": { "value": "rgb(204, 184, 245)", "type": "color" },
+  "purple-200": { "value": "rgb(230, 219, 250)", "type": "color" },
+  "purple-100": { "value": "rgb(242, 237, 253)", "type": "color" }
+}

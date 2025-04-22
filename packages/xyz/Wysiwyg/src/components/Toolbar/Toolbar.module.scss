@@ -1,0 +1,37 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 16px;
+  background: var(--editor-toolbar-bgc, transparent);
+
+  &_top {
+    border-bottom: 1px solid var(--editor-bdc, var(--color-neutral-200));
+  }
+
+  &_bottom {
+    border-top: 1px solid var(--editor-bdc, var(--color-neutral-200));
+  }
+}
+
+@each $composition, $gapX in ('full': 24px, 'compact': 16px, 'minimal': 8px) {
+  ._#{'' + $composition} {
+    gap: #{$gapX};
+  }
+}
+
+.toolbarBlock {
+  display: flex;
+}
+
+.toolbarSection {
+  display: flex;
+}
+
+.p4 {
+  padding: 4px;
+}
+
+.noShrink {
+  flex-shrink: 0;
+}

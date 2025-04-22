@@ -1,0 +1,22 @@
+.indicator {
+  outline: none;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  color: var(--cmbx-control-indicator-c) !important;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    --cmbx-control-indicator-c: var(--cmbx-control-indicator-c-h);
+  }
+
+  &_active {
+    --cmbx-control-indicator-c: var(--cmbx-control-indicator-c-p);
+
+    &:hover {
+      --cmbx-control-indicator-c: var(--cmbx-control-indicator-c-p);
+    }
+  }
+}

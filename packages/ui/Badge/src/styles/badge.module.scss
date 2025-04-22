@@ -1,0 +1,22 @@
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: var(--bdg-gp);
+  width: fit-content;
+  height: var(--bdg-h);
+  padding: var(--bdg-pd-y) var(--bdg-pd-x);
+  border-radius: var(--bdg-bdrs);
+
+  white-space: nowrap;
+  line-height: var(--bdg-lh);
+  letter-spacing: var(--bdg-lts);
+  font-family: var(--bdg-ff);
+  font-weight: var(--bdg-fw);
+  font-size: var(--bdg-fz);
+  color: var(--bdg-ct-gn);
+
+  box-shadow: var(--bdg-bd-sh, inset 0 0 0 0 transparent), var(--bdg-sh, 0 0 0 0 transparent);
+  background-color: var(--bdg-bgc);
+}

@@ -1,0 +1,79 @@
+@use '../../../theme/src/scss/tabs/' as tabs;
+
+$sizes: (s, xs);
+
+$shapes: (
+  'square': 'sq',
+  'rounded': 'ro',
+  'circular': 'cc',
+);
+
+$modeMaps: (
+  'light': tabs.$theme-light,
+  'dark': tabs.$theme-dark,
+  'color': tabs.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(tabs.$scale, $prop, $size);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@each $size in $sizes {
+  ._size_#{$size} {
+    --tbs-gp: #{get-scale('gap-x', $size)};
+    --tbs-pd: #{get-scale('padding', $size)};
+
+    --tbs-bdrs-sq: #{get-scale('border-radius-square', $size)};
+    --tbs-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --tbs-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+  }
+}
+
+@each $shape, $shapeNotation in $shapes {
+  ._shape_#{'' + $shape} {
+    --tbs-bdrs: var(--tbs-bdrs-#{'' + $shapeNotation});
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --tbs-toggler-active-c: #{get-color('toggler-active-color', $colorMode, $schema)};
+
+      --tbs-bgc: #{get-color('background', $colorMode, $schema)};
+      --tbs-toggler-bgc: #{get-color('background-active', $colorMode, $schema)};
+    }
+  }
+}
+
+.smoothAnimation {
+  position: relative;
+}
+
+.button {
+  z-index: 10;
+  transition: color 0.2s ease-in-out;
+
+  &_activated {
+    color: var(--tbs-toggler-active-c) !important;
+  }
+
+  path {
+    transition: color 0.2s ease-in-out;
+  }
+}
+
+.toggler {
+  position: absolute;
+  height: 100%;
+  width: 48px;
+  top: 0;
+  left: 0;
+  border-radius: var(--tbs-bdrs);
+  background-color: var(--tbs-toggler-bgc);
+  transition: 0.16s ease-in-out;
+}

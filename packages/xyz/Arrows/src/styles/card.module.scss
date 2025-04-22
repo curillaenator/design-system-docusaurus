@@ -1,0 +1,39 @@
+@import './posGenerators';
+
+.anchorContainer {
+  --container-width: fit-content;
+  --anchor-color: transparent;
+
+  position: relative;
+  width: var(--container-width);
+
+  &_devMode {
+    --anchor-size: 6px;
+    --anchor-color: red;
+  }
+
+  &_fullWidth {
+    --container-width: 100%;
+  }
+
+  .anchor {
+    &_asLine {
+      --anchor-color: var(--arrows-stroke-color);
+    }
+
+    position: absolute;
+    width: var(--anchor-size, $anchorSize);
+    height: var(--anchor-size, $anchorSize);
+    background-color: var(--anchor-color);
+  }
+
+  $anchorPositions: getAnchorsPositions(var(--general-offset, 32px));
+
+  @each $positionName, $positionValues in $anchorPositions {
+    .anchor-#{$positionName} {
+      top: #{map-get($positionValues, 'top')};
+      left: #{map-get($positionValues, 'left')};
+      transform: #{map-get($positionValues, 'transform')};
+    }
+  }
+}

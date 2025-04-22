@@ -1,0 +1,49 @@
+{
+  "name": "@kit-xyz/select",
+  "version": "1.0.20",
+  "description": "Компонент для выбора элементов из выпадающего списка",
+  "license": "UNLICENSED",
+  "sideEffects": [
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "type": "git",
+    "registry": "https://gitlab.com/api/v4/projects/50873891/packages/npm/"
+  },
+  "main": "src/index",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "run -T rimraf build && yarn run -T rollup -c --bundleConfigAsCjs",
+    "build:raw": "run -T tsc -p tsconfig.build.json",
+    "build:watch": "yarn build:raw --watch",
+    "pub": "yarn build && yarn setPath && npm publish && yarn revertPath",
+    "checkDep": "run -T pcbl-fe  checkDependencies",
+    "setPath": "node ../../../fe-scripts/bin/set-paths.js",
+    "revertPath": "node ../../../fe-scripts/bin/revert-paths.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.pcbltools.ru/bitbucket/projects/FRS2B/repos/clskit/browse/packages/ui/Selectbox",
+    "directory": "packages/ui"
+  },
+  "dependencies": {
+    "@kit-base/dropable": "0.2.7",
+    "@kit-xyz/avatar": "0.2.7",
+    "@kit-xyz/badge": "0.6.11",
+    "@kit-xyz/button": "0.3.13",
+    "classnames": "2.3.1"
+  },
+  "devDependencies": {
+    "@kit-base/common-types": "*"
+  },
+  "peerDependencies": {
+    "@kit-xyz/icon": "*",
+    "react": "*"
+  },
+  "files": [
+    "/build"
+  ]
+}

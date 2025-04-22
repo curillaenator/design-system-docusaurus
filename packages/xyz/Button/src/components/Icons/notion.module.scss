@@ -1,0 +1,38 @@
+@use '../../../../../theme/src/scss/media/' as media;
+
+@function get-scale($schema-name, $size) {
+  @return map-get(media.$glyph-scale, $schema-name, $size);
+}
+
+.notionized {
+  position: relative;
+  display: block;
+  width: var(--notion-ct-w);
+  height: var(--notion-ct-h);
+  flex-shrink: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: var(--btn-notion-sz);
+    height: var(--btn-notion-sz);
+    background-color: var(--btn-notion);
+    border-radius: 50%;
+    z-index: 2;
+  }
+}
+
+@each $size in(xl, l, m, s, xs) {
+  ._size_#{'' + $size} {
+    --notion-ct-w: #{get-scale(width, $size)};
+    --notion-ct-h: #{get-scale(height, $size)};
+  }
+}
+
+@each $state, $stateNotation in ('active': 'a', 'disabled': 'db') {
+  ._state_#{'' + $state} {
+    --btn-notion: var(--btn-notion-#{$stateNotation});
+  }
+}

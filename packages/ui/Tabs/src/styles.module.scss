@@ -1,0 +1,12 @@
+.tabs {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tbs-gp);
+  width: fit-content;
+  height: fit-content;
+  padding: var(--tbs-pd);
+  border-radius: var(--tbs-bdrs);
+  background-color: var(--tbs-bgc);
+  box-shadow: var(--tbs-sh, 0 0 0 0 transparent);
+  outline: none;
+}

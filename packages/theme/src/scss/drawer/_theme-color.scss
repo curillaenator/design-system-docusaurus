@@ -1,0 +1,19 @@
+$theme-color: (
+  color-default: (
+    content-general: var(--dwr_df_cnt-gn, rgb(255, 255, 255)),
+    background:
+      var(
+        --dwr_df_bgc,
+        linear-gradient(
+            to bottom,
+            rgb(64, 96, 255) 0%,
+            rgb(64, 96, 255) 50%,
+            rgb(128, 48, 255)
+          )
+          100%
+      ),
+    overlay-background: var(--dwr_df_overlay-bgc, rgba(255, 255, 255, 0.6)),
+    border: var(--dwr_df_bdc, rgba(0, 0, 0, 0)),
+    shadow: var(--dwr_df_sh, 0px 0px 16px rgba(64, 96, 255, 0.6)),
+  ),
+);

@@ -1,0 +1,29 @@
+@mixin weekdays {
+  .DayPicker-Weekdays {
+    display: table-header-group;
+    margin: 0;
+    padding: 0;
+  }
+
+  .DayPicker-WeekdaysRow {
+    display: grid;
+    min-height: var(--clnd-week-row-h, 32px);
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .DayPicker-Weekday {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--clnd-week-day-w, 32px);
+    text-align: center;
+    color: var(--clnd-txt-gn);
+    font-weight: var(--clnd-fw-semibold);
+    font-size: var(--clnd-weekday-fz);
+  }
+
+  .DayPicker-Weekday abbr[title] {
+    border-bottom: none;
+    text-decoration: none;
+  }
+}

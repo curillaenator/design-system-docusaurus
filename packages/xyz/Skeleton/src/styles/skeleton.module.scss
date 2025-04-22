@@ -1,0 +1,102 @@
+@use '../../../../theme/src/scss/skeleton' as skeleton;
+
+$modeMaps: (
+  'light': skeleton.$theme-light,
+  'dark': skeleton.$theme-dark,
+  'color': skeleton.$theme-color,
+);
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@function get-style($prop, $element: 'common') {
+  @return map-get(skeleton.$style, $element, $prop);
+}
+
+@function get-scale($prop, $size: 'medium') {
+  @return map-get(skeleton.$scale, $prop, $size);
+}
+
+@each $modeMapName in map-keys($modeMaps) {
+  @each $schema in map-keys(map-get($modeMaps, $modeMapName)) {
+    ._#{$schema}_#{$modeMapName} {
+      --stn-bg: #{get-color('background', $modeMapName, $schema)};
+      --stn-slider-color: #{get-color('slider', $modeMapName, $schema)};
+    }
+  }
+}
+
+@keyframes inner-slider {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.skeletonVariables {
+  --stn-slider-speed: #{get-style('speed')};
+  --stn-slider-delay: #{get-style('delay')};
+  --stn-slider-mw: #{get-scale('slider-min-width')};
+
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  backface-visibility: hidden; // нужно для сафари
+  transform: translate3d(0, 0, 0); // нужно для сафари
+  // background-color: var(--stn-bg);
+}
+
+.slider1,
+.slider2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  // min-width: var(--stn-slider-mw);
+
+  // &::after {
+  //   position: absolute;
+  //   content: '';
+  //   width: 4px;
+  //   height: 100%;
+  //   top: 0;
+  //   right: -2px;
+  // }
+}
+
+.slider1 {
+  animation: inner-slider var(--stn-slider-speed) linear infinite;
+  background-image: linear-gradient(
+    to right,
+    var(--stn-bg) 0%,
+    var(--stn-bg) 5%,
+    var(--stn-slider-color) 95%,
+    var(--stn-slider-color) 100%
+  );
+
+  &::after {
+    background-color: var(--stn-slider-color);
+  }
+}
+
+.slider2 {
+  animation: inner-slider var(--stn-slider-speed) linear infinite;
+  animation-delay: var(--stn-slider-delay);
+  background-image: linear-gradient(
+    to right,
+    var(--stn-slider-color) 0%,
+    var(--stn-slider-color) 5%,
+    var(--stn-bg) 95%,
+    var(--stn-bg) 100%
+  );
+
+  &::after {
+    background-color: var(--stn-bg);
+  }
+}

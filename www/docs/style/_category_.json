@@ -1,0 +1,9 @@
+{
+  "position": 1,
+  "label": "Style",
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Набор стилей дизайн-системы"
+  }
+}

@@ -1,0 +1,130 @@
+import tokens from '!!raw-loader!../examples/tokens.txt';
+import { CardColorValue } from '@site/src/components/ExamplesGrid';
+import { ColorMatrix, Opacities, Effect } from '../components';
+import {
+  PALETTE,
+  COLOR_MATRIX,
+  DOT_POSITIONS_MATRIX,
+  INDIGO,
+  PURPLE,
+  BLUE,
+  GREEN,
+  YELLOW,
+  RED,
+  DOT_POSITIONS_ROW,
+} from '../constants';
+
+## Basic color
+
+<textcolumns>
+  <span>
+    <p>Основные цвета в X.Y.Z для набора стилей, определяющих наполненность компонентов и фирменного стиля</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={tokens} language='json'>
+  <examples>
+    {PALETTE.map((card, i) => (
+      <example key={`card-${i}`} exampleCodeJSON={card.code} smoothedCorners>
+        <card {...card}>
+          <CardColorValue smoothed color={card.valueStyle} />
+        </card>
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Effect
+
+<textcolumns>
+  <span>
+    <p>
+      Тональный переход через черный и белый слой, cтандартное значение в дизайн-системе X.Y.Z имеет шаг прозрачности в
+      4%, но может варьироваться при необходимости создания своего шага в определении тонального перехода под проект
+    </p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <examples minCardWidth={1920}>
+    <example colorMode='dark' smoothedCorners>
+      <card title='white' colorMode='dark' subtitles={['color name: neutral-100', 'HEX: #ffffff']}>
+        <Opacities color='#ffffff' smoothed />
+      </card>
+    </example>
+    <example colorMode='dark' smoothedCorners>
+      <card title='white overlay' colorMode='dark' subtitles={['color name: neutral-100', 'HEX: #ffffff']}>
+        <Opacities color='#ffffff' blendMode='overlay' smoothed />
+      </card>
+    </example>
+    <example colorMode='dark' smoothedCorners>
+      <card title='black' colorMode='dark' subtitles={['color name: neutral-700', 'HEX: #0a0a0a']}>
+        <Opacities color='#0a0a0a' smoothed />
+      </card>
+    </example>
+    <example colorMode='dark' smoothedCorners>
+      <card title='black overlay' colorMode='dark' subtitles={['color name: neutral-700', 'HEX: #0a0a0a']}>
+        <Opacities color='#0a0a0a' blendMode='overlay' smoothed />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Sample
+
+<textcolumns>
+  <span>
+    <p>
+      Компонент содержит слои, которые накладываются поверх основного цвета, и дает возможность настроить тональный
+      спектр основного цвета
+    </p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <examples minCardWidth={1920} smoothedCorners>
+    <example smoothedCorners>
+      <Effect />
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Sample combination
+
+<textcolumns>
+  <span>
+    <p>Совмещенная палитра базовых цветов и наложения эффектов для выбора цветовых оттенков</p>
+  </span>
+</textcolumns>
+
+<docviewport modes={[]}>
+  <examples minCardWidth={1920}>
+    <example smoothedCorners>
+      <ColorMatrix colorMatrix={COLOR_MATRIX} dotsPositions={DOT_POSITIONS_MATRIX} type='matrix' />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }} smoothedCorners>
+      <ColorMatrix colorMatrix={PURPLE} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }} smoothedCorners>
+      <ColorMatrix colorMatrix={INDIGO} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }} smoothedCorners>
+      <ColorMatrix colorMatrix={BLUE} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }} smoothedCorners>
+      <ColorMatrix colorMatrix={GREEN} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }} smoothedCorners>
+      <ColorMatrix colorMatrix={YELLOW} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+    <example style={{ '--example-ct-mh': '0px' }} smoothedCorners>
+      <ColorMatrix colorMatrix={RED} dotsPositions={DOT_POSITIONS_ROW} />
+    </example>
+  </examples>
+</docviewport>

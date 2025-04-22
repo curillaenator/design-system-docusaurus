@@ -1,0 +1,59 @@
+---
+sidebar_label: 'Drawer'
+title: 'Drawer'
+description: 'Шторка'
+---
+
+import { StatedDrawer } from './components/StatedDrawer.tsx';
+import pkg from '@kit-xyz/drawer/package.json';
+
+import base from '!!raw-loader!./components/StatedDrawer.tsx';
+
+<headermeta
+  title='Drawer'
+  description='Шторка'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+/>
+
+<versionselector versionPages={[]}>
+<crutch />
+
+# Drawer
+
+## Base
+
+Базовое использование
+
+<docviewport codeBlock={base}>
+  <examples>
+    <example>
+      <StatedDrawer>
+        <div
+          style={{
+            padding: '64px',
+            height: '100%',
+            width: '100%',
+            minWidth: '480px',
+            borderRight: '2px solid var(--ifm-color-emphasis-200)',
+            borderLeft: '2px solid var(--ifm-color-emphasis-200)',
+            backgroundColor: 'var(--ifm-color-emphasis-100)',
+          }}
+        >
+          Content
+        </div>
+      </StatedDrawer>
+    </example>
+  </examples>
+</docviewport>
+
+</versionselector>

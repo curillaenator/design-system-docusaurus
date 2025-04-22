@@ -1,0 +1,9 @@
+{
+  "position": 2,
+  "label": "Layout",
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "В разработке"
+  }
+}

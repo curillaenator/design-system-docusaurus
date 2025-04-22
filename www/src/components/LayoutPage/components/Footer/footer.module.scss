@@ -1,0 +1,9 @@
+.footer {
+  display: block;
+  height: 100%;
+  min-height: var(--base-layout-footer-mh);
+  padding: var(--base-layout-footer-p-y) var(--base-layout-footer-p-x);
+  background-color: var(--base-layout-footer-p-bgc);
+
+  border-top: var(--base-layout-footer-p-bdw) solid var(--base-layout-footer-p-bdc);
+}

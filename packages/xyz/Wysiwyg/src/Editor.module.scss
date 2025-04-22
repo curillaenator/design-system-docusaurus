@@ -1,0 +1,265 @@
+@use 'sass:color';
+@use '../../../theme/src/scss/mixins/scroll' as scroll;
+
+._theme_concept {
+  --editor-primary: #6060ff;
+  --editor-primary-h: #6060c0;
+
+  --editor-link-visited: color.adjust(#6060ff, $lightness: 20%);
+
+  --editor-c: #101010;
+  --editor-bdc: #d1d1ff;
+  --editor-bgc: #ffffff;
+  --editor-highlight-bgc: #e5e5fa;
+
+  --editor-scroll-c: #4060ff29;
+  --editor-scroll-c-h: #6060c0;
+  --editor-scroll-bgc: #a3a3ff;
+  --editor-scroll-bgc-h: #4060ff29;
+
+  --editor-toolbar-bgc: var(--editor-bgc);
+
+  --editor-btn-primary-c: var(--editor-c);
+  --editor-btn-primary-c-h: var(--editor-primary-h);
+
+  --editor-btn-primary-bgc: transparent;
+  --editor-btn-primary-bgc-h: rgba(27, 27, 56, 0.08);
+  --editor-btn-primary-bgc-a: rgba(96, 96, 192, 0.16);
+
+  --editor-btn-primary-active-c: #ffffff;
+  --editor-btn-primary-active-c-h: #d1d1ff;
+  --editor-btn-primary-active-c-a: #a3a3ff;
+
+  --editor-btn-primary-active-bgc: #6060ff;
+
+  --editor-dropdown-c: #101010;
+  --editor-dropdown-bgc: #e5e5fa;
+  --editor-divider-bgc: var(--editor-bdc);
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  color: var(--editor-c, #101010);
+  font-family: SB Sans Text, sans-serif;
+  font-size: var(--wysiwyg-fz, 14px);
+  line-height: var(--wysiwyg-lh, 24px);
+  border-radius: var(--wysiwyg-bdrs, 0px);
+
+  &_toolbarTop {
+    flex-direction: column-reverse;
+  }
+
+  .scrollbarContainer {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    // настройка отображение плейсхолдера: https://tiptap.dev/docs/editor/api/extensions/placeholder
+    :global {
+      .tiptap {
+        a {
+          // cursor: pointer;
+          color: var(--editor-primary);
+
+          &:visited {
+            color: var(--editor-primary-h, color.adjust(#1677ff, $lightness: 20%));
+          }
+        }
+
+        p.is-editor-empty:first-child::before {
+          color: var(--color-neutral-300, #c2c2c2);
+          content: attr(data-placeholder);
+          float: left;
+          height: 0;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  &:not(:has(._disabled)) {
+    .scrollbarContainer {
+      @include scroll.scrollbar('mini', 'onLight');
+    }
+  }
+}
+
+._disabled {
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.04);
+
+  .scrollbarContainer {
+    overflow: hidden;
+
+    & > * {
+      pointer-events: none;
+    }
+  }
+}
+
+.content {
+  cursor: text;
+
+  padding: 24px;
+}
+
+.content h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.content * + h1 {
+  margin-top: 32px;
+}
+
+.content h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.content * + h2 {
+  margin-top: 32px;
+}
+
+.content h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.content * + h3 {
+  margin-top: 32px;
+}
+
+.content h4 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.content * + h4 {
+  margin-top: 32px;
+}
+
+.content h5 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.content * + h5 {
+  margin-top: 12px;
+}
+
+.content h6 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.content * + h6 {
+  margin-top: 12px;
+}
+
+.content ul,
+.content ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 24px;
+}
+
+/*
+  * list-style marker should appear inside child block with text to be able to be aligned [SWTR-1588]
+  TODO: investigate a possibility to add specific classname on li child using tiptap api when condition is meet
+
+  BEGIN OF HACK BLOCK
+*/
+
+.content ul > li > p::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 9px;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: currentColor;
+  border-radius: 100%;
+}
+
+.content ul > li > p[style='text-align: center']::before,
+.content ul > li > p[style='text-align: right']::before {
+  position: relative;
+  top: -2px;
+}
+
+.content ul > li > p,
+.content ol > li > p {
+  position: relative;
+}
+
+.content ol {
+  counter-reset: counter;
+}
+
+.content ol > li:nth-child(n + 10) > p:not([style='text-align: center']):not([style='text-align: right']) {
+  padding-left: 10px;
+}
+
+.content ol > li:nth-child(n + 100) > p:not([style='text-align: center']):not([style='text-align: right']) {
+  padding-left: 20px;
+}
+
+.content ol > li > p::before {
+  counter-increment: counter;
+  content: counter(counter) '. ';
+  position: absolute;
+  left: -18px;
+  top: 0;
+  display: inline-block;
+  color: currentColor;
+}
+
+.content ol > li > p[style='text-align: center']::before,
+.content ol > li > p[style='text-align: right']::before {
+  position: relative;
+}
+/* END OF HACK BLOCK */
+
+.content * + p {
+  margin-top: 8px;
+}
+
+/* TAGS */
+
+pre {
+  margin-top: 8px !important;
+  margin-bottom: 0 !important;
+  margin: 0;
+
+  box-shadow: inset 0 0 0 1px var(--editor-bdc);
+  padding: 24px;
+  border-radius: 4px;
+  background-color: var(--editor-highlight-bgc);
+}
+
+code[data-set='inline'] {
+  padding: 2px 4px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--editor-bdc);
+  background-color: var(--editor-highlight-bgc);
+}
+
+blockquote {
+  /* important needed to override antd css reset */
+  margin: 8px 0 0 !important;
+  padding-left: 16px;
+  border-left: 1px solid var(--editor-bdc);
+}
+
+hr {
+  /* important needed to override antd css reset */
+  height: 1px !important;
+  background-color: var(--editor-bdc);
+  border: none;
+  margin: 16px 0;
+}

@@ -1,0 +1,43 @@
+---
+sidebar_label: 'Menu'
+title: 'Menu'
+description: 'Layout menu'
+---
+
+import { MenuRunner } from './components/MenuRunner';
+
+import menuUsageCode from '!!raw-loader!./components/MenuRunner.tsx';
+import layoutStylesCode from '!!raw-loader!./components/styles.module.scss';
+
+<headermeta
+  title='Menu'
+  description='Layout menu'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+/>
+
+# Menu
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Базовое использование
+
+<docviewport codeBlock={menuUsageCode}>
+  <examples>
+    <example exampleCodeJSX={undefined} exampleCodeJSON={undefined}>
+      <MenuRunner />
+    </example>
+  </examples>
+</docviewport>
+
+</versionselector>

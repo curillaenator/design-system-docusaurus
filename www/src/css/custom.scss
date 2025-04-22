@@ -1,0 +1,94 @@
+@use '~@kit-xyz/theme/src/scss/mixins/scroll' as scroll;
+
+// sass плагин докузавра не может распарсить обычные импорты из _scss,
+// поэтому либовые стили подключаются тут
+@import '~@kit-xyz/fonts/fonts.css';
+@import '~react-day-picker/lib/style.css';
+@import '~react-toastify/dist/ReactToastify.min.css';
+@import '~@kit-base/calendar/src/components/DaysLayout/styles/defaultStyles';
+
+@import './colors', './navbarSidebar', './headings', './paragraph', './shadows', './reactTastifyCssv', './borders';
+
+:root {
+  --ifm-font-family-base: 'SB Sans Text', 'Arial', 'Helvetica', sans-serif;
+  --ifm-font-family-monospace: 'SB Sans Text Mono', monospace;
+
+  /* --ifm-code-font-size: 95%; */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Common */
+  --docitem-padding-x: 64px;
+  --docitem-padding-y: 192px;
+
+  --docitem-mobile-padding-x: 64px;
+  --docitem-mobile-padding-y: 64px;
+
+  --ifm-link-hover-decoration: none;
+  --ifm-spacing-vertical: 0px;
+  --ifm-spacing-horizontal: 0px;
+
+  --ifm-toc-border-color: var(--ifm-color-emphasis-200) !important;
+  --ifm-color-content: var(--ifm-color-emphasis-700) !important;
+
+  --ifm-pre-border-radius: var(--ifm-bdrs-xl);
+
+  --ifm-common-bdw: var(--ifm-bdw-xs);
+
+  /* Theme */
+  @include colors;
+  @include tintedLight;
+  @include shadows;
+  @include borders;
+
+  @include reactTastifyCssv;
+
+  // Content
+  @include headings;
+  @include paragraph;
+
+  /* Navbar & Sidebar (Drawer)*/
+  @include navbar;
+  @include sidebar;
+
+  // Utils
+  @include shadowsReassigned;
+
+  @include scroll.scrollbar('xs-doc', 'onLight');
+
+  --ifm-color-gray-100: var(--color-white) !important;
+  --ifm-color-gray-100: var(--color-neutral-100) !important;
+  --ifm-color-gray-200: var(--color-neutral-200) !important;
+  --ifm-color-gray-300: var(--color-neutral-300) !important;
+  --ifm-color-gray-400: var(--color-neutral-400) !important;
+  --ifm-color-gray-500: var(--color-neutral-500) !important;
+  --ifm-color-gray-600: var(--color-neutral-600) !important;
+  --ifm-color-gray-700: var(--color-neutral-700) !important;
+  --ifm-color-gray-800: var(--color-neutral-700) !important;
+  --ifm-color-gray-900: var(--color-neutral-700) !important;
+  --ifm-color-gray-1000: var(--color-black) !important;
+
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] {
+  @include tintedDark();
+
+  // нужно чтобы корректно инвертнуть нейтрал цвета для интерфейса
+  --ifm-color-emphasis-0: var(--ifm-color-gray-700) !important;
+  --ifm-color-emphasis-100: var(--ifm-color-gray-700) !important;
+  --ifm-color-emphasis-200: var(--ifm-color-gray-600) !important;
+  --ifm-color-emphasis-300: var(--ifm-color-gray-500) !important;
+  --ifm-color-emphasis-400: var(--ifm-color-gray-400) !important;
+  --ifm-color-emphasis-500: var(--ifm-color-gray-300) !important;
+  --ifm-color-emphasis-600: var(--ifm-color-gray-200) !important;
+  --ifm-color-emphasis-700: var(--ifm-color-gray-100) !important;
+  --ifm-color-emphasis-800: var(--ifm-color-gray-100) !important;
+  --ifm-color-emphasis-900: var(--ifm-color-gray-100) !important;
+  --ifm-color-emphasis-1000: var(--ifm-color-gray-100) !important;
+
+  // @include generateDarkTheme;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  @include scroll.scrollbar('xs-doc', 'onDark');
+}

@@ -1,0 +1,9 @@
+$theme-dark: (
+  color-default: (
+    content-general: var(--dwr_df_cnt-gn, rgb(255, 255, 255)),
+    background: var(--dwr_df_bgc, rgb(10, 10, 10)),
+    overlay-background: var(--dwr_df_overlay-bgc, rgba(10, 10, 10, 0.8)),
+    border: var(--dwr_df_bdc, rgba(0, 0, 0, 0)),
+    shadow: var(--dwr_df_sh, 0px 0px 16px rgba(64, 96, 255, 0.6)),
+  ),
+);

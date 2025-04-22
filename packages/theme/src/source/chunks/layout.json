@@ -1,0 +1,18 @@
+{
+  "breakpoint": {
+    "10xl": { "value": "2560px", "type": "sizing" },
+    "9xl": { "value": "1920px", "type": "sizing" },
+    "8xl": { "value": "1792px", "type": "sizing" },
+    "7xl": { "value": "1664px", "type": "sizing" },
+    "6xl": { "value": "1536px", "type": "sizing" },
+    "5xl": { "value": "1408px", "type": "sizing" },
+    "4xl": { "value": "1280px", "type": "sizing" },
+    "3xl": { "value": "1152px", "type": "sizing" },
+    "2xl": { "value": "1024px", "type": "sizing" },
+    "xl": { "value": "872px", "type": "sizing" },
+    "l": { "value": "768px", "type": "sizing" },
+    "m": { "value": "640px", "type": "sizing" },
+    "s": { "value": "512px", "type": "sizing" },
+    "xs": { "value": "384px", "type": "sizing" }
+  }
+}

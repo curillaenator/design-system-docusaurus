@@ -1,0 +1,106 @@
+---
+sidebar_label: 'Tabs'
+title: 'Tabs'
+description: 'Tabs'
+---
+
+import pkg from '@kit-xyz/tabs/package.json';
+
+import { TabsWrapped } from './components/TabsWrapped';
+
+import { COLORS, TABS, TITLED_TABS } from './examples/index';
+
+<headermeta
+  title='Tabs'
+  description='Tabs'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.com'
+  figmaLink='https://figma.com'
+  jiraLink='https://jira.com'
+/>
+
+# Tabs
+
+<versionselector versionPages={[]}>
+<crutch />
+
+## Theme
+
+<textcolumns>
+  <span>
+    <p>Выявлены 5 базовых цветовых подложек, где будет использоваться элемент дизайн-системы.</p>
+  </span>
+</textcolumns>
+
+<docviewport codeBlock={undefined} modes={['light', 'dark', 'color']}>
+  <examples>
+    {COLORS.map((card, i) => (
+      <example key={card.title + 1} exampleCodeJSX={undefined}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Basic tabs
+
+<textcolumns>
+  <span>
+    <p>Basic tabs</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples>
+    <example exampleCodeJSX={undefined}>
+      <card title='Basic tabs'>
+        <TabsWrapped items={TABS} />
+      </card>
+    </example>
+    <example exampleCodeJSX={undefined}>
+      <card title='Smooth animation tabs'>
+        <TabsWrapped items={TABS} smoothAnimation />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Titled tabs
+
+<textcolumns>
+  <span>
+    <p>Titled tabs</p>
+  </span>
+
+</textcolumns>
+
+<docviewport modes={['light', 'dark', 'color']}>
+  <examples minCardWidth={1920}>
+    <example exampleCodeJSX={undefined}>
+      <card title='Basic tabs'>
+        <TabsWrapped items={TITLED_TABS} activeEl='table-sa' />
+      </card>
+    </example>
+    <example exampleCodeJSX={undefined}>
+      <card title='Smooth animation tabs'>
+        <TabsWrapped items={TITLED_TABS} activeEl='table-sa' smoothAnimation />
+      </card>
+    </example>
+  </examples>
+</docviewport>
+
+</versionselector>

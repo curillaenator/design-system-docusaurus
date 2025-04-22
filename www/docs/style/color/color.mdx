@@ -1,0 +1,136 @@
+---
+sidebar_label: 'Color'
+sidebar_position: 3
+title: 'Color'
+description: 'Библиотека для работы с цветом'
+---
+
+import headerImage from './assets/color.png';
+import { Color } from './components/Color.tsx';
+import { COLORS } from './constants';
+
+import neutral from 'raw-loader!./examples/neutral.txt';
+import accent_1 from 'raw-loader!./examples/accent-1.txt';
+import accent_2 from 'raw-loader!./examples/accent-2.txt';
+import informative from 'raw-loader!./examples/informative.txt';
+import positive from 'raw-loader!./examples/positive.txt';
+import attention from 'raw-loader!./examples/attention.txt';
+import negative from 'raw-loader!./examples/negative.txt';
+
+<headermeta
+  title='Color'
+  description='Общая подключаемая библиотека для работы с цветом, содержит цвета разделенные уже по оттенкам, и переименована относительно использования и построения в дизайн-системе, и для подготовки макетов.'
+  copywriter='@astakhov'
+  copywriterLink='https://mm.pcbltools.ru/slack-export/messages/@astakhov'
+  designer='@eustinov'
+  designerLink='https://mm.pcbltools.ru/slack-export/messages/@eustinov'
+  developer='@kaarturov'
+  developerLink='https://mm.pcbltools.ru/slack-export/messages/@kaarturov'
+  versions={['1.0']}
+  actualVersion='1.0'
+  status='Work in progress'
+  info='Information'
+  bitbucketLink='https://bitbucket.pcbltools.ru/bitbucket/projects/XYZ/repos/kit/browse/packages/theme/src/scss/style/_color.scss'
+  figmaLink='https://www.figma.com/'
+  jiraLink='https://jira.pcbltools.ru/jira/browse/XYZ-366'
+  headerImage={headerImage}
+/>
+
+# Color
+
+## Neutral
+
+<docviewport codeBlock={neutral} language='json'>
+  <examples>
+    {COLORS.neutral.map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Accent-1
+
+<docviewport codeBlock={accent_1} language='json'>
+  <examples>
+    {COLORS['accent-1'].map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Accent-2
+
+<docviewport codeBlock={accent_2} language='json'>
+  <examples>
+    {COLORS['accent-2'].map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Informative
+
+<docviewport codeBlock={informative} language='json'>
+  <examples>
+    {COLORS['informative'].map((card) => (
+      <example key={card.id} >
+       <card {...card} />
+      </example>
+    ))}
+  </examples>
+
+</docviewport>
+
+<divider />
+
+## Positive
+
+<docviewport codeBlock={positive} language='json'>
+  <examples>
+    {COLORS['positive'].map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Attention
+
+<docviewport codeBlock={attention} language='json'>
+  <examples>
+    {COLORS['attention'].map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>
+
+<divider />
+
+## Negative
+
+<docviewport codeBlock={negative} language='json'>
+  <examples>
+    {COLORS['negative'].map((card) => (
+      <example key={card.id}>
+        <card {...card} />
+      </example>
+    ))}
+  </examples>
+</docviewport>

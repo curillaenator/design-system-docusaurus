@@ -1,0 +1,84 @@
+@use '../../../theme/src/scss/radio' as radio;
+
+$sizes: (xs);
+
+$modeMaps: (
+  'light': radio.$theme-light,
+  'dark': radio.$theme-dark,
+  'color': radio.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(radio.$scale, $prop, $size);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@function get-style($prop) {
+  @return map-get(radio.$style, 'content', $prop);
+}
+
+.radioVariables {
+  --rdo-ff: #{get-style('font-family')};
+  --rdo-fw: #{get-style('font-weight')};
+
+  --rdo-glph-pd-x: 0;
+  --rdo-glph-pd-y: 0;
+  --rdo-fzn-w: calc(var(--rdo-glph-w) + 8px);
+  --rdo-fzn-h: calc(var(--rdo-glph-h) + 8px);
+  --rdo-fzn-bdw: var(--rdo-glph-bdw);
+}
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --rdo-gp-x: #{get-scale('gap-x', $size)};
+
+    --rdo-pd-y: #{get-scale('padding-y', $size)};
+    --rdo-pd-x: #{get-scale('padding-x', $size)};
+
+    --rdo-glph-w: #{get-scale('glyph-width', $size)};
+    --rdo-glph-h: #{get-scale('glyph-height', $size)};
+    --rdo-glph-bdw: #{get-scale('glyph-border-width', $size)};
+    --rdo-glph-inner-sz: #{get-scale('glyph-inner-size', $size)};
+
+    --rdo-txt-gp-x: #{get-scale('text-gap-x', $size)};
+    --rdo-txt-fz: #{get-scale('text-font-size', $size)};
+    --rdo-txt-lh: #{get-scale('text-line-height', $size)};
+    --rdo-txt-pd-y: #{get-scale('text-padding-y', $size)};
+    --rdo-txt-pd-x: #{get-scale('text-padding-x', $size)};
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --rdo-txt-gn: #{get-color('text-general', $colorMode, $schema)};
+      --rdo-txt-gn-db: #{get-color('text-general-disabled', $colorMode, $schema)};
+      --rdo-txt-ad: #{get-color('text-additional', $colorMode, $schema)};
+      --rdo-txt-ad-db: #{get-color('text-additional-disabled', $colorMode, $schema)};
+
+      --rdo-glph-gn: #{get-color('glyph-general', $colorMode, $schema)};
+      --rdo-glph-gn-f: #{get-color('glyph-general-focused', $colorMode, $schema)};
+      --rdo-glph-gn-h: #{get-color('glyph-general-hovered', $colorMode, $schema)};
+      --rdo-glph-gn-p: #{get-color('glyph-general-pressed', $colorMode, $schema)};
+      --rdo-glph-gn-a: #{get-color('glyph-general-active', $colorMode, $schema)};
+      --rdo-glph-gn-db: #{get-color('glyph-general-disabled', $colorMode, $schema)};
+
+      --rdo-glph-ad: #{get-color('glyph-additional', $colorMode, $schema)};
+      --rdo-glph-ad-f: #{get-color('glyph-additional-focused', $colorMode, $schema)};
+      --rdo-glph-ad-h: #{get-color('glyph-additional-hovered', $colorMode, $schema)};
+      --rdo-glph-ad-p: #{get-color('glyph-additional-pressed', $colorMode, $schema)};
+      --rdo-glph-ad-a: #{get-color('glyph-additional-active', $colorMode, $schema)};
+      --rdo-glph-ad-db: #{get-color('glyph-additional-disabled', $colorMode, $schema)};
+
+      --rdo-glph-bgc: #{get-color('glyph-background', $colorMode, $schema)};
+      --rdo-glph-bgc-f: #{get-color('glyph-background-focused', $colorMode, $schema)};
+      --rdo-glph-bgc-h: #{get-color('glyph-background-hovered', $colorMode, $schema)};
+      --rdo-glph-bgc-p: #{get-color('glyph-background-pressed', $colorMode, $schema)};
+      --rdo-glph-bgc-a: #{get-color('glyph-background-active', $colorMode, $schema)};
+      --rdo-glph-bgc-db: #{get-color('glyph-background-disabled', $colorMode, $schema)};
+    }
+  }
+}

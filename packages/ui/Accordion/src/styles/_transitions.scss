@@ -1,0 +1,33 @@
+@mixin accordionTransitions() {
+  .accordion_enter {
+    transition: var(--acdn-animation-time) var(--acdn-animation-method);
+
+    &_from {
+      transform: var(--acdn-animation-transform-from, scale(0.9));
+      height: 0;
+      opacity: 0;
+    }
+
+    &_to {
+      transform: var(--acdn-animation-transform-to, scale(1));
+      height: var(--acdn-max-open-height);
+      opacity: 1;
+    }
+  }
+
+  .accordion_leave {
+    transition: var(--acdn-animation-time) var(--acdn-animation-method);
+
+    &_from {
+      transform: var(--acdn-animation-transform-to, scale(1));
+      height: var(--acdn-max-open-height);
+      opacity: 1;
+    }
+
+    &_to {
+      transform: var(--acdn-animation-transform-from, scale(0.9));
+      height: 0;
+      opacity: 0;
+    }
+  }
+}

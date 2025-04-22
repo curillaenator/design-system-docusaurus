@@ -1,0 +1,26 @@
+@function get-all-combinations($first-lvl-map: (), $second-lvl-map: ()) {
+  $result: ();
+
+  @each $first-name in $first-lvl-map {
+    @each $second-name in $second-lvl-map {
+      $result: append($result, #{$first-name}-#{$second-name});
+    }
+  }
+
+  @return $result;
+}
+
+@function kebab-to-camel-case($str) {
+  $result: '' + $str;
+
+  @while str-index($result, '-') != null {
+    $dash-index: str-index($result, '-');
+    $head: str-slice($result, 1, $dash-index - 1);
+    $letter: str-slice($result, $dash-index + 1, $dash-index + 1);
+    $tails: str-slice($result, $dash-index + 2, str-length($result));
+
+    $result: $head + to-upper-case($letter) + $tails;
+  }
+
+  @return $result;
+}

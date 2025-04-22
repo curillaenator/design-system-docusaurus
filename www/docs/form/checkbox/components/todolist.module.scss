@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.createItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  @mixin fontSettings {
+    font-family: SB Sans Text;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+
+    color: #101010;
+  }
+
+  span {
+    @include fontSettings;
+
+    min-height: 24px;
+    vertical-align: middle;
+  }
+
+  textarea {
+    outline: none;
+    border: none;
+    width: 100%;
+    min-height: 24px;
+    padding: 0;
+    background-color: transparent;
+    resize: none;
+
+    @include fontSettings;
+
+    ::placeholder {
+      color: #cdd5e0;
+    }
+  }
+}
+
+.checkboxTracker {
+  --cbx_c-s_glph-gn-h: #cdd5e0;
+  --cbx_c-s_glph-gn-a: #cdd5e0;
+  --cbx_c-s_glph-gn-p: #cdd5e0;
+
+  --cbx_c-s_glph-ad-a: #778292;
+  --cbx_c-s_glph-ad-p: #cdd5e0;
+
+  --cbx_c-s_glph-bgc: #dce4ef;
+  --cbx_c-s_glph-bgc-h: #dce4ef;
+  --cbx_c-s_glph-bgc-a: #dce4ef;
+  --cbx_c-s_glph-bgc-p: #dce4ef;
+  --cbx_c-s_glph-bgc-db: #dce4ef;
+  --cbx_c-s_glph-bgc-a-db: #dce4ef;
+}

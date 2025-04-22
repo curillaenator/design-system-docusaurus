@@ -1,0 +1,19 @@
+.tocItemLink {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.tree {
+  padding: 0;
+  border-left: none;
+
+  & > li {
+    --ifm-toc-link-color: var(--ifm-color-emphasis-700);
+
+    padding: 4px 8px;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+}

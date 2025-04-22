@@ -1,0 +1,48 @@
+{
+  "name": "@kit-base/platformNotification",
+  "version": "0.1.1",
+  "description": "Уведомления для проекта",
+  "license": "UNLICENSED",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "type": "git",
+    "registry": "https://gitlab.com/api/v4/projects/50873891/packages/npm/"
+  },
+  "main": "src/index",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "rimraf build && yarn build:raw && yarn setVersion",
+    "build:raw": "tsc -p tsconfig.build.json",
+    "build:watch": "yarn build:raw --watch",
+    "pub": "yarn build && npm publish",
+    "test": "pcbl-fe test",
+    "checkDep": "pcbl-fe checkDependencies",
+    "pack": "pcbl-fe pack",
+    "revertPack": "pcbl-fe revertPack",
+    "setVersion": "pcbl-fe setVersion",
+    "clean": "pcbl-fe clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit4/browse/packages/ui/PlatformNotification",
+    "directory": "packages/ui"
+  },
+  "dependencies": {
+    "@kit-base/button": "0.3.12",
+    "@kit-base/icon": "0.2.6",
+    "classnames": "2.3.1"
+  },
+  "devDependencies": {
+    "@kit-base/common-types": "0.0.2"
+  },
+  "peerDependencies": {
+    "@kit-xyz/icon": "*",
+    "react": "*"
+  },
+  "files": [
+    "/build"
+  ]
+}

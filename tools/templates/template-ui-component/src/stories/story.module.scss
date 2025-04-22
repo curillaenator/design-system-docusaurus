@@ -1,0 +1,35 @@
+// Canvas
+
+.canvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+// Examples
+
+.frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  padding: 0 32px;
+}
+
+.examples {
+  display: grid;
+  gap: 32px;
+
+  &_4InRow {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &_3InRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &_2InRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

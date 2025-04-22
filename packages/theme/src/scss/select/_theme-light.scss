@@ -1,0 +1,9 @@
+$theme-light: (
+  color-default: (
+    background: var(--slct_df_bgc, rgb(255, 255, 255)),
+    item-background-hover: var(--slct_df_tm-bckgrnd-hvr, rgb(235, 235, 235)),
+    border: var(--slct_df_bdc, rgba(0, 0, 0, 0)),
+    divider: var(--slct_df_dvdr, rgba(64, 96, 255, 0.2)),
+    shadow: var(--slct_df_sh, 0px 4px 8px rgba(64, 96, 255, 0.2)),
+  ),
+);

@@ -1,0 +1,159 @@
+.container {
+  --rdo-w: fit-content;
+  --rdo-cu: pointer;
+
+  position: relative;
+  flex-shrink: 0;
+  width: var(--rdo-w);
+  background-color: var(--rdo-bgc, transparent);
+
+  &_fullwidth {
+    --rdo-w: 100%;
+  }
+
+  & > .input {
+    position: absolute;
+    top: 50%;
+    left: calc(var(--rdo-glph-w) / 2);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: -100;
+    margin: 0;
+
+    &:disabled + label {
+      --rdo-cu: default;
+
+      --rdo-txt-gn: var(--rdo-txt-gn-db);
+      --rdo-txt-ad: var(--rdo-txt-ad-db);
+      --rdo-glph-bgc: var(--rdo-glph-bgc-db);
+      --rdo-glph-sh: var(--rdo-glph-sh-db);
+    }
+
+    &:disabled:checked + label {
+      --rdo-glph-gn: var(--rdo-glph-gn-db);
+      --rdo-glph-ad: var(--rdo-glph-ad-db);
+    }
+
+    &:not(:disabled) {
+      &:checked + label {
+        --rdo-glph-gn: var(--rdo-glph-gn-a);
+        --rdo-glph-ad: var(--rdo-glph-ad-a);
+        --rdo-glph-bgc: var(--rdo-glph-bgc-a);
+        --rdo-glph-sh: var(--rdo-glph-sh-a);
+      }
+
+      &:active + label {
+        --rdo-glph-gn: var(--rdo-glph-gn-p);
+        --rdo-glph-ad: var(--rdo-glph-ad-p);
+        --rdo-glph-bgc: var(--rdo-glph-bgc-p);
+        --rdo-glph-sh: var(--rdo-glph-sh-p);
+      }
+
+      &:hover + label {
+        --rdo-glph-gn: var(--rdo-glph-gn-h);
+        --rdo-glph-bgc: var(--rdo-glph-bgc-h);
+        --rdo-glph-sh: var(--rdo-glph-sh-h);
+      }
+
+      // outline focus with tab button
+      &:focus-visible + label > .glyphContainer::before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: var(--rdo-fzn-w, 0);
+        height: var(--rdo-fzn-h, 0);
+        border-radius: var(--rdo-fzn-bdrs, 50%);
+        box-shadow: inset 0 0 0 var(--rdo-fzn-bdw, 1px) var(--rdo-glph-gn-f, transparent);
+      }
+    }
+
+    // inner dot of radio (content-additional)
+    & + label > .glyphContainer::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: var(--rdo-glph-inner-sz, 8px);
+      height: var(--rdo-glph-inner-sz, 8px);
+      border-radius: 50%;
+      background-color: var(--rdo-glph-ad);
+      z-index: 10;
+    }
+  }
+
+  .radio {
+    --rdo-direction: row;
+    --rdo-ta: left;
+
+    display: flex;
+    flex-direction: var(--rdo-direction);
+    gap: var(--rdo-gp-x);
+    cursor: var(--rdo-cu);
+
+    &_reversed {
+      --rdo-direction: row-reverse;
+      --rdo-ta: right;
+    }
+  }
+}
+
+.glyphContainer {
+  position: relative;
+  flex-shrink: 0;
+  width: var(--rdo-glph-w);
+  height: calc(var(--rdo-glph-h) + var(--rdo-glph-pd-y, 0px) * 2);
+  padding: var(--rdo-glph-pd-y) var(--rdo-glph-pd-x);
+
+  .glyph {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--rdo-glph-bgc);
+    box-shadow: inset 0 0 0 var(--rdo-glph-bdw, 2px) var(--rdo-glph-gn);
+  }
+}
+
+.labels {
+  --rdo-text-direction: row;
+  --rdo-text-w: fit-content;
+  --rdo-texts-justify-content: flex-start;
+
+  display: flex;
+  flex-direction: var(--rdo-text-direction);
+  justify-content: var(--rdo-texts-justify-content);
+  gap: var(--rdo-txt-gp-x);
+  width: var(--rdo-text-w);
+  padding: var(--rdo-txt-pd-y) var(--rdo-txt-pd-x);
+
+  &_reversed {
+    --rdo-text-direction: row-reverse;
+    --rdo-texts-justify-content: flex-end;
+  }
+
+  &_labelsFullwidth {
+    --rdo-text-w: 100%;
+    --rdo-texts-justify-content: space-between !important;
+  }
+
+  .label {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: var(--rdo-ta);
+    font-family: var(--rdo-ff);
+    font-size: var(--rdo-txt-fz);
+    font-weight: var(--rdo-fw);
+    line-height: var(--rdo-txt-lh);
+    letter-spacing: var(--rdo-txt-lts);
+    color: var(--rdo-txt-gn);
+    white-space: normal;
+    user-select: none;
+  }
+
+  .labelAdditional {
+    color: var(--rdo-txt-ad);
+  }
+}

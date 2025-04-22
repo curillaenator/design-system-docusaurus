@@ -1,0 +1,22 @@
+{
+  "neutral-700-80%": {
+    "value": "rgba(20, 20, 20, 0.8)",
+    "type": "color"
+  },
+  "neutral-700-60%": {
+    "value": "rgba(20, 20, 20, 0.6)",
+    "type": "color"
+  },
+  "neutral-700-40%": {
+    "value": "rgba(20, 20, 20, 0.4)",
+    "type": "color"
+  },
+  "neutral-700-20%": {
+    "value": "rgba(20, 20, 20, 0.2)",
+    "type": "color"
+  },
+  "neutral-700-0%": {
+    "value": "rgba(20, 20, 20, 0)",
+    "type": "color"
+  }
+}

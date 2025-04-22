@@ -1,0 +1,54 @@
+@use '../../../../theme/src/scss/divider/' as divider;
+
+@function get-color($value-name, $schema-name: 'color-dark') {
+  @return map-get(map-get(divider.$theme-light, $schema-name), $value-name);
+}
+
+@function get-scale($value-name, $size: '2xl') {
+  @return map-get(map-get(divider.$scale, $value-name), $size);
+}
+
+@function get-style($value-name) {
+  @return map-get(map-get(divider.$style, 'content'), $value-name);
+}
+
+$sizes: (2xl xl l m s xs);
+
+.dividerVariables {
+  --dv-td: #{get-style('text-decoration')};
+  --dv-txt-case: #{get-style('text-case')};
+  --dv-ff: #{get-style('font-family')};
+  --dv-fw: #{get-style('font-weight')};
+}
+
+@each $size in $sizes {
+  ._size_#{$size} {
+    --dv-bdw: #{get-scale('border-width', $size)};
+    --dv-fz: #{get-scale('text-font-size', $size)};
+    --dv-lh: #{get-scale('text-line-height', $size)};
+    --dv-ct-gp: #{get-scale('gap-x', $size)};
+    --dv-ct-pd: #{get-scale('padding-y', $size)} #{get-scale('padding-x', $size)};
+    --dv-txt-pd: #{get-scale('text-padding-y', $size)} #{get-scale('text-padding-x', $size)};
+    --dv-ct-vertical-h: #{get-scale('height', $size)};
+    --dv-glph-w: #{get-scale('glyph-width', $size)};
+    --dv-glph-h: #{get-scale('glyph-height', $size)};
+    --dv-glph-bdw: #{get-scale('glyph-border-width', $size)};
+    --dv-glph-pd: #{get-scale('glyph-padding-y', $size)} #{get-scale('glyph-padding-x', $size)};
+  }
+}
+
+@each $schema in map-keys(divider.$theme-light) {
+  ._#{$schema} {
+    --dv-line-bgc: #{get-color('border', $schema)};
+    --dv-ct-gn: #{get-color('content-general', $schema)};
+    --dv-ct-ad: #{get-color('content-additional', $schema)};
+  }
+}
+
+._rounded {
+  border-radius: 2px,
+}
+
+._cornered {
+  border-radius: 0,
+}

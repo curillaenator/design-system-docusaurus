@@ -1,0 +1,67 @@
+// !important - :( , иначе не перебить дефолтные стили
+
+.option {
+  --cmbx-option-cursor: pointer;
+
+  cursor: var(--cmbx-option-cursor) !important;
+  user-select: none !important;
+  box-sizing: border-box !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: var(--cmbx-option-gp-x) !important;
+  width: 100% !important;
+  min-height: var(--cmbx-option-h) !important;
+  margin-bottom: var(--cmbx-menu-gp-y);
+  padding: var(--cmbx-option-pd-y) var(--cmbx-option-pd-x) !important;
+  background-color: var(--cmbx-option-bgc) !important;
+  border-radius: var(--cmbx-option-bdrs) !important;
+
+  color: var(--cmbx-option-ct-gn) !important;
+  font-size: var(--cmbx-menu-fz) !important;
+  line-height: var(--cmbx-menu-lh) !important;
+  font-weight: var(--cmbx-menu-fw) !important;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &_disabled {
+    --cmbx-option-cursor: default;
+    --cmbx-option-ct-gn: var(--cmbx-option-ct-gn-db);
+  }
+
+  &_interactive {
+    &:hover {
+      --cmbx-option-bgc: var(--cmbx-option-bgc-h);
+      --cmbx-option-ct-gn: var(--cmbx-option-ct-gn-h);
+    }
+  }
+
+  &_focused {
+    --cmbx-option-bgc: var(--cmbx-option-bgc-h);
+    --cmbx-option-ct-gn: var(--cmbx-option-ct-gn-h);
+  }
+
+  &_selected {
+    --cmbx-option-bgc: var(--cmbx-option-bgc-p);
+    --cmbx-option-bgc-h: var(--cmbx-option-bgc-p);
+    --cmbx-option-ct-gn: var(--cmbx-option-ct-gn-p);
+    --cmbx-option-ic-c: var(--cmbx-option-bgc);
+  }
+
+  .icon {
+    --ic-w: var(--cmbx-option-ic-sz);
+    --ic-h: var(--cmbx-option-ic-sz);
+  }
+
+  .label {
+    display: block;
+    width: calc(100% - var(--cmbx-option-gp-x) - var(--cmbx-menu-lh));
+    margin: 0;
+
+    &_breakwords {
+      word-break: break-all;
+    }
+  }
+}

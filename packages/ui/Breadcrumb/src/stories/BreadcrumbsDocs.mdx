@@ -1,0 +1,21 @@
+import { Layout, Header } from '@pcbl-ui-v4/storybook-components';
+
+import { BreadcrumbsStoryDocs } from './BreadcrumbsStory.docs';
+import packageInfo from '../../package.json';
+
+<Layout withoutPadding>
+<Header
+  title="Breadcrumbs"
+  authorName="Кирилл Артуров"
+  designerName="Олег Астахов"
+  status="production"
+  design="https://www.figma.com/file/Z4TAhF7dGNiseMZUIrWX4P/Kit-4.0?node-id=543%3A25273"
+  description="Компонент для навигации по приложению."
+  origin="https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit4/browse/packages/ui/Breadcrumb?at=refs%2Fheads%2Fmaster"
+  packageName={packageInfo.name}
+  packageVersion={packageInfo.version}
+/>
+
+<BreadcrumbsStoryDocs />
+
+</Layout>

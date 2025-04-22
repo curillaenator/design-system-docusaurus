@@ -1,0 +1,22 @@
+{
+  "informative-100-80%": {
+    "value": "rgba(240, 237, 253, 0.8)",
+    "type": "color"
+  },
+  "informative-100-60%": {
+    "value": "rgba(240, 237, 253, 0.6)",
+    "type": "color"
+  },
+  "informative-100-40%": {
+    "value": "rgba(240, 237, 253, 0.4)",
+    "type": "color"
+  },
+  "informative-100-20%": {
+    "value": "rgba(240, 237, 253, 0.2)",
+    "type": "color"
+  },
+  "informative-100-0%": {
+    "value": "rgba(240, 237, 253, 0)",
+    "type": "color"
+  }
+}

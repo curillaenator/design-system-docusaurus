@@ -1,0 +1,42 @@
+@use '../../../../../theme/src/scss/accordion' as accordion;
+
+$modeMaps: (
+  'light': accordion.$theme-light,
+  'dark': accordion.$theme-dark,
+  'color': accordion.$theme-color,
+);
+
+@function get-scale($prop, $size) {
+  @return map-get(accordion.$scale, $prop, $size);
+}
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@function get-style($prop, $group: 'content') {
+  @return map-get(accordion.$style, $group, $prop);
+}
+
+.accordionVariables {
+  --acdn-animation-time: #{get-style('time', 'animation')};
+  --acdn-animation-method: #{get-style('method', 'animation')};
+  --acdn-ff: #{get-style('font-family')};
+  --acdn-ct-w: 100%;
+}
+
+@each $size in (s, xs) {
+  ._size_#{'' + $size} {
+    --acdn-ct-pd-y: #{get-scale('padding-y', $size)};
+    --acdn-ct-pd-x: #{get-scale('padding-x', $size)};
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --acdn-ct-gn: #{get-color('content-general', $colorMode, $schema)};
+      --acdn-ct-bgc: #{get-color('background', $colorMode, $schema)};
+    }
+  }
+}

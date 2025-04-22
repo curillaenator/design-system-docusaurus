@@ -1,0 +1,12 @@
+.navbarItem {
+  white-space: nowrap;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px;
+}
+
+.noShrink {
+  flex-shrink: 0;
+}

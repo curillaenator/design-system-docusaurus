@@ -1,0 +1,12 @@
+@use '~@kit-xyz/theme/src/scss/style/border-width' as bdw;
+@use '~@kit-xyz/theme/src/scss/style/border-radius' as bdrs;
+
+@mixin borders {
+  @each $size, $width in bdw.$border-width {
+    --ifm-bdw-#{$size}: #{'' + $width};
+  }
+
+  @each $size, $radius in bdrs.$border-radius {
+    --ifm-bdrs-#{$size}: #{'' + $radius};
+  }
+}

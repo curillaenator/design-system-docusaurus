@@ -1,0 +1,51 @@
+@use '../../../../theme/src/scss/bubble/' as bubble;
+
+$sizes: (2xl, xl, l, m, s, xs);
+$color-schema: map-keys(bubble.$theme-dark);
+
+@function get-scale($prop, $size) {
+  @return map-get(map-get(bubble.$scale, $prop), $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(map-get(bubble.$style, $group), $value);
+}
+
+@function get-color($prop, $schema) {
+  @return map-get(map-get(bubble.$theme-light, $schema), $prop);
+}
+
+.bubbleVariables {
+  --bbl-ff: #{get-style('font-family')};
+  --bbl-fw: #{get-style('font-weight')};
+}
+
+@each $schema in $color-schema {
+  ._#{$schema} {
+    --bbl-ct-gn: #{get-color('content-general', $schema)};
+    --bbl-ct-ad: #{get-color('content-additional', $schema)};
+    --bbl-bg: #{get-color(('background'), $schema)};
+    --bbl-bg-f: #{get-color(('background-focused'), $schema)};
+    --bbl-bg-h: #{get-color(('background-hovered'), $schema)};
+    --bbl-bg-p: #{get-color(('background-pressed'), $schema)};
+    --bbl-sh: #{get-color(('shadow'), $schema)};
+  }
+}
+
+@each $size in $sizes {
+  ._#{$size} {
+    --bbl-w: #{get-scale('width', $size)};
+    --bbl-pd-x: #{get-scale('padding-x', $size)};
+    --bbl-pd-y: #{get-scale('padding-y', $size)};
+    --bbl-gp-x: #{get-scale('gap-x', $size)};
+    --bbl-bd-cc: #{get-scale('border-radius-circular', $size)};
+    --bbl-bd-ro: #{get-scale('border-radius-rounded', $size)};
+    --bbl-bdrs-corner: #{get-scale('border-radius-corner', $size)};
+    --bbl-fz: #{get-scale('text-font-size', $size)};
+    --bbl-lh: #{get-scale('text-line-height', $size)};
+    --bbl-ic-pd-x: #{get-scale('glyph-padding-x', $size)};
+    --bbl-ic-pd-y: #{get-scale('glyph-padding-y', $size)};
+    --bbl-txt-pd-x: #{get-scale('text-padding-x', $size)};
+    --bbl-txt-pd-y: #{get-scale('text-padding-y', $size)};
+  }
+}

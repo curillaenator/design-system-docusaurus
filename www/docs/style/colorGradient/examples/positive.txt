@@ -1,0 +1,50 @@
+{
+  "positive-700-positive-400-top": {
+    "value": "linear-gradient(180deg, rgb(0, 192, 96) 0%, rgb(122, 222, 172) 100%)",
+    "type": "color"
+  },
+  "positive-700-positive-400-right": {
+    "value": "linear-gradient(270deg, rgb(0, 192, 96) 0%, rgb(122, 222, 172) 100%)",
+    "type": "color"
+  },
+  "positive-700-positive-400-bottom": {
+    "value": "linear-gradient(180deg, rgb(122, 222, 172) 0%, rgb(0, 192, 96) 100%)",
+    "type": "color"
+  },
+  "positive-700-positive-400-left": {
+    "value": "linear-gradient(90deg, rgb(0, 192, 96) 0%, rgb(122, 222, 172) 100%)",
+    "type": "color"
+  },
+  "positive-700-positive-100-top": {
+    "value": "linear-gradient(180deg, rgb(0, 192, 96) 0%, rgb(235, 250, 242) 100%)",
+    "type": "color"
+  },
+  "positive-700-positive-100-right": {
+    "value": "linear-gradient(270deg, rgb(0, 192, 96) 0%, rgb(235, 250, 242) 100%)",
+    "type": "color"
+  },
+  "positive-700-positive-100-bottom": {
+    "value": "linear-gradient(180deg, rgb(235, 250, 242) 0%, rgb(0, 192, 96) 100%)",
+    "type": "color"
+  },
+  "positive-700-positive-100-left": {
+    "value": "linear-gradient(90deg, rgb(0, 192, 96) 0%, rgb(235, 250, 242) 100%)",
+    "type": "color"
+  },
+  "positive-400-positive-100-top": {
+    "value": "linear-gradient(180deg, rgb(122, 222, 172) 0%, rgb(235, 250, 242) 100%)",
+    "type": "color"
+  },
+  "positive-400-positive-100-right": {
+    "value": "linear-gradient(270deg, rgb(122, 222, 172) 0%, rgb(235, 250, 242) 100%)",
+    "type": "color"
+  },
+  "positive-400-positive-100-bottom": {
+    "value": "linear-gradient(180deg, rgb(235, 250, 242) 0%, rgb(122, 222, 172) 100%)",
+    "type": "color"
+  },
+  "positive-400-positive-100-left": {
+    "value": "linear-gradient(90deg, rgb(122, 222, 172) 0%, rgb(235, 250, 242) 100%)",
+    "type": "color"
+  }
+}

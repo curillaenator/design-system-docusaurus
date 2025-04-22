@@ -1,0 +1,20 @@
+{
+  "extends": "@pcbl/fe-scripts/configs/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["esnext", "dom", "ES5"],
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "outDir": "build",
+    "paths": {
+      "*": ["*"]
+    },
+    "declaration": true,
+    "noEmit": false,
+    "target": "ES6",
+    "module": "CommonJS",
+    "downlevelIteration": true,
+    "types": ["react"]
+  },
+  "include": ["src"],
+  "exclude": ["**/stories", "**/*.stories.*", "**/*.test.*", "*.css", "**/indexLocal.js"]
+}

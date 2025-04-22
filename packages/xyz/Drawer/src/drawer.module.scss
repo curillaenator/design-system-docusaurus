@@ -1,0 +1,56 @@
+@use '../../../theme/src/scss/drawer' as drawer;
+@use '../../../theme/src/scss/mixins/scroll' as scroll;
+
+$modeMaps: (
+  'light': drawer.$theme-light,
+  'dark': drawer.$theme-dark,
+  'color': drawer.$theme-color,
+);
+
+@function get-color($prop, $mapName, $schema) {
+  @return map-get(map-get($modeMaps, $mapName), $schema, $prop);
+}
+
+@function get-scale($prop, $size) {
+  @return map-get(drawer.$scale, $prop, $size);
+}
+
+@function get-style($prop, $style: 'animation') {
+  @return map-get(drawer.$style, $style, $prop);
+}
+
+.variables {
+  --dwr-animation-time: #{get-style('time')};
+  --dwr-animation-method: #{get-style('method')};
+}
+
+$sizes: ('2xl', 'xl', 'l', 'm', 's', 'xs', 'none');
+
+@each $size in $sizes {
+  ._size_#{$size} {
+    --dwr-opened-w: #{get-scale('opened', $size)};
+    --dwr-closed-w: #{get-scale('closed', $size)};
+    --dwr-bdw: #{get-scale('border-width', $size)};
+  }
+}
+
+@each $colorMode, $modeMap in $modeMaps {
+  @each $schema in map-keys($modeMap) {
+    ._#{$schema}_#{$colorMode} {
+      --dwr-ct-gn: #{get-color('content-general', $colorMode, $schema)};
+      --dwr-ct-bgc: #{get-color('background', $colorMode, $schema)};
+      --dwr-ct-bdc: #{get-color('border', $colorMode, $schema)};
+      --dwr-overlay-bgc: #{get-color('overlay-background', $colorMode, $schema)};
+      --drw-sh: #{get-color('shadow', $colorMode, $schema)};
+    }
+  }
+}
+
+.scroll {
+  @include scroll.scrollbar('xs', 'onLight');
+}
+
+.content {
+  color: var(--dwr-ct-gn);
+  background-color: transparent;
+}

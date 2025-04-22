@@ -1,0 +1,33 @@
+.examples {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 32px;
+
+  .frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 192px;
+
+    &_dark {
+      background-color: var(--color-neutral-700);
+    }
+  }
+
+  &_4inRow {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &_3inRow {
+    grid-template-columns: repeat(3, 1fr);
+
+    &WithGap {
+      margin-top: 30px;
+    }
+  }
+
+  &_2inRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

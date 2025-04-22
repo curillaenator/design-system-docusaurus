@@ -1,0 +1,275 @@
+@use '~@kit-xyz/theme/src/scss/mixins/scroll' as scroll;
+@import './breakpoints';
+@import './paddings';
+
+.section {
+  user-select: none;
+  border-bottom: var(--ifm-common-bdw) solid var(--ifm-color-emphasis-200);
+  padding: $sectionMobileY $sectionMobileX;
+
+  @media (min-width: $mobile) {
+    padding: $sectionTabletY $sectionTabletX;
+  }
+
+  @media (min-width: $tablet) {
+    padding: $sectionLaptopY $sectionLaptopX;
+  }
+
+  @media (min-width: $desktop) {
+    padding: $sectionDesctopY $sectionDesctopX;
+  }
+
+  h2 {
+    margin-bottom: 64px;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+    color: var(--ifm-color-emphasis-700);
+  }
+}
+
+.technologies {
+  display: grid;
+  gap: 32px;
+
+  &_mb32 {
+    margin-bottom: 32px;
+  }
+
+  &_mb64 {
+    margin-bottom: 64px;
+  }
+
+  @each $cols, $frame in (2: 1, 4: 1) {
+    &_#{'' + $cols} {
+      grid-template-columns: repeat($frame, 1fr);
+    }
+  }
+
+  @media (min-width: $tablet) {
+    @each $cols, $frame in (2: 1, 4: 2) {
+      &_#{'' + $cols} {
+        grid-template-columns: repeat($frame, 1fr);
+      }
+    }
+  }
+
+  @media (min-width: $desktop) {
+    @each $cols in (2, 4) {
+      &_#{'' + $cols} {
+        grid-template-columns: repeat($cols, 1fr);
+      }
+    }
+  }
+}
+
+// Grid card
+
+.technology {
+  display: flex;
+  // width: 100%;
+  justify-content: space-between;
+  // padding: 32px;
+  gap: 32px;
+  // border-radius: 16px;
+  // background-color: var(--ifm-color-emphasis-200);
+
+  svg {
+    flex-shrink: 0;
+    fill: var(--ifm-color-emphasis-700);
+    display: none;
+
+    @media (min-width: $mobile) {
+      display: block;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+
+  h3 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    color: var(--ifm-color-emphasis-700);
+    margin-bottom: 24px;
+  }
+
+  .badges {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .list {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 0;
+
+    @each $col in (1, 2) {
+      &_#{'' + $col} {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    @media (min-width: $mobile) {
+      @each $col in (1, 2) {
+        &_#{'' + $col} {
+          grid-template-columns: repeat($col, 1fr);
+        }
+      }
+    }
+  }
+
+  .item {
+    $dotColors: (
+      'primary': var(--color-accent-1-700),
+      'secondary': var(--ifm-color-emphasis-300),
+    );
+
+    position: relative;
+    padding: 4px 8px;
+    margin-left: 32px;
+
+    @each $appearance, $value in $dotColors {
+      &_#{'' + $appearance} {
+        --item-dot-color: #{$value};
+      }
+    }
+
+    span {
+      display: block;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--ifm-color-emphasis-700);
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 8px;
+      height: 8px;
+      top: 16px;
+      left: -20px;
+      transform: translateY(-50%);
+      background-color: var(--item-dot-color);
+      border-radius: 50%;
+    }
+  }
+}
+
+// Table
+
+.tableContainer {
+  // --ppr-bgc: var(--ifm-color-emphasis-200);
+
+  display: none;
+  width: 100%;
+
+  // overflow-y: hidden;
+  // overflow-x: auto;
+  padding-bottom: 8px;
+
+  &_light {
+    @include scroll.scrollbar('xs', 'onLight');
+  }
+
+  &_dark {
+    @include scroll.scrollbar('xs', 'onDark');
+  }
+
+  @media (min-width: $laptop) {
+    display: block;
+  }
+
+  .table {
+    width: fit-content;
+    // border-radius: 16px;
+    // overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    margin-bottom: 0;
+
+    overflow-wrap: break-word;
+
+    @media (min-width: $tablet) {
+      table-layout: fixed;
+    }
+
+    tr {
+      border: none;
+
+      th,
+      td {
+        padding: 32px;
+        text-align: left;
+        vertical-align: top;
+        border: none;
+
+        &[data-column='column-0'] {
+          width: 30%;
+        }
+
+        & > span {
+          display: block;
+          width: 100%;
+          padding: 4px 8px;
+        }
+      }
+    }
+
+    thead {
+      // background-color: var(--ifm-color-emphasis-200);
+      background-color: transparent;
+
+      tr {
+        th {
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 600;
+          color: var(--ifm-color-emphasis-400);
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-top: var(--ifm-common-bdw) solid var(--ifm-color-emphasis-300);
+        // background-color: var(--ifm-color-emphasis-200);
+        background-color: transparent;
+
+        td {
+          color: var(--ifm-color-emphasis-700);
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+
+          span[data-cell='cell-bold'] {
+            font-weight: 600;
+            width: 100%;
+          }
+
+          span[data-cell='cell-statused'] {
+            color: var(--ifm-color-emphasis-400);
+          }
+
+          div[data-cell='cell-flex'] {
+            display: flex;
+            gap: 16px;
+
+            @media (max-width: $desktop) {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+  }
+}
