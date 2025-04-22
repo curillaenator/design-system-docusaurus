@@ -12,10 +12,10 @@ import updateIconsMap from './updateIconSteps/updateIconsMap';
 const run = async (cmd: Command) => {
   const rawArgs = cmd?.parent?.rawArgs as string[];
   const { token, dist, filename, nodes } = {
-    token: 'figd_769zb9VU_H_70USw1pYa4tEcwHkH0AJ5A_u21ACF',
-    dist: './packages/xyz/Icon',
-    filename: 'SPLhN9CXHveMaUfbKsTm9k',
-    nodes: '217:2',
+    token: '',
+    dist: '',
+    filename: '',
+    nodes: '',
   };
 
   const config = createConfig(filename, token, nodes, dist);
